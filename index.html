@@ -11,7 +11,7 @@
     <meta property="og:url" content="https://phonerepairpos.app">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Instrument+Serif&display=swap" rel="stylesheet">
     <style>
         *, *::before, *::after {
             margin: 0;
@@ -21,18 +21,27 @@
 
         :root {
             --primary: #3D3385;
-            --accent: #5448AE;
-            --vibrant: #7C6FF7;
+            --accent: #5548AD;
+            --vibrant: #5548AD;
             --light-purple: #EDE9FE;
             --white: #FFFFFF;
-            --off-white: #F8F7FC;
+            --off-white: #F6F6FB;
             --dark: #1A1338;
-            --text: #2D2554;
-            --text-light: #6B6494;
+            --text: #1E1E3F;
+            --text-light: #5C5C7A;
             --blue: #3B82F6;
             --orange: #F59E0B;
             --green: #10B981;
             --pink: #EC4899;
+            /* Status colors — matched from AppTheme.swift */
+            --status-received: #4078D9;
+            --status-diagnosing: #E69426;
+            --status-repairing: #8F59C2;
+            --status-waiting: #D9A621;
+            --status-ready: #38B36B;
+            --status-collected: #99949E;
+            /* Accent warm */
+            --warm-accent: #FF6B4A;
         }
 
         html {
@@ -40,7 +49,7 @@
         }
 
         body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
             color: var(--text);
             background: var(--white);
             overflow-x: hidden;
@@ -108,20 +117,20 @@
 
         .nav-cta:hover {
             transform: translateY(-1px);
-            box-shadow: 0 4px 12px rgba(124, 111, 247, 0.4);
+            box-shadow: 0 4px 16px rgba(85, 72, 173, 0.5);
         }
 
         /* ===== HERO ===== */
         .hero {
             position: relative;
-            min-height: 100vh;
             display: flex;
             align-items: center;
             justify-content: center;
             text-align: center;
-            padding: 8rem 2rem 6rem;
+            padding: 8rem 2rem 4rem;
             background: linear-gradient(135deg, var(--dark) 0%, var(--primary) 50%, var(--accent) 100%);
             overflow: hidden;
+            z-index: 1;
         }
 
         .hero::before {
@@ -129,7 +138,7 @@
             position: absolute;
             inset: 0;
             background:
-                radial-gradient(ellipse 600px 400px at 20% 30%, rgba(124, 111, 247, 0.25), transparent),
+                radial-gradient(ellipse 600px 400px at 20% 30%, rgba(85, 72, 173, 0.25), transparent),
                 radial-gradient(ellipse 500px 500px at 80% 70%, rgba(84, 72, 174, 0.3), transparent),
                 radial-gradient(ellipse 300px 300px at 60% 20%, rgba(236, 72, 153, 0.1), transparent);
             z-index: 1;
@@ -147,7 +156,8 @@
         .hero-content {
             position: relative;
             z-index: 3;
-            max-width: 800px;
+            max-width: 1100px;
+            width: 100%;
         }
 
         .hero-badge {
@@ -162,6 +172,12 @@
             font-size: 0.85rem;
             color: rgba(255, 255, 255, 0.9);
             margin-bottom: 2rem;
+            animation: fade-up 0.6s cubic-bezier(0.23, 1, 0.32, 1) both;
+        }
+
+        @keyframes fade-up {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
         }
 
         .hero-badge-dot {
@@ -181,16 +197,24 @@
             font-size: clamp(2.5rem, 6vw, 4.5rem);
             font-weight: 900;
             color: var(--white);
-            line-height: 1.05;
+            line-height: 1.15;
             letter-spacing: -0.03em;
             margin-bottom: 1.5rem;
+            animation: fade-up 0.6s cubic-bezier(0.23, 1, 0.32, 1) 0.1s both;
         }
 
         .hero h1 .gradient-text {
-            background: linear-gradient(135deg, #A78BFA, #C084FC, #F472B6);
+            font-family: 'Instrument Serif', Georgia, serif;
+            font-style: italic;
+            font-weight: 400;
+            background: linear-gradient(135deg, #7C6FF7, #B494F7, #E88DC8);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
+            padding: 0.05em 0.15em;
+            margin: 0 -0.15em;
+            -webkit-box-decoration-break: clone;
+            box-decoration-break: clone;
         }
 
         .hero p {
@@ -199,13 +223,16 @@
             line-height: 1.6;
             max-width: 600px;
             margin: 0 auto 2.5rem;
+            animation: fade-up 0.6s cubic-bezier(0.23, 1, 0.32, 1) 0.2s both;
         }
 
         .hero-ctas {
             display: flex;
             gap: 1rem;
+            animation: fade-up 0.6s cubic-bezier(0.23, 1, 0.32, 1) 0.3s both;
             justify-content: center;
             flex-wrap: wrap;
+            margin-bottom: 3.5rem;
         }
 
         .app-store-badge {
@@ -255,7 +282,7 @@
         .orb-1 {
             width: 300px;
             height: 300px;
-            background: rgba(124, 111, 247, 0.2);
+            background: rgba(85, 72, 173, 0.2);
             top: 10%;
             left: -5%;
             animation-delay: 0s;
@@ -284,6 +311,943 @@
             50% { transform: translateY(-30px) scale(1.05); }
         }
 
+        /* ===== iPad MOCKUP FRAME ===== */
+        .ipad-frame {
+            background: #1C1C1E;
+            border-radius: 20px;
+            padding: 12px;
+            position: relative;
+            box-shadow: 0 25px 80px rgba(0, 0, 0, 0.4), 0 5px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .ipad-frame::before {
+            content: '';
+            position: absolute;
+            top: 6px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 8px;
+            height: 8px;
+            background: #2C2C2E;
+            border-radius: 50%;
+            z-index: 5;
+        }
+
+        .ipad-frame::after {
+            content: '';
+            position: absolute;
+            bottom: 5px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 36px;
+            height: 4px;
+            background: #3A3A3C;
+            border-radius: 2px;
+            z-index: 5;
+        }
+
+        .ipad-screen {
+            background: #F2F2F7;
+            border-radius: 12px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        /* Hero mockup - large with perspective */
+        .hero-mockup {
+            perspective: 1200px;
+            max-width: 960px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .hero-mockup::before {
+            content: '';
+            position: absolute;
+            inset: -40px;
+            background: radial-gradient(ellipse 70% 60% at 50% 55%, rgba(85, 72, 173, 0.35), rgba(255, 107, 74, 0.1) 50%, transparent 70%);
+            z-index: -1;
+            filter: blur(30px);
+            animation: mockup-glow 4s ease-in-out infinite alternate;
+        }
+
+        @keyframes mockup-glow {
+            0% { opacity: 0.6; transform: scale(0.95); }
+            100% { opacity: 1; transform: scale(1.02); }
+        }
+
+        .hero-mockup .ipad-frame {
+            transform: rotateX(4deg) rotateY(-2deg);
+            transition: transform 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+            animation: mockup-float-in 1s cubic-bezier(0.23, 1, 0.32, 1) 0.3s both;
+        }
+
+        @keyframes mockup-float-in {
+            from {
+                opacity: 0;
+                transform: rotateX(8deg) rotateY(-4deg) translateY(40px) scale(0.95);
+            }
+            to {
+                opacity: 1;
+                transform: rotateX(4deg) rotateY(-2deg) translateY(0) scale(1);
+            }
+        }
+
+        .hero-mockup .ipad-frame:hover {
+            transform: rotateX(1deg) rotateY(0deg) scale(1.01);
+        }
+
+        .hero-mockup .ipad-screen {
+            display: flex;
+            height: 480px;
+        }
+
+        /* Staggered card entrance */
+        .hero-mockup .mockup-ticket-card {
+            animation: card-slide-in 0.5s cubic-bezier(0.23, 1, 0.32, 1) both;
+        }
+        .hero-mockup .mockup-ticket-card:nth-child(2) { animation-delay: 0.7s; }
+        .hero-mockup .mockup-ticket-card:nth-child(3) { animation-delay: 0.85s; }
+        .hero-mockup .mockup-ticket-card:nth-child(4) { animation-delay: 1s; }
+        .hero-mockup .mockup-ticket-card:nth-child(5) { animation-delay: 1.15s; }
+
+        @keyframes card-slide-in {
+            from { opacity: 0; transform: translateX(-12px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+
+        /* Ticket card hover */
+        .mockup-ticket-card {
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        .hero-mockup .mockup-ticket-card:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+        }
+
+        /* Split-view: sidebar + detail */
+        .mockup-sidebar {
+            width: 220px;
+            background: #F2F2F7;
+            border-right: 1px solid #D1D1D6;
+            padding: 10px 8px;
+            flex-shrink: 0;
+            overflow: hidden;
+        }
+
+        .mockup-sidebar-header {
+            font-size: 15px;
+            font-weight: 700;
+            color: #1C1C1E;
+            padding: 4px 6px 12px;
+        }
+
+        .mockup-ticket-card {
+            background: #fff;
+            border-radius: 10px;
+            padding: 10px 12px;
+            margin-bottom: 8px;
+            border: 1px solid #E5E5EA;
+        }
+
+        .mockup-ticket-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 5px;
+        }
+
+        .mockup-ticket-id {
+            font-size: 11px;
+            font-weight: 700;
+            color: #1C1C1E;
+        }
+
+        .mockup-status-badge {
+            font-size: 9px;
+            font-weight: 600;
+            padding: 2px 7px;
+            border-radius: 6px;
+            color: #fff;
+            text-transform: uppercase;
+            letter-spacing: 0.03em;
+        }
+
+        .badge-received { background: var(--status-received); }
+        .badge-diagnosing { background: var(--status-diagnosing); }
+        .badge-repairing { background: var(--status-repairing); }
+        .badge-ready { background: var(--status-ready); }
+        .badge-collected { background: var(--status-collected); }
+
+        .mockup-ticket-name {
+            font-size: 12px;
+            font-weight: 600;
+            color: #1C1C1E;
+            margin-bottom: 2px;
+        }
+
+        .mockup-ticket-device {
+            font-size: 10px;
+            color: #8E8E93;
+        }
+
+        .mockup-ticket-card.active {
+            border-color: var(--vibrant);
+            box-shadow: 0 0 0 2px rgba(85, 72, 173, 0.2);
+        }
+
+        /* Detail pane */
+        .mockup-detail {
+            flex: 1;
+            background: #fff;
+            padding: 18px 20px;
+            overflow: hidden;
+        }
+
+        .mockup-detail-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 18px;
+        }
+
+        .mockup-detail-title {
+            font-size: 17px;
+            font-weight: 700;
+            color: #1C1C1E;
+        }
+
+        .mockup-detail-subtitle {
+            font-size: 12px;
+            color: #8E8E93;
+            margin-top: 2px;
+        }
+
+        /* Status progress bar */
+        .mockup-progress {
+            display: flex;
+            align-items: center;
+            gap: 0;
+            margin-bottom: 20px;
+            padding: 12px 14px;
+            background: #F9F9FB;
+            border-radius: 10px;
+            border: 1px solid #E5E5EA;
+        }
+
+        .mockup-progress-step {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            flex: 1;
+            position: relative;
+        }
+
+        .mockup-progress-dot {
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            border: 2px solid #D1D1D6;
+            background: #fff;
+            margin-bottom: 4px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .mockup-progress-dot.completed {
+            background: var(--status-ready);
+            border-color: var(--status-ready);
+        }
+
+        .mockup-progress-dot.completed::after {
+            content: '✓';
+            color: #fff;
+            font-size: 10px;
+            font-weight: 700;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .mockup-progress-dot.active {
+            background: var(--status-repairing);
+            border-color: var(--status-repairing);
+            box-shadow: 0 0 0 3px rgba(143, 89, 194, 0.2);
+        }
+
+        .mockup-progress-label {
+            font-size: 8px;
+            font-weight: 600;
+            color: #8E8E93;
+            text-align: center;
+        }
+
+        .mockup-progress-label.active-label {
+            color: var(--status-repairing);
+        }
+
+        .mockup-progress-line {
+            position: absolute;
+            top: 9px;
+            left: 55%;
+            right: -45%;
+            height: 2px;
+            background: #D1D1D6;
+            z-index: 1;
+        }
+
+        .mockup-progress-line.filled {
+            background: var(--status-ready);
+        }
+
+        /* Detail info rows */
+        .mockup-info-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            margin-bottom: 16px;
+        }
+
+        .mockup-info-item {
+            padding: 10px 12px;
+            background: #F9F9FB;
+            border-radius: 8px;
+            border: 1px solid #E5E5EA;
+        }
+
+        .mockup-info-label {
+            font-size: 9px;
+            font-weight: 600;
+            color: #8E8E93;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+            margin-bottom: 3px;
+        }
+
+        .mockup-info-value {
+            font-size: 12px;
+            font-weight: 600;
+            color: #1C1C1E;
+        }
+
+        .mockup-notes-block {
+            background: #F9F9FB;
+            border: 1px solid #E5E5EA;
+            border-radius: 8px;
+            padding: 10px 12px;
+        }
+
+        .mockup-notes-title {
+            font-size: 10px;
+            font-weight: 600;
+            color: #8E8E93;
+            margin-bottom: 5px;
+        }
+
+        .mockup-note-line {
+            font-size: 11px;
+            color: #3A3A3C;
+            line-height: 1.5;
+        }
+
+        /* ===== REAL APP MOCKUP STYLES ===== */
+        .mockup-sidebar-count {
+            font-size: 10px;
+            color: #8E8E93;
+            padding: 0 6px 6px;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        .sidebar-dot {
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            display: inline-block;
+        }
+
+        .mockup-filter-tabs {
+            display: flex;
+            gap: 4px;
+            padding: 0 4px 8px;
+            overflow: hidden;
+        }
+
+        .filter-tab {
+            font-size: 8px;
+            font-weight: 600;
+            padding: 3px 8px;
+            border-radius: 6px;
+            background: #F2F2F7;
+            color: #8E8E93;
+            white-space: nowrap;
+        }
+
+        .filter-tab.active-tab {
+            background: var(--vibrant);
+            color: #fff;
+        }
+
+        .mockup-ticket-price {
+            font-size: 12px;
+            font-weight: 700;
+            color: #1C1C1E;
+        }
+
+        .mockup-ticket-bottom {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .mockup-ticket-time {
+            font-size: 9px;
+            color: #C7C7CC;
+        }
+
+        .mockup-detail-topbar {
+            font-size: 13px;
+            font-weight: 600;
+            color: #1C1C1E;
+            text-align: center;
+            padding: 8px 0;
+            border-bottom: 1px solid #E5E5EA;
+            margin-bottom: 10px;
+        }
+
+        .mockup-section-card {
+            background: #fff;
+            border: 1px solid #E5E5EA;
+            border-radius: 10px;
+            padding: 10px 12px;
+            margin-bottom: 8px;
+        }
+
+        .mockup-section-label {
+            font-size: 9px;
+            font-weight: 600;
+            color: #8E8E93;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+            margin-bottom: 6px;
+        }
+
+        .mockup-customer-name {
+            font-size: 16px;
+            font-weight: 700;
+            color: #1C1C1E;
+            margin-bottom: 2px;
+        }
+
+        .mockup-customer-phone {
+            font-size: 11px;
+            color: var(--vibrant);
+        }
+
+        /* Real progress bar with colored icons */
+        .mockup-progress-real {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 6px 0;
+        }
+
+        .progress-icon-step {
+            display: flex;
+            align-items: center;
+        }
+
+        .progress-icon {
+            width: 26px;
+            height: 26px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 10px;
+            color: #fff;
+            flex-shrink: 0;
+        }
+
+        .progress-icon.done {
+            /* background set inline */
+        }
+
+        .progress-icon.current {
+            box-shadow: 0 0 0 3px rgba(143, 89, 194, 0.2);
+        }
+
+        .progress-icon.pending {
+            background: none;
+            border: 2px dashed #D1D1D6;
+            color: #C7C7CC;
+            font-size: 9px;
+        }
+
+        .progress-connector {
+            width: 28px;
+            height: 3px;
+            background: #E5E5EA;
+            border-radius: 2px;
+        }
+
+        .progress-connector.filled-line {
+            background: #E69326;
+        }
+
+        .progress-labels-real {
+            display: flex;
+            justify-content: space-between;
+            padding: 2px 2px 6px;
+            font-size: 8px;
+            color: #8E8E93;
+        }
+
+        .mockup-action-btns {
+            display: flex;
+            gap: 5px;
+            flex-wrap: wrap;
+        }
+
+        .action-btn {
+            font-size: 8px;
+            font-weight: 600;
+            padding: 4px 8px;
+            border-radius: 8px;
+            display: inline-flex;
+            align-items: center;
+            gap: 3px;
+            white-space: nowrap;
+        }
+
+        .btn-outline {
+            background: #F2F2F7;
+            color: #3A3A3C;
+            border: 1px solid #E5E5EA;
+        }
+
+        .btn-amber {
+            background: #FDF3D7;
+            color: #8B6914;
+            border: 1px solid #F5D97A;
+        }
+
+        .btn-green {
+            background: #D1FAE5;
+            color: #065F46;
+            border: 1px solid #6EE7B7;
+        }
+
+        /* Real payment methods (4 across) */
+        .mockup-payment-methods-real {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 5px;
+            margin-bottom: 8px;
+        }
+
+        .pay-method-real {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 3px;
+            padding: 8px 4px;
+            border: 1.5px solid #E5E5EA;
+            border-radius: 8px;
+            font-size: 8px;
+            font-weight: 500;
+            color: #3A3A3C;
+        }
+
+        .pay-method-real.selected-method {
+            border-color: var(--vibrant);
+            background: rgba(85, 72, 173, 0.04);
+            color: var(--vibrant);
+        }
+
+        .mockup-record-payment-btn {
+            background: var(--status-ready);
+            color: #fff;
+            border-radius: 10px;
+            padding: 8px;
+            text-align: center;
+            font-size: 11px;
+            font-weight: 600;
+        }
+
+        /* Detail pane background for grouped cards */
+        .mockup-detail {
+            flex: 1;
+            background: #F2F2F7;
+            padding: 0 12px 12px;
+            overflow: hidden;
+        }
+
+        /* ===== FEATURE SHOWCASE PANELS ===== */
+        .showcase {
+            padding: 6rem 2rem;
+            background: var(--off-white);
+            position: relative;
+            overflow: hidden;
+            z-index: 2;
+        }
+
+        .showcase::before {
+            content: '';
+            position: absolute;
+            width: 500px;
+            height: 500px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(85, 72, 173, 0.06), transparent 70%);
+            top: 10%;
+            right: -10%;
+            pointer-events: none;
+        }
+
+        .showcase::after {
+            content: '';
+            position: absolute;
+            width: 400px;
+            height: 400px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(255, 107, 74, 0.05), transparent 70%);
+            bottom: 15%;
+            left: -8%;
+            pointer-events: none;
+        }
+
+        .showcase-panel {
+            display: flex;
+            align-items: center;
+            gap: 4rem;
+            max-width: 1200px;
+            margin: 0 auto 5rem;
+            opacity: 0;
+            transform: translateY(30px);
+        }
+
+        .showcase-panel.visible {
+            opacity: 1;
+            transform: translateY(0);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        .showcase-panel:last-child {
+            margin-bottom: 0;
+        }
+
+        .showcase-panel.reversed {
+            flex-direction: row-reverse;
+        }
+
+        .showcase-mockup {
+            flex: 1;
+            min-width: 0;
+        }
+
+        .showcase-mockup .ipad-frame {
+            box-shadow: 0 20px 60px rgba(17, 17, 54, 0.15), 0 5px 15px rgba(0, 0, 0, 0.08);
+            transition: transform 0.5s cubic-bezier(0.23, 1, 0.32, 1), box-shadow 0.5s ease;
+        }
+
+        .showcase-mockup .ipad-frame:hover {
+            transform: translateY(-6px) rotate(-0.5deg);
+            box-shadow: 0 30px 80px rgba(17, 17, 54, 0.18), 0 8px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .showcase-text {
+            flex: 1;
+            min-width: 0;
+        }
+
+        .showcase-label {
+            display: inline-block;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--vibrant);
+            margin-bottom: 0.75rem;
+        }
+
+        .showcase-text h3 {
+            font-size: clamp(1.75rem, 3vw, 2.25rem);
+            font-weight: 800;
+            color: var(--dark);
+            line-height: 1.15;
+            letter-spacing: -0.02em;
+            margin-bottom: 1rem;
+        }
+
+        .showcase-text h3 em {
+            font-family: 'Instrument Serif', Georgia, serif;
+            font-weight: 400;
+            font-style: italic;
+            color: var(--vibrant);
+        }
+
+        .showcase-text p {
+            font-size: 1.05rem;
+            color: var(--text-light);
+            line-height: 1.7;
+        }
+
+        /* Showcase mockup screens */
+        .mockup-intake-screen {
+            padding: 16px 18px;
+            background: #fff;
+        }
+
+        .mockup-form-title {
+            font-size: 17px;
+            font-weight: 700;
+            color: #1C1C1E;
+            margin-bottom: 16px;
+        }
+
+        .mockup-form-group {
+            margin-bottom: 12px;
+        }
+
+        .mockup-form-label {
+            font-size: 10px;
+            font-weight: 600;
+            color: #8E8E93;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+            margin-bottom: 4px;
+        }
+
+        .mockup-form-input {
+            width: 100%;
+            height: 34px;
+            background: #F2F2F7;
+            border: 1px solid #E5E5EA;
+            border-radius: 8px;
+            padding: 0 10px;
+            font-size: 12px;
+            color: #1C1C1E;
+            display: flex;
+            align-items: center;
+        }
+
+        .mockup-form-input.filled {
+            color: #1C1C1E;
+        }
+
+        .mockup-form-input.placeholder {
+            color: #C7C7CC;
+        }
+
+        .mockup-form-row {
+            display: flex;
+            gap: 10px;
+        }
+
+        .mockup-form-row .mockup-form-group {
+            flex: 1;
+        }
+
+        .mockup-form-textarea {
+            width: 100%;
+            height: 50px;
+            background: #F2F2F7;
+            border: 1px solid #E5E5EA;
+            border-radius: 8px;
+            padding: 8px 10px;
+            font-size: 12px;
+            color: #1C1C1E;
+        }
+
+        .mockup-form-btn {
+            width: 100%;
+            height: 38px;
+            background: var(--vibrant);
+            color: #fff;
+            border: none;
+            border-radius: 10px;
+            font-size: 13px;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 14px;
+        }
+
+        /* Status flow screen */
+        .mockup-status-screen {
+            padding: 16px 18px;
+            background: #fff;
+        }
+
+        .mockup-status-flow {
+            display: flex;
+            flex-direction: column;
+            gap: 0;
+            padding: 10px 0;
+        }
+
+        .mockup-flow-step {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            position: relative;
+            padding-bottom: 20px;
+        }
+
+        .mockup-flow-step:last-child {
+            padding-bottom: 0;
+        }
+
+        .mockup-flow-step::before {
+            content: '';
+            position: absolute;
+            left: 13px;
+            top: 26px;
+            bottom: 0;
+            width: 2px;
+            background: #E5E5EA;
+        }
+
+        .mockup-flow-step:last-child::before {
+            display: none;
+        }
+
+        .mockup-flow-step.step-done::before {
+            background: var(--status-ready);
+        }
+
+        .mockup-flow-dot {
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 11px;
+            font-weight: 700;
+            color: #fff;
+            position: relative;
+            z-index: 2;
+        }
+
+        .mockup-flow-dot.dot-done {
+            background: var(--status-ready);
+        }
+
+        .mockup-flow-dot.dot-done::after {
+            content: '✓';
+        }
+
+        .mockup-flow-dot.dot-active {
+            background: var(--status-repairing);
+            box-shadow: 0 0 0 4px rgba(143, 89, 194, 0.15);
+        }
+
+        .mockup-flow-dot.dot-pending {
+            background: #fff;
+            border: 2px solid #D1D1D6;
+        }
+
+        .mockup-flow-info h4 {
+            font-size: 13px;
+            font-weight: 600;
+            color: #1C1C1E;
+            margin-bottom: 2px;
+        }
+
+        .mockup-flow-info .flow-time {
+            font-size: 10px;
+            color: #8E8E93;
+        }
+
+        .mockup-flow-info .flow-active-tag {
+            font-size: 9px;
+            font-weight: 600;
+            color: var(--status-repairing);
+            background: rgba(143, 89, 194, 0.1);
+            padding: 1px 6px;
+            border-radius: 4px;
+            display: inline-block;
+            margin-top: 2px;
+        }
+
+        /* Payment screen */
+        .mockup-payment-screen {
+            padding: 16px 18px;
+            background: #fff;
+        }
+
+        .mockup-payment-summary {
+            background: #F9F9FB;
+            border: 1px solid #E5E5EA;
+            border-radius: 10px;
+            padding: 14px;
+            margin-bottom: 14px;
+        }
+
+        .mockup-payment-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 5px 0;
+            font-size: 12px;
+            color: #3A3A3C;
+        }
+
+        .mockup-payment-row.total {
+            border-top: 1px solid #E5E5EA;
+            margin-top: 6px;
+            padding-top: 10px;
+            font-weight: 700;
+            font-size: 14px;
+            color: #1C1C1E;
+        }
+
+        .mockup-payment-methods {
+            display: flex;
+            gap: 8px;
+            margin-bottom: 14px;
+        }
+
+        .mockup-pay-method {
+            flex: 1;
+            height: 44px;
+            border: 2px solid #E5E5EA;
+            border-radius: 10px;
+            background: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 11px;
+            font-weight: 600;
+            color: #3A3A3C;
+            gap: 5px;
+        }
+
+        .mockup-pay-method.selected {
+            border-color: var(--vibrant);
+            background: rgba(85, 72, 173, 0.05);
+            color: var(--vibrant);
+        }
+
+        .mockup-payment-done {
+            background: var(--status-ready);
+            color: #fff;
+            border-radius: 10px;
+            padding: 12px;
+            text-align: center;
+            font-size: 12px;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+        }
+
         /* ===== SECTION STYLING ===== */
         section {
             padding: 6rem 2rem;
@@ -291,7 +1255,7 @@
 
         .section-header {
             text-align: center;
-            max-width: 600px;
+            max-width: 700px;
             margin: 0 auto 4rem;
         }
 
@@ -329,7 +1293,7 @@
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 1.5rem;
-            max-width: 1100px;
+            max-width: 1200px;
             margin: 0 auto;
         }
 
@@ -351,7 +1315,8 @@
 
         .feature-card:hover {
             transform: translateY(-4px);
-            box-shadow: 0 12px 40px rgba(61, 51, 133, 0.1);
+            box-shadow: 0 16px 48px rgba(17, 17, 54, 0.1);
+            border-color: rgba(85, 72, 173, 0.15);
         }
 
         .feature-icon {
@@ -394,7 +1359,7 @@
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
             gap: 2rem;
-            max-width: 900px;
+            max-width: 1100px;
             margin: 0 auto;
             position: relative;
         }
@@ -428,9 +1393,110 @@
             box-shadow: 0 4px 15px rgba(61, 51, 133, 0.25);
         }
 
-        .step-icon {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
+        /* Mini iPad mockup thumbnails for How It Works */
+        .step-mini-mockup {
+            width: 180px;
+            margin: 0 auto 1rem;
+        }
+
+        .step-mini-mockup .ipad-frame {
+            padding: 6px;
+            border-radius: 12px;
+            box-shadow: 0 8px 25px rgba(17, 17, 54, 0.12), 0 2px 8px rgba(0, 0, 0, 0.06);
+            transition: transform 0.4s cubic-bezier(0.23, 1, 0.32, 1), box-shadow 0.4s ease;
+        }
+
+        .step:hover .step-mini-mockup .ipad-frame {
+            transform: translateY(-4px) scale(1.03);
+            box-shadow: 0 14px 35px rgba(17, 17, 54, 0.16), 0 4px 12px rgba(0, 0, 0, 0.08);
+        }
+
+        .step-mini-mockup .ipad-frame::before {
+            width: 5px;
+            height: 5px;
+            top: 3px;
+        }
+
+        .step-mini-mockup .ipad-frame::after {
+            width: 20px;
+            height: 3px;
+            bottom: 3px;
+        }
+
+        .step-mini-mockup .ipad-screen {
+            border-radius: 7px;
+        }
+
+        .mini-screen-content {
+            padding: 8px;
+            background: #fff;
+            font-size: 7px;
+        }
+
+        .mini-ticket-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 4px 5px;
+            background: #F9F9FB;
+            border-radius: 4px;
+            margin-bottom: 3px;
+        }
+
+        .mini-ticket-name {
+            font-weight: 600;
+            color: #1C1C1E;
+        }
+
+        .mini-badge {
+            font-size: 5px;
+            padding: 1px 4px;
+            border-radius: 3px;
+            color: #fff;
+            font-weight: 600;
+        }
+
+        .mini-progress-bar {
+            display: flex;
+            gap: 2px;
+            padding: 6px 4px;
+        }
+
+        .mini-progress-segment {
+            flex: 1;
+            height: 4px;
+            border-radius: 2px;
+            background: #E5E5EA;
+        }
+
+        .mini-progress-segment.filled {
+            background: var(--status-ready);
+        }
+
+        .mini-progress-segment.current {
+            background: var(--status-repairing);
+        }
+
+        .mini-payment-block {
+            padding: 6px;
+        }
+
+        .mini-pay-total {
+            text-align: center;
+            font-weight: 700;
+            font-size: 10px;
+            color: #1C1C1E;
+            margin-bottom: 4px;
+        }
+
+        .mini-pay-btn {
+            background: var(--status-ready);
+            color: #fff;
+            text-align: center;
+            border-radius: 4px;
+            padding: 3px;
+            font-size: 6px;
+            font-weight: 600;
         }
 
         .step h3 {
@@ -455,7 +1521,7 @@
             .step-connector {
                 display: block;
                 position: absolute;
-                top: 28px;
+                top: 100px;
                 right: -1rem;
                 width: 2rem;
                 color: var(--vibrant);
@@ -479,7 +1545,7 @@
             position: absolute;
             inset: 0;
             background:
-                radial-gradient(ellipse 400px 300px at 80% 20%, rgba(124, 111, 247, 0.2), transparent),
+                radial-gradient(ellipse 400px 300px at 80% 20%, rgba(85, 72, 173, 0.2), transparent),
                 radial-gradient(ellipse 300px 300px at 20% 80%, rgba(236, 72, 153, 0.1), transparent);
         }
 
@@ -488,7 +1554,7 @@
         }
 
         .social-proof .section-label {
-            color: #A78BFA;
+            color: #7C6FF7;
         }
 
         .social-proof .section-header h2 {
@@ -503,7 +1569,7 @@
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
             gap: 2rem;
-            max-width: 800px;
+            max-width: 1000px;
             margin: 0 auto;
             position: relative;
         }
@@ -531,7 +1597,7 @@
             color: var(--white);
             line-height: 1;
             margin-bottom: 0.5rem;
-            background: linear-gradient(135deg, #A78BFA, #F472B6);
+            background: linear-gradient(135deg, #7C6FF7, #E88DC8);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
@@ -549,7 +1615,7 @@
         }
 
         .cta-card {
-            max-width: 700px;
+            max-width: 900px;
             margin: 0 auto;
             background: linear-gradient(135deg, var(--primary), var(--vibrant));
             border-radius: 24px;
@@ -587,6 +1653,10 @@
             max-width: 500px;
             margin-left: auto;
             margin-right: auto;
+        }
+
+        .cta-card .app-store-badge {
+            display: inline-block;
         }
 
         .cta-card .app-store-badge img {
@@ -670,15 +1740,102 @@
             .cta-card {
                 padding: 3rem 1.5rem;
             }
+
+            /* Hero mockup responsive */
+            .hero-mockup .ipad-screen {
+                height: 280px;
+            }
+
+            .mockup-sidebar {
+                width: 160px;
+                padding: 8px 6px;
+            }
+
+            .mockup-sidebar-header {
+                font-size: 11px;
+                padding: 2px 4px 8px;
+            }
+
+            .mockup-ticket-card {
+                padding: 6px 8px;
+                margin-bottom: 5px;
+            }
+
+            .mockup-ticket-id { font-size: 9px; }
+            .mockup-status-badge { font-size: 7px; padding: 1px 5px; }
+            .mockup-ticket-name { font-size: 10px; }
+            .mockup-ticket-device { font-size: 8px; }
+
+            .mockup-detail {
+                padding: 10px 12px;
+            }
+
+            .mockup-detail-title { font-size: 13px; }
+            .mockup-detail-subtitle { font-size: 10px; }
+            .mockup-progress { padding: 8px 6px; margin-bottom: 12px; }
+            .mockup-progress-dot { width: 14px; height: 14px; }
+            .mockup-progress-dot.completed::after { font-size: 8px; }
+            .mockup-progress-label { font-size: 6px; }
+            .mockup-info-item { padding: 6px 8px; }
+            .mockup-info-label { font-size: 7px; }
+            .mockup-info-value { font-size: 10px; }
+
+            /* Showcase panels stack on mobile */
+            .showcase-panel,
+            .showcase-panel.reversed {
+                flex-direction: column;
+                gap: 2rem;
+                margin-bottom: 3.5rem;
+            }
+
+            .showcase-text {
+                text-align: center;
+            }
         }
 
         @media (max-width: 480px) {
             .hero {
-                padding: 7rem 1.25rem 4rem;
+                padding: 7rem 1.25rem 3rem;
+            }
+
+            .hero-mockup .ipad-screen {
+                flex-direction: column;
+                height: auto;
+            }
+
+            .mockup-sidebar {
+                width: 100%;
+                border-right: none;
+                border-bottom: 1px solid #D1D1D6;
+                padding: 8px;
+            }
+
+            .mockup-sidebar-header {
+                display: none;
+            }
+
+            .mockup-ticket-card:nth-child(n+4) {
+                display: none;
+            }
+
+            .mockup-detail {
+                padding: 10px;
+            }
+
+            .mockup-info-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .mockup-notes-block {
+                display: none;
             }
 
             .stats-grid {
                 grid-template-columns: 1fr;
+            }
+
+            .step-mini-mockup {
+                width: 140px;
             }
         }
 
@@ -698,6 +1855,7 @@
         <div class="nav-links">
             <a href="#features">Features</a>
             <a href="#how-it-works">How It Works</a>
+            <a href="blog/index.html">Blog</a>
             <a href="#" class="nav-cta">Download</a>
         </div>
     </nav>
@@ -721,6 +1879,298 @@
                 <a href="#features" class="hero-secondary-btn">
                     See features ↓
                 </a>
+            </div>
+
+            <!-- Hero iPad Mockup -->
+            <div class="hero-mockup">
+                <div class="ipad-frame">
+                    <div class="ipad-screen">
+                        <!-- Sidebar: Ticket List -->
+                        <div class="mockup-sidebar">
+                            <div class="mockup-sidebar-header">
+                                <span style="font-size:15px; font-weight:700;">Tickets</span>
+                            </div>
+                            <div class="mockup-sidebar-count">
+                                <span class="sidebar-dot" style="background:var(--status-repairing);"></span> 1 Repairing
+                            </div>
+                            <div class="mockup-filter-tabs">
+                                <span class="filter-tab active-tab">All Active</span>
+                                <span class="filter-tab">Received</span>
+                                <span class="filter-tab">Diagn...</span>
+                            </div>
+
+                            <div class="mockup-ticket-card active">
+                                <div class="mockup-ticket-top">
+                                    <span class="mockup-ticket-name">Jonathan</span>
+                                    <span class="mockup-ticket-price">£80.00</span>
+                                </div>
+                                <div class="mockup-ticket-bottom">
+                                    <span class="mockup-ticket-device">iPhone 17</span>
+                                    <span class="mockup-ticket-time">1 sec ago</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Detail Pane -->
+                        <div class="mockup-detail">
+                            <div class="mockup-detail-topbar">iPhone 17</div>
+
+                            <!-- Customer header card -->
+                            <div class="mockup-section-card">
+                                <div class="mockup-customer-name">Jonathan</div>
+                                <div class="mockup-customer-phone">&#9742; 00000000000</div>
+                            </div>
+
+                            <!-- Status progress bar -->
+                            <div class="mockup-section-card">
+                                <div class="mockup-progress-real">
+                                    <div class="progress-icon-step">
+                                        <div class="progress-icon done" style="background:#E69326;">&#128230;</div>
+                                        <div class="progress-connector filled-line"></div>
+                                    </div>
+                                    <div class="progress-icon-step">
+                                        <div class="progress-icon done" style="background:#E69326;">&#128269;</div>
+                                        <div class="progress-connector filled-line"></div>
+                                    </div>
+                                    <div class="progress-icon-step">
+                                        <div class="progress-icon current" style="background:var(--status-repairing);">&#128295;</div>
+                                        <div class="progress-connector"></div>
+                                    </div>
+                                    <div class="progress-icon-step">
+                                        <div class="progress-icon pending">&#10003;</div>
+                                        <div class="progress-connector"></div>
+                                    </div>
+                                    <div class="progress-icon-step">
+                                        <div class="progress-icon pending">&#128230;</div>
+                                    </div>
+                                </div>
+                                <div class="progress-labels-real">
+                                    <span>Received</span>
+                                    <span>Diagnose</span>
+                                    <span style="font-weight:700;">Repair</span>
+                                    <span>Ready</span>
+                                    <span>Collected</span>
+                                </div>
+                                <div class="mockup-action-btns">
+                                    <span class="action-btn btn-outline">&#8617; Back to Diagnosing</span>
+                                    <span class="action-btn btn-amber">&#10047; Waiting for Parts</span>
+                                    <span class="action-btn btn-green">&#10003; Ready</span>
+                                </div>
+                            </div>
+
+                            <!-- Device & Issue card -->
+                            <div class="mockup-section-card">
+                                <div class="mockup-section-label">DEVICE &amp; ISSUE</div>
+                                <div style="display:flex; align-items:center; gap:5px; margin-bottom:3px;">
+                                    <span style="font-size:11px;">&#128241;</span>
+                                    <span style="font-size:12px; font-weight:600; color:#1C1C1E;">iPhone 17</span>
+                                </div>
+                                <div style="font-size:11px; color:#3A3A3C; margin-bottom:5px;">Broken Screen</div>
+                                <div style="font-size:9px; color:#8E8E93;">&#9201; Created: 6 Mar 2026 at 21:29 &nbsp; &#128197; Due: 7 Mar 2026</div>
+                            </div>
+
+                            <!-- Payment card -->
+                            <div class="mockup-section-card">
+                                <div class="mockup-section-label">PAYMENT</div>
+                                <div style="font-size:11px; color:#3A3A3C; margin-bottom:8px;">Estimated: <strong>£80.00</strong></div>
+                                <div class="mockup-payment-methods-real">
+                                    <div class="pay-method-real selected-method">
+                                        <span style="font-size:10px;">&#128181;</span>
+                                        <span>Cash</span>
+                                    </div>
+                                    <div class="pay-method-real">
+                                        <span style="font-size:10px;">&#128179;</span>
+                                        <span>Card</span>
+                                    </div>
+                                    <div class="pay-method-real">
+                                        <span style="font-size:10px;">&#127974;</span>
+                                        <span>Bank Transfer</span>
+                                    </div>
+                                    <div class="pay-method-real">
+                                        <span style="font-size:10px;">&#128172;</span>
+                                        <span>Other</span>
+                                    </div>
+                                </div>
+                                <div class="mockup-record-payment-btn">&#128179; Record Payment</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Feature Showcase Panels -->
+    <section class="showcase" id="showcase">
+        <div class="section-header">
+            <div class="section-label">See it in action</div>
+            <h2>Built for the way you work</h2>
+            <p>Every screen designed around the real workflow of a phone repair shop.</p>
+        </div>
+
+        <!-- Panel 1: Job Intake -->
+        <div class="showcase-panel animate-in">
+            <div class="showcase-mockup">
+                <div class="ipad-frame">
+                    <div class="ipad-screen">
+                        <div class="mockup-intake-screen">
+                            <div class="mockup-form-title">New Repair Ticket</div>
+
+                            <div class="mockup-form-group">
+                                <div class="mockup-form-label">Customer</div>
+                                <div class="mockup-form-input filled">Sarah Chen — 07700 123456</div>
+                            </div>
+
+                            <div class="mockup-form-row">
+                                <div class="mockup-form-group">
+                                    <div class="mockup-form-label">Device</div>
+                                    <div class="mockup-form-input filled">iPhone 15 Pro</div>
+                                </div>
+                                <div class="mockup-form-group">
+                                    <div class="mockup-form-label">Colour</div>
+                                    <div class="mockup-form-input filled">Natural Titanium</div>
+                                </div>
+                            </div>
+
+                            <div class="mockup-form-group">
+                                <div class="mockup-form-label">Issue Description</div>
+                                <div class="mockup-form-textarea">Cracked screen — dropped on concrete. Touch works but display has lines across the top.</div>
+                            </div>
+
+                            <div class="mockup-form-row">
+                                <div class="mockup-form-group">
+                                    <div class="mockup-form-label">Estimate</div>
+                                    <div class="mockup-form-input filled">£89.00</div>
+                                </div>
+                                <div class="mockup-form-group">
+                                    <div class="mockup-form-label">Due Date</div>
+                                    <div class="mockup-form-input filled">Today, 4:30 PM</div>
+                                </div>
+                            </div>
+
+                            <div class="mockup-form-btn">Create Ticket</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="showcase-text">
+                <div class="showcase-label">Job Intake</div>
+                <h3>Create tickets in under <em>30 seconds</em></h3>
+                <p>Customer walks in, you tap "New Ticket" and fill in the basics — name, device, issue, estimate. Returning customers auto-fill from your database. Hand them a ticket number and get to work.</p>
+            </div>
+        </div>
+
+        <!-- Panel 2: Status Tracking (reversed) -->
+        <div class="showcase-panel reversed animate-in">
+            <div class="showcase-mockup">
+                <div class="ipad-frame">
+                    <div class="ipad-screen">
+                        <div class="mockup-status-screen" style="background:#F2F2F7; padding:12px 14px;">
+                            <div class="mockup-section-card">
+                                <div class="mockup-progress-real" style="padding:10px 0;">
+                                    <div class="progress-icon-step">
+                                        <div class="progress-icon done" style="background:#38B36B; width:32px; height:32px; font-size:13px;">&#128230;</div>
+                                        <div class="progress-connector filled-line" style="width:36px; height:3px;"></div>
+                                    </div>
+                                    <div class="progress-icon-step">
+                                        <div class="progress-icon done" style="background:#E69326; width:32px; height:32px; font-size:13px;">&#128269;</div>
+                                        <div class="progress-connector filled-line" style="width:36px; height:3px;"></div>
+                                    </div>
+                                    <div class="progress-icon-step">
+                                        <div class="progress-icon current" style="background:var(--status-repairing); width:32px; height:32px; font-size:13px;">&#128295;</div>
+                                        <div class="progress-connector" style="width:36px; height:3px;"></div>
+                                    </div>
+                                    <div class="progress-icon-step">
+                                        <div class="progress-icon pending" style="width:32px; height:32px; font-size:12px;">&#10003;</div>
+                                        <div class="progress-connector" style="width:36px; height:3px;"></div>
+                                    </div>
+                                    <div class="progress-icon-step">
+                                        <div class="progress-icon pending" style="width:32px; height:32px; font-size:12px;">&#128230;</div>
+                                    </div>
+                                </div>
+                                <div class="progress-labels-real" style="font-size:10px; padding:0 4px 10px;">
+                                    <span>Received</span>
+                                    <span>Diagnose</span>
+                                    <span style="font-weight:700; color:#1C1C1E;">Repair</span>
+                                    <span>Ready</span>
+                                    <span>Collected</span>
+                                </div>
+                                <div class="mockup-action-btns" style="gap:6px;">
+                                    <span class="action-btn btn-outline" style="font-size:10px; padding:6px 10px;">&#8617; Back to Diagnosing</span>
+                                    <span class="action-btn btn-amber" style="font-size:10px; padding:6px 10px;">&#10047; Waiting for Parts</span>
+                                    <span class="action-btn btn-green" style="font-size:10px; padding:6px 10px;">&#10003; Ready</span>
+                                </div>
+                            </div>
+
+                            <div class="mockup-section-card" style="margin-top:8px;">
+                                <div class="mockup-section-label">DEVICE &amp; ISSUE</div>
+                                <div style="display:flex; align-items:center; gap:6px; margin-bottom:4px;">
+                                    <span style="font-size:13px;">&#128241;</span>
+                                    <span style="font-size:13px; font-weight:600; color:#1C1C1E;">iPhone 17</span>
+                                </div>
+                                <div style="font-size:12px; color:#3A3A3C;">Broken Screen</div>
+                            </div>
+
+                            <div class="mockup-section-card" style="margin-top:8px;">
+                                <div class="mockup-section-label">COST &amp; ASSIGNMENT</div>
+                                <div style="display:flex; justify-content:space-between; align-items:center;">
+                                    <span style="font-size:12px; color:#3A3A3C;">Final Cost</span>
+                                    <span style="font-size:12px; color:#1C1C1E;">£ 0.00</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="showcase-text">
+                <div class="showcase-label">Status Tracking</div>
+                <h3>Track every repair <em>at a glance</em></h3>
+                <p>Move jobs through your workflow with a single tap. Received, Diagnosing, Repairing, Ready, Collected — your whole team sees the same status in real time. No more shouting across the shop.</p>
+            </div>
+        </div>
+
+        <!-- Panel 3: Payment -->
+        <div class="showcase-panel animate-in">
+            <div class="showcase-mockup">
+                <div class="ipad-frame">
+                    <div class="ipad-screen">
+                        <div class="mockup-payment-screen" style="background:#F2F2F7; padding:12px 14px;">
+                            <div class="mockup-section-card">
+                                <div class="mockup-section-label">PAYMENT</div>
+                                <div style="font-size:11px; color:#3A3A3C; margin-bottom:10px;">Estimated: <strong>£80.00</strong></div>
+                                <div class="mockup-payment-methods-real" style="grid-template-columns:repeat(4, 1fr); gap:6px; margin-bottom:10px;">
+                                    <div class="pay-method-real selected-method" style="padding:10px 6px;">
+                                        <span style="font-size:14px;">&#128181;</span>
+                                        <span style="font-size:9px;">Cash</span>
+                                    </div>
+                                    <div class="pay-method-real" style="padding:10px 6px;">
+                                        <span style="font-size:14px;">&#128179;</span>
+                                        <span style="font-size:9px;">Card</span>
+                                    </div>
+                                    <div class="pay-method-real" style="padding:10px 6px;">
+                                        <span style="font-size:14px;">&#127974;</span>
+                                        <span style="font-size:9px;">Bank Transfer</span>
+                                    </div>
+                                    <div class="pay-method-real" style="padding:10px 6px;">
+                                        <span style="font-size:14px;">&#128172;</span>
+                                        <span style="font-size:9px;">Other</span>
+                                    </div>
+                                </div>
+                                <div class="mockup-record-payment-btn" style="padding:10px; font-size:12px;">&#128179; Record Payment</div>
+                            </div>
+
+                            <div class="mockup-section-card" style="margin-top:8px;">
+                                <div class="mockup-section-label">NOTES</div>
+                                <div style="font-size:11px; color:#C7C7CC;">Add a note...</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="showcase-text">
+                <div class="showcase-label">Payments</div>
+                <h3>Get paid without <em>the paperwork</em></h3>
+                <p>Record payments right on the ticket — card, cash, or bank transfer. Every job has a clear payment status so you always know who's paid and who hasn't. No separate spreadsheet needed.</p>
             </div>
         </div>
     </section>
@@ -776,21 +2226,84 @@
         <div class="steps">
             <div class="step animate-in delay-1">
                 <div class="step-number">1</div>
-                <div class="step-icon">🎫</div>
+                <div class="step-mini-mockup">
+                    <div class="ipad-frame">
+                        <div class="ipad-screen">
+                            <div class="mini-screen-content">
+                                <div style="font-size:8px; font-weight:700; color:#1C1C1E; margin-bottom:5px;">New Ticket</div>
+                                <div class="mini-ticket-row">
+                                    <span class="mini-ticket-name">Customer</span>
+                                    <span style="color:#8E8E93;">Sarah C.</span>
+                                </div>
+                                <div class="mini-ticket-row">
+                                    <span class="mini-ticket-name">Device</span>
+                                    <span style="color:#8E8E93;">iPhone 15</span>
+                                </div>
+                                <div class="mini-ticket-row">
+                                    <span class="mini-ticket-name">Issue</span>
+                                    <span style="color:#8E8E93;">Screen</span>
+                                </div>
+                                <div style="background:var(--vibrant); color:#fff; text-align:center; border-radius:4px; padding:3px; font-size:6px; font-weight:600; margin-top:4px;">Create</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 <h3>Create a ticket</h3>
                 <p>Customer walks in? Open a new job, log the device and issue, and hand them a ticket number. Done in under 30 seconds.</p>
                 <div class="step-connector">→</div>
             </div>
             <div class="step animate-in delay-2">
                 <div class="step-number">2</div>
-                <div class="step-icon">🔧</div>
+                <div class="step-mini-mockup">
+                    <div class="ipad-frame">
+                        <div class="ipad-screen">
+                            <div class="mini-screen-content">
+                                <div style="font-size:8px; font-weight:700; color:#1C1C1E; margin-bottom:5px;">Status</div>
+                                <div class="mini-progress-bar">
+                                    <div class="mini-progress-segment filled"></div>
+                                    <div class="mini-progress-segment filled"></div>
+                                    <div class="mini-progress-segment current"></div>
+                                    <div class="mini-progress-segment"></div>
+                                    <div class="mini-progress-segment"></div>
+                                </div>
+                                <div class="mini-ticket-row">
+                                    <span class="mini-ticket-name">#1042</span>
+                                    <span class="mini-badge" style="background:var(--status-repairing);">Repairing</span>
+                                </div>
+                                <div class="mini-ticket-row">
+                                    <span class="mini-ticket-name">#1041</span>
+                                    <span class="mini-badge" style="background:var(--status-diagnosing);">Diagnosing</span>
+                                </div>
+                                <div class="mini-ticket-row">
+                                    <span class="mini-ticket-name">#1040</span>
+                                    <span class="mini-badge" style="background:var(--status-ready);">Ready</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 <h3>Track the repair</h3>
                 <p>Move jobs through your workflow stages. Add notes, update status, and keep your whole team on the same page.</p>
                 <div class="step-connector">→</div>
             </div>
             <div class="step animate-in delay-3">
                 <div class="step-number">3</div>
-                <div class="step-icon">✅</div>
+                <div class="step-mini-mockup">
+                    <div class="ipad-frame">
+                        <div class="ipad-screen">
+                            <div class="mini-screen-content">
+                                <div class="mini-payment-block">
+                                    <div class="mini-pay-total">£89.00</div>
+                                    <div class="mini-ticket-row">
+                                        <span class="mini-ticket-name">Method</span>
+                                        <span style="color:#8E8E93;">Card</span>
+                                    </div>
+                                    <div class="mini-pay-btn">✓ Payment Recorded</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 <h3>Get paid</h3>
                 <p>Mark the repair complete, record payment, and close the ticket. Customer walks out happy. Repeat.</p>
             </div>
@@ -837,8 +2350,8 @@
             <div class="footer-logo">Phone<span>Repair</span>POS</div>
             <div class="footer-links">
                 <a href="mailto:support@phonerepairpos.app">Contact</a>
-                <a href="#">Privacy Policy</a>
-                <a href="#">Terms of Use</a>
+                <a href="privacy.html">Privacy Policy</a>
+                <a href="terms.html">Terms of Use</a>
             </div>
             <p>&copy; 2026 PhoneRepairPOS. All rights reserved.</p>
         </div>
@@ -879,6 +2392,18 @@
                 }
             });
         });
+
+        // Subtle parallax on hero mockup — only shifts slightly, stays clipped inside hero
+        const heroMockup = document.querySelector('.hero-mockup');
+        if (heroMockup) {
+            window.addEventListener('scroll', () => {
+                const scrollY = window.scrollY;
+                if (scrollY < 600) {
+                    heroMockup.style.transform = `translateY(${scrollY * 0.08}px)`;
+                    heroMockup.style.opacity = Math.max(1 - scrollY / 600, 0);
+                }
+            }, { passive: true });
+        }
     </script>
 
 </body>
