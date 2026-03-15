@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tracking Repair Status: Why It Matters More Than You Think — PhoneRepairPOS</title>
+    <meta name="description" content="When every repair has a clear status, your team moves faster and customers stop calling to ask 'is it ready yet?'">
+    <meta property="og:title" content="Tracking Repair Status: Why It Matters More Than You Think">
+    <meta property="og:description" content="When every repair has a clear status, your team moves faster and customers stop calling to ask 'is it ready yet?'">
+    <meta property="og:type" content="article">
+    <link rel="canonical" href="https://phonerepairpos.app/blog/tracking-repair-status-why-it-matters.html">
+    <meta property="og:url" content="https://phonerepairpos.app/blog/tracking-repair-status-why-it-matters.html">
+    <meta property="og:locale" content="en_GB">
+    <meta property="og:image" content="https://phonerepairpos.app/og-image.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Tracking Repair Status: Why It Matters More Than You Think — PhoneRepairPOS">
+    <meta name="twitter:description" content="When every repair has a clear status, your team moves faster and customers stop calling to ask 'is it ready yet?'">
+    <meta name="twitter:image" content="https://phonerepairpos.app/og-image.png">
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #2B2D7C;
+            --accent: #3F41B2;
+            --vibrant: #5B5EF4;
+            --white: #FFFFFF;
+            --off-white: #F6F6FB;
+            --dark: #111136;
+            --text: #1E1E3F;
+            --text-light: #5C5C7A;
+            --warm-accent: #FF6B4A;
+            --border: #E4E4EE;
+        }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+            color: var(--text);
+            background: var(--white);
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* ===== NAV ===== */
+        nav {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            padding: 1rem 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: rgba(255, 255, 255, 0.92);
+            backdrop-filter: blur(16px);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .nav-logo {
+            font-weight: 800;
+            font-size: 1.25rem;
+            color: var(--dark);
+            text-decoration: none;
+            letter-spacing: -0.02em;
+        }
+
+        .nav-logo span { color: var(--vibrant); }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: var(--text-light);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover { color: var(--dark); }
+
+        .nav-links a.active {
+            color: var(--vibrant);
+            font-weight: 600;
+        }
+
+        .nav-cta {
+            background: var(--vibrant) !important;
+            color: var(--white) !important;
+            padding: 0.5rem 1.25rem;
+            border-radius: 8px;
+            font-weight: 600 !important;
+            transition: transform 0.2s, box-shadow 0.2s !important;
+        }
+
+        .nav-cta:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 4px 16px rgba(91, 94, 244, 0.4);
+        }
+
+        /* ===== ARTICLE HEADER ===== */
+        .article-hero {
+            background: linear-gradient(135deg, var(--dark) 0%, var(--primary) 100%);
+            padding: 5rem 2rem 4rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .article-hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background:
+                radial-gradient(ellipse 300px 250px at 25% 40%, rgba(91, 94, 244, 0.25), transparent),
+                radial-gradient(ellipse 250px 200px at 75% 60%, rgba(255, 107, 74, 0.12), transparent);
+        }
+
+        .article-hero > * { position: relative; }
+
+        .article-hero .post-tag {
+            display: inline-block;
+            font-size: 0.7rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: rgba(255, 255, 255, 0.7);
+            background: rgba(255, 255, 255, 0.1);
+            padding: 0.3rem 0.75rem;
+            border-radius: 6px;
+            margin-bottom: 1.25rem;
+        }
+
+        .article-hero h1 {
+            font-size: clamp(2rem, 4.5vw, 3rem);
+            font-weight: 800;
+            color: var(--white);
+            line-height: 1.15;
+            letter-spacing: -0.03em;
+            max-width: 700px;
+            margin: 0 auto 1.25rem;
+        }
+
+        .article-meta {
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.5);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.75rem;
+        }
+
+        .article-meta-dot {
+            width: 3px;
+            height: 3px;
+            background: rgba(255, 255, 255, 0.4);
+            border-radius: 50%;
+        }
+
+        /* ===== ARTICLE BODY ===== */
+        .article-body {
+            max-width: 680px;
+            margin: 0 auto;
+            padding: 3rem 2rem 5rem;
+        }
+
+        .article-body p {
+            font-size: 1.05rem;
+            line-height: 1.8;
+            color: var(--text);
+            margin-bottom: 1.5rem;
+        }
+
+        .article-body h2 {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--dark);
+            letter-spacing: -0.02em;
+            margin: 2.5rem 0 1rem;
+            line-height: 1.2;
+        }
+
+        .article-body h3 {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--dark);
+            margin: 2rem 0 0.75rem;
+        }
+
+        .article-body ul, .article-body ol {
+            margin: 0 0 1.5rem 1.25rem;
+        }
+
+        .article-body li {
+            font-size: 1.05rem;
+            line-height: 1.8;
+            color: var(--text);
+            margin-bottom: 0.5rem;
+        }
+
+        .article-body blockquote {
+            border-left: 3px solid var(--vibrant);
+            padding: 0.75rem 1.25rem;
+            margin: 1.5rem 0;
+            background: var(--off-white);
+            border-radius: 0 10px 10px 0;
+        }
+
+        .article-body blockquote p {
+            color: var(--text-light);
+            font-size: 1rem;
+            margin-bottom: 0;
+        }
+
+        .article-body strong {
+            color: var(--dark);
+            font-weight: 700;
+        }
+
+        .article-body a {
+            color: var(--vibrant);
+            text-decoration: underline;
+            text-underline-offset: 2px;
+        }
+
+        .article-body a:hover {
+            color: var(--primary);
+        }
+
+        /* Callout box */
+        .callout {
+            background: var(--off-white);
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            padding: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .callout-title {
+            font-size: 0.9rem;
+            font-weight: 700;
+            color: var(--vibrant);
+            margin-bottom: 0.5rem;
+        }
+
+        .callout p {
+            font-size: 0.95rem;
+            margin-bottom: 0;
+        }
+
+        /* ===== ARTICLE FOOTER / CTA ===== */
+        .article-cta {
+            max-width: 680px;
+            margin: 0 auto;
+            padding: 0 2rem 5rem;
+        }
+
+        .article-cta-card {
+            background: var(--dark);
+            border-radius: 20px;
+            padding: 2.5rem;
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .article-cta-card::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(ellipse 200px 200px at 90% 50%, rgba(91, 94, 244, 0.2), transparent);
+        }
+
+        .article-cta-card > * { position: relative; }
+
+        .article-cta-text h3 {
+            font-size: 1.25rem;
+            font-weight: 800;
+            color: var(--white);
+            margin-bottom: 0.5rem;
+        }
+
+        .article-cta-text p {
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.6);
+            line-height: 1.5;
+        }
+
+        .article-cta-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            background: var(--vibrant);
+            color: var(--white);
+            padding: 0.75rem 1.5rem;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            white-space: nowrap;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .article-cta-btn:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 4px 16px rgba(91, 94, 244, 0.4);
+        }
+
+        /* Back link */
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.35rem;
+            color: var(--text-light);
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 500;
+            margin-bottom: 2rem;
+            transition: color 0.2s, gap 0.2s;
+        }
+
+        .back-link:hover {
+            color: var(--vibrant);
+            gap: 0.55rem;
+        }
+
+        /* ===== FOOTER ===== */
+        footer {
+            background: var(--dark);
+            color: rgba(255, 255, 255, 0.5);
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+
+        .footer-content {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .footer-logo {
+            font-weight: 800;
+            font-size: 1.1rem;
+            color: var(--white);
+            margin-bottom: 0.75rem;
+        }
+
+        .footer-logo span { color: var(--vibrant); }
+
+        .footer-links {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.5);
+            text-decoration: none;
+            font-size: 0.85rem;
+            transition: color 0.2s;
+        }
+
+        .footer-links a:hover { color: var(--white); }
+
+        footer p { font-size: 0.8rem; }
+
+        .footer-tagline {
+            font-size: 0.85rem;
+            color: rgba(255, 255, 255, 0.4);
+            margin-bottom: 1rem;
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 768px) {
+            nav { padding: 1rem 1.25rem; }
+            .nav-links { display: none; }
+
+            .article-hero { padding: 4rem 1.25rem 3rem; }
+            .article-body { padding: 2rem 1.25rem 4rem; }
+            .article-cta { padding: 0 1.25rem 4rem; }
+
+            .article-cta-card {
+                flex-direction: column;
+                text-align: center;
+                padding: 2rem 1.5rem;
+            }
+        }
+    </style>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      "headline": "Tracking Repair Status: Why It Matters More Than You Think",
+      "datePublished": "2026-02-22",
+      "dateModified": "2026-02-22",
+      "author": {
+        "@type": "Person",
+        "name": "PhoneRepairPOS Team"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "PhoneRepairPOS",
+        "url": "https://phonerepairpos.app"
+      },
+      "description": "When every repair has a clear status, your team moves faster and customers stop calling to ask 'is it ready yet?'",
+      "mainEntityOfPage": "https://phonerepairpos.app/blog/tracking-repair-status-why-it-matters.html"
+    }
+    </script>
+</head>
+<body>
+
+    <nav>
+        <a href="../index.html" class="nav-logo">Phone<span>Repair</span>POS</a>
+        <div class="nav-links">
+            <a href="../index.html#features">Features</a>
+            <a href="index.html" class="active">Blog</a>
+            <a href="https://apps.apple.com/gb/app/phone-repair-pos/id6759859240" class="nav-cta">Download</a>
+        </div>
+    </nav>
+
+    <div class="article-hero">
+        <div class="post-tag">Workflow</div>
+        <h1>Tracking Repair Status: Why It Matters More Than You Think</h1>
+        <div class="article-meta">
+            <span>22 Feb 2026</span>
+            <span class="article-meta-dot"></span>
+            <span>4 min read</span>
+        </div>
+    </div>
+
+    <article class="article-body">
+        <a href="index.html" class="back-link">← All articles</a>
+
+        <p>Most phone repair shops operate on a simple binary: a device is either being worked on, or it's done. That system works fine when you have two jobs on the bench. The moment you have twelve, it starts to fall apart — and customers start calling.</p>
+
+        <p>Status tracking isn't a luxury feature for big operations. It's the single biggest lever you can pull to reduce chaos, cut down on interruptions, and give your team a shared picture of what's actually happening in the workshop at any moment.</p>
+
+        <h2>The binary "done/not done" problem</h2>
+
+        <p>When a repair only has two states, every question from a customer becomes a disruption. Someone calls to ask if their phone is ready. You don't know off the top of your head, so you put them on hold, walk to the bench, check, walk back, and tell them. That interaction costs you two to three minutes — and it happens a dozen times a day.</p>
+
+        <p>The binary system also tells you nothing useful about your shop's performance. You know how many jobs came in and how many went out, but you can't see where the delays are happening, which technicians are overloaded, or why turnaround times are slipping on certain device types.</p>
+
+        <blockquote>
+            <p>If you can't see where your repairs are in the process, you can't improve the process. You're just reacting.</p>
+        </blockquote>
+
+        <p>The fix is straightforward: break your workflow into named stages and assign every job to one of them. The exact stages you use will depend on how your shop operates, but a typical set looks like this.</p>
+
+        <h2>The case for status stages</h2>
+
+        <p>A well-designed set of repair statuses might look like: <strong>Received → Diagnosing → Repairing → Waiting for Parts → Ready → Collected</strong>. Each stage tells a complete story about where the job is and what needs to happen next.</p>
+
+        <p>Here's what each stage does for you:</p>
+
+        <ul>
+            <li><strong>Received</strong> — the job is logged, the device is in your hands. Nothing has been done yet.</li>
+            <li><strong>Diagnosing</strong> — a technician is assessing the fault. No repair has started.</li>
+            <li><strong>Repairing</strong> — active work is underway. Parts are being replaced or components are being tested.</li>
+            <li><strong>Waiting for Parts</strong> — the diagnosis is done, but you're blocked on a component. The job is paused through no fault of the technician.</li>
+            <li><strong>Ready</strong> — the repair is complete and the device is waiting for collection.</li>
+            <li><strong>Collected</strong> — the customer has picked up the device and the job is closed.</li>
+        </ul>
+
+        <p>You don't need to stick to this exact list. Some shops add a "Testing" stage between Repairing and Ready. Others merge Received and Diagnosing if intake always includes an immediate assessment. The important thing is that the stages reflect how your shop actually works — not an idealised version of it.</p>
+
+        <h2>Reducing "is it ready?" calls</h2>
+
+        <p>Once every job has a live status, answering a customer query goes from a two-minute interruption to a five-second glance at a screen. You don't need to find the paper ticket, walk to the bench, or ask a technician. The information is right there.</p>
+
+        <p>More importantly, when you know a job has moved to "Ready", you can proactively notify the customer instead of waiting for them to chase you. A quick text or call at the right moment eliminates most inbound status enquiries before they happen. Customers appreciate it, and your phone stops ringing with questions you should have answered first.</p>
+
+        <div class="callout">
+            <div class="callout-title">Worth doing</div>
+            <p>Even a simple text saying "Your screen replacement is done — you can collect any time today" removes the need for the customer to call at all. It costs you nothing and builds trust.</p>
+        </div>
+
+        <h2>Spotting bottlenecks with status data</h2>
+
+        <p>This is where status tracking pays dividends beyond the individual job. When you can see at a glance that eight devices are stuck at "Diagnosing" and only one is at "Repairing", you've identified a bottleneck without anyone having to tell you. Maybe a technician is off sick. Maybe a particular fault is taking longer than expected. Maybe your intake volume spiked and you haven't adapted.</p>
+
+        <p>Status data also helps you answer questions like:</p>
+
+        <ul>
+            <li>What's our average time from Received to Ready for screen replacements?</li>
+            <li>How often do jobs get stuck at Waiting for Parts, and for which device types?</li>
+            <li>Are jobs consistently spending too long at Diagnosing before repair starts?</li>
+        </ul>
+
+        <p>You can't answer any of these questions from a paper ticket system or a binary done/not-done list. But once you're recording status changes, the data is already there — you just need to look at it.</p>
+
+        <h2>Team visibility and handoffs</h2>
+
+        <p>In a multi-technician shop, status tracking is essential for clean handoffs. When one technician finishes a diagnosis and moves on to a different job, the next person picking up that ticket can see exactly where it was left and what the outstanding task is. There's no verbal handoff required, no chance of information getting lost, and no need to re-open a device to figure out what's already been done.</p>
+
+        <p>Status stages also create natural accountability. If a job has been sitting at "Diagnosing" for two days, that's visible to anyone who looks at the ticket list. It doesn't need a manager to notice — the system surfaces it automatically.</p>
+
+        <p>This is particularly useful for shops where technicians work shifts or where the person who took in the device isn't the same person who repairs it. The ticket is the handoff. Status is the handshake.</p>
+
+        <h2>How PhoneRepairPOS handles status tracking</h2>
+
+        <p>PhoneRepairPOS gives every repair ticket a status that you can update with a single tap. As you move a job from Received through to Collected, the status is recorded against the ticket — so you always have a clear picture of every open job and a history of how completed jobs progressed.</p>
+
+        <p>The ticket list view shows statuses at a glance, which means anyone on the team can see what's active, what's ready for collection, and what's waiting on parts — without needing to ask. It's designed to work the way a busy shop actually operates: quickly, with no extra steps.</p>
+
+        <p>Whether you have one bench or five, the principle is the same. When every repair has a clear status, your team moves faster and your customers get better service. The calls asking "is it ready yet?" stop. The handoffs become smoother. And the data you generate starts to tell you things about your shop you didn't know you were missing.</p>
+
+        <h2>Related articles</h2>
+        <ul>
+          <li><a href="5-ways-to-speed-up-your-repair-workflow.html">5 Ways to Speed Up Your Repair Workflow</a></li>
+          <li><a href="how-to-manage-repair-tickets.html">How to Manage Repair Tickets Without Losing Your Mind</a></li>
+          <li><a href="going-paperless-a-guide-for-repair-shops.html">Going Paperless: A Guide for Repair Shops</a></li>
+        </ul>
+    </article>
+
+    <!-- Post CTA -->
+    <div class="article-cta">
+        <div class="article-cta-card">
+            <div class="article-cta-text">
+                <h3>Try PhoneRepairPOS free</h3>
+                <p>Digital tickets, status tracking, and payment records — all from your iPad.</p>
+            </div>
+            <a href="https://apps.apple.com/gb/app/phone-repair-pos/id6759859240" class="article-cta-btn">Download →</a>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">Phone<span>Repair</span>POS</div>
+            <p class="footer-tagline">Built for repair shops worldwide.</p>
+            <div class="footer-links">
+                <a href="index.html">Blog</a>
+                <a href="mailto:support@phonerepairpos.app">Contact</a>
+                <a href="../privacy.html">Privacy Policy</a>
+                <a href="../terms.html">Terms of Use</a>
+            </div>
+            <p>&copy; 2026 PhoneRepairPOS. All rights reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
