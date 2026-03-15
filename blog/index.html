@@ -403,14 +403,14 @@
             border-color: var(--vibrant);
         }
 
-        /* ===== NEWSLETTER CTA ===== */
-        .newsletter {
+        /* ===== DOWNLOAD CTA ===== */
+        .download-cta {
             max-width: 600px;
             margin: 0 auto 5rem;
             padding: 0 2rem;
         }
 
-        .newsletter-card {
+        .download-cta-card {
             background: var(--dark);
             border-radius: 20px;
             padding: 3rem 2.5rem;
@@ -419,7 +419,7 @@
             overflow: hidden;
         }
 
-        .newsletter-card::before {
+        .download-cta-card::before {
             content: '';
             position: absolute;
             inset: 0;
@@ -428,9 +428,9 @@
                 radial-gradient(ellipse 200px 150px at 20% 80%, rgba(255, 107, 74, 0.1), transparent);
         }
 
-        .newsletter-card > * { position: relative; }
+        .download-cta-card > * { position: relative; }
 
-        .newsletter-card h2 {
+        .download-cta-card h2 {
             font-size: 1.5rem;
             font-weight: 800;
             color: var(--white);
@@ -438,57 +438,19 @@
             letter-spacing: -0.02em;
         }
 
-        .newsletter-card p {
+        .download-cta-card p {
             font-size: 0.95rem;
             color: rgba(255, 255, 255, 0.6);
             margin-bottom: 1.5rem;
         }
 
-        .newsletter-form {
-            display: flex;
-            gap: 0.75rem;
-            max-width: 420px;
-            margin: 0 auto;
+        .download-cta-btn {
+            display: inline-block;
+            transition: transform 0.2s;
         }
 
-        .newsletter-form input {
-            flex: 1;
-            padding: 0.75rem 1rem;
-            border: 1px solid rgba(255, 255, 255, 0.15);
-            border-radius: 10px;
-            background: rgba(255, 255, 255, 0.08);
-            color: var(--white);
-            font-family: inherit;
-            font-size: 0.9rem;
-            outline: none;
-            transition: border-color 0.2s;
-        }
-
-        .newsletter-form input::placeholder {
-            color: rgba(255, 255, 255, 0.35);
-        }
-
-        .newsletter-form input:focus {
-            border-color: var(--vibrant);
-        }
-
-        .newsletter-form button {
-            padding: 0.75rem 1.5rem;
-            background: var(--vibrant);
-            color: var(--white);
-            border: none;
-            border-radius: 10px;
-            font-family: inherit;
-            font-size: 0.9rem;
-            font-weight: 600;
-            cursor: pointer;
-            transition: transform 0.2s, box-shadow 0.2s;
-            white-space: nowrap;
-        }
-
-        .newsletter-form button:hover {
-            transform: translateY(-1px);
-            box-shadow: 0 4px 16px rgba(91, 94, 244, 0.4);
+        .download-cta-btn:hover {
+            transform: translateY(-2px);
         }
 
         /* ===== FOOTER ===== */
@@ -531,6 +493,12 @@
 
         footer p { font-size: 0.8rem; }
 
+        .footer-tagline {
+            font-size: 0.85rem;
+            color: rgba(255, 255, 255, 0.4);
+            margin-bottom: 1rem;
+        }
+
         /* ===== RESPONSIVE ===== */
         @media (max-width: 768px) {
             nav { padding: 1rem 1.25rem; }
@@ -550,11 +518,8 @@
                 padding: 0 1.25rem 4rem;
             }
 
-            .newsletter { padding: 0 1.25rem; }
-            .newsletter-card { padding: 2rem 1.5rem; }
-            .newsletter-form {
-                flex-direction: column;
-            }
+            .download-cta { padding: 0 1.25rem; }
+            .download-cta-card { padding: 2rem 1.5rem; }
         }
 
         /* ===== ANIMATIONS ===== */
@@ -715,13 +680,250 @@
                 </div>
             </div>
         </a>
+
+        <a href="best-pos-systems-for-phone-repair-shops-2026.html" class="post-card animate-in delay-1" data-category="guide">
+            <div class="post-card-image bg-indigo">
+                <span>&#127942;</span>
+            </div>
+            <div class="post-card-body">
+                <div class="post-tag guide">Guide</div>
+                <h3>Best POS Systems for Phone Repair Shops in 2026</h3>
+                <p>A look at the top POS options for repair shops — what they do, what they cost, and which one fits your workflow.</p>
+                <div class="post-meta">
+                    <span>12 Mar 2026</span>
+                    <span class="post-meta-dot"></span>
+                    <span>7 min read</span>
+                </div>
+            </div>
+        </a>
+
+        <a href="phone-repair-shop-software-what-to-look-for.html" class="post-card animate-in delay-2" data-category="guide">
+            <div class="post-card-image bg-warm">
+                <span>&#128269;</span>
+            </div>
+            <div class="post-card-body">
+                <div class="post-tag guide">Guide</div>
+                <h3>Phone Repair Shop Software: What to Look For</h3>
+                <p>The features that matter, the ones that don't, and how to avoid paying for things you'll never use.</p>
+                <div class="post-meta">
+                    <span>10 Mar 2026</span>
+                    <span class="post-meta-dot"></span>
+                    <span>6 min read</span>
+                </div>
+            </div>
+        </a>
+
+        <a href="repairdesk-vs-phonerepairpos.html" class="post-card animate-in delay-3" data-category="guide">
+            <div class="post-card-image bg-teal">
+                <span>&#9878;</span>
+            </div>
+            <div class="post-card-body">
+                <div class="post-tag guide">Guide</div>
+                <h3>RepairDesk vs PhoneRepairPOS</h3>
+                <p>Two very different approaches to managing repairs. Here's how they compare on price, features, and simplicity.</p>
+                <div class="post-meta">
+                    <span>8 Mar 2026</span>
+                    <span class="post-meta-dot"></span>
+                    <span>7 min read</span>
+                </div>
+            </div>
+        </a>
+
+        <a href="free-vs-paid-repair-shop-software.html" class="post-card animate-in delay-1" data-category="business">
+            <div class="post-card-image bg-slate">
+                <span>&#128176;</span>
+            </div>
+            <div class="post-card-body">
+                <div class="post-tag business">Business</div>
+                <h3>Free vs Paid Repair Shop Software</h3>
+                <p>What you actually get with free tools, where they fall short, and when it's worth paying.</p>
+                <div class="post-meta">
+                    <span>6 Mar 2026</span>
+                    <span class="post-meta-dot"></span>
+                    <span>5 min read</span>
+                </div>
+            </div>
+        </a>
+
+        <a href="do-you-need-a-pos-system-for-your-repair-shop.html" class="post-card animate-in delay-2" data-category="business">
+            <div class="post-card-image bg-indigo">
+                <span>&#129300;</span>
+            </div>
+            <div class="post-card-body">
+                <div class="post-tag business">Business</div>
+                <h3>Do You Really Need a POS System for Your Repair Shop?</h3>
+                <p>If your current system works, maybe you don't. But here's how to tell when it's time to switch.</p>
+                <div class="post-meta">
+                    <span>4 Mar 2026</span>
+                    <span class="post-meta-dot"></span>
+                    <span>5 min read</span>
+                </div>
+            </div>
+        </a>
+
+        <a href="how-to-start-a-phone-repair-business.html" class="post-card animate-in delay-3" data-category="guide">
+            <div class="post-card-image bg-warm">
+                <span>&#128640;</span>
+            </div>
+            <div class="post-card-body">
+                <div class="post-tag guide">Guide</div>
+                <h3>How to Start a Phone Repair Business: A Practical Guide</h3>
+                <p>Everything from tools and parts to pricing and your first customer — without the fluff.</p>
+                <div class="post-meta">
+                    <span>2 Mar 2026</span>
+                    <span class="post-meta-dot"></span>
+                    <span>8 min read</span>
+                </div>
+            </div>
+        </a>
+
+        <a href="how-to-manage-repair-tickets.html" class="post-card animate-in delay-1" data-category="tips">
+            <div class="post-card-image bg-teal">
+                <span>&#127915;</span>
+            </div>
+            <div class="post-card-body">
+                <div class="post-tag tips">Tips</div>
+                <h3>How to Manage Repair Tickets Without Losing Your Mind</h3>
+                <p>A simple system for keeping track of every repair, from intake to collection.</p>
+                <div class="post-meta">
+                    <span>28 Feb 2026</span>
+                    <span class="post-meta-dot"></span>
+                    <span>5 min read</span>
+                </div>
+            </div>
+        </a>
+
+        <a href="7-common-mistakes-new-repair-shop-owners-make.html" class="post-card animate-in delay-2" data-category="tips">
+            <div class="post-card-image bg-slate">
+                <span>&#9888;</span>
+            </div>
+            <div class="post-card-body">
+                <div class="post-tag tips">Tips</div>
+                <h3>7 Common Mistakes New Repair Shop Owners Make</h3>
+                <p>The pitfalls that catch most people out — and how to avoid them before they cost you.</p>
+                <div class="post-meta">
+                    <span>24 Feb 2026</span>
+                    <span class="post-meta-dot"></span>
+                    <span>6 min read</span>
+                </div>
+            </div>
+        </a>
+
+        <a href="how-to-price-screen-repairs-for-profit.html" class="post-card animate-in delay-3" data-category="business">
+            <div class="post-card-image bg-indigo">
+                <span>&#128178;</span>
+            </div>
+            <div class="post-card-body">
+                <div class="post-tag business">Business</div>
+                <h3>How to Price Screen Repairs for Profit</h3>
+                <p>Actual pricing strategies, not guesswork. Factor in parts, labour, and what your market will bear.</p>
+                <div class="post-meta">
+                    <span>20 Feb 2026</span>
+                    <span class="post-meta-dot"></span>
+                    <span>6 min read</span>
+                </div>
+            </div>
+        </a>
+
+        <a href="building-customer-trust-in-your-repair-shop.html" class="post-card animate-in delay-1" data-category="tips">
+            <div class="post-card-image bg-warm">
+                <span>&#129309;</span>
+            </div>
+            <div class="post-card-body">
+                <div class="post-tag tips">Tips</div>
+                <h3>Building Customer Trust in Your Repair Shop</h3>
+                <p>Trust turns one-time fixes into repeat customers and referrals. Here's how to earn it.</p>
+                <div class="post-meta">
+                    <span>16 Feb 2026</span>
+                    <span class="post-meta-dot"></span>
+                    <span>5 min read</span>
+                </div>
+            </div>
+        </a>
+
+        <a href="going-paperless-a-guide-for-repair-shops.html" class="post-card animate-in delay-2" data-category="workflow">
+            <div class="post-card-image bg-teal">
+                <span>&#128196;</span>
+            </div>
+            <div class="post-card-body">
+                <div class="post-tag">Workflow</div>
+                <h3>Going Paperless: A Guide for Repair Shops</h3>
+                <p>How to ditch paper tickets and spreadsheets without disrupting your workflow.</p>
+                <div class="post-meta">
+                    <span>12 Feb 2026</span>
+                    <span class="post-meta-dot"></span>
+                    <span>5 min read</span>
+                </div>
+            </div>
+        </a>
+
+        <a href="why-offline-first-software-matters-for-repair-shops.html" class="post-card animate-in delay-3" data-category="workflow">
+            <div class="post-card-image bg-slate">
+                <span>&#128268;</span>
+            </div>
+            <div class="post-card-body">
+                <div class="post-tag">Workflow</div>
+                <h3>Why Offline-First Software Matters for Repair Shops</h3>
+                <p>When your Wi-Fi drops, your shop shouldn't stop. Here's why offline capability is non-negotiable.</p>
+                <div class="post-meta">
+                    <span>8 Feb 2026</span>
+                    <span class="post-meta-dot"></span>
+                    <span>4 min read</span>
+                </div>
+            </div>
+        </a>
+
+        <a href="using-an-ipad-to-run-your-repair-shop.html" class="post-card animate-in delay-1" data-category="guide">
+            <div class="post-card-image bg-indigo">
+                <span>&#128241;</span>
+            </div>
+            <div class="post-card-body">
+                <div class="post-tag guide">Guide</div>
+                <h3>Using an iPad to Run Your Repair Shop</h3>
+                <p>Why more repair shops are swapping tills and laptops for an iPad on the counter.</p>
+                <div class="post-meta">
+                    <span>4 Feb 2026</span>
+                    <span class="post-meta-dot"></span>
+                    <span>5 min read</span>
+                </div>
+            </div>
+        </a>
+
+        <a href="how-to-track-parts-and-inventory.html" class="post-card animate-in delay-2" data-category="workflow">
+            <div class="post-card-image bg-warm">
+                <span>&#128230;</span>
+            </div>
+            <div class="post-card-body">
+                <div class="post-tag">Workflow</div>
+                <h3>How to Track Parts and Inventory as a Solo Repairer</h3>
+                <p>Simple inventory tracking that works when you don't have time for a full stock system.</p>
+                <div class="post-meta">
+                    <span>1 Feb 2026</span>
+                    <span class="post-meta-dot"></span>
+                    <span>5 min read</span>
+                </div>
+            </div>
+        </a>
+    </div>
+
+    <!-- Download CTA -->
+    <div class="download-cta">
+        <div class="download-cta-card">
+            <h2>Try PhoneRepairPOS</h2>
+            <p>Download free on the App Store. No sign-up needed.</p>
+            <a href="https://apps.apple.com/gb/app/phone-repair-pos/id6759859240" class="download-cta-btn">
+                <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="Download on the App Store" style="height: 44px;">
+            </a>
+        </div>
     </div>
 
     <!-- Footer -->
     <footer>
         <div class="footer-content">
             <div class="footer-logo">Phone<span>Repair</span>POS</div>
+            <p class="footer-tagline">Built for repair shops worldwide.</p>
             <div class="footer-links">
+                <a href="">Blog</a>
                 <a href="mailto:support@phonerepairpos.app">Contact</a>
                 <a href="../privacy.html">Privacy Policy</a>
                 <a href="../terms.html">Terms of Use</a>
@@ -741,6 +943,31 @@
         }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
 
         document.querySelectorAll('.animate-in').forEach(el => observer.observe(el));
+
+        // Category filter pills
+        const pills = document.querySelectorAll('.filter-pill');
+        const featuredSection = document.querySelector('.featured');
+        const postCards = document.querySelectorAll('.post-card');
+
+        pills.forEach(pill => {
+            pill.addEventListener('click', () => {
+                const filter = pill.dataset.filter;
+
+                pills.forEach(p => p.classList.remove('active'));
+                pill.classList.add('active');
+
+                if (filter === 'all') {
+                    featuredSection.style.display = '';
+                    postCards.forEach(c => c.style.display = '');
+                } else {
+                    const featuredCard = featuredSection.querySelector('.featured-card');
+                    featuredSection.style.display = featuredCard.dataset.category === filter ? '' : 'none';
+                    postCards.forEach(card => {
+                        card.style.display = card.dataset.category === filter ? '' : 'none';
+                    });
+                }
+            });
+        });
     </script>
 
 </body>
