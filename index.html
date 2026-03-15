@@ -8,7 +8,17 @@
     <meta property="og:title" content="PhoneRepairPOS — iPad POS for Phone Repair Shops">
     <meta property="og:description" content="Manage jobs, track repairs, and get paid faster with the POS built for repair shops.">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://phonerepairpos.app">
+    <meta property="og:url" content="https://phonerepairpos.app/">
+    <link rel="canonical" href="https://phonerepairpos.app/">
+    <meta property="og:locale" content="en">
+    <meta property="og:image" content="https://phonerepairpos.app/og-image.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="PhoneRepairPOS — iPad POS for Phone Repair Shops">
+    <meta name="twitter:description" content="Manage jobs, track repairs, and get paid faster with the POS built for repair shops.">
+    <meta name="twitter:image" content="https://phonerepairpos.app/og-image.png">
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Instrument+Serif&display=swap" rel="stylesheet">
@@ -1709,6 +1719,75 @@
             font-size: 0.8rem;
         }
 
+        .footer-tagline {
+            font-size: 0.85rem;
+            color: rgba(255, 255, 255, 0.4);
+            margin-bottom: 1rem;
+        }
+
+        /* ===== FAQ ===== */
+        .faq-section {
+            max-width: 760px;
+            margin: 0 auto;
+            padding: 5rem 2rem;
+        }
+
+        .faq-section .section-label {
+            text-align: center;
+        }
+
+        .faq-section h2 {
+            text-align: center;
+            font-size: clamp(1.75rem, 3.5vw, 2.5rem);
+            font-weight: 800;
+            color: var(--dark);
+            letter-spacing: -0.03em;
+            margin-bottom: 2.5rem;
+        }
+
+        .faq-item {
+            border-bottom: 1px solid #E4E4EE;
+            padding: 0;
+        }
+
+        .faq-item summary {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 1.25rem 0;
+            font-size: 1.05rem;
+            font-weight: 600;
+            color: var(--dark);
+            cursor: pointer;
+            list-style: none;
+            transition: color 0.2s;
+        }
+
+        .faq-item summary::-webkit-details-marker { display: none; }
+
+        .faq-item summary::after {
+            content: '+';
+            font-size: 1.4rem;
+            font-weight: 400;
+            color: var(--text-light);
+            transition: transform 0.2s;
+            flex-shrink: 0;
+            margin-left: 1rem;
+        }
+
+        .faq-item[open] summary::after {
+            content: '−';
+        }
+
+        .faq-item summary:hover { color: var(--primary); }
+
+        .faq-answer {
+            padding: 0 0 1.25rem;
+            font-size: 0.95rem;
+            line-height: 1.7;
+            color: var(--text-light);
+        }
+
         /* ===== RESPONSIVE ===== */
         @media (max-width: 768px) {
             nav {
@@ -1846,17 +1925,123 @@
         .delay-4 { transition-delay: 0.4s !important; }
         .delay-5 { transition-delay: 0.5s !important; }
     </style>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Organization",
+          "name": "PhoneRepairPOS",
+          "url": "https://phonerepairpos.app",
+          "logo": "https://phonerepairpos.app/favicon.svg",
+          "foundingDate": "2026",
+          "contactPoint": {
+            "@type": "ContactPoint",
+            "email": "support@phonerepairpos.app",
+            "contactType": "customer support"
+          }
+        },
+        {
+          "@type": "SoftwareApplication",
+          "name": "PhoneRepairPOS",
+          "applicationCategory": "BusinessApplication",
+          "operatingSystem": "iPadOS",
+          "description": "The all-in-one iPad point-of-sale system designed specifically for phone repair shops. Manage jobs, track repairs, and get paid faster.",
+          "url": "https://phonerepairpos.app",
+          "installUrl": "https://apps.apple.com/gb/app/phone-repair-pos/id6759859240",
+          "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD",
+            "availability": "https://schema.org/InStock"
+          }
+        }
+      ]
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is PhoneRepairPOS?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "PhoneRepairPOS is an iPad app that replaces paper tickets, spreadsheets, and sticky notes with a simple digital system for managing phone repairs. Create tickets, track repair status, record payments, and keep customer records — all from your iPad."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Who is PhoneRepairPOS for?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "It's built for phone repair shop owners and technicians — whether you're a solo repairer working from a market stall or a multi-staff high street shop. If you fix phones and need a better way to manage jobs, it's for you."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does it work offline?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. PhoneRepairPOS is 100% offline capable. All your data is stored locally on your iPad. No internet connection is required to create tickets, update statuses, or record payments. If you use iCloud, your data syncs when you're back online."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What devices does it support?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "PhoneRepairPOS runs on iPad. It's designed specifically for the iPad's larger screen, so you get a full dashboard view — not a stretched-out phone app."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How much does it cost?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "PhoneRepairPOS is free to download from the App Store. Download it and start using it straight away — no sign-up, no credit card, no trial period."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I track repair status with it?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Every repair ticket moves through status stages — Received, Diagnosing, Repairing, Waiting for Parts, Ready for Collection, and Collected. You and your team can see where every job stands at a glance."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is my customer data private and secure?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Your data stays on your iPad. PhoneRepairPOS uses local storage (Core Data) and optionally iCloud for sync. There is no third-party server, no analytics tracking, and no one else has access to your customer records."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do I get started?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Download PhoneRepairPOS from the App Store, open it on your iPad, and create your first ticket. There's no account to set up and no configuration needed. You'll be managing repairs in under a minute."
+          }
+        }
+      ]
+    }
+    </script>
 </head>
 <body>
 
     <!-- Navigation -->
     <nav>
-        <a href="#" class="nav-logo">Phone<span>Repair</span>POS</a>
+        <a href="/" class="nav-logo">Phone<span>Repair</span>POS</a>
         <div class="nav-links">
             <a href="#features">Features</a>
             <a href="#how-it-works">How It Works</a>
             <a href="blog/index.html">Blog</a>
-            <a href="#" class="nav-cta">Download</a>
+            <a href="https://apps.apple.com/gb/app/phone-repair-pos/id6759859240" class="nav-cta">Download</a>
         </div>
     </nav>
 
@@ -1873,7 +2058,7 @@
             <h1>The POS system built for <span class="gradient-text">phone repair</span></h1>
             <p>Create tickets, track repairs, and get paid — all from your iPad. Built specifically for phone repair shops that want to ditch the paperwork.</p>
             <div class="hero-ctas">
-                <a href="#" class="app-store-badge" aria-label="Download on the App Store">
+                <a href="https://apps.apple.com/gb/app/phone-repair-pos/id6759859240" class="app-store-badge" aria-label="Download on the App Store">
                     <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="Download on the App Store">
                 </a>
                 <a href="#features" class="hero-secondary-btn">
@@ -2333,12 +2518,58 @@
         </div>
     </section>
 
+    <!-- FAQ -->
+    <section class="faq-section" id="faq">
+        <div class="section-label">FAQ</div>
+        <h2>Frequently asked questions</h2>
+
+        <details class="faq-item">
+            <summary>What is PhoneRepairPOS?</summary>
+            <div class="faq-answer">PhoneRepairPOS is an iPad app that replaces paper tickets, spreadsheets, and sticky notes with a simple digital system for managing phone repairs. Create tickets, track repair status, record payments, and keep customer records — all from your iPad.</div>
+        </details>
+
+        <details class="faq-item">
+            <summary>Who is PhoneRepairPOS for?</summary>
+            <div class="faq-answer">It's built for phone repair shop owners and technicians — whether you're a solo repairer working from a market stall or a multi-staff high street shop. If you fix phones and need a better way to manage jobs, it's for you.</div>
+        </details>
+
+        <details class="faq-item">
+            <summary>Does it work offline?</summary>
+            <div class="faq-answer">Yes. PhoneRepairPOS is 100% offline capable. All your data is stored locally on your iPad. No internet connection is required to create tickets, update statuses, or record payments. If you use iCloud, your data syncs when you're back online.</div>
+        </details>
+
+        <details class="faq-item">
+            <summary>What devices does it support?</summary>
+            <div class="faq-answer">PhoneRepairPOS runs on iPad. It's designed specifically for the iPad's larger screen, so you get a full dashboard view — not a stretched-out phone app.</div>
+        </details>
+
+        <details class="faq-item">
+            <summary>How much does it cost?</summary>
+            <div class="faq-answer">PhoneRepairPOS is free to download from the App Store. Download it and start using it straight away — no sign-up, no credit card, no trial period.</div>
+        </details>
+
+        <details class="faq-item">
+            <summary>Can I track repair status with it?</summary>
+            <div class="faq-answer">Yes. Every repair ticket moves through status stages — Received, Diagnosing, Repairing, Waiting for Parts, Ready for Collection, and Collected. You and your team can see where every job stands at a glance.</div>
+        </details>
+
+        <details class="faq-item">
+            <summary>Is my customer data private and secure?</summary>
+            <div class="faq-answer">Your data stays on your iPad. PhoneRepairPOS uses local storage (Core Data) and optionally iCloud for sync. There is no third-party server, no analytics tracking, and no one else has access to your customer records.</div>
+        </details>
+
+        <details class="faq-item">
+            <summary>How do I get started?</summary>
+            <div class="faq-answer">Download PhoneRepairPOS from the App Store, open it on your iPad, and create your first ticket. There's no account to set up and no configuration needed. You'll be managing repairs in under a minute.</div>
+        </details>
+    </section>
+
     <!-- CTA Banner -->
     <section class="cta-banner">
         <div class="cta-card">
             <h2>Ready to ditch the paper tickets?</h2>
             <p>Download PhoneRepairPOS and start managing your repairs the modern way.</p>
-            <a href="#" class="app-store-badge" aria-label="Download on the App Store">
+            <a href="https://apps.apple.com/gb/app/phone-repair-pos/id6759859240" class="app-store-badge" aria-label="Download on the App Store">
                 <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="Download on the App Store">
             </a>
         </div>
@@ -2348,7 +2579,9 @@
     <footer>
         <div class="footer-content">
             <div class="footer-logo">Phone<span>Repair</span>POS</div>
+            <p class="footer-tagline">Built for repair shops worldwide.</p>
             <div class="footer-links">
+                <a href="blog/">Blog</a>
                 <a href="mailto:support@phonerepairpos.app">Contact</a>
                 <a href="privacy.html">Privacy Policy</a>
                 <a href="terms.html">Terms of Use</a>
