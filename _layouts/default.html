@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  {% include head-meta.html %}
+  <link rel="stylesheet" href="/assets/css/shared.css">
+  {% if page.stylesheet %}
+  <link rel="stylesheet" href="{{ page.stylesheet }}">
+  {% endif %}
+</head>
+<body>
+  {% include nav.html %}
+  {{ content }}
+  {% include footer.html %}
+</body>
+</html>
