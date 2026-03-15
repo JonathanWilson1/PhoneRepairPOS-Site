@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Phone Repair Shop Software: What to Look For — PhoneRepairPOS</title>
-    <meta name="description" content="The features that matter, the ones that don't, and how to avoid paying for things you'll never use.">
+    <meta name="description" content="Not all repair shop software is the same. Here's what actually matters when choosing a system for your phone repair business.">
     <meta property="og:title" content="Phone Repair Shop Software: What to Look For">
-    <meta property="og:description" content="The features that matter, the ones that don't, and how to avoid paying for things you'll never use.">
+    <meta property="og:description" content="Not all repair shop software is the same. Here's what actually matters when choosing a system for your phone repair business.">
     <meta property="og:type" content="article">
     <link rel="canonical" href="https://phonerepairpos.app/blog/phone-repair-shop-software-what-to-look-for.html">
     <meta property="og:url" content="https://phonerepairpos.app/blog/phone-repair-shop-software-what-to-look-for.html">
@@ -14,7 +14,7 @@
     <meta property="og:image" content="https://phonerepairpos.app/og-image.png">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Phone Repair Shop Software: What to Look For — PhoneRepairPOS">
-    <meta name="twitter:description" content="The features that matter, the ones that don't, and how to avoid paying for things you'll never use.">
+    <meta name="twitter:description" content="Not all repair shop software is the same. Here's what actually matters when choosing a system for your phone repair business.">
     <meta name="twitter:image" content="https://phonerepairpos.app/og-image.png">
     <link rel="icon" type="image/svg+xml" href="/favicon.svg">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -23,382 +23,73 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
     <style>
-        *, *::before, *::after {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
         :root {
-            --primary: #2B2D7C;
-            --accent: #3F41B2;
-            --vibrant: #5B5EF4;
-            --white: #FFFFFF;
-            --off-white: #F6F6FB;
-            --dark: #111136;
-            --text: #1E1E3F;
-            --text-light: #5C5C7A;
-            --warm-accent: #FF6B4A;
-            --border: #E4E4EE;
+            --primary: #2B2D7C; --accent: #3F41B2; --vibrant: #5B5EF4;
+            --white: #FFFFFF; --off-white: #F6F6FB; --dark: #111136;
+            --text: #1E1E3F; --text-light: #5C5C7A; --warm-accent: #FF6B4A; --border: #E4E4EE;
         }
-
         html { scroll-behavior: smooth; }
-
-        body {
-            font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
-            color: var(--text);
-            background: var(--white);
-            overflow-x: hidden;
-            -webkit-font-smoothing: antialiased;
-        }
-
-        /* ===== NAV ===== */
-        nav {
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            padding: 1rem 2rem;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            background: rgba(255, 255, 255, 0.92);
-            backdrop-filter: blur(16px);
-            border-bottom: 1px solid var(--border);
-        }
-
-        .nav-logo {
-            font-weight: 800;
-            font-size: 1.25rem;
-            color: var(--dark);
-            text-decoration: none;
-            letter-spacing: -0.02em;
-        }
-
+        body { font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif; color: var(--text); background: var(--white); overflow-x: hidden; -webkit-font-smoothing: antialiased; }
+        nav { position: sticky; top: 0; z-index: 100; padding: 1rem 2rem; display: flex; align-items: center; justify-content: space-between; background: rgba(255,255,255,0.92); backdrop-filter: blur(16px); border-bottom: 1px solid var(--border); }
+        .nav-logo { font-weight: 800; font-size: 1.25rem; color: var(--dark); text-decoration: none; letter-spacing: -0.02em; }
         .nav-logo span { color: var(--vibrant); }
-
-        .nav-links {
-            display: flex;
-            gap: 2rem;
-            align-items: center;
-        }
-
-        .nav-links a {
-            color: var(--text-light);
-            text-decoration: none;
-            font-size: 0.9rem;
-            font-weight: 500;
-            transition: color 0.2s;
-        }
-
+        .nav-links { display: flex; gap: 2rem; align-items: center; }
+        .nav-links a { color: var(--text-light); text-decoration: none; font-size: 0.9rem; font-weight: 500; transition: color 0.2s; }
         .nav-links a:hover { color: var(--dark); }
-
-        .nav-links a.active {
-            color: var(--vibrant);
-            font-weight: 600;
-        }
-
-        .nav-cta {
-            background: var(--vibrant) !important;
-            color: var(--white) !important;
-            padding: 0.5rem 1.25rem;
-            border-radius: 8px;
-            font-weight: 600 !important;
-            transition: transform 0.2s, box-shadow 0.2s !important;
-        }
-
-        .nav-cta:hover {
-            transform: translateY(-1px);
-            box-shadow: 0 4px 16px rgba(91, 94, 244, 0.4);
-        }
-
-        /* ===== ARTICLE HEADER ===== */
-        .article-hero {
-            background: linear-gradient(135deg, var(--dark) 0%, var(--primary) 100%);
-            padding: 5rem 2rem 4rem;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .article-hero::before {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background:
-                radial-gradient(ellipse 300px 250px at 25% 40%, rgba(91, 94, 244, 0.25), transparent),
-                radial-gradient(ellipse 250px 200px at 75% 60%, rgba(255, 107, 74, 0.12), transparent);
-        }
-
+        .nav-links a.active { color: var(--vibrant); font-weight: 600; }
+        .nav-cta { background: var(--vibrant) !important; color: var(--white) !important; padding: 0.5rem 1.25rem; border-radius: 8px; font-weight: 600 !important; transition: transform 0.2s, box-shadow 0.2s !important; }
+        .nav-cta:hover { transform: translateY(-1px); box-shadow: 0 4px 16px rgba(91,94,244,0.4); }
+        .article-hero { background: linear-gradient(135deg, var(--dark) 0%, var(--primary) 100%); padding: 5rem 2rem 4rem; text-align: center; position: relative; overflow: hidden; }
+        .article-hero::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse 300px 250px at 25% 40%, rgba(91,94,244,0.25), transparent), radial-gradient(ellipse 250px 200px at 75% 60%, rgba(255,107,74,0.12), transparent); }
         .article-hero > * { position: relative; }
-
-        .article-hero .post-tag {
-            display: inline-block;
-            font-size: 0.7rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 0.08em;
-            color: rgba(255, 255, 255, 0.7);
-            background: rgba(255, 255, 255, 0.1);
-            padding: 0.3rem 0.75rem;
-            border-radius: 6px;
-            margin-bottom: 1.25rem;
-        }
-
-        .article-hero h1 {
-            font-size: clamp(2rem, 4.5vw, 3rem);
-            font-weight: 800;
-            color: var(--white);
-            line-height: 1.15;
-            letter-spacing: -0.03em;
-            max-width: 700px;
-            margin: 0 auto 1.25rem;
-        }
-
-        .article-meta {
-            font-size: 0.9rem;
-            color: rgba(255, 255, 255, 0.5);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 0.75rem;
-        }
-
-        .article-meta-dot {
-            width: 3px;
-            height: 3px;
-            background: rgba(255, 255, 255, 0.4);
-            border-radius: 50%;
-        }
-
-        /* ===== ARTICLE BODY ===== */
-        .article-body {
-            max-width: 680px;
-            margin: 0 auto;
-            padding: 3rem 2rem 5rem;
-        }
-
-        .article-body p {
-            font-size: 1.05rem;
-            line-height: 1.8;
-            color: var(--text);
-            margin-bottom: 1.5rem;
-        }
-
-        .article-body h2 {
-            font-size: 1.5rem;
-            font-weight: 800;
-            color: var(--dark);
-            letter-spacing: -0.02em;
-            margin: 2.5rem 0 1rem;
-            line-height: 1.2;
-        }
-
-        .article-body h3 {
-            font-size: 1.2rem;
-            font-weight: 700;
-            color: var(--dark);
-            margin: 2rem 0 0.75rem;
-        }
-
-        .article-body ul, .article-body ol {
-            margin: 0 0 1.5rem 1.25rem;
-        }
-
-        .article-body li {
-            font-size: 1.05rem;
-            line-height: 1.8;
-            color: var(--text);
-            margin-bottom: 0.5rem;
-        }
-
-        .article-body blockquote {
-            border-left: 3px solid var(--vibrant);
-            padding: 0.75rem 1.25rem;
-            margin: 1.5rem 0;
-            background: var(--off-white);
-            border-radius: 0 10px 10px 0;
-        }
-
-        .article-body blockquote p {
-            color: var(--text-light);
-            font-size: 1rem;
-            margin-bottom: 0;
-        }
-
-        .article-body strong {
-            color: var(--dark);
-            font-weight: 700;
-        }
-
-        .article-body a {
-            color: var(--vibrant);
-            text-decoration: underline;
-            text-underline-offset: 2px;
-        }
-
-        .article-body a:hover {
-            color: var(--primary);
-        }
-
-        /* Callout box */
-        .callout {
-            background: var(--off-white);
-            border: 1px solid var(--border);
-            border-radius: 14px;
-            padding: 1.5rem;
-            margin: 2rem 0;
-        }
-
-        .callout-title {
-            font-size: 0.9rem;
-            font-weight: 700;
-            color: var(--vibrant);
-            margin-bottom: 0.5rem;
-        }
-
-        .callout p {
-            font-size: 0.95rem;
-            margin-bottom: 0;
-        }
-
-        /* ===== ARTICLE FOOTER / CTA ===== */
-        .article-cta {
-            max-width: 680px;
-            margin: 0 auto;
-            padding: 0 2rem 5rem;
-        }
-
-        .article-cta-card {
-            background: var(--dark);
-            border-radius: 20px;
-            padding: 2.5rem;
-            display: flex;
-            align-items: center;
-            gap: 2rem;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .article-cta-card::before {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background: radial-gradient(ellipse 200px 200px at 90% 50%, rgba(91, 94, 244, 0.2), transparent);
-        }
-
+        .article-hero .post-tag { display: inline-block; font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: rgba(255,255,255,0.7); background: rgba(255,255,255,0.1); padding: 0.3rem 0.75rem; border-radius: 6px; margin-bottom: 1.25rem; }
+        .article-hero .post-tag.business { background: rgba(230,147,38,0.2); color: #E69326; }
+        .article-hero .post-tag.guide { background: rgba(255,107,74,0.2); color: #FF6B4A; }
+        .article-hero .post-tag.tips { background: rgba(16,185,129,0.2); color: #10B981; }
+        .article-hero h1 { font-size: clamp(2rem, 4.5vw, 3rem); font-weight: 800; color: var(--white); line-height: 1.15; letter-spacing: -0.03em; max-width: 700px; margin: 0 auto 1.25rem; }
+        .article-meta { font-size: 0.9rem; color: rgba(255,255,255,0.5); display: flex; align-items: center; justify-content: center; gap: 0.75rem; }
+        .article-meta-dot { width: 3px; height: 3px; background: rgba(255,255,255,0.4); border-radius: 50%; }
+        .article-body { max-width: 680px; margin: 0 auto; padding: 3rem 2rem 5rem; }
+        .article-body p { font-size: 1.05rem; line-height: 1.8; color: var(--text); margin-bottom: 1.5rem; }
+        .article-body h2 { font-size: 1.5rem; font-weight: 800; color: var(--dark); letter-spacing: -0.02em; margin: 2.5rem 0 1rem; line-height: 1.2; }
+        .article-body h3 { font-size: 1.2rem; font-weight: 700; color: var(--dark); margin: 2rem 0 0.75rem; }
+        .article-body ul, .article-body ol { margin: 0 0 1.5rem 1.25rem; }
+        .article-body li { font-size: 1.05rem; line-height: 1.8; color: var(--text); margin-bottom: 0.5rem; }
+        .article-body blockquote { border-left: 3px solid var(--vibrant); padding: 0.75rem 1.25rem; margin: 1.5rem 0; background: var(--off-white); border-radius: 0 10px 10px 0; }
+        .article-body blockquote p { color: var(--text-light); font-size: 1rem; margin-bottom: 0; }
+        .article-body strong { color: var(--dark); font-weight: 700; }
+        .article-body a { color: var(--vibrant); text-decoration: underline; text-underline-offset: 2px; }
+        .article-body a:hover { color: var(--primary); }
+        .callout { background: var(--off-white); border: 1px solid var(--border); border-radius: 14px; padding: 1.5rem; margin: 2rem 0; }
+        .callout-title { font-size: 0.9rem; font-weight: 700; color: var(--vibrant); margin-bottom: 0.5rem; }
+        .callout p { font-size: 0.95rem; margin-bottom: 0; }
+        .article-cta { max-width: 680px; margin: 0 auto; padding: 0 2rem 5rem; }
+        .article-cta-card { background: var(--dark); border-radius: 20px; padding: 2.5rem; display: flex; align-items: center; gap: 2rem; position: relative; overflow: hidden; }
+        .article-cta-card::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse 200px 200px at 90% 50%, rgba(91,94,244,0.2), transparent); }
         .article-cta-card > * { position: relative; }
-
-        .article-cta-text h3 {
-            font-size: 1.25rem;
-            font-weight: 800;
-            color: var(--white);
-            margin-bottom: 0.5rem;
-        }
-
-        .article-cta-text p {
-            font-size: 0.9rem;
-            color: rgba(255, 255, 255, 0.6);
-            line-height: 1.5;
-        }
-
-        .article-cta-btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.4rem;
-            background: var(--vibrant);
-            color: var(--white);
-            padding: 0.75rem 1.5rem;
-            border-radius: 10px;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 0.9rem;
-            white-space: nowrap;
-            transition: transform 0.2s, box-shadow 0.2s;
-        }
-
-        .article-cta-btn:hover {
-            transform: translateY(-1px);
-            box-shadow: 0 4px 16px rgba(91, 94, 244, 0.4);
-        }
-
-        /* Back link */
-        .back-link {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.35rem;
-            color: var(--text-light);
-            text-decoration: none;
-            font-size: 0.85rem;
-            font-weight: 500;
-            margin-bottom: 2rem;
-            transition: color 0.2s, gap 0.2s;
-        }
-
-        .back-link:hover {
-            color: var(--vibrant);
-            gap: 0.55rem;
-        }
-
-        /* ===== FOOTER ===== */
-        footer {
-            background: var(--dark);
-            color: rgba(255, 255, 255, 0.5);
-            padding: 3rem 2rem;
-            text-align: center;
-        }
-
-        .footer-content {
-            max-width: 600px;
-            margin: 0 auto;
-        }
-
-        .footer-logo {
-            font-weight: 800;
-            font-size: 1.1rem;
-            color: var(--white);
-            margin-bottom: 0.75rem;
-        }
-
+        .article-cta-text h3 { font-size: 1.25rem; font-weight: 800; color: var(--white); margin-bottom: 0.5rem; }
+        .article-cta-text p { font-size: 0.9rem; color: rgba(255,255,255,0.6); line-height: 1.5; }
+        .article-cta-btn { display: inline-flex; align-items: center; gap: 0.4rem; background: var(--vibrant); color: var(--white); padding: 0.75rem 1.5rem; border-radius: 10px; text-decoration: none; font-weight: 600; font-size: 0.9rem; white-space: nowrap; transition: transform 0.2s, box-shadow 0.2s; }
+        .article-cta-btn:hover { transform: translateY(-1px); box-shadow: 0 4px 16px rgba(91,94,244,0.4); }
+        .back-link { display: inline-flex; align-items: center; gap: 0.35rem; color: var(--text-light); text-decoration: none; font-size: 0.85rem; font-weight: 500; margin-bottom: 2rem; transition: color 0.2s, gap 0.2s; }
+        .back-link:hover { color: var(--vibrant); gap: 0.55rem; }
+        footer { background: var(--dark); color: rgba(255,255,255,0.5); padding: 3rem 2rem; text-align: center; }
+        .footer-content { max-width: 600px; margin: 0 auto; }
+        .footer-logo { font-weight: 800; font-size: 1.1rem; color: var(--white); margin-bottom: 0.75rem; }
         .footer-logo span { color: var(--vibrant); }
-
-        .footer-links {
-            display: flex;
-            gap: 1.5rem;
-            justify-content: center;
-            margin-bottom: 1.5rem;
-        }
-
-        .footer-links a {
-            color: rgba(255, 255, 255, 0.5);
-            text-decoration: none;
-            font-size: 0.85rem;
-            transition: color 0.2s;
-        }
-
+        .footer-links { display: flex; gap: 1.5rem; justify-content: center; margin-bottom: 1.5rem; }
+        .footer-links a { color: rgba(255,255,255,0.5); text-decoration: none; font-size: 0.85rem; transition: color 0.2s; }
         .footer-links a:hover { color: var(--white); }
-
         footer p { font-size: 0.8rem; }
-
-        .footer-tagline {
-            font-size: 0.85rem;
-            color: rgba(255, 255, 255, 0.4);
-            margin-bottom: 1rem;
-        }
-
-        /* ===== RESPONSIVE ===== */
+        .footer-tagline { font-size: 0.85rem; color: rgba(255,255,255,0.4); margin-bottom: 1rem; }
         @media (max-width: 768px) {
             nav { padding: 1rem 1.25rem; }
             .nav-links { display: none; }
-
             .article-hero { padding: 4rem 1.25rem 3rem; }
             .article-body { padding: 2rem 1.25rem 4rem; }
             .article-cta { padding: 0 1.25rem 4rem; }
-
-            .article-cta-card {
-                flex-direction: column;
-                text-align: center;
-                padding: 2rem 1.5rem;
-            }
+            .article-cta-card { flex-direction: column; text-align: center; padding: 2rem 1.5rem; }
         }
     </style>
     <script type="application/ld+json">
@@ -406,24 +97,17 @@
       "@context": "https://schema.org",
       "@type": "BlogPosting",
       "headline": "Phone Repair Shop Software: What to Look For",
-      "datePublished": "2026-03-10",
-      "dateModified": "2026-03-10",
-      "author": {
-        "@type": "Person",
-        "name": "PhoneRepairPOS Team"
-      },
-      "publisher": {
-        "@type": "Organization",
-        "name": "PhoneRepairPOS",
-        "url": "https://phonerepairpos.app"
-      },
-      "description": "The features that matter, the ones that don't, and how to avoid paying for things you'll never use.",
+      "description": "Not all repair shop software is the same. Here's what actually matters when choosing a system for your phone repair business.",
+      "author": { "@type": "Organization", "name": "PhoneRepairPOS" },
+      "publisher": { "@type": "Organization", "name": "PhoneRepairPOS", "url": "https://phonerepairpos.app" },
+      "datePublished": "2026-03-09",
+      "dateModified": "2026-03-09",
+      "url": "https://phonerepairpos.app/blog/phone-repair-shop-software-what-to-look-for.html",
       "mainEntityOfPage": "https://phonerepairpos.app/blog/phone-repair-shop-software-what-to-look-for.html"
     }
     </script>
 </head>
 <body>
-
     <nav>
         <a href="../index.html" class="nav-logo">Phone<span>Repair</span>POS</a>
         <div class="nav-links">
@@ -437,7 +121,7 @@
         <div class="post-tag guide">Guide</div>
         <h1>Phone Repair Shop Software: What to Look For</h1>
         <div class="article-meta">
-            <span>10 Mar 2026</span>
+            <span>9 Mar 2026</span>
             <span class="article-meta-dot"></span>
             <span>6 min read</span>
         </div>
@@ -446,96 +130,113 @@
     <article class="article-body">
         <a href="index.html" class="back-link">← All articles</a>
 
-        <p>There's no shortage of software marketed at phone repair shops. Some are purpose-built for the trade. Some are general business tools with a repair-flavoured skin on top. And some are genuinely useful, while others will have you paying a monthly subscription for a product you use a fraction of.</p>
+        <p>Search for "phone repair shop software" and you'll find dozens of options, ranging from tools designed for independent one-person shops to full enterprise platforms aimed at franchises with 50 locations. The challenge isn't finding a tool — it's working out which one is actually right for your business.</p>
 
-        <p>This guide cuts through the noise. Here's what repair shop software actually needs to do, what's optional, what's a warning sign — and the questions worth asking before you commit.</p>
+        <p>This guide covers the features that genuinely matter for a small or solo phone repair operation, the things you can safely ignore, and the questions to ask before you commit.</p>
 
-        <h2>The features you genuinely need</h2>
+        <h2>Repair Ticket and Job Management: The Non-Negotiable Core</h2>
 
-        <p>Phone repair is a service business, not a retail business. The software that serves you best is the software built around that distinction. These are the core capabilities that matter:</p>
+        <p>If there's one thing repair shop software must do well, it's job management. Everything else is secondary. A repair shop isn't a retail store — the product you're selling is a service, and that service has a lifecycle: intake, diagnosis, parts sourcing, repair, collection, payment.</p>
 
-        <h3>Ticket and job management</h3>
-        <p>Every repair should start life as a record — a job ticket. That record needs to capture the customer's name and contact details, the device make and model, the problem as described, any agreed price, and the expected turnaround. Without this, you're relying on memory and scraps of paper. When you're doing ten repairs a day, that doesn't scale.</p>
-
-        <h3>Status tracking</h3>
-        <p>Knowing that a repair is "in progress" isn't enough. You need to know where in the process it is: received, being diagnosed, waiting for parts, in repair, testing, ready to collect. Status stages let you answer customer queries instantly, spot bottlenecks, and prioritise your workload. Any software worth using should support this out of the box — not require you to hack it together with custom fields.</p>
-
-        <h3>Customer records</h3>
-        <p>The ability to look up a customer and see every repair you've done for them is more useful than it sounds. It helps you diagnose recurring issues, handle warranty queries, and build the kind of ongoing relationship that turns one-time customers into regulars. A flat list of jobs with no customer linkage misses this entirely.</p>
-
-        <h3>Payment logging</h3>
-        <p>This isn't about taking payments — you can handle that with a card terminal or cash. It's about recording what was paid, by what method, against which job, and when. That record is your evidence if a customer disputes a charge, and it gives you an accurate picture of revenue without manually tallying a till.</p>
-
-        <h2>Useful but not essential</h2>
-
-        <p>These features become valuable as your operation grows, but they're not requirements when you're getting started — or when you're a solo operator running a tight shop.</p>
+        <p>At minimum, good job management means:</p>
 
         <ul>
-            <li><strong>Reporting and analytics</strong> — summaries of revenue, most common repairs, busiest periods. Useful for planning; not urgent for day-to-day.</li>
-            <li><strong>Inventory tracking</strong> — managing your parts stock within the software. Helpful if you carry significant inventory; overkill if you order parts per job.</li>
-            <li><strong>Multi-technician support</strong> — assigning jobs to specific staff members. Only relevant once you have more than one person working repairs.</li>
-            <li><strong>iCloud or cloud sync</strong> — keeping data in sync across devices. Valuable if you use multiple iPads or want a backup; optional if you're on a single device.</li>
+            <li>Creating a job ticket at intake with the customer's name, contact details, device model, and fault description</li>
+            <li>Assigning a unique job reference number that appears on the physical ticket given to the customer</li>
+            <li>Tracking status — "Awaiting Parts", "In Progress", "Ready for Collection", "Collected" — with the ability to update this quickly from the counter</li>
+            <li>Viewing all open jobs at a glance so nothing gets forgotten</li>
+            <li>Finding a job instantly by customer name, phone number, or job reference</li>
         </ul>
 
+        <p>Any software that doesn't do all five of these things cleanly is not worth using for a repair shop, regardless of what else it offers.</p>
+
+        <h2>Payment Processing</h2>
+
+        <p>Your software needs to handle payment at collection — cash, card, or both. Check that the payment flow is integrated with job closure, so taking a payment marks the job as paid and closed in a single step. Separate systems for payments and job management create friction and errors.</p>
+
+        <p>For card payments, the most common integrations are with Stripe or Square readers. Check what hardware is required, what the per-transaction fees are, and whether those fees change with the volume you process.</p>
+
+        <h2>Customer Records</h2>
+
+        <p>Every job should be linked to a customer record. This means that when the same customer comes back — and good customers do — you can see their repair history instantly: what device they had, what was wrong with it, what parts were used, when it was repaired.</p>
+
+        <p>This isn't just about personalisation. It's operationally important. If a customer comes back three weeks after a screen replacement and says the new screen is lifting, you need to be able to confirm the original job, check the warranty period, and respond with confidence rather than guessing.</p>
+
+        <h2>Parts Tracking</h2>
+
+        <p>Basic parts tracking — logging which parts were used on which jobs — is useful for two reasons: it helps you understand your stock usage patterns and spot when you're running low on commonly needed parts, and it creates an accurate record for warranty purposes.</p>
+
+        <p>You don't necessarily need a full inventory management module with automated reorder points and supplier integrations. For most small shops, a simple per-job parts log is enough. If you're doing high volume across many device types, more comprehensive stock management starts to pay off — but that's a scaling problem, not a starting point.</p>
+
+        <h2>Reporting</h2>
+
+        <p>Basic reporting — revenue by day/week/month, jobs completed, average job value — helps you understand how the business is performing and spot trends. Look for a system that gives you this without requiring you to export data to a spreadsheet and build your own analysis.</p>
+
+        <p>You don't need advanced analytics dashboards. You just need to be able to answer: how much did I take this week? How many jobs did I complete? What are my busiest repair types? These are the numbers that drive real business decisions.</p>
+
+        <h2>Offline Capability: Critical and Often Overlooked</h2>
+
         <div class="callout">
-            <div class="callout-title">Worth knowing</div>
-            <p>The best time to add complexity to your software is when you've outgrown the simple version — not before. Start with what you need now, not what you might need in two years.</p>
+            <div class="callout-title">The most important question: does it work offline?</div>
+            <p>Broadband goes down. Mobile data has dead spots. If your software requires a live internet connection to log a job or take a payment, you are one outage away from a queue of frustrated customers and a broken workflow. Offline-first software stores data locally and syncs when the connection returns. This is not a nice-to-have for a repair shop — it is a requirement.</p>
         </div>
 
-        <h2>Red flags to watch for</h2>
+        <p>Always test offline behaviour before committing to any cloud-based system. Open the app, turn off WiFi, and try to create a job and take a payment. If it throws an error, move on.</p>
 
-        <p>The repair shop software market has some recurring patterns that are worth being cautious about.</p>
+        <h2>iPad and Tablet Support</h2>
 
-        <h3>Basic features locked behind subscriptions</h3>
-        <p>Some platforms offer a free tier that's essentially unusable — limited tickets per month, core features disabled, prominent upsell prompts on every screen. If the free version can't support your actual workflow, it's not really free. Evaluate based on what the paid tier costs and whether you'll use enough of it to justify the outgoing.</p>
+        <p>An iPad behind the counter is the standard for modern repair shops. It's clean, portable, and familiar to any member of staff. Look for software built natively for iPad rather than a web app crammed onto a tablet screen. Native iPad apps are faster, more reliable offline, and significantly easier to use in a fast-paced counter environment.</p>
 
-        <h3>Internet-only operation</h3>
-        <p>Software that only works online is a liability in a repair shop. If your broadband drops, your card terminal might fail, but your job tracking shouldn't. Any software that can't function offline — at least in read mode — is a risk to your day-to-day operation.</p>
+        <p>A well-designed iPad app should allow a technician to create a new job, log a device and fault, and hand over a printed or digital receipt in under two minutes. If it takes longer than that for a straightforward intake, the interface needs work.</p>
 
-        <h3>Complex setup requirements</h3>
-        <p>If getting a POS system running takes more than a few hours of configuration, that's time you're not spending on repairs. Long onboarding processes, required data imports, and mandatory training sessions are signals that the software wasn't designed with simplicity in mind. Some complexity is warranted for genuinely full-featured platforms. But if a system needs days of setup before it's usable, consider whether the features justify that investment.</p>
+        <h2>Ease of Use: Can a New Staff Member Learn It in an Hour?</h2>
 
-        <h3>Pricing that isn't transparent</h3>
-        <p>If you can't find the price on the website without requesting a demo, that's a signal the pricing is variable and sales-led. Not always a dealbreaker — enterprise software works this way — but for a small repair shop, you want to know what you'll pay before you commit time to evaluating a product.</p>
+        <p>This is the question to ask when you evaluate any new tool. If you need two days of training and a manual to use the software, the learning curve will cost you every time you hire someone new, every time you're busy and someone unfamiliar has to cover, and every time something unexpected happens mid-repair.</p>
 
-        <h2>Questions to ask before buying</h2>
+        <p>Software for a small repair shop should be learnable in under an hour. The core workflows — new job, status update, payment, collection — should be achievable without any guidance after a brief walkthrough. If you find yourself reading documentation to do routine tasks, look elsewhere.</p>
 
-        <p>Before committing to any software, it's worth running through a short checklist:</p>
+        <h2>Pricing Model</h2>
 
-        <ol>
-            <li>Can I create a job, track its status, and record payment — in under two minutes?</li>
-            <li>Does it work if my internet connection drops?</li>
-            <li>What does it cost per month, and what happens if I stop paying?</li>
-            <li>Can I export my data if I want to switch to something else?</li>
-            <li>How long does setup take before the app is actually usable?</li>
-        </ol>
+        <p>Repair shop software typically comes in three pricing models:</p>
 
-        <p>If a product can't answer these questions clearly, that's useful information in itself.</p>
+        <ul>
+            <li><strong>Monthly SaaS subscription:</strong> ongoing cost, usually includes updates and support. Budget £20–£80/month depending on the provider and features.</li>
+            <li><strong>One-time purchase:</strong> pay once, own it. Less common for modern cloud software but exists for some iPad-native apps.</li>
+            <li><strong>Free tier with paid upgrades:</strong> some tools are free up to a certain job volume or feature set, then charge for more.</li>
+        </ul>
 
-        <h2>What PhoneRepairPOS does</h2>
+        <p>Whatever model you choose, calculate the annual cost including any transaction fees and compare it against the value you get. A £30/month tool that saves you two hours a week is cheap. A free tool that loses you jobs because it crashes offline is expensive.</p>
 
-        <p>PhoneRepairPOS is a free iPad app built specifically for phone repair shops. It covers the essentials — job tickets, status tracking, customer records, payment logging — without subscription fees or setup overhead. It works offline, syncs via iCloud, and is designed to be usable on the first day without configuration.</p>
+        <h2>Cloud Sync</h2>
 
-        <p>It doesn't have inventory management, advanced reporting, or multi-location support. If those are requirements for your shop, a more comprehensive platform will serve you better. But if you're a small or independent shop that wants a clean, reliable system without a monthly commitment, it's worth trying.</p>
+        <p>Cloud sync means your data is backed up automatically and accessible from any device. This protects you against hardware failure — if your iPad is lost, stolen, or broken, you don't lose every customer record and job history. For a small business with no IT team, cloud backup is a meaningful safety net.</p>
 
-        <blockquote>
-            <p>The right software is the one that gets used consistently. Don't buy features you won't use — buy reliability for the ones you will.</p>
-        </blockquote>
+        <h2>What You Don't Need</h2>
+
+        <p>Many repair shop software platforms are built for larger operations and include features that add complexity without adding value for a small shop. You can safely ignore:</p>
+
+        <ul>
+            <li><strong>Complex multi-location inventory modules:</strong> if you have one shop, you don't need warehouse management.</li>
+            <li><strong>E-commerce integration:</strong> useful only if you're selling accessories online, which is a different business model entirely.</li>
+            <li><strong>Enterprise reporting and user permission hierarchies:</strong> overkill for a solo or two-person operation.</li>
+            <li><strong>Built-in marketing automation:</strong> good in theory, rarely used in practice by small shops.</li>
+        </ul>
+
+        <p>The best software for a small repair shop is not the one with the most features. It's the one that does the core job management and payment workflow flawlessly, works offline, runs well on an iPad, and can be learned quickly. Everything else is noise until you've outgrown the basics.</p>
 
         <h2>Related articles</h2>
         <ul>
+            <li><a href="ipad-pos-vs-traditional-till.html">iPad POS vs Traditional Till</a></li>
             <li><a href="best-pos-systems-for-phone-repair-shops-2026.html">Best POS Systems for Phone Repair Shops in 2026</a></li>
-            <li><a href="do-you-need-a-pos-system-for-your-repair-shop.html">Do You Really Need a POS System for Your Repair Shop?</a></li>
-            <li><a href="free-vs-paid-repair-shop-software.html">Free vs Paid Repair Shop Software</a></li>
+            <li><a href="repairdesk-vs-phonerepairpos.html">RepairDesk vs PhoneRepairPOS</a></li>
         </ul>
     </article>
 
-    <!-- Post CTA -->
     <div class="article-cta">
         <div class="article-cta-card">
             <div class="article-cta-text">
                 <h3>Try PhoneRepairPOS free</h3>
-                <p>Digital tickets, status tracking, and payment records — all from your iPad.</p>
+                <p>Offline-first, iPad-native repair shop software. Built for small shops that just want something that works.</p>
             </div>
             <a href="https://apps.apple.com/gb/app/phone-repair-pos/id6759859240" class="article-cta-btn">Download →</a>
         </div>
@@ -554,6 +255,5 @@
             <p>&copy; 2026 PhoneRepairPOS. All rights reserved.</p>
         </div>
     </footer>
-
 </body>
 </html>

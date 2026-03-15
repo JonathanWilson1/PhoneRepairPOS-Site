@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Marketing Your Repair Shop on a Budget — PhoneRepairPOS</title>
-    <meta name="description" content="Google Business Profile, local SEO, and word of mouth — the channels that actually bring walk-ins through the door.">
+    <meta name="description" content="Practical marketing tactics for phone repair shop owners who don't have time or money to waste. Google Business, word of mouth, and more.">
     <meta property="og:title" content="Marketing Your Repair Shop on a Budget">
-    <meta property="og:description" content="Google Business Profile, local SEO, and word of mouth — the channels that actually bring walk-ins through the door.">
+    <meta property="og:description" content="Practical marketing tactics for phone repair shop owners who don't have time or money to waste. Google Business, word of mouth, and more.">
     <meta property="og:type" content="article">
     <link rel="canonical" href="https://phonerepairpos.app/blog/phone-repair-shop-marketing.html">
     <meta property="og:url" content="https://phonerepairpos.app/blog/phone-repair-shop-marketing.html">
@@ -14,7 +14,7 @@
     <meta property="og:image" content="https://phonerepairpos.app/og-image.png">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Marketing Your Repair Shop on a Budget — PhoneRepairPOS">
-    <meta name="twitter:description" content="Google Business Profile, local SEO, and word of mouth — the channels that actually bring walk-ins through the door.">
+    <meta name="twitter:description" content="Practical marketing tactics for phone repair shop owners who don't have time or money to waste. Google Business, word of mouth, and more.">
     <meta name="twitter:image" content="https://phonerepairpos.app/og-image.png">
     <link rel="icon" type="image/svg+xml" href="/favicon.svg">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -23,382 +23,73 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
     <style>
-        *, *::before, *::after {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
         :root {
-            --primary: #2B2D7C;
-            --accent: #3F41B2;
-            --vibrant: #5B5EF4;
-            --white: #FFFFFF;
-            --off-white: #F6F6FB;
-            --dark: #111136;
-            --text: #1E1E3F;
-            --text-light: #5C5C7A;
-            --warm-accent: #FF6B4A;
-            --border: #E4E4EE;
+            --primary: #2B2D7C; --accent: #3F41B2; --vibrant: #5B5EF4;
+            --white: #FFFFFF; --off-white: #F6F6FB; --dark: #111136;
+            --text: #1E1E3F; --text-light: #5C5C7A; --warm-accent: #FF6B4A; --border: #E4E4EE;
         }
-
         html { scroll-behavior: smooth; }
-
-        body {
-            font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
-            color: var(--text);
-            background: var(--white);
-            overflow-x: hidden;
-            -webkit-font-smoothing: antialiased;
-        }
-
-        /* ===== NAV ===== */
-        nav {
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            padding: 1rem 2rem;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            background: rgba(255, 255, 255, 0.92);
-            backdrop-filter: blur(16px);
-            border-bottom: 1px solid var(--border);
-        }
-
-        .nav-logo {
-            font-weight: 800;
-            font-size: 1.25rem;
-            color: var(--dark);
-            text-decoration: none;
-            letter-spacing: -0.02em;
-        }
-
+        body { font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif; color: var(--text); background: var(--white); overflow-x: hidden; -webkit-font-smoothing: antialiased; }
+        nav { position: sticky; top: 0; z-index: 100; padding: 1rem 2rem; display: flex; align-items: center; justify-content: space-between; background: rgba(255,255,255,0.92); backdrop-filter: blur(16px); border-bottom: 1px solid var(--border); }
+        .nav-logo { font-weight: 800; font-size: 1.25rem; color: var(--dark); text-decoration: none; letter-spacing: -0.02em; }
         .nav-logo span { color: var(--vibrant); }
-
-        .nav-links {
-            display: flex;
-            gap: 2rem;
-            align-items: center;
-        }
-
-        .nav-links a {
-            color: var(--text-light);
-            text-decoration: none;
-            font-size: 0.9rem;
-            font-weight: 500;
-            transition: color 0.2s;
-        }
-
+        .nav-links { display: flex; gap: 2rem; align-items: center; }
+        .nav-links a { color: var(--text-light); text-decoration: none; font-size: 0.9rem; font-weight: 500; transition: color 0.2s; }
         .nav-links a:hover { color: var(--dark); }
-
-        .nav-links a.active {
-            color: var(--vibrant);
-            font-weight: 600;
-        }
-
-        .nav-cta {
-            background: var(--vibrant) !important;
-            color: var(--white) !important;
-            padding: 0.5rem 1.25rem;
-            border-radius: 8px;
-            font-weight: 600 !important;
-            transition: transform 0.2s, box-shadow 0.2s !important;
-        }
-
-        .nav-cta:hover {
-            transform: translateY(-1px);
-            box-shadow: 0 4px 16px rgba(91, 94, 244, 0.4);
-        }
-
-        /* ===== ARTICLE HEADER ===== */
-        .article-hero {
-            background: linear-gradient(135deg, var(--dark) 0%, var(--primary) 100%);
-            padding: 5rem 2rem 4rem;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .article-hero::before {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background:
-                radial-gradient(ellipse 300px 250px at 25% 40%, rgba(91, 94, 244, 0.25), transparent),
-                radial-gradient(ellipse 250px 200px at 75% 60%, rgba(255, 107, 74, 0.12), transparent);
-        }
-
+        .nav-links a.active { color: var(--vibrant); font-weight: 600; }
+        .nav-cta { background: var(--vibrant) !important; color: var(--white) !important; padding: 0.5rem 1.25rem; border-radius: 8px; font-weight: 600 !important; transition: transform 0.2s, box-shadow 0.2s !important; }
+        .nav-cta:hover { transform: translateY(-1px); box-shadow: 0 4px 16px rgba(91,94,244,0.4); }
+        .article-hero { background: linear-gradient(135deg, var(--dark) 0%, var(--primary) 100%); padding: 5rem 2rem 4rem; text-align: center; position: relative; overflow: hidden; }
+        .article-hero::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse 300px 250px at 25% 40%, rgba(91,94,244,0.25), transparent), radial-gradient(ellipse 250px 200px at 75% 60%, rgba(255,107,74,0.12), transparent); }
         .article-hero > * { position: relative; }
-
-        .article-hero .post-tag {
-            display: inline-block;
-            font-size: 0.7rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 0.08em;
-            color: rgba(255, 255, 255, 0.7);
-            background: rgba(255, 255, 255, 0.1);
-            padding: 0.3rem 0.75rem;
-            border-radius: 6px;
-            margin-bottom: 1.25rem;
-        }
-
-        .article-hero h1 {
-            font-size: clamp(2rem, 4.5vw, 3rem);
-            font-weight: 800;
-            color: var(--white);
-            line-height: 1.15;
-            letter-spacing: -0.03em;
-            max-width: 700px;
-            margin: 0 auto 1.25rem;
-        }
-
-        .article-meta {
-            font-size: 0.9rem;
-            color: rgba(255, 255, 255, 0.5);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 0.75rem;
-        }
-
-        .article-meta-dot {
-            width: 3px;
-            height: 3px;
-            background: rgba(255, 255, 255, 0.4);
-            border-radius: 50%;
-        }
-
-        /* ===== ARTICLE BODY ===== */
-        .article-body {
-            max-width: 680px;
-            margin: 0 auto;
-            padding: 3rem 2rem 5rem;
-        }
-
-        .article-body p {
-            font-size: 1.05rem;
-            line-height: 1.8;
-            color: var(--text);
-            margin-bottom: 1.5rem;
-        }
-
-        .article-body h2 {
-            font-size: 1.5rem;
-            font-weight: 800;
-            color: var(--dark);
-            letter-spacing: -0.02em;
-            margin: 2.5rem 0 1rem;
-            line-height: 1.2;
-        }
-
-        .article-body h3 {
-            font-size: 1.2rem;
-            font-weight: 700;
-            color: var(--dark);
-            margin: 2rem 0 0.75rem;
-        }
-
-        .article-body ul, .article-body ol {
-            margin: 0 0 1.5rem 1.25rem;
-        }
-
-        .article-body li {
-            font-size: 1.05rem;
-            line-height: 1.8;
-            color: var(--text);
-            margin-bottom: 0.5rem;
-        }
-
-        .article-body blockquote {
-            border-left: 3px solid var(--vibrant);
-            padding: 0.75rem 1.25rem;
-            margin: 1.5rem 0;
-            background: var(--off-white);
-            border-radius: 0 10px 10px 0;
-        }
-
-        .article-body blockquote p {
-            color: var(--text-light);
-            font-size: 1rem;
-            margin-bottom: 0;
-        }
-
-        .article-body strong {
-            color: var(--dark);
-            font-weight: 700;
-        }
-
-        .article-body a {
-            color: var(--vibrant);
-            text-decoration: underline;
-            text-underline-offset: 2px;
-        }
-
-        .article-body a:hover {
-            color: var(--primary);
-        }
-
-        /* Callout box */
-        .callout {
-            background: var(--off-white);
-            border: 1px solid var(--border);
-            border-radius: 14px;
-            padding: 1.5rem;
-            margin: 2rem 0;
-        }
-
-        .callout-title {
-            font-size: 0.9rem;
-            font-weight: 700;
-            color: var(--vibrant);
-            margin-bottom: 0.5rem;
-        }
-
-        .callout p {
-            font-size: 0.95rem;
-            margin-bottom: 0;
-        }
-
-        /* ===== ARTICLE FOOTER / CTA ===== */
-        .article-cta {
-            max-width: 680px;
-            margin: 0 auto;
-            padding: 0 2rem 5rem;
-        }
-
-        .article-cta-card {
-            background: var(--dark);
-            border-radius: 20px;
-            padding: 2.5rem;
-            display: flex;
-            align-items: center;
-            gap: 2rem;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .article-cta-card::before {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background: radial-gradient(ellipse 200px 200px at 90% 50%, rgba(91, 94, 244, 0.2), transparent);
-        }
-
+        .article-hero .post-tag { display: inline-block; font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: rgba(255,255,255,0.7); background: rgba(255,255,255,0.1); padding: 0.3rem 0.75rem; border-radius: 6px; margin-bottom: 1.25rem; }
+        .article-hero .post-tag.business { background: rgba(230,147,38,0.2); color: #E69326; }
+        .article-hero .post-tag.guide { background: rgba(255,107,74,0.2); color: #FF6B4A; }
+        .article-hero .post-tag.tips { background: rgba(16,185,129,0.2); color: #10B981; }
+        .article-hero h1 { font-size: clamp(2rem, 4.5vw, 3rem); font-weight: 800; color: var(--white); line-height: 1.15; letter-spacing: -0.03em; max-width: 700px; margin: 0 auto 1.25rem; }
+        .article-meta { font-size: 0.9rem; color: rgba(255,255,255,0.5); display: flex; align-items: center; justify-content: center; gap: 0.75rem; }
+        .article-meta-dot { width: 3px; height: 3px; background: rgba(255,255,255,0.4); border-radius: 50%; }
+        .article-body { max-width: 680px; margin: 0 auto; padding: 3rem 2rem 5rem; }
+        .article-body p { font-size: 1.05rem; line-height: 1.8; color: var(--text); margin-bottom: 1.5rem; }
+        .article-body h2 { font-size: 1.5rem; font-weight: 800; color: var(--dark); letter-spacing: -0.02em; margin: 2.5rem 0 1rem; line-height: 1.2; }
+        .article-body h3 { font-size: 1.2rem; font-weight: 700; color: var(--dark); margin: 2rem 0 0.75rem; }
+        .article-body ul, .article-body ol { margin: 0 0 1.5rem 1.25rem; }
+        .article-body li { font-size: 1.05rem; line-height: 1.8; color: var(--text); margin-bottom: 0.5rem; }
+        .article-body blockquote { border-left: 3px solid var(--vibrant); padding: 0.75rem 1.25rem; margin: 1.5rem 0; background: var(--off-white); border-radius: 0 10px 10px 0; }
+        .article-body blockquote p { color: var(--text-light); font-size: 1rem; margin-bottom: 0; }
+        .article-body strong { color: var(--dark); font-weight: 700; }
+        .article-body a { color: var(--vibrant); text-decoration: underline; text-underline-offset: 2px; }
+        .article-body a:hover { color: var(--primary); }
+        .callout { background: var(--off-white); border: 1px solid var(--border); border-radius: 14px; padding: 1.5rem; margin: 2rem 0; }
+        .callout-title { font-size: 0.9rem; font-weight: 700; color: var(--vibrant); margin-bottom: 0.5rem; }
+        .callout p { font-size: 0.95rem; margin-bottom: 0; }
+        .article-cta { max-width: 680px; margin: 0 auto; padding: 0 2rem 5rem; }
+        .article-cta-card { background: var(--dark); border-radius: 20px; padding: 2.5rem; display: flex; align-items: center; gap: 2rem; position: relative; overflow: hidden; }
+        .article-cta-card::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse 200px 200px at 90% 50%, rgba(91,94,244,0.2), transparent); }
         .article-cta-card > * { position: relative; }
-
-        .article-cta-text h3 {
-            font-size: 1.25rem;
-            font-weight: 800;
-            color: var(--white);
-            margin-bottom: 0.5rem;
-        }
-
-        .article-cta-text p {
-            font-size: 0.9rem;
-            color: rgba(255, 255, 255, 0.6);
-            line-height: 1.5;
-        }
-
-        .article-cta-btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.4rem;
-            background: var(--vibrant);
-            color: var(--white);
-            padding: 0.75rem 1.5rem;
-            border-radius: 10px;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 0.9rem;
-            white-space: nowrap;
-            transition: transform 0.2s, box-shadow 0.2s;
-        }
-
-        .article-cta-btn:hover {
-            transform: translateY(-1px);
-            box-shadow: 0 4px 16px rgba(91, 94, 244, 0.4);
-        }
-
-        /* Back link */
-        .back-link {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.35rem;
-            color: var(--text-light);
-            text-decoration: none;
-            font-size: 0.85rem;
-            font-weight: 500;
-            margin-bottom: 2rem;
-            transition: color 0.2s, gap 0.2s;
-        }
-
-        .back-link:hover {
-            color: var(--vibrant);
-            gap: 0.55rem;
-        }
-
-        /* ===== FOOTER ===== */
-        footer {
-            background: var(--dark);
-            color: rgba(255, 255, 255, 0.5);
-            padding: 3rem 2rem;
-            text-align: center;
-        }
-
-        .footer-content {
-            max-width: 600px;
-            margin: 0 auto;
-        }
-
-        .footer-logo {
-            font-weight: 800;
-            font-size: 1.1rem;
-            color: var(--white);
-            margin-bottom: 0.75rem;
-        }
-
+        .article-cta-text h3 { font-size: 1.25rem; font-weight: 800; color: var(--white); margin-bottom: 0.5rem; }
+        .article-cta-text p { font-size: 0.9rem; color: rgba(255,255,255,0.6); line-height: 1.5; }
+        .article-cta-btn { display: inline-flex; align-items: center; gap: 0.4rem; background: var(--vibrant); color: var(--white); padding: 0.75rem 1.5rem; border-radius: 10px; text-decoration: none; font-weight: 600; font-size: 0.9rem; white-space: nowrap; transition: transform 0.2s, box-shadow 0.2s; }
+        .article-cta-btn:hover { transform: translateY(-1px); box-shadow: 0 4px 16px rgba(91,94,244,0.4); }
+        .back-link { display: inline-flex; align-items: center; gap: 0.35rem; color: var(--text-light); text-decoration: none; font-size: 0.85rem; font-weight: 500; margin-bottom: 2rem; transition: color 0.2s, gap 0.2s; }
+        .back-link:hover { color: var(--vibrant); gap: 0.55rem; }
+        footer { background: var(--dark); color: rgba(255,255,255,0.5); padding: 3rem 2rem; text-align: center; }
+        .footer-content { max-width: 600px; margin: 0 auto; }
+        .footer-logo { font-weight: 800; font-size: 1.1rem; color: var(--white); margin-bottom: 0.75rem; }
         .footer-logo span { color: var(--vibrant); }
-
-        .footer-links {
-            display: flex;
-            gap: 1.5rem;
-            justify-content: center;
-            margin-bottom: 1.5rem;
-        }
-
-        .footer-links a {
-            color: rgba(255, 255, 255, 0.5);
-            text-decoration: none;
-            font-size: 0.85rem;
-            transition: color 0.2s;
-        }
-
+        .footer-links { display: flex; gap: 1.5rem; justify-content: center; margin-bottom: 1.5rem; }
+        .footer-links a { color: rgba(255,255,255,0.5); text-decoration: none; font-size: 0.85rem; transition: color 0.2s; }
         .footer-links a:hover { color: var(--white); }
-
         footer p { font-size: 0.8rem; }
-
-        .footer-tagline {
-            font-size: 0.85rem;
-            color: rgba(255, 255, 255, 0.4);
-            margin-bottom: 1rem;
-        }
-
-        /* ===== RESPONSIVE ===== */
+        .footer-tagline { font-size: 0.85rem; color: rgba(255,255,255,0.4); margin-bottom: 1rem; }
         @media (max-width: 768px) {
             nav { padding: 1rem 1.25rem; }
             .nav-links { display: none; }
-
             .article-hero { padding: 4rem 1.25rem 3rem; }
             .article-body { padding: 2rem 1.25rem 4rem; }
             .article-cta { padding: 0 1.25rem 4rem; }
-
-            .article-cta-card {
-                flex-direction: column;
-                text-align: center;
-                padding: 2rem 1.5rem;
-            }
+            .article-cta-card { flex-direction: column; text-align: center; padding: 2rem 1.5rem; }
         }
     </style>
     <script type="application/ld+json">
@@ -406,24 +97,17 @@
       "@context": "https://schema.org",
       "@type": "BlogPosting",
       "headline": "Marketing Your Repair Shop on a Budget",
-      "datePublished": "2026-02-14",
-      "dateModified": "2026-02-14",
-      "author": {
-        "@type": "Person",
-        "name": "PhoneRepairPOS Team"
-      },
-      "publisher": {
-        "@type": "Organization",
-        "name": "PhoneRepairPOS",
-        "url": "https://phonerepairpos.app"
-      },
-      "description": "Google Business Profile, local SEO, and word of mouth — the channels that actually bring walk-ins through the door.",
+      "description": "Practical marketing tactics for phone repair shop owners who don't have time or money to waste. Google Business, word of mouth, and more.",
+      "author": { "@type": "Organization", "name": "PhoneRepairPOS" },
+      "publisher": { "@type": "Organization", "name": "PhoneRepairPOS", "url": "https://phonerepairpos.app" },
+      "datePublished": "2026-03-08",
+      "dateModified": "2026-03-08",
+      "url": "https://phonerepairpos.app/blog/phone-repair-shop-marketing.html",
       "mainEntityOfPage": "https://phonerepairpos.app/blog/phone-repair-shop-marketing.html"
     }
     </script>
 </head>
 <body>
-
     <nav>
         <a href="../index.html" class="nav-logo">Phone<span>Repair</span>POS</a>
         <div class="nav-links">
@@ -437,7 +121,7 @@
         <div class="post-tag tips">Tips</div>
         <h1>Marketing Your Repair Shop on a Budget</h1>
         <div class="article-meta">
-            <span>14 Feb 2026</span>
+            <span>8 Mar 2026</span>
             <span class="article-meta-dot"></span>
             <span>6 min read</span>
         </div>
@@ -446,109 +130,105 @@
     <article class="article-body">
         <a href="index.html" class="back-link">← All articles</a>
 
-        <p>Most phone repair shops don't need a marketing agency. They need customers to find them when their screen cracks — and that's a very solvable problem. The channels that consistently deliver walk-ins for repair shops are almost entirely free to use, and the paid options that work are cheap when used correctly.</p>
+        <p>Most phone repair shop owners didn't go into business to do marketing. They went in because they're good at fixing phones. But without customers, none of that skill matters. The good news: for a local repair shop, the most effective marketing costs almost nothing. It just takes consistency.</p>
 
-        <p>This guide focuses on what actually moves the needle for an independent repair shop with limited time and a limited budget.</p>
+        <p>This is a list of things that actually work — no paid ads, no social media agency, no jargon. Just tactics a one-person or small-team shop can act on this week.</p>
 
-        <h2>Google Business Profile: your most important asset</h2>
+        <h2>Google Business Profile: The Single Most Important Thing You Can Do</h2>
 
-        <p>When someone in your town searches "phone repair near me", the results they see first aren't websites — they're Google Business Profile listings. That map pack at the top of the search results is where most of your potential customers are making their decision. If you're not in it, or if your listing is incomplete, you're losing jobs to competitors every day.</p>
+        <p>When someone's screen cracks, the first thing they do is search "phone repair near me" on Google. If your business doesn't appear in those results — or appears without reviews, photos, or accurate details — you lose that customer before they've even considered you.</p>
 
-        <p>Setting up and optimising your Google Business Profile is free and takes about an hour. Here's what to focus on:</p>
+        <p>Setting up and optimising a Google Business Profile is free and takes about an hour. Here's what matters:</p>
 
         <ul>
-            <li><strong>Complete every field.</strong> Business name, address, phone number, website, opening hours, and services. The more complete your listing, the better Google ranks it.</li>
-            <li><strong>Choose the right primary category.</strong> "Mobile Phone Repair Shop" is usually the correct primary category. You can add secondary categories for tablet repair, computer repair, and so on.</li>
-            <li><strong>Add photos.</strong> The exterior of your shop, your workspace, your tools — real photos outperform stock images. Listings with photos get significantly more clicks.</li>
-            <li><strong>Post updates regularly.</strong> Google lets you post offers, news, and updates directly to your listing. Posting once a fortnight signals to Google that your listing is active and maintained.</li>
-            <li><strong>Answer questions.</strong> If someone asks a question on your listing, answer it. Unanswered questions get answered by random members of the public, which is not ideal.</li>
+            <li><strong>Business name and category:</strong> use "Phone Repair Shop" as your primary category. Add secondary categories like "Mobile Phone Accessories" if relevant.</li>
+            <li><strong>Opening hours:</strong> keep these accurate. Wrong hours = frustrated customers and bad reviews.</li>
+            <li><strong>Phone number and address:</strong> obvious, but double-check they're correct.</li>
+            <li><strong>Services:</strong> list specific repairs — screen replacement, battery replacement, water damage, charging port repair. Google surfaces this in search results.</li>
+            <li><strong>Photos:</strong> add photos of your shopfront, your workspace, and completed repairs. Listings with photos get significantly more clicks than those without.</li>
+            <li><strong>Posts:</strong> Google lets you post updates, offers, and announcements. A monthly post keeps the listing active and signals to Google that the business is current.</li>
         </ul>
 
-        <h2>Local SEO basics</h2>
+        <p>Once it's set up, reviews are the thing that makes the biggest difference to how prominently you appear. Which brings us to the next point.</p>
 
-        <p>Beyond your Google Business Profile, local SEO is about making sure your website and online presence clearly communicate where you are and what you do. Search engines need consistent, clear signals to rank a local business confidently.</p>
+        <h2>Asking for Reviews (and Doing It Right)</h2>
 
-        <p>The three things that matter most for local SEO are:</p>
+        <p>Most happy customers don't leave reviews unless they're asked. Most unhappy customers do, without being asked. This means that if you're passive about reviews, your rating will be dragged down by the small minority of difficult jobs — while the majority of satisfied customers leave no trace.</p>
 
-        <h3>Location keywords on your website</h3>
-        <p>Your website should mention your town and nearby areas naturally throughout the content. Not stuffed awkwardly into every sentence, but clearly present on your homepage, your about page, and any service pages. "iPhone screen repair in Manchester" is a phrase worth having on your site. "We fix phones" is not enough.</p>
+        <p>The fix is simple: ask. When a customer collects their device and everything went well, say: "If you've got a minute, it would really help us if you left a Google review." Then show them the QR code that links directly to your review page — you can generate this from Google Business Profile for free.</p>
 
-        <h3>Consistent NAP across the web</h3>
-        <p>NAP stands for Name, Address, Phone number. Wherever your business is listed online — Google, Yelp, Yell.com, local directories — these three details should be identical. Inconsistencies confuse search engines and dilute your local ranking signal. Do a quick search for your business name and correct any listings where the details differ from your Google Business Profile.</p>
+        <p>Timing matters. Ask when the customer is happy, not when they're in a rush or if there was any friction. A satisfied customer who leaves in a good mood is your most reliable source of new business.</p>
 
-        <h3>A website that loads fast on mobile</h3>
-        <p>Most people searching for a repair shop are doing it on the cracked phone they need fixing. If your website takes five seconds to load on a mobile connection, a significant number of them will go back and click a competitor instead. Use Google's PageSpeed Insights to check your site speed and address any glaring issues.</p>
+        <p>Aim for 20+ reviews with a 4.5+ average before you worry about anything else. That alone puts most local repair shops ahead of most of their competition.</p>
 
-        <h2>Review generation strategy</h2>
+        <h2>Referral Incentives</h2>
 
-        <p>Reviews are the single biggest trust signal for a local business. A shop with 80 reviews averaging 4.7 stars will beat a shop with 12 reviews averaging 4.9 every time, simply because the volume of reviews is more convincing than a perfect score.</p>
+        <p>Word of mouth is the oldest form of marketing and still one of the most effective for local service businesses. You can make it slightly more systematic without it feeling manufactured.</p>
 
-        <p>The most effective time to ask for a review is at the moment of collection — when the customer has their phone back, it's working perfectly, and they're relieved and happy. That emotional peak is when they're most likely to follow through.</p>
+        <p>A simple referral scheme: give customers a small card at collection that says "Refer a friend — they get £5 off their first repair, you get £5 off your next one." Print 100 of these at a local print shop for about £8. Hand them out with every completed job. The people most likely to refer are those who just had a good experience — which is exactly when you're handing over the device.</p>
 
-        <p>Keep it simple: say something like "It would really help us if you left a quick Google review — it only takes a minute." Have a QR code printed at the counter that links directly to your review page so there's no friction. Don't ask via email two days later — the moment has passed.</p>
+        <p>Keep the incentive modest. You're not trying to run a complex loyalty programme. You just want existing customers to mention your name when their friends or colleagues crack a screen.</p>
+
+        <h2>Local Facebook Groups</h2>
+
+        <p>Almost every town and neighbourhood has at least one active Facebook group — "X Town Community", "Things to do in X", "Buy/Sell/Swap X". These groups often have thousands of members and near-daily activity.</p>
+
+        <p>Join the relevant local groups. Don't spam them with ads — that gets you removed. Instead, be useful. If someone posts "can anyone recommend a phone repair shop in [town]?", that's your moment to respond professionally and offer to help. One genuine reply in a busy thread can drive 5–10 new enquiries.</p>
+
+        <p>You can also occasionally post legitimately — if you've just started doing a new repair type, or you have a special offer running, a brief post in a community group is usually welcome if it's not done every week.</p>
+
+        <h2>Leafleting in the Right Places</h2>
+
+        <p>Leaflets feel old-fashioned, but for a local repair shop they work — especially if you target them well. The highest-value locations:</p>
+
+        <ul>
+            <li><strong>Near phone network shops:</strong> people who've just been quoted £300 for a screen replacement by a network provider walk past your leaflet and see "£69 screen repair, same day". That's a compelling contrast.</li>
+            <li><strong>Near schools and colleges:</strong> young people break phones at a high rate and often pay themselves. A simple A6 card with your prices and address, pinned to a community board near a school, costs pennies and can generate steady enquiries.</li>
+            <li><strong>Nearby businesses:</strong> office blocks, retail units, gyms. A stack of business cards or small flyers left with the reception desk can work well, especially in places with lots of footfall.</li>
+        </ul>
+
+        <p>Don't bother with mass mail drops or door-to-door leafleting to residential streets — the response rate is too low to justify the cost. Target places where the people are already thinking about their phones.</p>
+
+        <h2>Simple Social Media: Before and After Photos</h2>
+
+        <p>You don't need a social media strategy. You don't need a content calendar. But a basic Instagram or Facebook page with occasional before-and-after photos serves two purposes: it proves you do real work, and it gives people something to share.</p>
+
+        <p>The format is simple. Cracked screen comes in — take a photo before you start. Repaired device ready to go — take a photo after. Post both together. That's the whole thing. "iPhone 15 screen replacement — in and out in 45 minutes." No hashtag strategy required.</p>
+
+        <p>Do this 2–3 times a week and within a few months you have a visible portfolio of your work. When a potential customer checks you out online before calling, they see real evidence of quality. That builds trust before they've spoken to you.</p>
+
+        <h2>Partnerships With Local Businesses</h2>
+
+        <p>Phone shops and network provider stores (EE, Vodafone, O2 independents) get customers asking about repairs every day, and they typically don't do them. An informal arrangement — "if you send customers our way, we'll send accessories enquiries to you" — can generate steady referrals at zero cost.</p>
+
+        <p>Other good partnership targets: phone case and accessories shops, secondhand phone dealers, computer repair shops (they often get phone enquiries), and pawn shops. Walk in, introduce yourself, leave a stack of business cards. Many will be happy to refer if they know you exist and trust the quality of your work.</p>
 
         <div class="callout">
-            <div class="callout-title">Target</div>
-            <p>Aim to ask every customer who collects a completed repair. Even if only one in five leaves a review, you'll accumulate reviews faster than almost any competitor who isn't actively asking.</p>
+            <div class="callout-title">The marketing priority order</div>
+            <p>If you're starting from scratch: (1) set up and fully complete your Google Business Profile, (2) start asking for reviews after every successful job, (3) set up a basic social media page and post before/afters. Once those three things are consistent, everything else is a bonus.</p>
         </div>
 
-        <p>Respond to every review — positive and negative. A gracious response to a critical review often impresses prospective customers more than the negative review itself damages you. It shows professionalism and accountability.</p>
+        <h2>Loyalty Schemes</h2>
 
-        <h2>Social media for repair shops</h2>
+        <p>A simple loyalty card — "5 repairs, get £10 off your next one" — gives regular customers a reason to come back to you rather than trying a competitor. Print these cheaply, hand them out at collection, and stamp them each visit.</p>
 
-        <p>Social media is one area where it's easy to waste time. Let's be direct about what works and what doesn't.</p>
+        <p>Don't overthink it. The value isn't in the discount — most customers won't redeem it. The value is in the feeling of being a regular customer. People like being loyal to a local business they trust. A loyalty card is just a small signal that you recognise and reward that loyalty.</p>
 
-        <p><strong>What tends not to work:</strong> elaborate video productions, daily posting schedules you can't sustain, chasing followers, trying to go viral. These consume time and produce minimal walk-in customers for a local repair shop.</p>
-
-        <p><strong>What can work:</strong> a Facebook page with your opening hours and contact details up to date (many people check Facebook before calling), occasional posts showing a satisfying before/after repair, and responding quickly to direct messages. If someone messages your Facebook page asking your prices, a fast response converts them. A response the next day loses them.</p>
-
-        <p>Instagram can work well if you're willing to photograph your work consistently — water damage repairs, heavily cracked screens restored to perfect, satisfying tool photos. This builds a local audience over time and demonstrates craft. But it requires consistency, and sporadic posting is worse than no posting at all because it signals an abandoned account.</p>
-
-        <p>If you're choosing one social channel to maintain, make it Facebook. The demographic of people breaking phones skews older than you might think, and Facebook remains where they go to find and evaluate local businesses.</p>
-
-        <h2>Word of mouth: how to systematise referrals</h2>
-
-        <p>Word of mouth is the highest-quality lead source for a repair shop. A customer who was referred by a friend arrives already trusting you, is less likely to haggle, and is more likely to return. The challenge is that word of mouth feels like it happens randomly — some customers recommend you, most don't.</p>
-
-        <p>You can make it less random. A few approaches that work:</p>
-
-        <ul>
-            <li><strong>Ask directly.</strong> When a customer picks up their phone, tell them: "If you know anyone who needs a repair, please send them our way." It sounds obvious, but most shops never say it.</li>
-            <li><strong>Business cards.</strong> Give every customer two business cards when they collect. One for them, one to pass on. This is a £20 investment that keeps working.</li>
-            <li><strong>Referral offer.</strong> A simple "refer a friend and get £5 off your next repair" creates a real incentive to recommend you. Track it by asking new customers how they heard about you.</li>
-            <li><strong>Corporate accounts.</strong> Local offices, small businesses, and schools all have devices that break. Introduce yourself, offer a small discount for volume, and become their go-to repair shop. One corporate relationship can be worth dozens of individual customers.</li>
-        </ul>
-
-        <h2>Budget allocation: free first, then paid</h2>
-
-        <p>If you're starting out or working with minimal budget, the priority order is:</p>
-
-        <ol>
-            <li>Google Business Profile — free, highest ROI</li>
-            <li>Review generation — free, compounds over time</li>
-            <li>Website local SEO — free or low cost</li>
-            <li>Facebook page maintenance — free</li>
-            <li>Business cards and printed materials — low cost, high impact</li>
-        </ol>
-
-        <p>Once the free channels are working, paid options worth testing include Google Local Services Ads (you pay per lead, not per click) and boosted Facebook posts targeting people within a few miles of your shop. Both can deliver strong returns for a repair shop, but only once your listing and reviews are already in good shape — paid traffic sent to a weak listing or a shop with few reviews will underperform.</p>
-
-        <p>The shops that consistently win on marketing aren't spending more — they're showing up in the right places, asking for reviews, and treating every customer as a potential referral source. That costs almost nothing and compounds every week.</p>
+        <p>These tactics taken together — Google Business, reviews, referrals, local presence, and simple social content — are enough to build a steady flow of local customers without spending money on advertising. The shops that grow fastest are usually not the ones with the best marketing budget. They're the ones that do good work, ask for reviews, and stay visible in their community.</p>
 
         <h2>Related articles</h2>
         <ul>
-          <li><a href="building-customer-trust-in-your-repair-shop.html">Building Customer Trust in Your Repair Shop</a></li>
-          <li><a href="how-to-start-a-phone-repair-business.html">How to Start a Phone Repair Business</a></li>
-          <li><a href="7-common-mistakes-new-repair-shop-owners-make.html">7 Common Mistakes New Repair Shop Owners Make</a></li>
+            <li><a href="how-to-handle-customer-disputes.html">How to Handle Customer Disputes Like a Pro</a></li>
+            <li><a href="building-customer-trust-in-your-repair-shop.html">Building Customer Trust in Your Repair Shop</a></li>
+            <li><a href="7-common-mistakes-new-repair-shop-owners-make.html">7 Common Mistakes New Repair Shop Owners Make</a></li>
         </ul>
     </article>
 
-    <!-- Post CTA -->
     <div class="article-cta">
         <div class="article-cta-card">
             <div class="article-cta-text">
                 <h3>Try PhoneRepairPOS free</h3>
-                <p>Digital tickets, status tracking, and payment records — all from your iPad.</p>
+                <p>Give customers the professional experience that turns a one-time visit into a loyal regular.</p>
             </div>
             <a href="https://apps.apple.com/gb/app/phone-repair-pos/id6759859240" class="article-cta-btn">Download →</a>
         </div>
@@ -567,6 +247,5 @@
             <p>&copy; 2026 PhoneRepairPOS. All rights reserved.</p>
         </div>
     </footer>
-
 </body>
 </html>

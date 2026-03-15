@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>A Straightforward Guide to Setting Repair Prices — PhoneRepairPOS</title>
-    <meta name="description" content="How to price screen replacements, battery swaps, and diagnostics without leaving money on the table.">
+    <meta name="description" content="How to set repair prices that cover your costs, pay your time, and keep customers coming back. A practical guide for phone repair shop owners.">
     <meta property="og:title" content="A Straightforward Guide to Setting Repair Prices">
-    <meta property="og:description" content="How to price screen replacements, battery swaps, and diagnostics without leaving money on the table.">
+    <meta property="og:description" content="How to set repair prices that cover your costs, pay your time, and keep customers coming back. A practical guide for phone repair shop owners.">
     <meta property="og:type" content="article">
     <link rel="canonical" href="https://phonerepairpos.app/blog/setting-repair-prices-guide.html">
     <meta property="og:url" content="https://phonerepairpos.app/blog/setting-repair-prices-guide.html">
@@ -14,7 +14,7 @@
     <meta property="og:image" content="https://phonerepairpos.app/og-image.png">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="A Straightforward Guide to Setting Repair Prices — PhoneRepairPOS">
-    <meta name="twitter:description" content="How to price screen replacements, battery swaps, and diagnostics without leaving money on the table.">
+    <meta name="twitter:description" content="How to set repair prices that cover your costs, pay your time, and keep customers coming back. A practical guide for phone repair shop owners.">
     <meta name="twitter:image" content="https://phonerepairpos.app/og-image.png">
     <link rel="icon" type="image/svg+xml" href="/favicon.svg">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -23,382 +23,73 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
     <style>
-        *, *::before, *::after {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
         :root {
-            --primary: #2B2D7C;
-            --accent: #3F41B2;
-            --vibrant: #5B5EF4;
-            --white: #FFFFFF;
-            --off-white: #F6F6FB;
-            --dark: #111136;
-            --text: #1E1E3F;
-            --text-light: #5C5C7A;
-            --warm-accent: #FF6B4A;
-            --border: #E4E4EE;
+            --primary: #2B2D7C; --accent: #3F41B2; --vibrant: #5B5EF4;
+            --white: #FFFFFF; --off-white: #F6F6FB; --dark: #111136;
+            --text: #1E1E3F; --text-light: #5C5C7A; --warm-accent: #FF6B4A; --border: #E4E4EE;
         }
-
         html { scroll-behavior: smooth; }
-
-        body {
-            font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
-            color: var(--text);
-            background: var(--white);
-            overflow-x: hidden;
-            -webkit-font-smoothing: antialiased;
-        }
-
-        /* ===== NAV ===== */
-        nav {
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            padding: 1rem 2rem;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            background: rgba(255, 255, 255, 0.92);
-            backdrop-filter: blur(16px);
-            border-bottom: 1px solid var(--border);
-        }
-
-        .nav-logo {
-            font-weight: 800;
-            font-size: 1.25rem;
-            color: var(--dark);
-            text-decoration: none;
-            letter-spacing: -0.02em;
-        }
-
+        body { font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif; color: var(--text); background: var(--white); overflow-x: hidden; -webkit-font-smoothing: antialiased; }
+        nav { position: sticky; top: 0; z-index: 100; padding: 1rem 2rem; display: flex; align-items: center; justify-content: space-between; background: rgba(255,255,255,0.92); backdrop-filter: blur(16px); border-bottom: 1px solid var(--border); }
+        .nav-logo { font-weight: 800; font-size: 1.25rem; color: var(--dark); text-decoration: none; letter-spacing: -0.02em; }
         .nav-logo span { color: var(--vibrant); }
-
-        .nav-links {
-            display: flex;
-            gap: 2rem;
-            align-items: center;
-        }
-
-        .nav-links a {
-            color: var(--text-light);
-            text-decoration: none;
-            font-size: 0.9rem;
-            font-weight: 500;
-            transition: color 0.2s;
-        }
-
+        .nav-links { display: flex; gap: 2rem; align-items: center; }
+        .nav-links a { color: var(--text-light); text-decoration: none; font-size: 0.9rem; font-weight: 500; transition: color 0.2s; }
         .nav-links a:hover { color: var(--dark); }
-
-        .nav-links a.active {
-            color: var(--vibrant);
-            font-weight: 600;
-        }
-
-        .nav-cta {
-            background: var(--vibrant) !important;
-            color: var(--white) !important;
-            padding: 0.5rem 1.25rem;
-            border-radius: 8px;
-            font-weight: 600 !important;
-            transition: transform 0.2s, box-shadow 0.2s !important;
-        }
-
-        .nav-cta:hover {
-            transform: translateY(-1px);
-            box-shadow: 0 4px 16px rgba(91, 94, 244, 0.4);
-        }
-
-        /* ===== ARTICLE HEADER ===== */
-        .article-hero {
-            background: linear-gradient(135deg, var(--dark) 0%, var(--primary) 100%);
-            padding: 5rem 2rem 4rem;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .article-hero::before {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background:
-                radial-gradient(ellipse 300px 250px at 25% 40%, rgba(91, 94, 244, 0.25), transparent),
-                radial-gradient(ellipse 250px 200px at 75% 60%, rgba(255, 107, 74, 0.12), transparent);
-        }
-
+        .nav-links a.active { color: var(--vibrant); font-weight: 600; }
+        .nav-cta { background: var(--vibrant) !important; color: var(--white) !important; padding: 0.5rem 1.25rem; border-radius: 8px; font-weight: 600 !important; transition: transform 0.2s, box-shadow 0.2s !important; }
+        .nav-cta:hover { transform: translateY(-1px); box-shadow: 0 4px 16px rgba(91,94,244,0.4); }
+        .article-hero { background: linear-gradient(135deg, var(--dark) 0%, var(--primary) 100%); padding: 5rem 2rem 4rem; text-align: center; position: relative; overflow: hidden; }
+        .article-hero::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse 300px 250px at 25% 40%, rgba(91,94,244,0.25), transparent), radial-gradient(ellipse 250px 200px at 75% 60%, rgba(255,107,74,0.12), transparent); }
         .article-hero > * { position: relative; }
-
-        .article-hero .post-tag {
-            display: inline-block;
-            font-size: 0.7rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 0.08em;
-            color: rgba(255, 255, 255, 0.7);
-            background: rgba(255, 255, 255, 0.1);
-            padding: 0.3rem 0.75rem;
-            border-radius: 6px;
-            margin-bottom: 1.25rem;
-        }
-
-        .article-hero h1 {
-            font-size: clamp(2rem, 4.5vw, 3rem);
-            font-weight: 800;
-            color: var(--white);
-            line-height: 1.15;
-            letter-spacing: -0.03em;
-            max-width: 700px;
-            margin: 0 auto 1.25rem;
-        }
-
-        .article-meta {
-            font-size: 0.9rem;
-            color: rgba(255, 255, 255, 0.5);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 0.75rem;
-        }
-
-        .article-meta-dot {
-            width: 3px;
-            height: 3px;
-            background: rgba(255, 255, 255, 0.4);
-            border-radius: 50%;
-        }
-
-        /* ===== ARTICLE BODY ===== */
-        .article-body {
-            max-width: 680px;
-            margin: 0 auto;
-            padding: 3rem 2rem 5rem;
-        }
-
-        .article-body p {
-            font-size: 1.05rem;
-            line-height: 1.8;
-            color: var(--text);
-            margin-bottom: 1.5rem;
-        }
-
-        .article-body h2 {
-            font-size: 1.5rem;
-            font-weight: 800;
-            color: var(--dark);
-            letter-spacing: -0.02em;
-            margin: 2.5rem 0 1rem;
-            line-height: 1.2;
-        }
-
-        .article-body h3 {
-            font-size: 1.2rem;
-            font-weight: 700;
-            color: var(--dark);
-            margin: 2rem 0 0.75rem;
-        }
-
-        .article-body ul, .article-body ol {
-            margin: 0 0 1.5rem 1.25rem;
-        }
-
-        .article-body li {
-            font-size: 1.05rem;
-            line-height: 1.8;
-            color: var(--text);
-            margin-bottom: 0.5rem;
-        }
-
-        .article-body blockquote {
-            border-left: 3px solid var(--vibrant);
-            padding: 0.75rem 1.25rem;
-            margin: 1.5rem 0;
-            background: var(--off-white);
-            border-radius: 0 10px 10px 0;
-        }
-
-        .article-body blockquote p {
-            color: var(--text-light);
-            font-size: 1rem;
-            margin-bottom: 0;
-        }
-
-        .article-body strong {
-            color: var(--dark);
-            font-weight: 700;
-        }
-
-        .article-body a {
-            color: var(--vibrant);
-            text-decoration: underline;
-            text-underline-offset: 2px;
-        }
-
-        .article-body a:hover {
-            color: var(--primary);
-        }
-
-        /* Callout box */
-        .callout {
-            background: var(--off-white);
-            border: 1px solid var(--border);
-            border-radius: 14px;
-            padding: 1.5rem;
-            margin: 2rem 0;
-        }
-
-        .callout-title {
-            font-size: 0.9rem;
-            font-weight: 700;
-            color: var(--vibrant);
-            margin-bottom: 0.5rem;
-        }
-
-        .callout p {
-            font-size: 0.95rem;
-            margin-bottom: 0;
-        }
-
-        /* ===== ARTICLE FOOTER / CTA ===== */
-        .article-cta {
-            max-width: 680px;
-            margin: 0 auto;
-            padding: 0 2rem 5rem;
-        }
-
-        .article-cta-card {
-            background: var(--dark);
-            border-radius: 20px;
-            padding: 2.5rem;
-            display: flex;
-            align-items: center;
-            gap: 2rem;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .article-cta-card::before {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background: radial-gradient(ellipse 200px 200px at 90% 50%, rgba(91, 94, 244, 0.2), transparent);
-        }
-
+        .article-hero .post-tag { display: inline-block; font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: rgba(255,255,255,0.7); background: rgba(255,255,255,0.1); padding: 0.3rem 0.75rem; border-radius: 6px; margin-bottom: 1.25rem; }
+        .article-hero .post-tag.business { background: rgba(230,147,38,0.2); color: #E69326; }
+        .article-hero .post-tag.guide { background: rgba(255,107,74,0.2); color: #FF6B4A; }
+        .article-hero .post-tag.tips { background: rgba(16,185,129,0.2); color: #10B981; }
+        .article-hero h1 { font-size: clamp(2rem, 4.5vw, 3rem); font-weight: 800; color: var(--white); line-height: 1.15; letter-spacing: -0.03em; max-width: 700px; margin: 0 auto 1.25rem; }
+        .article-meta { font-size: 0.9rem; color: rgba(255,255,255,0.5); display: flex; align-items: center; justify-content: center; gap: 0.75rem; }
+        .article-meta-dot { width: 3px; height: 3px; background: rgba(255,255,255,0.4); border-radius: 50%; }
+        .article-body { max-width: 680px; margin: 0 auto; padding: 3rem 2rem 5rem; }
+        .article-body p { font-size: 1.05rem; line-height: 1.8; color: var(--text); margin-bottom: 1.5rem; }
+        .article-body h2 { font-size: 1.5rem; font-weight: 800; color: var(--dark); letter-spacing: -0.02em; margin: 2.5rem 0 1rem; line-height: 1.2; }
+        .article-body h3 { font-size: 1.2rem; font-weight: 700; color: var(--dark); margin: 2rem 0 0.75rem; }
+        .article-body ul, .article-body ol { margin: 0 0 1.5rem 1.25rem; }
+        .article-body li { font-size: 1.05rem; line-height: 1.8; color: var(--text); margin-bottom: 0.5rem; }
+        .article-body blockquote { border-left: 3px solid var(--vibrant); padding: 0.75rem 1.25rem; margin: 1.5rem 0; background: var(--off-white); border-radius: 0 10px 10px 0; }
+        .article-body blockquote p { color: var(--text-light); font-size: 1rem; margin-bottom: 0; }
+        .article-body strong { color: var(--dark); font-weight: 700; }
+        .article-body a { color: var(--vibrant); text-decoration: underline; text-underline-offset: 2px; }
+        .article-body a:hover { color: var(--primary); }
+        .callout { background: var(--off-white); border: 1px solid var(--border); border-radius: 14px; padding: 1.5rem; margin: 2rem 0; }
+        .callout-title { font-size: 0.9rem; font-weight: 700; color: var(--vibrant); margin-bottom: 0.5rem; }
+        .callout p { font-size: 0.95rem; margin-bottom: 0; }
+        .article-cta { max-width: 680px; margin: 0 auto; padding: 0 2rem 5rem; }
+        .article-cta-card { background: var(--dark); border-radius: 20px; padding: 2.5rem; display: flex; align-items: center; gap: 2rem; position: relative; overflow: hidden; }
+        .article-cta-card::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse 200px 200px at 90% 50%, rgba(91,94,244,0.2), transparent); }
         .article-cta-card > * { position: relative; }
-
-        .article-cta-text h3 {
-            font-size: 1.25rem;
-            font-weight: 800;
-            color: var(--white);
-            margin-bottom: 0.5rem;
-        }
-
-        .article-cta-text p {
-            font-size: 0.9rem;
-            color: rgba(255, 255, 255, 0.6);
-            line-height: 1.5;
-        }
-
-        .article-cta-btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.4rem;
-            background: var(--vibrant);
-            color: var(--white);
-            padding: 0.75rem 1.5rem;
-            border-radius: 10px;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 0.9rem;
-            white-space: nowrap;
-            transition: transform 0.2s, box-shadow 0.2s;
-        }
-
-        .article-cta-btn:hover {
-            transform: translateY(-1px);
-            box-shadow: 0 4px 16px rgba(91, 94, 244, 0.4);
-        }
-
-        /* Back link */
-        .back-link {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.35rem;
-            color: var(--text-light);
-            text-decoration: none;
-            font-size: 0.85rem;
-            font-weight: 500;
-            margin-bottom: 2rem;
-            transition: color 0.2s, gap 0.2s;
-        }
-
-        .back-link:hover {
-            color: var(--vibrant);
-            gap: 0.55rem;
-        }
-
-        /* ===== FOOTER ===== */
-        footer {
-            background: var(--dark);
-            color: rgba(255, 255, 255, 0.5);
-            padding: 3rem 2rem;
-            text-align: center;
-        }
-
-        .footer-content {
-            max-width: 600px;
-            margin: 0 auto;
-        }
-
-        .footer-logo {
-            font-weight: 800;
-            font-size: 1.1rem;
-            color: var(--white);
-            margin-bottom: 0.75rem;
-        }
-
+        .article-cta-text h3 { font-size: 1.25rem; font-weight: 800; color: var(--white); margin-bottom: 0.5rem; }
+        .article-cta-text p { font-size: 0.9rem; color: rgba(255,255,255,0.6); line-height: 1.5; }
+        .article-cta-btn { display: inline-flex; align-items: center; gap: 0.4rem; background: var(--vibrant); color: var(--white); padding: 0.75rem 1.5rem; border-radius: 10px; text-decoration: none; font-weight: 600; font-size: 0.9rem; white-space: nowrap; transition: transform 0.2s, box-shadow 0.2s; }
+        .article-cta-btn:hover { transform: translateY(-1px); box-shadow: 0 4px 16px rgba(91,94,244,0.4); }
+        .back-link { display: inline-flex; align-items: center; gap: 0.35rem; color: var(--text-light); text-decoration: none; font-size: 0.85rem; font-weight: 500; margin-bottom: 2rem; transition: color 0.2s, gap 0.2s; }
+        .back-link:hover { color: var(--vibrant); gap: 0.55rem; }
+        footer { background: var(--dark); color: rgba(255,255,255,0.5); padding: 3rem 2rem; text-align: center; }
+        .footer-content { max-width: 600px; margin: 0 auto; }
+        .footer-logo { font-weight: 800; font-size: 1.1rem; color: var(--white); margin-bottom: 0.75rem; }
         .footer-logo span { color: var(--vibrant); }
-
-        .footer-links {
-            display: flex;
-            gap: 1.5rem;
-            justify-content: center;
-            margin-bottom: 1.5rem;
-        }
-
-        .footer-links a {
-            color: rgba(255, 255, 255, 0.5);
-            text-decoration: none;
-            font-size: 0.85rem;
-            transition: color 0.2s;
-        }
-
+        .footer-links { display: flex; gap: 1.5rem; justify-content: center; margin-bottom: 1.5rem; }
+        .footer-links a { color: rgba(255,255,255,0.5); text-decoration: none; font-size: 0.85rem; transition: color 0.2s; }
         .footer-links a:hover { color: var(--white); }
-
         footer p { font-size: 0.8rem; }
-
-        .footer-tagline {
-            font-size: 0.85rem;
-            color: rgba(255, 255, 255, 0.4);
-            margin-bottom: 1rem;
-        }
-
-        /* ===== RESPONSIVE ===== */
+        .footer-tagline { font-size: 0.85rem; color: rgba(255,255,255,0.4); margin-bottom: 1rem; }
         @media (max-width: 768px) {
             nav { padding: 1rem 1.25rem; }
             .nav-links { display: none; }
-
             .article-hero { padding: 4rem 1.25rem 3rem; }
             .article-body { padding: 2rem 1.25rem 4rem; }
             .article-cta { padding: 0 1.25rem 4rem; }
-
-            .article-cta-card {
-                flex-direction: column;
-                text-align: center;
-                padding: 2rem 1.5rem;
-            }
+            .article-cta-card { flex-direction: column; text-align: center; padding: 2rem 1.5rem; }
         }
     </style>
     <script type="application/ld+json">
@@ -406,24 +97,17 @@
       "@context": "https://schema.org",
       "@type": "BlogPosting",
       "headline": "A Straightforward Guide to Setting Repair Prices",
-      "datePublished": "2026-02-18",
-      "dateModified": "2026-02-18",
-      "author": {
-        "@type": "Person",
-        "name": "PhoneRepairPOS Team"
-      },
-      "publisher": {
-        "@type": "Organization",
-        "name": "PhoneRepairPOS",
-        "url": "https://phonerepairpos.app"
-      },
-      "description": "How to price screen replacements, battery swaps, and diagnostics without leaving money on the table.",
+      "description": "How to set repair prices that cover your costs, pay your time, and keep customers coming back. A practical guide for phone repair shop owners.",
+      "author": { "@type": "Organization", "name": "PhoneRepairPOS" },
+      "publisher": { "@type": "Organization", "name": "PhoneRepairPOS", "url": "https://phonerepairpos.app" },
+      "datePublished": "2026-03-07",
+      "dateModified": "2026-03-07",
+      "url": "https://phonerepairpos.app/blog/setting-repair-prices-guide.html",
       "mainEntityOfPage": "https://phonerepairpos.app/blog/setting-repair-prices-guide.html"
     }
     </script>
 </head>
 <body>
-
     <nav>
         <a href="../index.html" class="nav-logo">Phone<span>Repair</span>POS</a>
         <div class="nav-links">
@@ -437,113 +121,122 @@
         <div class="post-tag business">Business</div>
         <h1>A Straightforward Guide to Setting Repair Prices</h1>
         <div class="article-meta">
-            <span>18 Feb 2026</span>
+            <span>7 Mar 2026</span>
             <span class="article-meta-dot"></span>
-            <span>5 min read</span>
+            <span>7 min read</span>
         </div>
     </div>
 
     <article class="article-body">
         <a href="index.html" class="back-link">← All articles</a>
 
-        <p>Pricing is one of the most awkward parts of running a repair shop. Set your prices too low and you're working hard for margins that don't cover your costs. Set them too high and customers walk past your door to the shop down the road. Get it right and pricing almost runs itself — you quote confidently, customers accept, and the numbers add up at the end of the month.</p>
+        <p>Pricing is one of the things repair shop owners get wrong most often — not because they're bad at business, but because they've never sat down and worked out the actual numbers. Most people price by gut feel, by what the shop down the road charges, or by what they think a customer will pay. None of those methods reliably produces a price that keeps the business alive and profitable.</p>
 
-        <p>The good news is that pricing phone repairs is more science than art. There's a clear framework for working out what to charge, and once you've done it once, updating prices as costs change is straightforward.</p>
+        <p>This guide walks through how to build a repair price from the ground up, avoid the most common mistakes, and raise prices without losing customers.</p>
 
-        <h2>Why pricing is genuinely hard</h2>
+        <h2>Start With Your Costs, Not Your Competitors</h2>
 
-        <p>The challenge with repair pricing isn't laziness — it's that three variables are always moving at once. Parts costs fluctuate depending on your supplier, the device model, and whether you're using OEM, aftermarket, or refurbished components. Time varies because two "identical" screen replacements can take very different amounts of work depending on the condition of the device. And competition is local and highly visible: customers often know within a few pounds what the shop across the road is charging.</p>
+        <p>The first thing to understand is that your pricing problem is a costs problem in disguise. If you don't know what a repair costs you to deliver, you can't price it correctly — no matter what your competitors charge.</p>
 
-        <p>Shops that don't have a pricing framework tend to do one of two things: price on gut feel (which usually means undercharging) or price to match competitors (which means inheriting their mistakes). Neither approach is sustainable.</p>
+        <p>Every repair has three cost components:</p>
 
-        <blockquote>
-            <p>Pricing isn't just about winning the job. It's about winning the job at a number that makes running your business worth it.</p>
-        </blockquote>
+        <ol>
+            <li><strong>Parts cost:</strong> what you paid for the component (screen, battery, charging port, etc.) including any shipping</li>
+            <li><strong>Labour cost:</strong> the time the repair takes, multiplied by your effective hourly rate</li>
+            <li><strong>Overhead allocation:</strong> your share of fixed costs — rent, insurance, software, utilities — allocated per job</li>
+        </ol>
 
-        <h2>Cost-plus pricing: the foundation</h2>
+        <p>Let's take each in turn.</p>
 
-        <p>The most reliable starting point for any repair price is cost-plus pricing. The formula is simple:</p>
+        <h2>Calculating Parts Cost</h2>
 
-        <p><strong>Price = Parts cost + Labour cost + Overhead allocation + Target margin</strong></p>
+        <p>Parts cost is the most obvious component, but people still get it wrong. Common mistakes: forgetting to include shipping (if you're ordering small quantities, carriage per unit can be £2–£5), not accounting for dead-on-arrival rates (some parts fail on first fit — the cost of that is built into your pricing), and using the cheapest possible parts without factoring in the warranty risk.</p>
 
-        <p>Work through each component in turn.</p>
+        <p>If you use aftermarket parts, your parts cost is lower, but you may face more comebacks. If you use OEM or high-quality equivalents, cost is higher but warranty claims are rarer. Both approaches can work — the key is that your price reflects which route you've taken.</p>
 
-        <h3>Parts cost</h3>
-        <p>This is what you actually paid for the component — not what the supplier lists, but what appears on your invoice including VAT and shipping. If you bought a batch of ten screens and one was faulty, spread the cost of the faulty one across the other nine. Your effective parts cost per repair is always slightly higher than the unit price suggests.</p>
+        <h2>Calculating Labour Cost</h2>
 
-        <h3>Labour cost</h3>
-        <p>Work out your hourly rate by dividing your target monthly earnings by the number of billable hours you can realistically work. If you want to earn £2,500 a month and you can complete roughly 100 billable hours of repair work, your labour rate is £25 per hour. A 20-minute screen replacement costs you roughly £8 in labour. A 90-minute logic board repair costs £37.50.</p>
+        <p>To price labour, you need an hourly rate. Start by working out what you want to earn. If you want to take home £35,000/year as a sole trader, that's roughly £675/week. If you work 45 hours/week, your effective rate needs to be at least £15/hour just to cover your own wage — before any business costs.</p>
 
-        <h3>Overhead allocation</h3>
-        <p>Rent, utilities, insurance, software subscriptions, tools — these costs exist regardless of how many repairs you do. Divide your monthly overhead by the number of jobs you complete in a typical month. If your overhead is £600 and you complete 80 jobs, you need to recover £7.50 per job just to break even on costs.</p>
+        <p>A realistic labour rate for a UK repair shop, including salary and employer costs, is £25–£40/hour depending on the operator and location. If you're in a city, lean towards the top of that range. If you're in a lower-cost area, £25–£30/hour is still competitive and sustainable.</p>
 
-        <h3>Margin</h3>
-        <p>Add a margin on top — typically 20–40% depending on your market. This is your profit, your buffer for slow months, and your fund for buying better tools or training.</p>
+        <p>Time each common repair a few times and use the average. An iPhone screen replacement takes 20–35 minutes for most technicians. At £30/hour, that's £10–£17.50 in labour. Use the average across several jobs, not your fastest time.</p>
 
-        <h2>What to charge for common repairs</h2>
+        <h2>Overhead Allocation</h2>
 
-        <p>These are approximate ranges based on typical UK market pricing in early 2026. Your numbers will vary depending on your parts supplier and local competition.</p>
+        <p>This is the number most shop owners ignore, and it's the one that slowly bleeds profit. Add up your monthly fixed costs: rent, business rates, insurance, broadband, software subscriptions, card machine fees (the fixed element), consumables, and tools. Let's say that totals £1,500/month. Divide by the number of jobs you complete each month. If you complete 100 repairs/month, your overhead per job is £15.</p>
 
-        <ul>
-            <li><strong>Screen replacements (iPhone 13/14/15):</strong> £70–£120 depending on model and screen grade</li>
-            <li><strong>Battery replacement:</strong> £25–£50 depending on model complexity</li>
-            <li><strong>Charging port repair:</strong> £35–£65 — labour-intensive on some models</li>
-            <li><strong>Diagnostics fee:</strong> £15–£25, often waived if the repair goes ahead</li>
-            <li><strong>Camera replacement:</strong> £40–£80 depending on module type</li>
-            <li><strong>Water damage assessment:</strong> £30–£50, with no guarantee of successful repair</li>
-        </ul>
-
-        <p>If your cost-plus calculation is coming out lower than these ranges, you're either getting excellent parts prices or you're undervaluing your labour. If it's coming out higher, check whether your overhead allocation is accurate — many shops overestimate how much overhead to assign to each job.</p>
+        <p>That £15 needs to be in every price you quote, or you're subsidising your business from your own wage. Most repair shops that struggle aren't doing bad work — they're doing good work at prices that don't cover what it costs to run the business.</p>
 
         <div class="callout">
-            <div class="callout-title">Common mistake</div>
-            <p>Quoting parts cost plus a flat £10 for labour is not a pricing strategy. It ignores overhead entirely and usually results in prices that feel right but are quietly losing money on every job.</p>
+            <div class="callout-title">Worked example: iPhone 14 screen replacement</div>
+            <p>Parts (aftermarket screen, inc. shipping): £42 &nbsp;|&nbsp; Labour (45 min at £30/hr): £22.50 &nbsp;|&nbsp; Overhead allocation: £15 &nbsp;|&nbsp; <strong>Total cost: £79.50</strong><br><br>To hit a 25% net margin, add £26.50 — giving a target price of £106. Rounding to £99 or £105 is a reasonable commercial decision. Going below £90 means you're either working below cost or paying yourself less than minimum wage.</p>
         </div>
 
-        <h2>Competitor research without a race to the bottom</h2>
+        <h2>Common Pricing Mistakes</h2>
 
-        <p>Checking what local competitors charge is sensible — but the goal isn't to match or undercut them. The goal is to understand the market so you can position yourself within it.</p>
+        <h3>Underpricing to win work</h3>
 
-        <p>Do a simple audit once or twice a year: look up three or four local repair shops and note their prices for screen replacements and battery swaps on the most common iPhone models. This gives you a range. If your cost-plus price sits comfortably within that range, you're in good shape. If it's significantly higher, investigate whether you can reduce parts costs through a different supplier. If it's significantly lower, you may be undercharging.</p>
+        <p>Charging £49 for an iPhone screen replacement because the shop up the road does it for £55 doesn't make you competitive — it makes you unprofitable. Customers who choose purely on price are the least loyal customers you have. The customer who pays £90 for a quality repair with a 90-day warranty is far more likely to return than the one you charged £49, who will still complain if anything goes wrong.</p>
 
-        <p>The shops that win on price alone attract customers who will leave the moment someone cheaper opens nearby. The shops that win on service, speed, and trust can charge at the higher end of the local range and retain customers. Focus on the latter.</p>
+        <h3>The race to the bottom</h3>
 
-        <h2>When to adjust your prices</h2>
+        <p>When everyone in a local area keeps undercutting each other, prices fall below sustainable levels and everyone loses. The way out is to compete on quality and trust, not price. Be transparent about the parts you use, offer a clear warranty, communicate well, and charge what the service is worth. Plenty of customers value this over saving £10 — and those are the customers worth having.</p>
 
-        <p>Prices aren't set-and-forget. Review them whenever:</p>
+        <h3>Not updating prices as costs rise</h3>
 
+        <p>Parts prices change. Supplier shipping costs go up. Rent increases. If you set your prices in 2023 and haven't reviewed them since, the chances are your margins have been quietly shrinking. Review your cost base at least once a year and adjust prices accordingly. A small annual increase is much easier for customers to accept than a large jump after years of no change.</p>
+
+        <h2>Researching Competitor Pricing</h2>
+
+        <p>Knowing what competitors charge is useful context — but it shouldn't set your floor. The right way to use competitor data is to understand the market range, position yourself within it, and then make sure that position is profitable for you.</p>
+
+        <p>Check Google for "[your town] phone repair" and visit the top 5 results. Many shops list their prices on their website or Google Business Profile. Note what they charge for the three or four most common repairs. If you're consistently £15–£20 above the local average, that's fine — but be ready to explain why (better parts, longer warranty, faster turnaround, better customer experience).</p>
+
+        <p>If a competitor is charging prices you genuinely cannot match without losing money, let them have those customers. Chasing every low-margin job is not a growth strategy.</p>
+
+        <h2>OEM vs Aftermarket: Tiered Pricing</h2>
+
+        <p>Many shops offer two price points for the same repair: an aftermarket option and an OEM-grade option. This works well because it gives customers a choice, and it gives you a higher-margin tier to offer.</p>
+
+        <p>A common structure:</p>
         <ul>
-            <li>Your parts supplier changes their prices (up or down)</li>
-            <li>A new device model comes out and existing parts prices drop</li>
-            <li>Your overhead costs change — new rent, new insurance premium</li>
-            <li>You're consistently turning away work because you're too busy (a sign you could charge more)</li>
-            <li>You're consistently losing quotes to competitors (a sign you may be too high, or need to communicate value better)</li>
+            <li>Aftermarket screen: standard price, 30-day warranty</li>
+            <li>OEM-grade or genuine Apple screen: £20–£40 more, 90-day warranty</li>
         </ul>
 
-        <p>You can also adjust prices situationally. Loyal customers who bring you five phones a year might get a small discount. Jobs that arrive on a Saturday afternoon when you're slammed might carry a premium. Complex repairs on older devices where there's a real risk of failure warrant a higher quoted price with a clear explanation of why.</p>
+        <p>Be clear with customers about what they're getting. When you explain the difference honestly — part quality, warranty length, how the display looks — most customers make an informed choice and don't resent it. The ones who choose the premium tier rarely complain; they know what they paid for.</p>
 
-        <h2>Recording what you actually charged</h2>
+        <h2>Deposit Policy</h2>
 
-        <p>One thing that catches many repair shops out is not knowing what they've actually charged historically. If every job is a verbal quote that you write on a paper ticket, you have no easy way to review whether your pricing is working — you can't see average job values, you can't spot which repair types are most profitable, and you can't quickly update a price across all your standard jobs.</p>
+        <p>For high-value or unusual repairs — older devices, rare parts, complex water damage, anything where the parts are non-returnable — take a deposit at intake. A 30–50% deposit covers your parts cost if the customer doesn't collect, and it signals commitment on both sides. Most customers accept a deposit request as professional and reasonable. State your deposit policy clearly when quoting and include it on the job ticket so there's no ambiguity later.</p>
 
-        <p>PhoneRepairPOS lets you record the price against every repair ticket and track payments as they come in — so at the end of the week, you can see exactly what came in, what's outstanding, and which repair types are generating the most revenue. It's not a replacement for an accountant, but it gives you the ground-level data you need to price with confidence.</p>
+        <h2>How to Raise Prices Without Losing Customers</h2>
 
-        <p>Pricing doesn't need to be complicated. Build your numbers from the ground up, sense-check against your market, and review when costs change. Do that, and you'll stop leaving money on the table.</p>
+        <p>The fear of raising prices is usually worse than the reality. Customers are less price-sensitive than repair shop owners tend to assume. Here's how to do it cleanly:</p>
+
+        <ul>
+            <li><strong>Don't apologise:</strong> announce the change matter-of-factly. "Our prices have been updated as of [date]." No lengthy explanation needed. Apologising signals that you think the new price is wrong.</li>
+            <li><strong>Raise gradually:</strong> a £10 increase is easier for everyone to absorb than a sudden £25 jump. Incremental changes spread over two reviews are less noticeable.</li>
+            <li><strong>Raise on new quotes, not mid-job:</strong> never change a price after you've quoted a customer. Stick to your quote; update the price list for the next person.</li>
+            <li><strong>Lead with value:</strong> if you're raising prices, make sure your service quality justifies it. Improve turnaround time, tighten your warranty, or add small extras like a screen clean on collection.</li>
+        </ul>
+
+        <p>Customers who leave because your price went from £75 to £85 were probably not the loyal customers driving your repeat business. Holding a sustainable price point keeps the business healthy and lets you provide a consistently better service to the customers who value quality over the cheapest option.</p>
 
         <h2>Related articles</h2>
         <ul>
-          <li><a href="how-to-price-screen-repairs-for-profit.html">How to Price Screen Repairs for Profit</a></li>
-          <li><a href="free-vs-paid-repair-shop-software.html">Free vs Paid Repair Shop Software</a></li>
-          <li><a href="why-paper-tickets-are-costing-you-money.html">Why Paper Tickets Are Costing You Money</a></li>
+            <li><a href="why-paper-tickets-are-costing-you-money.html">Why Paper Tickets Are Costing You Money</a></li>
+            <li><a href="how-to-price-screen-repairs-for-profit.html">How to Price Screen Repairs for Profit</a></li>
+            <li><a href="free-vs-paid-repair-shop-software.html">Free vs Paid Repair Shop Software</a></li>
         </ul>
     </article>
 
-    <!-- Post CTA -->
     <div class="article-cta">
         <div class="article-cta-card">
             <div class="article-cta-text">
                 <h3>Try PhoneRepairPOS free</h3>
-                <p>Digital tickets, status tracking, and payment records — all from your iPad.</p>
+                <p>Track every job, every payment, and every customer — all in one iPad app built for repair shops.</p>
             </div>
             <a href="https://apps.apple.com/gb/app/phone-repair-pos/id6759859240" class="article-cta-btn">Download →</a>
         </div>
@@ -562,6 +255,5 @@
             <p>&copy; 2026 PhoneRepairPOS. All rights reserved.</p>
         </div>
     </footer>
-
 </body>
 </html>
