@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>iPad POS vs Traditional Till: Which Is Right for Your Shop? — PhoneRepairPOS</title>
+    <meta name="description" content="A no-nonsense comparison of cost, flexibility, and features for small repair businesses.">
+    <meta property="og:title" content="iPad POS vs Traditional Till: Which Is Right for Your Shop?">
+    <meta property="og:description" content="A no-nonsense comparison of cost, flexibility, and features for small repair businesses.">
+    <meta property="og:type" content="article">
+    <link rel="canonical" href="https://phonerepairpos.app/blog/ipad-pos-vs-traditional-till.html">
+    <meta property="og:url" content="https://phonerepairpos.app/blog/ipad-pos-vs-traditional-till.html">
+    <meta property="og:locale" content="en_GB">
+    <meta property="og:image" content="https://phonerepairpos.app/og-image.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="iPad POS vs Traditional Till: Which Is Right for Your Shop? — PhoneRepairPOS">
+    <meta name="twitter:description" content="A no-nonsense comparison of cost, flexibility, and features for small repair businesses.">
+    <meta name="twitter:image" content="https://phonerepairpos.app/og-image.png">
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #2B2D7C;
+            --accent: #3F41B2;
+            --vibrant: #5B5EF4;
+            --white: #FFFFFF;
+            --off-white: #F6F6FB;
+            --dark: #111136;
+            --text: #1E1E3F;
+            --text-light: #5C5C7A;
+            --warm-accent: #FF6B4A;
+            --border: #E4E4EE;
+        }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+            color: var(--text);
+            background: var(--white);
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* ===== NAV ===== */
+        nav {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            padding: 1rem 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: rgba(255, 255, 255, 0.92);
+            backdrop-filter: blur(16px);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .nav-logo {
+            font-weight: 800;
+            font-size: 1.25rem;
+            color: var(--dark);
+            text-decoration: none;
+            letter-spacing: -0.02em;
+        }
+
+        .nav-logo span { color: var(--vibrant); }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: var(--text-light);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover { color: var(--dark); }
+
+        .nav-links a.active {
+            color: var(--vibrant);
+            font-weight: 600;
+        }
+
+        .nav-cta {
+            background: var(--vibrant) !important;
+            color: var(--white) !important;
+            padding: 0.5rem 1.25rem;
+            border-radius: 8px;
+            font-weight: 600 !important;
+            transition: transform 0.2s, box-shadow 0.2s !important;
+        }
+
+        .nav-cta:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 4px 16px rgba(91, 94, 244, 0.4);
+        }
+
+        /* ===== ARTICLE HEADER ===== */
+        .article-hero {
+            background: linear-gradient(135deg, var(--dark) 0%, var(--primary) 100%);
+            padding: 5rem 2rem 4rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .article-hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background:
+                radial-gradient(ellipse 300px 250px at 25% 40%, rgba(91, 94, 244, 0.25), transparent),
+                radial-gradient(ellipse 250px 200px at 75% 60%, rgba(255, 107, 74, 0.12), transparent);
+        }
+
+        .article-hero > * { position: relative; }
+
+        .article-hero .post-tag {
+            display: inline-block;
+            font-size: 0.7rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: rgba(255, 255, 255, 0.7);
+            background: rgba(255, 255, 255, 0.1);
+            padding: 0.3rem 0.75rem;
+            border-radius: 6px;
+            margin-bottom: 1.25rem;
+        }
+
+        .article-hero .post-tag.guide {
+            background: rgba(255, 107, 74, 0.2);
+            color: #FF6B4A;
+        }
+
+        .article-hero h1 {
+            font-size: clamp(2rem, 4.5vw, 3rem);
+            font-weight: 800;
+            color: var(--white);
+            line-height: 1.15;
+            letter-spacing: -0.03em;
+            max-width: 700px;
+            margin: 0 auto 1.25rem;
+        }
+
+        .article-meta {
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.5);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.75rem;
+        }
+
+        .article-meta-dot {
+            width: 3px;
+            height: 3px;
+            background: rgba(255, 255, 255, 0.4);
+            border-radius: 50%;
+        }
+
+        /* ===== ARTICLE BODY ===== */
+        .article-body {
+            max-width: 680px;
+            margin: 0 auto;
+            padding: 3rem 2rem 5rem;
+        }
+
+        .article-body p {
+            font-size: 1.05rem;
+            line-height: 1.8;
+            color: var(--text);
+            margin-bottom: 1.5rem;
+        }
+
+        .article-body h2 {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--dark);
+            letter-spacing: -0.02em;
+            margin: 2.5rem 0 1rem;
+            line-height: 1.2;
+        }
+
+        .article-body h3 {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--dark);
+            margin: 2rem 0 0.75rem;
+        }
+
+        .article-body ul, .article-body ol {
+            margin: 0 0 1.5rem 1.25rem;
+        }
+
+        .article-body li {
+            font-size: 1.05rem;
+            line-height: 1.8;
+            color: var(--text);
+            margin-bottom: 0.5rem;
+        }
+
+        .article-body blockquote {
+            border-left: 3px solid var(--vibrant);
+            padding: 0.75rem 1.25rem;
+            margin: 1.5rem 0;
+            background: var(--off-white);
+            border-radius: 0 10px 10px 0;
+        }
+
+        .article-body blockquote p {
+            color: var(--text-light);
+            font-size: 1rem;
+            margin-bottom: 0;
+        }
+
+        .article-body strong {
+            color: var(--dark);
+            font-weight: 700;
+        }
+
+        .article-body a {
+            color: var(--vibrant);
+            text-decoration: underline;
+            text-underline-offset: 2px;
+        }
+
+        .article-body a:hover {
+            color: var(--primary);
+        }
+
+        /* Callout box */
+        .callout {
+            background: var(--off-white);
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            padding: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .callout-title {
+            font-size: 0.9rem;
+            font-weight: 700;
+            color: var(--vibrant);
+            margin-bottom: 0.5rem;
+        }
+
+        .callout p {
+            font-size: 0.95rem;
+            margin-bottom: 0;
+        }
+
+        /* ===== ARTICLE FOOTER / CTA ===== */
+        .article-cta {
+            max-width: 680px;
+            margin: 0 auto;
+            padding: 0 2rem 5rem;
+        }
+
+        .article-cta-card {
+            background: var(--dark);
+            border-radius: 20px;
+            padding: 2.5rem;
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .article-cta-card::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(ellipse 200px 200px at 90% 50%, rgba(91, 94, 244, 0.2), transparent);
+        }
+
+        .article-cta-card > * { position: relative; }
+
+        .article-cta-text h3 {
+            font-size: 1.25rem;
+            font-weight: 800;
+            color: var(--white);
+            margin-bottom: 0.5rem;
+        }
+
+        .article-cta-text p {
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.6);
+            line-height: 1.5;
+        }
+
+        .article-cta-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            background: var(--vibrant);
+            color: var(--white);
+            padding: 0.75rem 1.5rem;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            white-space: nowrap;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .article-cta-btn:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 4px 16px rgba(91, 94, 244, 0.4);
+        }
+
+        /* Back link */
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.35rem;
+            color: var(--text-light);
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 500;
+            margin-bottom: 2rem;
+            transition: color 0.2s, gap 0.2s;
+        }
+
+        .back-link:hover {
+            color: var(--vibrant);
+            gap: 0.55rem;
+        }
+
+        /* ===== FOOTER ===== */
+        footer {
+            background: var(--dark);
+            color: rgba(255, 255, 255, 0.5);
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+
+        .footer-content {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .footer-logo {
+            font-weight: 800;
+            font-size: 1.1rem;
+            color: var(--white);
+            margin-bottom: 0.75rem;
+        }
+
+        .footer-logo span { color: var(--vibrant); }
+
+        .footer-links {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.5);
+            text-decoration: none;
+            font-size: 0.85rem;
+            transition: color 0.2s;
+        }
+
+        .footer-links a:hover { color: var(--white); }
+
+        footer p { font-size: 0.8rem; }
+
+        .footer-tagline {
+            font-size: 0.85rem;
+            color: rgba(255, 255, 255, 0.4);
+            margin-bottom: 1rem;
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 768px) {
+            nav { padding: 1rem 1.25rem; }
+            .nav-links { display: none; }
+
+            .article-hero { padding: 4rem 1.25rem 3rem; }
+            .article-body { padding: 2rem 1.25rem 4rem; }
+            .article-cta { padding: 0 1.25rem 4rem; }
+
+            .article-cta-card {
+                flex-direction: column;
+                text-align: center;
+                padding: 2rem 1.5rem;
+            }
+        }
+    </style>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      "headline": "iPad POS vs Traditional Till: Which Is Right for Your Shop?",
+      "datePublished": "2026-02-26",
+      "dateModified": "2026-02-26",
+      "author": {
+        "@type": "Person",
+        "name": "PhoneRepairPOS Team"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "PhoneRepairPOS",
+        "url": "https://phonerepairpos.app"
+      },
+      "description": "A no-nonsense comparison of cost, flexibility, and features for small repair businesses.",
+      "mainEntityOfPage": "https://phonerepairpos.app/blog/ipad-pos-vs-traditional-till.html"
+    }
+    </script>
+</head>
+<body>
+
+    <nav>
+        <a href="../index.html" class="nav-logo">Phone<span>Repair</span>POS</a>
+        <div class="nav-links">
+            <a href="../index.html#features">Features</a>
+            <a href="index.html" class="active">Blog</a>
+            <a href="https://apps.apple.com/gb/app/phone-repair-pos/id6759859240" class="nav-cta">Download</a>
+        </div>
+    </nav>
+
+    <div class="article-hero">
+        <div class="post-tag guide">Guide</div>
+        <h1>iPad POS vs Traditional Till: Which Is Right for Your Shop?</h1>
+        <div class="article-meta">
+            <span>26 Feb 2026</span>
+            <span class="article-meta-dot"></span>
+            <span>7 min read</span>
+        </div>
+    </div>
+
+    <article class="article-body">
+        <a href="index.html" class="back-link">← All articles</a>
+
+        <p>If you're setting up a phone repair shop — or thinking about replacing the system you've been using — the choice between a traditional electronic till and an iPad-based POS is one of the first practical decisions you'll face. Both can take payments and print receipts. But that's about where the similarity ends.</p>
+
+        <p>This guide breaks down the real differences: cost, features, flexibility, and which type of shop each option suits best.</p>
+
+        <h2>Cost: what you actually pay</h2>
+
+        <h3>Traditional till</h3>
+
+        <p>A decent electronic point-of-sale till — the kind you'd buy from a retail equipment supplier — typically costs between £300 and £800 upfront for the hardware alone. That gets you a till with a display, a cash drawer, and usually a receipt printer built in or included.</p>
+
+        <p>Older-style tills don't require ongoing software fees, but they also don't do much beyond ring up sales and print a receipt. Modern "smart tills" have moved closer to tablets, with touchscreens and cloud connectivity — but these are typically priced higher and may carry monthly fees anyway.</p>
+
+        <p>If something breaks, repair or replacement costs come out of pocket. Till hardware is not consumer electronics — parts and servicing can be expensive, and models are often discontinued.</p>
+
+        <h3>iPad POS</h3>
+
+        <p>An iPad suitable for counter use — iPad (10th generation) or iPad Air — costs between £350 and £600 new, or considerably less refurbished. You'll also want a stand, which ranges from £30 for a basic model to £150+ for a lockable counter mount with cable management.</p>
+
+        <p>A card reader compatible with your payment processor (Square, SumUp, Stripe Terminal) typically costs £20–£60. If you want a receipt printer, thermal Bluetooth models start at around £80.</p>
+
+        <p>The app subscription — for repair-specific POS software — is usually £15–£40 per month. Over a year, that's £180–£480, but you get software updates, support, and new features throughout.</p>
+
+        <div class="callout">
+            <div class="callout-title">Rough total cost comparison</div>
+            <p>Traditional till setup: £400–£1,000 upfront, minimal ongoing cost, limited functionality. iPad POS setup: £500–£900 upfront, £200–£500/year ongoing, significant functionality advantage.</p>
+        </div>
+
+        <p>The traditional till wins on year-two-and-beyond cost if you only need basic sales recording. The iPad wins if you need anything more.</p>
+
+        <h2>Feature comparison</h2>
+
+        <h3>What a traditional till does well</h3>
+
+        <p>A traditional till is good at one thing: recording a sale. It handles cash and card payments, produces a receipt, and keeps a running total. For a busy shop that just needs to ring things up quickly, it's reliable and familiar to use.</p>
+
+        <p>That reliability is genuine — most tills don't depend on internet connectivity, don't need updates, and don't crash. If you've been using the same till for five years without a problem, that's not nothing.</p>
+
+        <h3>What an iPad POS does that a till can't</h3>
+
+        <p>This is where the comparison stops being close. A repair-specific iPad POS system doesn't just take payments — it manages the entire repair workflow:</p>
+
+        <ul>
+            <li><strong>Job intake:</strong> create a ticket for each repair with customer details, device information, and fault description</li>
+            <li><strong>Repair tracking:</strong> move jobs through stages (received, diagnosing, repairing, ready, collected) and see all open jobs at a glance</li>
+            <li><strong>Customer records:</strong> look up a customer's repair history in seconds</li>
+            <li><strong>Payment linked to jobs:</strong> every payment is attached to a specific repair ticket, not just added to the daily total</li>
+            <li><strong>Notes and timestamps:</strong> record what you found during diagnosis, what parts you used, any customer communications</li>
+            <li><strong>Receipts via email or print:</strong> send digital receipts without a printer if you prefer</li>
+        </ul>
+
+        <p>A traditional till can't do any of this. It records money in, money out, and that's it. For a shop that repairs phones, that's missing most of what you actually need to manage.</p>
+
+        <h2>Flexibility: where the iPad wins clearly</h2>
+
+        <p>A traditional till is fixed. It sits on the counter, it faces one direction, and it stays there. If you want to show a customer something, hand the till to them, or use it at a market or pop-up event, you can't.</p>
+
+        <p>An iPad can be picked up and handed to a customer to confirm their details or show them a repair quote. It can move to the workshop bench when someone needs to log a note mid-repair. It can be used at a trade fair or second location without buying new hardware. The stand keeps it anchored when you want it anchored — but it's not permanently fixed.</p>
+
+        <p>For a small repair shop where one person often handles intake, repair, and payment, this flexibility matters more than it might seem. You're not always behind the counter.</p>
+
+        <h2>Software updates and ongoing capability</h2>
+
+        <p>A traditional till's software is essentially frozen at the point of purchase. It will do exactly what it did on day one, five years from now. That's stable — but it also means no new features, no improvements, and eventually no support for new payment methods (contactless limits change, new card standards emerge).</p>
+
+        <p>An iPad app updates automatically. When a new feature is added — a new report, a new status type, an improved receipt format — it appears in your app without any action on your part. The software improves over time at no extra cost.</p>
+
+        <p>iPads themselves also receive iOS updates for several years after purchase, which keeps security patches current and maintains compatibility with payment processors and printers.</p>
+
+        <blockquote>
+            <p>A till bought in 2019 does the same thing today that it did then. An iPad app bought in 2024 is likely meaningfully better today than it was at launch.</p>
+        </blockquote>
+
+        <h2>Internet dependency</h2>
+
+        <p>This is the most common concern about iPad-based systems, and it's a fair one. If your internet goes down and your card reader requires connectivity, you can't take card payments. If the app requires a live connection, you might not be able to create tickets.</p>
+
+        <p>A few things worth knowing:</p>
+
+        <ul>
+            <li>Many card readers (Square, SumUp) can process payments in offline mode and sync when connectivity is restored</li>
+            <li>Some repair POS apps store data locally and sync to the cloud — meaning the app works without internet even if the cloud sync pauses</li>
+            <li>Mobile data on a phone can act as a hotspot if your broadband drops, covering the rare outage</li>
+        </ul>
+
+        <p>Internet outages are infrequent and usually brief. For most shops, this is a minor consideration rather than a dealbreaker — especially since most businesses now depend on internet for card payments regardless of what POS they use.</p>
+
+        <h2>Which type of shop suits which option?</h2>
+
+        <h3>A traditional till might suit you if:</h3>
+
+        <ul>
+            <li>You run a very high-volume shop where speed of checkout is the only priority</li>
+            <li>You manage repairs entirely on paper and have no interest in changing</li>
+            <li>You have no broadband and mobile data is unreliable in your area</li>
+            <li>You need a cash drawer and receipt printer as the primary function</li>
+        </ul>
+
+        <h3>An iPad POS is likely the better choice if:</h3>
+
+        <ul>
+            <li>You want to track repairs from intake to collection in one system</li>
+            <li>You want payment records linked to individual jobs</li>
+            <li>You have more than a handful of jobs per day and need to stay organised</li>
+            <li>You want to be able to look up any customer's history quickly</li>
+            <li>You're starting fresh and want a system built for repair shops rather than adapted from retail</li>
+        </ul>
+
+        <p>For most independent phone repair shops, the iPad wins — not because a till is bad, but because a till was designed for retail, not for repair. A repair shop needs to track more than transactions. It needs to track jobs.</p>
+
+        <h2>A note on general retail POS vs repair-specific POS</h2>
+
+        <p>Not all iPad POS systems are created equal for repair shops. Many popular iPad POS apps — Square for Retail, Lightspeed, Shopify POS — are built around product sales and inventory management. They can record a payment for a repair, but they have no concept of a job ticket, repair status, or device-linked customer record.</p>
+
+        <p>A repair-specific system is worth the extra consideration. The difference between a generic POS and one built for repair shops is the difference between something that technically works and something that fits how your day actually runs.</p>
+
+        <p>PhoneRepairPOS is designed from the ground up for iPad, specifically for phone repair shops. Job intake, status tracking, customer records, and payment are all connected — because in a repair shop, they need to be.</p>
+
+        <h2>Making the decision</h2>
+
+        <p>If you're replacing an existing till, the transition to an iPad POS is worth the short adjustment period. The features you gain — especially repair tracking and payment-to-job linking — will save you time and prevent disputes within the first week.</p>
+
+        <p>If you're setting up for the first time, there's very little reason to choose a traditional till over an iPad system unless your circumstances are unusual. The upfront costs are comparable, the ongoing costs are justified by the functionality, and the iPad gives you room to grow.</p>
+
+        <p>The till will still ring up a sale in 2031. So will the iPad — and it'll do considerably more besides.</p>
+
+        <h2>Related articles</h2>
+        <ul>
+            <li><a href="using-an-ipad-to-run-your-repair-shop.html">Using an iPad to Run Your Repair Shop</a></li>
+            <li><a href="best-pos-systems-for-phone-repair-shops-2026.html">Best POS Systems for Phone Repair Shops in 2026</a></li>
+            <li><a href="do-you-need-a-pos-system-for-your-repair-shop.html">Do You Really Need a POS System for Your Repair Shop?</a></li>
+        </ul>
+    </article>
+
+    <!-- Post CTA -->
+    <div class="article-cta">
+        <div class="article-cta-card">
+            <div class="article-cta-text">
+                <h3>Try PhoneRepairPOS free</h3>
+                <p>Digital tickets, status tracking, and payment records — all from your iPad.</p>
+            </div>
+            <a href="https://apps.apple.com/gb/app/phone-repair-pos/id6759859240" class="article-cta-btn">Download →</a>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">Phone<span>Repair</span>POS</div>
+            <p class="footer-tagline">Built for repair shops worldwide.</p>
+            <div class="footer-links">
+                <a href="index.html">Blog</a>
+                <a href="mailto:support@phonerepairpos.app">Contact</a>
+                <a href="../privacy.html">Privacy Policy</a>
+                <a href="../terms.html">Terms of Use</a>
+            </div>
+            <p>&copy; 2026 PhoneRepairPOS. All rights reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How to Handle Customer Disputes Like a Pro — PhoneRepairPOS</title>
+    <meta name="description" content="Every repair shop gets complaints. The difference is how you handle them — and what records you keep.">
+    <meta property="og:title" content="How to Handle Customer Disputes Like a Pro">
+    <meta property="og:description" content="Every repair shop gets complaints. The difference is how you handle them — and what records you keep.">
+    <meta property="og:type" content="article">
+    <link rel="canonical" href="https://phonerepairpos.app/blog/how-to-handle-customer-disputes.html">
+    <meta property="og:url" content="https://phonerepairpos.app/blog/how-to-handle-customer-disputes.html">
+    <meta property="og:locale" content="en_GB">
+    <meta property="og:image" content="https://phonerepairpos.app/og-image.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="How to Handle Customer Disputes Like a Pro — PhoneRepairPOS">
+    <meta name="twitter:description" content="Every repair shop gets complaints. The difference is how you handle them — and what records you keep.">
+    <meta name="twitter:image" content="https://phonerepairpos.app/og-image.png">
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #2B2D7C;
+            --accent: #3F41B2;
+            --vibrant: #5B5EF4;
+            --white: #FFFFFF;
+            --off-white: #F6F6FB;
+            --dark: #111136;
+            --text: #1E1E3F;
+            --text-light: #5C5C7A;
+            --warm-accent: #FF6B4A;
+            --border: #E4E4EE;
+        }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+            color: var(--text);
+            background: var(--white);
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* ===== NAV ===== */
+        nav {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            padding: 1rem 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: rgba(255, 255, 255, 0.92);
+            backdrop-filter: blur(16px);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .nav-logo {
+            font-weight: 800;
+            font-size: 1.25rem;
+            color: var(--dark);
+            text-decoration: none;
+            letter-spacing: -0.02em;
+        }
+
+        .nav-logo span { color: var(--vibrant); }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: var(--text-light);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover { color: var(--dark); }
+
+        .nav-links a.active {
+            color: var(--vibrant);
+            font-weight: 600;
+        }
+
+        .nav-cta {
+            background: var(--vibrant) !important;
+            color: var(--white) !important;
+            padding: 0.5rem 1.25rem;
+            border-radius: 8px;
+            font-weight: 600 !important;
+            transition: transform 0.2s, box-shadow 0.2s !important;
+        }
+
+        .nav-cta:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 4px 16px rgba(91, 94, 244, 0.4);
+        }
+
+        /* ===== ARTICLE HEADER ===== */
+        .article-hero {
+            background: linear-gradient(135deg, var(--dark) 0%, var(--primary) 100%);
+            padding: 5rem 2rem 4rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .article-hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background:
+                radial-gradient(ellipse 300px 250px at 25% 40%, rgba(91, 94, 244, 0.25), transparent),
+                radial-gradient(ellipse 250px 200px at 75% 60%, rgba(255, 107, 74, 0.12), transparent);
+        }
+
+        .article-hero > * { position: relative; }
+
+        .article-hero .post-tag {
+            display: inline-block;
+            font-size: 0.7rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: rgba(255, 255, 255, 0.7);
+            background: rgba(255, 255, 255, 0.1);
+            padding: 0.3rem 0.75rem;
+            border-radius: 6px;
+            margin-bottom: 1.25rem;
+        }
+
+        .article-hero .post-tag.tips {
+            background: rgba(16, 185, 129, 0.2);
+            color: #10B981;
+        }
+
+        .article-hero h1 {
+            font-size: clamp(2rem, 4.5vw, 3rem);
+            font-weight: 800;
+            color: var(--white);
+            line-height: 1.15;
+            letter-spacing: -0.03em;
+            max-width: 700px;
+            margin: 0 auto 1.25rem;
+        }
+
+        .article-meta {
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.5);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.75rem;
+        }
+
+        .article-meta-dot {
+            width: 3px;
+            height: 3px;
+            background: rgba(255, 255, 255, 0.4);
+            border-radius: 50%;
+        }
+
+        /* ===== ARTICLE BODY ===== */
+        .article-body {
+            max-width: 680px;
+            margin: 0 auto;
+            padding: 3rem 2rem 5rem;
+        }
+
+        .article-body p {
+            font-size: 1.05rem;
+            line-height: 1.8;
+            color: var(--text);
+            margin-bottom: 1.5rem;
+        }
+
+        .article-body h2 {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--dark);
+            letter-spacing: -0.02em;
+            margin: 2.5rem 0 1rem;
+            line-height: 1.2;
+        }
+
+        .article-body h3 {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--dark);
+            margin: 2rem 0 0.75rem;
+        }
+
+        .article-body ul, .article-body ol {
+            margin: 0 0 1.5rem 1.25rem;
+        }
+
+        .article-body li {
+            font-size: 1.05rem;
+            line-height: 1.8;
+            color: var(--text);
+            margin-bottom: 0.5rem;
+        }
+
+        .article-body blockquote {
+            border-left: 3px solid var(--vibrant);
+            padding: 0.75rem 1.25rem;
+            margin: 1.5rem 0;
+            background: var(--off-white);
+            border-radius: 0 10px 10px 0;
+        }
+
+        .article-body blockquote p {
+            color: var(--text-light);
+            font-size: 1rem;
+            margin-bottom: 0;
+        }
+
+        .article-body strong {
+            color: var(--dark);
+            font-weight: 700;
+        }
+
+        .article-body a {
+            color: var(--vibrant);
+            text-decoration: underline;
+            text-underline-offset: 2px;
+        }
+
+        .article-body a:hover {
+            color: var(--primary);
+        }
+
+        /* Callout box */
+        .callout {
+            background: var(--off-white);
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            padding: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .callout-title {
+            font-size: 0.9rem;
+            font-weight: 700;
+            color: var(--vibrant);
+            margin-bottom: 0.5rem;
+        }
+
+        .callout p {
+            font-size: 0.95rem;
+            margin-bottom: 0;
+        }
+
+        /* ===== ARTICLE FOOTER / CTA ===== */
+        .article-cta {
+            max-width: 680px;
+            margin: 0 auto;
+            padding: 0 2rem 5rem;
+        }
+
+        .article-cta-card {
+            background: var(--dark);
+            border-radius: 20px;
+            padding: 2.5rem;
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .article-cta-card::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(ellipse 200px 200px at 90% 50%, rgba(91, 94, 244, 0.2), transparent);
+        }
+
+        .article-cta-card > * { position: relative; }
+
+        .article-cta-text h3 {
+            font-size: 1.25rem;
+            font-weight: 800;
+            color: var(--white);
+            margin-bottom: 0.5rem;
+        }
+
+        .article-cta-text p {
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.6);
+            line-height: 1.5;
+        }
+
+        .article-cta-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            background: var(--vibrant);
+            color: var(--white);
+            padding: 0.75rem 1.5rem;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            white-space: nowrap;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .article-cta-btn:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 4px 16px rgba(91, 94, 244, 0.4);
+        }
+
+        /* Back link */
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.35rem;
+            color: var(--text-light);
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 500;
+            margin-bottom: 2rem;
+            transition: color 0.2s, gap 0.2s;
+        }
+
+        .back-link:hover {
+            color: var(--vibrant);
+            gap: 0.55rem;
+        }
+
+        /* ===== FOOTER ===== */
+        footer {
+            background: var(--dark);
+            color: rgba(255, 255, 255, 0.5);
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+
+        .footer-content {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .footer-logo {
+            font-weight: 800;
+            font-size: 1.1rem;
+            color: var(--white);
+            margin-bottom: 0.75rem;
+        }
+
+        .footer-logo span { color: var(--vibrant); }
+
+        .footer-links {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.5);
+            text-decoration: none;
+            font-size: 0.85rem;
+            transition: color 0.2s;
+        }
+
+        .footer-links a:hover { color: var(--white); }
+
+        footer p { font-size: 0.8rem; }
+
+        .footer-tagline {
+            font-size: 0.85rem;
+            color: rgba(255, 255, 255, 0.4);
+            margin-bottom: 1rem;
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 768px) {
+            nav { padding: 1rem 1.25rem; }
+            .nav-links { display: none; }
+
+            .article-hero { padding: 4rem 1.25rem 3rem; }
+            .article-body { padding: 2rem 1.25rem 4rem; }
+            .article-cta { padding: 0 1.25rem 4rem; }
+
+            .article-cta-card {
+                flex-direction: column;
+                text-align: center;
+                padding: 2rem 1.5rem;
+            }
+        }
+    </style>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      "headline": "How to Handle Customer Disputes Like a Pro",
+      "datePublished": "2026-03-01",
+      "dateModified": "2026-03-01",
+      "author": {
+        "@type": "Person",
+        "name": "PhoneRepairPOS Team"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "PhoneRepairPOS",
+        "url": "https://phonerepairpos.app"
+      },
+      "description": "Every repair shop gets complaints. The difference is how you handle them — and what records you keep.",
+      "mainEntityOfPage": "https://phonerepairpos.app/blog/how-to-handle-customer-disputes.html"
+    }
+    </script>
+</head>
+<body>
+
+    <nav>
+        <a href="../index.html" class="nav-logo">Phone<span>Repair</span>POS</a>
+        <div class="nav-links">
+            <a href="../index.html#features">Features</a>
+            <a href="index.html" class="active">Blog</a>
+            <a href="https://apps.apple.com/gb/app/phone-repair-pos/id6759859240" class="nav-cta">Download</a>
+        </div>
+    </nav>
+
+    <div class="article-hero">
+        <div class="post-tag tips">Tips</div>
+        <h1>How to Handle Customer Disputes Like a Pro</h1>
+        <div class="article-meta">
+            <span>1 Mar 2026</span>
+            <span class="article-meta-dot"></span>
+            <span>6 min read</span>
+        </div>
+    </div>
+
+    <article class="article-body">
+        <a href="index.html" class="back-link">← All articles</a>
+
+        <p>No matter how good your repairs are, disputes will happen. A customer believes a fault appeared after they left your shop. Someone argues the price wasn't what they expected. A screen that was fine on collection has cracked again three days later and they want it fixed for free. These situations come with the territory.</p>
+
+        <p>What separates a shop that handles disputes confidently from one that dreads them is rarely the outcome — it's the preparation. Specifically, it's the records you keep and the way you respond in the moment.</p>
+
+        <h2>The most common types of disputes</h2>
+
+        <h3>Damage claims</h3>
+
+        <p>A customer brings in a phone for a battery replacement and collects it looking fine. Two days later they're back saying the screen was damaged during the repair. This is one of the most difficult disputes to handle because both sides believe they're telling the truth — the customer didn't notice the crack at collection, and you didn't cause it.</p>
+
+        <p>Without documentation of the device's condition at intake, you have no defence. With it, you do.</p>
+
+        <h3>Pricing disagreements</h3>
+
+        <p>These usually stem from one of three things: the price wasn't clearly communicated upfront, additional work was done without approval, or the customer simply misremembers what they agreed to. In all three cases, a written record of the quoted price — and any approved extras — is your best protection.</p>
+
+        <h3>Warranty and repeat faults</h3>
+
+        <p>A customer returns saying the fault has come back and demands a free repair. Whether this is a legitimate warranty claim or a new issue caused by something else, you need to know what you did, what parts you used, and when the original repair was completed. Without that detail, you're guessing.</p>
+
+        <h2>Why documentation is your strongest tool</h2>
+
+        <p>In most disputes, the question isn't who's right — it's who can prove it. Documentation shifts that balance decisively in your favour.</p>
+
+        <p>Good intake records should capture:</p>
+
+        <ul>
+            <li>The device's visible condition at drop-off (pre-existing cracks, scratches, cosmetic damage)</li>
+            <li>The exact fault the customer described</li>
+            <li>The price quoted and agreed</li>
+            <li>Any conditions — for example, "we will call before proceeding if we find additional damage"</li>
+            <li>The customer's signature or acknowledgement</li>
+        </ul>
+
+        <p>If you make additional discoveries during the repair, note them and when you communicated them to the customer. If the customer approves extra work verbally, note that too — ideally with the time of the call.</p>
+
+        <blockquote>
+            <p>A dispute that would cost you £60 to resolve becomes a five-minute conversation when you can show the customer exactly what was agreed and when.</p>
+        </blockquote>
+
+        <p>Good notes on a ticket don't just help with disputes — they also help with warranty queries. If a customer comes back three months later saying a screen you replaced has developed a fault, your ticket tells you which part you used, when it was fitted, and whether the device had any pre-existing damage that might be relevant.</p>
+
+        <h2>How to respond without escalating</h2>
+
+        <p>Even when you're confident you're in the right, the way you respond matters. A customer who feels heard and treated fairly is far less likely to escalate — even if the outcome isn't what they wanted.</p>
+
+        <p>A few principles that work:</p>
+
+        <h3>Listen before you respond</h3>
+
+        <p>Let the customer explain fully before you say anything. Don't interrupt, don't start explaining yourself while they're still talking, and don't become defensive immediately. You need to understand exactly what they're claiming before you can address it — and giving them space to speak often diffuses the initial frustration on its own.</p>
+
+        <h3>Acknowledge their concern</h3>
+
+        <p>You don't have to agree with them to acknowledge that they're frustrated. "I can see why that's concerning" is not an admission of fault — it's a human response that makes the next part of the conversation much easier.</p>
+
+        <h3>Present your records calmly</h3>
+
+        <p>Once you've heard them out, calmly show them what you have. "Here's the ticket from when you came in — you can see we noted the pre-existing crack on the corner of the screen." Most customers, when faced with a clear written record, will either accept the explanation or at least tone down their position. Very few will continue to argue against documented evidence.</p>
+
+        <h3>Don't make promises you can't keep</h3>
+
+        <p>It's tempting to say "leave it with me and I'll sort it out" just to end the conversation. But vague reassurances create more disputes. Be specific about what you'll do and when — "I'll look at it now and call you within the hour" is better than "I'll look into it".</p>
+
+        <h2>When to offer a refund vs redo the repair</h2>
+
+        <p>This is a judgement call, but some guidelines help:</p>
+
+        <p><strong>Redo the repair</strong> if the fault is clearly related to the original work and within a reasonable timeframe. This is both the right thing to do and good for your reputation. A customer who sees you stand behind your work will tell people — a customer who feels ignored will also tell people.</p>
+
+        <p><strong>Offer a partial refund</strong> if there's genuine ambiguity — you're not certain the fault is yours, but you want to resolve the situation fairly. Splitting the cost is often a reasonable middle ground that both parties can accept.</p>
+
+        <p><strong>Hold your position</strong> if you have clear documentation that the damage wasn't caused by your repair, the fault is entirely new, or the customer's claim doesn't match the timeline. You can do this politely and firmly — "Based on our records, the device was fully tested before collection and the screen was intact. I'm not able to repair new damage under warranty, but I'm happy to give you a quote."</p>
+
+        <div class="callout">
+            <div class="callout-title">Know your limits</div>
+            <p>If a customer becomes aggressive or abusive, it's reasonable to end the interaction and ask them to return when they're ready to discuss it calmly. You're not obligated to be shouted at, and most reputable dispute frameworks recognise that.</p>
+        </div>
+
+        <h2>Preventing disputes before they start</h2>
+
+        <p>The best dispute is the one that never happens. Most disputes arise from unclear communication at the start of the repair — not from anything that happens during it.</p>
+
+        <h3>Be specific about the quote</h3>
+
+        <p>Don't give a vague range when you can give a firm price. If the price might change depending on what you find, say so explicitly at intake — and get the customer's agreement on the maximum they're willing to approve before you call them.</p>
+
+        <h3>Explain your warranty terms</h3>
+
+        <p>What does your warranty cover? For how long? Does it cover parts but not labour, or both? Tell the customer at the point of booking and make sure it's on the ticket. Most people don't read the small print, but when a dispute comes up you can point to it and say "this is what we agreed."</p>
+
+        <h3>Document device condition at intake</h3>
+
+        <p>Before touching a device, note its condition. If there's a cracked corner, note it. If the charging port is already loose, note it. If the camera has a scratch, note it. This takes thirty seconds and prevents a whole category of "you damaged my phone" disputes entirely.</p>
+
+        <h3>Communicate proactively</h3>
+
+        <p>If a repair is going to take longer than expected, call the customer before they call you. If you find additional damage, tell them before doing anything about it. Customers who feel informed don't become disputants. Customers who feel surprised or ignored do.</p>
+
+        <h2>Building a shop that disputes can't damage</h2>
+
+        <p>The shops that handle disputes well aren't lucky — they're organised. They have a clear intake process, consistent note-taking, and staff who know how to respond to a frustrated customer without making it worse.</p>
+
+        <p>A digital job management system makes most of this much easier. Every ticket records who dropped in what, what was agreed, what was found, what was done, and what was paid. When a customer returns three weeks later with a complaint, you can pull up the full history in seconds rather than trying to reconstruct it from memory and scraps of paper.</p>
+
+        <p>It won't stop every dispute. But it will mean that when one happens, you're starting from a position of strength rather than scrambling for information.</p>
+
+        <h2>Related articles</h2>
+        <ul>
+            <li><a href="building-customer-trust-in-your-repair-shop.html">Building Customer Trust in Your Repair Shop</a></li>
+            <li><a href="why-paper-tickets-are-costing-you-money.html">Why Paper Tickets Are Costing You Money</a></li>
+            <li><a href="tracking-repair-status-why-it-matters.html">Tracking Repair Status: Why It Matters</a></li>
+        </ul>
+    </article>
+
+    <!-- Post CTA -->
+    <div class="article-cta">
+        <div class="article-cta-card">
+            <div class="article-cta-text">
+                <h3>Try PhoneRepairPOS free</h3>
+                <p>Digital tickets, status tracking, and payment records — all from your iPad.</p>
+            </div>
+            <a href="https://apps.apple.com/gb/app/phone-repair-pos/id6759859240" class="article-cta-btn">Download →</a>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">Phone<span>Repair</span>POS</div>
+            <p class="footer-tagline">Built for repair shops worldwide.</p>
+            <div class="footer-links">
+                <a href="index.html">Blog</a>
+                <a href="mailto:support@phonerepairpos.app">Contact</a>
+                <a href="../privacy.html">Privacy Policy</a>
+                <a href="../terms.html">Terms of Use</a>
+            </div>
+            <p>&copy; 2026 PhoneRepairPOS. All rights reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
