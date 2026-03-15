@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>How to Track Parts and Inventory as a Solo Repairer — PhoneRepairPOS</title>
-    <meta name="description" content="Simple inventory tracking that works when you don't have time for a full stock system.">
+    <meta name="description" content="A practical approach to tracking parts and stock as a solo phone repairer — without a complex system or wasted money.">
     <meta property="og:title" content="How to Track Parts and Inventory as a Solo Repairer">
-    <meta property="og:description" content="Simple inventory tracking that works when you don't have time for a full stock system.">
+    <meta property="og:description" content="A practical approach to tracking parts and stock as a solo phone repairer — without a complex system or wasted money.">
     <meta property="og:type" content="article">
     <link rel="canonical" href="https://phonerepairpos.app/blog/how-to-track-parts-and-inventory.html">
     <meta property="og:url" content="https://phonerepairpos.app/blog/how-to-track-parts-and-inventory.html">
@@ -14,7 +14,7 @@
     <meta property="og:image" content="https://phonerepairpos.app/og-image.png">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="How to Track Parts and Inventory as a Solo Repairer — PhoneRepairPOS">
-    <meta name="twitter:description" content="Simple inventory tracking that works when you don't have time for a full stock system.">
+    <meta name="twitter:description" content="A practical approach to tracking parts and stock as a solo phone repairer — without a complex system or wasted money.">
     <meta name="twitter:image" content="https://phonerepairpos.app/og-image.png">
     <link rel="icon" type="image/svg+xml" href="/favicon.svg">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -23,382 +23,73 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
     <style>
-        *, *::before, *::after {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
         :root {
-            --primary: #2B2D7C;
-            --accent: #3F41B2;
-            --vibrant: #5B5EF4;
-            --white: #FFFFFF;
-            --off-white: #F6F6FB;
-            --dark: #111136;
-            --text: #1E1E3F;
-            --text-light: #5C5C7A;
-            --warm-accent: #FF6B4A;
-            --border: #E4E4EE;
+            --primary: #2B2D7C; --accent: #3F41B2; --vibrant: #5B5EF4;
+            --white: #FFFFFF; --off-white: #F6F6FB; --dark: #111136;
+            --text: #1E1E3F; --text-light: #5C5C7A; --warm-accent: #FF6B4A; --border: #E4E4EE;
         }
-
         html { scroll-behavior: smooth; }
-
-        body {
-            font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
-            color: var(--text);
-            background: var(--white);
-            overflow-x: hidden;
-            -webkit-font-smoothing: antialiased;
-        }
-
-        /* ===== NAV ===== */
-        nav {
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            padding: 1rem 2rem;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            background: rgba(255, 255, 255, 0.92);
-            backdrop-filter: blur(16px);
-            border-bottom: 1px solid var(--border);
-        }
-
-        .nav-logo {
-            font-weight: 800;
-            font-size: 1.25rem;
-            color: var(--dark);
-            text-decoration: none;
-            letter-spacing: -0.02em;
-        }
-
+        body { font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif; color: var(--text); background: var(--white); overflow-x: hidden; -webkit-font-smoothing: antialiased; }
+        nav { position: sticky; top: 0; z-index: 100; padding: 1rem 2rem; display: flex; align-items: center; justify-content: space-between; background: rgba(255,255,255,0.92); backdrop-filter: blur(16px); border-bottom: 1px solid var(--border); }
+        .nav-logo { font-weight: 800; font-size: 1.25rem; color: var(--dark); text-decoration: none; letter-spacing: -0.02em; }
         .nav-logo span { color: var(--vibrant); }
-
-        .nav-links {
-            display: flex;
-            gap: 2rem;
-            align-items: center;
-        }
-
-        .nav-links a {
-            color: var(--text-light);
-            text-decoration: none;
-            font-size: 0.9rem;
-            font-weight: 500;
-            transition: color 0.2s;
-        }
-
+        .nav-links { display: flex; gap: 2rem; align-items: center; }
+        .nav-links a { color: var(--text-light); text-decoration: none; font-size: 0.9rem; font-weight: 500; transition: color 0.2s; }
         .nav-links a:hover { color: var(--dark); }
-
-        .nav-links a.active {
-            color: var(--vibrant);
-            font-weight: 600;
-        }
-
-        .nav-cta {
-            background: var(--vibrant) !important;
-            color: var(--white) !important;
-            padding: 0.5rem 1.25rem;
-            border-radius: 8px;
-            font-weight: 600 !important;
-            transition: transform 0.2s, box-shadow 0.2s !important;
-        }
-
-        .nav-cta:hover {
-            transform: translateY(-1px);
-            box-shadow: 0 4px 16px rgba(91, 94, 244, 0.4);
-        }
-
-        /* ===== ARTICLE HEADER ===== */
-        .article-hero {
-            background: linear-gradient(135deg, var(--dark) 0%, var(--primary) 100%);
-            padding: 5rem 2rem 4rem;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .article-hero::before {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background:
-                radial-gradient(ellipse 300px 250px at 25% 40%, rgba(91, 94, 244, 0.25), transparent),
-                radial-gradient(ellipse 250px 200px at 75% 60%, rgba(255, 107, 74, 0.12), transparent);
-        }
-
+        .nav-links a.active { color: var(--vibrant); font-weight: 600; }
+        .nav-cta { background: var(--vibrant) !important; color: var(--white) !important; padding: 0.5rem 1.25rem; border-radius: 8px; font-weight: 600 !important; transition: transform 0.2s, box-shadow 0.2s !important; }
+        .nav-cta:hover { transform: translateY(-1px); box-shadow: 0 4px 16px rgba(91,94,244,0.4); }
+        .article-hero { background: linear-gradient(135deg, var(--dark) 0%, var(--primary) 100%); padding: 5rem 2rem 4rem; text-align: center; position: relative; overflow: hidden; }
+        .article-hero::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse 300px 250px at 25% 40%, rgba(91,94,244,0.25), transparent), radial-gradient(ellipse 250px 200px at 75% 60%, rgba(255,107,74,0.12), transparent); }
         .article-hero > * { position: relative; }
-
-        .article-hero .post-tag {
-            display: inline-block;
-            font-size: 0.7rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 0.08em;
-            color: rgba(255, 255, 255, 0.7);
-            background: rgba(255, 255, 255, 0.1);
-            padding: 0.3rem 0.75rem;
-            border-radius: 6px;
-            margin-bottom: 1.25rem;
-        }
-
-        .article-hero h1 {
-            font-size: clamp(2rem, 4.5vw, 3rem);
-            font-weight: 800;
-            color: var(--white);
-            line-height: 1.15;
-            letter-spacing: -0.03em;
-            max-width: 700px;
-            margin: 0 auto 1.25rem;
-        }
-
-        .article-meta {
-            font-size: 0.9rem;
-            color: rgba(255, 255, 255, 0.5);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 0.75rem;
-        }
-
-        .article-meta-dot {
-            width: 3px;
-            height: 3px;
-            background: rgba(255, 255, 255, 0.4);
-            border-radius: 50%;
-        }
-
-        /* ===== ARTICLE BODY ===== */
-        .article-body {
-            max-width: 680px;
-            margin: 0 auto;
-            padding: 3rem 2rem 5rem;
-        }
-
-        .article-body p {
-            font-size: 1.05rem;
-            line-height: 1.8;
-            color: var(--text);
-            margin-bottom: 1.5rem;
-        }
-
-        .article-body h2 {
-            font-size: 1.5rem;
-            font-weight: 800;
-            color: var(--dark);
-            letter-spacing: -0.02em;
-            margin: 2.5rem 0 1rem;
-            line-height: 1.2;
-        }
-
-        .article-body h3 {
-            font-size: 1.2rem;
-            font-weight: 700;
-            color: var(--dark);
-            margin: 2rem 0 0.75rem;
-        }
-
-        .article-body ul, .article-body ol {
-            margin: 0 0 1.5rem 1.25rem;
-        }
-
-        .article-body li {
-            font-size: 1.05rem;
-            line-height: 1.8;
-            color: var(--text);
-            margin-bottom: 0.5rem;
-        }
-
-        .article-body blockquote {
-            border-left: 3px solid var(--vibrant);
-            padding: 0.75rem 1.25rem;
-            margin: 1.5rem 0;
-            background: var(--off-white);
-            border-radius: 0 10px 10px 0;
-        }
-
-        .article-body blockquote p {
-            color: var(--text-light);
-            font-size: 1rem;
-            margin-bottom: 0;
-        }
-
-        .article-body strong {
-            color: var(--dark);
-            font-weight: 700;
-        }
-
-        .article-body a {
-            color: var(--vibrant);
-            text-decoration: underline;
-            text-underline-offset: 2px;
-        }
-
-        .article-body a:hover {
-            color: var(--primary);
-        }
-
-        /* Callout box */
-        .callout {
-            background: var(--off-white);
-            border: 1px solid var(--border);
-            border-radius: 14px;
-            padding: 1.5rem;
-            margin: 2rem 0;
-        }
-
-        .callout-title {
-            font-size: 0.9rem;
-            font-weight: 700;
-            color: var(--vibrant);
-            margin-bottom: 0.5rem;
-        }
-
-        .callout p {
-            font-size: 0.95rem;
-            margin-bottom: 0;
-        }
-
-        /* ===== ARTICLE FOOTER / CTA ===== */
-        .article-cta {
-            max-width: 680px;
-            margin: 0 auto;
-            padding: 0 2rem 5rem;
-        }
-
-        .article-cta-card {
-            background: var(--dark);
-            border-radius: 20px;
-            padding: 2.5rem;
-            display: flex;
-            align-items: center;
-            gap: 2rem;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .article-cta-card::before {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background: radial-gradient(ellipse 200px 200px at 90% 50%, rgba(91, 94, 244, 0.2), transparent);
-        }
-
+        .article-hero .post-tag { display: inline-block; font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: rgba(255,255,255,0.7); background: rgba(255,255,255,0.1); padding: 0.3rem 0.75rem; border-radius: 6px; margin-bottom: 1.25rem; }
+        .article-hero .post-tag.business { background: rgba(230,147,38,0.2); color: #E69326; }
+        .article-hero .post-tag.guide { background: rgba(255,107,74,0.2); color: #FF6B4A; }
+        .article-hero .post-tag.tips { background: rgba(16,185,129,0.2); color: #10B981; }
+        .article-hero h1 { font-size: clamp(2rem, 4.5vw, 3rem); font-weight: 800; color: var(--white); line-height: 1.15; letter-spacing: -0.03em; max-width: 700px; margin: 0 auto 1.25rem; }
+        .article-meta { font-size: 0.9rem; color: rgba(255,255,255,0.5); display: flex; align-items: center; justify-content: center; gap: 0.75rem; }
+        .article-meta-dot { width: 3px; height: 3px; background: rgba(255,255,255,0.4); border-radius: 50%; }
+        .article-body { max-width: 680px; margin: 0 auto; padding: 3rem 2rem 5rem; }
+        .article-body p { font-size: 1.05rem; line-height: 1.8; color: var(--text); margin-bottom: 1.5rem; }
+        .article-body h2 { font-size: 1.5rem; font-weight: 800; color: var(--dark); letter-spacing: -0.02em; margin: 2.5rem 0 1rem; line-height: 1.2; }
+        .article-body h3 { font-size: 1.2rem; font-weight: 700; color: var(--dark); margin: 2rem 0 0.75rem; }
+        .article-body ul, .article-body ol { margin: 0 0 1.5rem 1.25rem; }
+        .article-body li { font-size: 1.05rem; line-height: 1.8; color: var(--text); margin-bottom: 0.5rem; }
+        .article-body blockquote { border-left: 3px solid var(--vibrant); padding: 0.75rem 1.25rem; margin: 1.5rem 0; background: var(--off-white); border-radius: 0 10px 10px 0; }
+        .article-body blockquote p { color: var(--text-light); font-size: 1rem; margin-bottom: 0; }
+        .article-body strong { color: var(--dark); font-weight: 700; }
+        .article-body a { color: var(--vibrant); text-decoration: underline; text-underline-offset: 2px; }
+        .article-body a:hover { color: var(--primary); }
+        .callout { background: var(--off-white); border: 1px solid var(--border); border-radius: 14px; padding: 1.5rem; margin: 2rem 0; }
+        .callout-title { font-size: 0.9rem; font-weight: 700; color: var(--vibrant); margin-bottom: 0.5rem; }
+        .callout p { font-size: 0.95rem; margin-bottom: 0; }
+        .article-cta { max-width: 680px; margin: 0 auto; padding: 0 2rem 5rem; }
+        .article-cta-card { background: var(--dark); border-radius: 20px; padding: 2.5rem; display: flex; align-items: center; gap: 2rem; position: relative; overflow: hidden; }
+        .article-cta-card::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse 200px 200px at 90% 50%, rgba(91,94,244,0.2), transparent); }
         .article-cta-card > * { position: relative; }
-
-        .article-cta-text h3 {
-            font-size: 1.25rem;
-            font-weight: 800;
-            color: var(--white);
-            margin-bottom: 0.5rem;
-        }
-
-        .article-cta-text p {
-            font-size: 0.9rem;
-            color: rgba(255, 255, 255, 0.6);
-            line-height: 1.5;
-        }
-
-        .article-cta-btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.4rem;
-            background: var(--vibrant);
-            color: var(--white);
-            padding: 0.75rem 1.5rem;
-            border-radius: 10px;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 0.9rem;
-            white-space: nowrap;
-            transition: transform 0.2s, box-shadow 0.2s;
-        }
-
-        .article-cta-btn:hover {
-            transform: translateY(-1px);
-            box-shadow: 0 4px 16px rgba(91, 94, 244, 0.4);
-        }
-
-        /* Back link */
-        .back-link {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.35rem;
-            color: var(--text-light);
-            text-decoration: none;
-            font-size: 0.85rem;
-            font-weight: 500;
-            margin-bottom: 2rem;
-            transition: color 0.2s, gap 0.2s;
-        }
-
-        .back-link:hover {
-            color: var(--vibrant);
-            gap: 0.55rem;
-        }
-
-        /* ===== FOOTER ===== */
-        footer {
-            background: var(--dark);
-            color: rgba(255, 255, 255, 0.5);
-            padding: 3rem 2rem;
-            text-align: center;
-        }
-
-        .footer-content {
-            max-width: 600px;
-            margin: 0 auto;
-        }
-
-        .footer-logo {
-            font-weight: 800;
-            font-size: 1.1rem;
-            color: var(--white);
-            margin-bottom: 0.75rem;
-        }
-
+        .article-cta-text h3 { font-size: 1.25rem; font-weight: 800; color: var(--white); margin-bottom: 0.5rem; }
+        .article-cta-text p { font-size: 0.9rem; color: rgba(255,255,255,0.6); line-height: 1.5; }
+        .article-cta-btn { display: inline-flex; align-items: center; gap: 0.4rem; background: var(--vibrant); color: var(--white); padding: 0.75rem 1.5rem; border-radius: 10px; text-decoration: none; font-weight: 600; font-size: 0.9rem; white-space: nowrap; transition: transform 0.2s, box-shadow 0.2s; }
+        .article-cta-btn:hover { transform: translateY(-1px); box-shadow: 0 4px 16px rgba(91,94,244,0.4); }
+        .back-link { display: inline-flex; align-items: center; gap: 0.35rem; color: var(--text-light); text-decoration: none; font-size: 0.85rem; font-weight: 500; margin-bottom: 2rem; transition: color 0.2s, gap 0.2s; }
+        .back-link:hover { color: var(--vibrant); gap: 0.55rem; }
+        footer { background: var(--dark); color: rgba(255,255,255,0.5); padding: 3rem 2rem; text-align: center; }
+        .footer-content { max-width: 600px; margin: 0 auto; }
+        .footer-logo { font-weight: 800; font-size: 1.1rem; color: var(--white); margin-bottom: 0.75rem; }
         .footer-logo span { color: var(--vibrant); }
-
-        .footer-links {
-            display: flex;
-            gap: 1.5rem;
-            justify-content: center;
-            margin-bottom: 1.5rem;
-        }
-
-        .footer-links a {
-            color: rgba(255, 255, 255, 0.5);
-            text-decoration: none;
-            font-size: 0.85rem;
-            transition: color 0.2s;
-        }
-
+        .footer-links { display: flex; gap: 1.5rem; justify-content: center; margin-bottom: 1.5rem; }
+        .footer-links a { color: rgba(255,255,255,0.5); text-decoration: none; font-size: 0.85rem; transition: color 0.2s; }
         .footer-links a:hover { color: var(--white); }
-
         footer p { font-size: 0.8rem; }
-
-        .footer-tagline {
-            font-size: 0.85rem;
-            color: rgba(255, 255, 255, 0.4);
-            margin-bottom: 1rem;
-        }
-
-        /* ===== RESPONSIVE ===== */
+        .footer-tagline { font-size: 0.85rem; color: rgba(255,255,255,0.4); margin-bottom: 1rem; }
         @media (max-width: 768px) {
             nav { padding: 1rem 1.25rem; }
             .nav-links { display: none; }
-
             .article-hero { padding: 4rem 1.25rem 3rem; }
             .article-body { padding: 2rem 1.25rem 4rem; }
             .article-cta { padding: 0 1.25rem 4rem; }
-
-            .article-cta-card {
-                flex-direction: column;
-                text-align: center;
-                padding: 2rem 1.5rem;
-            }
+            .article-cta-card { flex-direction: column; text-align: center; padding: 2rem 1.5rem; }
         }
     </style>
     <script type="application/ld+json">
@@ -406,24 +97,25 @@
       "@context": "https://schema.org",
       "@type": "BlogPosting",
       "headline": "How to Track Parts and Inventory as a Solo Repairer",
-      "datePublished": "2026-02-01",
-      "dateModified": "2026-02-01",
+      "description": "A practical approach to tracking parts and stock as a solo phone repairer — without a complex system or wasted money.",
       "author": {
-        "@type": "Person",
-        "name": "PhoneRepairPOS Team"
+        "@type": "Organization",
+        "name": "PhoneRepairPOS"
       },
       "publisher": {
         "@type": "Organization",
         "name": "PhoneRepairPOS",
         "url": "https://phonerepairpos.app"
       },
-      "description": "Simple inventory tracking that works when you don't have time for a full stock system.",
-      "mainEntityOfPage": "https://phonerepairpos.app/blog/how-to-track-parts-and-inventory.html"
+      "datePublished": "2026-03-15",
+      "dateModified": "2026-03-15",
+      "url": "https://phonerepairpos.app/blog/how-to-track-parts-and-inventory.html",
+      "mainEntityOfPage": "https://phonerepairpos.app/blog/how-to-track-parts-and-inventory.html",
+      "keywords": "repair parts inventory tracking, phone repair stock management, solo repairer inventory"
     }
     </script>
 </head>
 <body>
-
     <nav>
         <a href="../index.html" class="nav-logo">Phone<span>Repair</span>POS</a>
         <div class="nav-links">
@@ -437,127 +129,128 @@
         <div class="post-tag">Workflow</div>
         <h1>How to Track Parts and Inventory as a Solo Repairer</h1>
         <div class="article-meta">
-            <span>1 Feb 2026</span>
+            <span>15 Mar 2026</span>
             <span class="article-meta-dot"></span>
-            <span>5 min read</span>
+            <span>6 min read</span>
         </div>
     </div>
 
     <article class="article-body">
         <a href="index.html" class="back-link">← All articles</a>
 
-        <p>Ask most solo repairers how they manage inventory and you'll get some version of the same answer: "I keep a rough count in my head, reorder when I think I'm running low, and occasionally get caught out." It's not a system — it's hope. And hope has a habit of letting you down at the worst possible time: when a customer is standing at the counter waiting for a screen replacement you thought you had.</p>
+        <p>Search for "repair shop inventory management" and you will find software with barcode scanners, multi-location stock sync, supplier purchase order workflows, and pricing dashboards. Most of it is designed for operations with dozens of SKUs, multiple technicians, and a dedicated person whose job it is to manage stock.</p>
 
-        <p>This guide isn't about implementing a full warehouse management system. That's overkill for a one-person shop. It's about a minimum viable approach to parts tracking — one that takes minutes to set up and prevents the most common pain points without adding busywork to your day.</p>
+        <p>That is not most phone repair shops. Most phone repair shops are run by one or two people who are also the ones doing the actual repairs, taking calls, handling customers at the counter, and ordering parts in the thirty seconds between jobs. A full inventory management system in this context is not helpful — it is another thing to maintain, another thing that can go wrong, and another reason to feel behind.</p>
 
-        <h2>Why solo repairers struggle with inventory</h2>
-
-        <p>The root cause is usually time, not knowledge. You know you should track stock. You've probably tried before. But when you're busy — and most repairers are nearly always busy — updating a spreadsheet after every repair feels like the last thing worth doing.</p>
-
-        <p>There's also an ad hoc buying habit that develops naturally. A customer books in an iPhone 13 screen replacement. You don't have the part. You order one from your usual supplier, do the repair, and move on. That works — until you get three iPhone 13 bookings in the same week and you're waiting on deliveries for two of them.</p>
-
-        <p>The other challenge is part fragmentation. Unlike a retailer selling a finite range of products, a repair shop might handle screens for fifty different device models, each with variations by colour and grade. Tracking that manually is genuinely difficult, which is why most people don't bother.</p>
-
-        <h2>What you actually need to track</h2>
-
-        <p>You don't need to track everything. Start with the parts you use most often and the ones where running out would cost you the most time and money. For most phone repair shops, that means:</p>
-
-        <ul>
-            <li><strong>Screens by model and colour</strong> — your highest-volume, highest-margin repairs. iPhone 14 black, iPhone 14 white, Samsung S23, and so on.</li>
-            <li><strong>Batteries by model</strong> — high volume, relatively low cost, but running out creates delays.</li>
-            <li><strong>Charging ports</strong> — USB-C and Lightning ports for the models you see most frequently.</li>
-            <li><strong>Adhesive and seals</strong> — easy to forget until you're mid-repair. Keep a buffer.</li>
-            <li><strong>Back glass panels</strong> — if you offer back glass repairs, these come in model and colour variants too.</li>
-        </ul>
-
-        <p>Everything else — specialist parts you order on demand for less common repairs — doesn't need to be in your inventory system. Track what you hold stock of; order everything else reactively.</p>
-
-        <h2>A simple spreadsheet system to start</h2>
-
-        <p>If you're starting from nothing, a spreadsheet is a perfectly valid first step. You don't need purpose-built software on day one. Here's a minimal structure that works:</p>
-
-        <ul>
-            <li>Column A: Part name (e.g., "iPhone 14 Screen — Black OEM")</li>
-            <li>Column B: Current quantity in stock</li>
-            <li>Column C: Reorder point (the quantity at which you order more)</li>
-            <li>Column D: Preferred supplier</li>
-            <li>Column E: Last ordered</li>
-        </ul>
-
-        <p>Once a week — Friday afternoon, or whenever you have a quiet ten minutes — update the quantities. It takes less time than you think once the list is set up, because you're just changing numbers rather than building something from scratch.</p>
+        <p>This article is for the solo or small-team repairer who wants a practical, proportionate approach to tracking parts and stock. One that gives you the information you actually need without requiring a logistics degree to operate.</p>
 
         <div class="callout">
-            <div class="callout-title">The key habit</div>
-            <p>The spreadsheet only works if you update it. The easiest trigger: update the quantity every time you use a part, immediately after the repair. One tap, five seconds. Don't batch it up for later.</p>
+            <div class="callout-title">Start with this principle</div>
+            <p>The best inventory system for a solo repairer is the one you will actually use. A perfect system you ignore is worth less than a simple one you maintain consistently.</p>
         </div>
 
-        <h2>Minimum viable reorder system</h2>
+        <h2>Why most solo repairers do not need a full inventory system</h2>
 
-        <p>The reorder point column in your spreadsheet is the most important part. This is the quantity at which you place a new order — not when you run out, but when you get close.</p>
+        <p>Full inventory management systems are built around a core problem: how do you know what you have, across multiple locations, with multiple people using stock simultaneously, without things falling out of sync?</p>
 
-        <p>For your most common parts, a reorder point of two is a reasonable starting place. When you're down to two iPhone 14 black screens, you order more. By the time the order arrives (usually one to two days from a UK supplier), you've probably done one or two repairs but still have one in stock as a buffer.</p>
+        <p>If you are a single repairer in a single location, most of that complexity does not apply. You know roughly what you have because you bought it, you used it, and you ordered more when you ran low. Your mental model of your stock is reasonably accurate because you are the only person touching it.</p>
 
-        <p>For parts you use less often, a reorder point of one may be fine — order as soon as you open the last one. For adhesive and consumables, reorder when you open the last pack.</p>
+        <p>The genuine problems you face are simpler: ordering the wrong quantity, not knowing your actual cost on a per-repair basis, getting caught without a critical part mid-job, and mixing up parts without realising which are OEM and which are aftermarket. These are solvable with lightweight systems, not enterprise software.</p>
 
-        <p>The system only works if you check it. A weekly stock check — genuinely just scanning the spreadsheet and comparing numbers to physical count — catches anything that's drifted.</p>
+        <h2>The right approach early on: order per job</h2>
 
-        <h2>Supplier strategy: bulk vs on demand</h2>
+        <p>If you are early in your business or repairing a wide variety of device models, the cleanest approach is to order parts per job. A customer books an iPhone 15 screen repair: you order the screen, do the job, and do not carry any buffer stock for that model.</p>
 
-        <p>This is where inventory management directly affects your margins. Buying parts one at a time from a supplier is convenient but expensive. Buying in bulk reduces unit cost but ties up cash in stock.</p>
+        <p>This approach ties up no cash in stock, means you never have parts that go stale or become obsolete, and keeps your storage simple. The trade-off is turnaround time — you cannot promise a same-day repair if you are ordering per job. But for many repair types and many customers, a 24–48 hour turnaround is perfectly acceptable.</p>
 
-        <p>The practical approach for a solo repairer:</p>
+        <p>Ordering per job also gives you excellent data. After three months, look back at what you have ordered. The parts you ordered most frequently are telling you something: these are your high-volume repairs, and they are candidates for keeping in stock.</p>
 
-        <p><strong>Buy in bulk for your top five parts.</strong> If you're doing fifteen iPhone screen replacements a week, buying screens one at a time is inefficient. Order five or ten at a time. The per-unit saving adds up quickly, and the cash tied up in stock is manageable.</p>
+        <h2>Building a buffer stock for your most common repairs</h2>
 
-        <p><strong>Order on demand for everything else.</strong> Parts you use once a month don't need to be stocked. Order them when you need them, keep delivery time in mind when quoting the customer, and don't maintain a buffer for low-frequency repairs.</p>
+        <p>Once you can identify your most common repair types — which usually becomes clear within a few months of trading — it makes sense to keep a small buffer of those parts. Not a warehouse's worth. Just enough to handle a few jobs without waiting for a delivery.</p>
 
-        <p><strong>Use two or three suppliers, not one.</strong> Every supplier goes out of stock occasionally. If your single supplier is out of iPhone 15 screens for a week, you're stuck. Having a backup means you're never more than a day away from a part.</p>
-
-        <blockquote>
-            <p>Your supplier relationships are part of your inventory system. A supplier who ships next day and communicates stock levels is worth more than one who's marginally cheaper but unreliable.</p>
-        </blockquote>
-
-        <h2>Avoiding the "I'd fix it but I don't have the part" problem</h2>
-
-        <p>This is the most expensive inventory failure in a repair shop. A customer brings in a phone, you agree a price, they leave it with you — and then you discover you're out of the part you need. Now you're ringing them back to explain a delay, your reputation takes a small hit, and you've wasted the time you blocked out for the repair.</p>
-
-        <p>The fix is a quick stock check at intake, before you confirm the job. When a customer brings in a device for a screen replacement, check your stock before you quote a turnaround time. If you have the part: same day. If you don't: give them a realistic timeline based on when you can get it, and be upfront about it.</p>
-
-        <p>Most customers would rather hear "that'll be tomorrow — I need to order the screen" than be told "it'll be ready this afternoon" and get a call at 4pm saying it's not. Managing expectations at intake is free; managing disappointment after a missed promise costs you repeat business.</p>
-
-        <h2>When to move beyond a spreadsheet</h2>
-
-        <p>A spreadsheet works well for a small shop with a manageable parts range. It starts to break down when:</p>
+        <p>For most solo repairers, this means identifying the top five to ten parts by repair volume. Common candidates include:</p>
 
         <ul>
-            <li>You have more than one person updating it (version conflicts, overwriting each other's changes)</li>
-            <li>Your parts range grows beyond what's easy to scan visually</li>
-            <li>You want to link parts to specific repair jobs for cost tracking</li>
-            <li>You're opening a second location</li>
+            <li>iPhone screens for the two or three most popular current models</li>
+            <li>Samsung screen assemblies for your most common Samsung repairs</li>
+            <li>Charging ports for the models you fix most frequently</li>
+            <li>Batteries for high-volume battery replacement requests</li>
+            <li>Rear glass panels if you do a lot of back glass repairs</li>
         </ul>
 
-        <p>At that point, purpose-built repair shop software with integrated parts tracking becomes worthwhile. PhoneRepairPOS lets you log parts against jobs, so as you work through repairs you have a natural record of what's been used — without maintaining a separate spreadsheet alongside your job management system.</p>
+        <p>A buffer of two to three units per part is often sufficient for a solo repairer. Enough to handle a run of the same repair type, not so much that you are tying up significant cash in stock that might sit for months.</p>
 
-        <h2>Start simple, stay consistent</h2>
+        <p>Restock when you use your last unit, not when you are already out. This is a simple discipline but an important one. The moment you use your last iPhone 14 screen, that is when you order the replacement — not when the next iPhone 14 comes in and you realise you have nothing to fit.</p>
 
-        <p>The best inventory system is the one you actually use. A simple spreadsheet updated consistently beats a sophisticated system that gets ignored after the first week. Start with your top ten parts, set reorder points, and build the habit of updating quantities as you work.</p>
+        <h2>How to track stock: keeping it simple</h2>
 
-        <p>Once that's a reflex — and it becomes one faster than you'd expect — you can layer in more detail. Track costs to understand your margins. Link parts to jobs to see which repairs are actually profitable. But none of that matters until the basics are in place.</p>
+        <p>For a solo repairer with a small buffer stock, a complex system is overkill. A well-maintained spreadsheet — even a note on your phone — is often sufficient. The key fields you need for each part:</p>
+
+        <ul>
+            <li><strong>Part description.</strong> Be specific: "iPhone 14 screen — OEM" or "Samsung S23 battery — aftermarket Grade A."</li>
+            <li><strong>Current quantity.</strong> How many you have right now.</li>
+            <li><strong>Reorder point.</strong> The quantity at which you trigger a new order (usually 1 for low-turnover parts, 2–3 for high-volume).</li>
+            <li><strong>Supplier and part number.</strong> So you can reorder in thirty seconds without hunting through emails.</li>
+            <li><strong>Cost price.</strong> What you paid per unit. This is important for calculating your margin per repair.</li>
+        </ul>
+
+        <p>Update the spreadsheet when parts arrive and when you use them. That is it. Two entries per event. If you do this consistently, you will always have an accurate view of your stock without any dedicated software.</p>
+
+        <p>Some repair shop apps, including PhoneRepairPOS, allow you to log parts used against each repair ticket. This is useful because it creates an automatic record of what was consumed on each job — which feeds directly into understanding your profitability without needing a separate spreadsheet.</p>
+
+        <h2>Common inventory mistakes to avoid</h2>
+
+        <p><strong>Over-ordering to get a discount.</strong> Suppliers often offer tiered pricing — buy 10 screens and get a better unit price than buying 2. This is tempting, but for a solo repairer, buying 10 units of a slow-moving part can tie up hundreds of pounds in stock that sits for months. The cash in your account earning nothing (or funding other purchases) is usually worth more than the marginal saving on unit price. Be disciplined: only buy in bulk for parts you are genuinely confident you will use within four to six weeks.</p>
+
+        <p><strong>No record of what was used on each job.</strong> If you do not record which parts were used on which repair, you cannot calculate your actual profit per job. You know what you charged. You do not know what you spent to do the repair. Over time, this makes it impossible to know which repairs are genuinely profitable and which you are underpricing.</p>
+
+        <p><strong>Mixing OEM and aftermarket without labelling.</strong> Aftermarket parts are often physically identical to OEM parts until you install them. If you have both in stock and do not label them clearly, you will eventually fit the wrong one — either charging a customer for OEM and fitting aftermarket (a trust issue) or fitting premium parts when the customer chose the budget option (a margin issue). Label everything clearly at the point it arrives.</p>
+
+        <p><strong>Using only one supplier.</strong> Single-supplier dependency is a risk. If your main supplier has a stock issue or a delivery delay, you have no fallback. Maintain relationships with at least two reliable suppliers for your most critical parts, and keep their order details somewhere accessible.</p>
+
+        <h2>Supplier management for a small shop</h2>
+
+        <p>Two to three reliable suppliers is the right number for most solo repairers. More than that and the administrative overhead of managing different accounts, payment terms, and price lists starts to outweigh the benefit.</p>
+
+        <p>For each supplier, keep a note of: their website login, your account number or reference, the specific part numbers for your most common orders, typical delivery times, and your preferred payment method. This information should be somewhere you can access in under a minute — a note in your phone's notes app, a pinned document, or a section of your parts spreadsheet.</p>
+
+        <p>When a supplier repeatedly lets you down — delayed deliveries, wrong parts, quality issues — replace them. Good suppliers are part of your operational infrastructure. Bad ones are a hidden cost in time, customer delays, and frustration.</p>
+
+        <h2>When to upgrade to a proper inventory system</h2>
+
+        <p>There are clear signals that you have outgrown a lightweight approach:</p>
+
+        <ul>
+            <li>You have multiple technicians using stock and things regularly go missing or miscounted</li>
+            <li>You are ordering from more than three or four suppliers and losing track of what is on order</li>
+            <li>You are buying in bulk and genuinely struggling to know what you have without physically counting</li>
+            <li>You are running multiple locations and need to transfer stock between them</li>
+        </ul>
+
+        <p>At that point, dedicated inventory software becomes a genuine time-saver rather than an overhead. Until then, simplicity is almost always the right call.</p>
+
+        <h2>The connection between parts tracking and job profitability</h2>
+
+        <p>Knowing what you have in stock is only half the value of parts tracking. The other half is understanding your profitability. If you log the parts used against each repair ticket — even just the cost of the main part — you can calculate your actual margin per job rather than estimating it.</p>
+
+        <p>This matters more than most new repairers realise. A repair you are charging £60 for might feel profitable until you account for a £30 screen, £5 in consumables, and thirty minutes of labour. Understanding your real numbers on each repair type allows you to price correctly, identify your most and least profitable work, and make smarter decisions about which repairs to focus on.</p>
+
+        <p>For more on the job tracking side, see our post on <a href="tracking-repair-status-why-it-matters.html">tracking repair status and why it matters</a>.</p>
 
         <h2>Related articles</h2>
         <ul>
-            <li><a href="5-ways-to-speed-up-your-repair-workflow.html">5 Ways to Speed Up Your Repair Workflow</a></li>
+            <li><a href="tracking-repair-status-why-it-matters.html">Tracking Repair Status: Why It Matters</a></li>
             <li><a href="going-paperless-a-guide-for-repair-shops.html">Going Paperless: A Guide for Repair Shops</a></li>
-            <li><a href="7-common-mistakes-new-repair-shop-owners-make.html">7 Common Mistakes New Repair Shop Owners Make</a></li>
+            <li><a href="5-ways-to-speed-up-your-repair-workflow.html">5 Ways to Speed Up Your Repair Workflow</a></li>
         </ul>
     </article>
 
-    <!-- Post CTA -->
     <div class="article-cta">
         <div class="article-cta-card">
             <div class="article-cta-text">
                 <h3>Try PhoneRepairPOS free</h3>
-                <p>Track jobs, parts, and payments from your iPad — without the spreadsheet juggling.</p>
+                <p>Log parts against jobs, track repair status, and run your shop from an iPad — no complex setup required.</p>
             </div>
             <a href="https://apps.apple.com/gb/app/phone-repair-pos/id6759859240" class="article-cta-btn">Download →</a>
         </div>
@@ -576,6 +269,5 @@
             <p>&copy; 2026 PhoneRepairPOS. All rights reserved.</p>
         </div>
     </footer>
-
 </body>
 </html>
