@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How to Manage Repair Tickets Without Losing Your Mind — PhoneRepairPOS</title>
+    <meta name="description" content="A simple system for keeping track of every repair, from intake to collection.">
+    <meta property="og:title" content="How to Manage Repair Tickets Without Losing Your Mind">
+    <meta property="og:description" content="A simple system for keeping track of every repair, from intake to collection.">
+    <meta property="og:type" content="article">
+    <link rel="canonical" href="https://phonerepairpos.app/blog/how-to-manage-repair-tickets.html">
+    <meta property="og:url" content="https://phonerepairpos.app/blog/how-to-manage-repair-tickets.html">
+    <meta property="og:locale" content="en_GB">
+    <meta property="og:image" content="https://phonerepairpos.app/og-image.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="How to Manage Repair Tickets Without Losing Your Mind — PhoneRepairPOS">
+    <meta name="twitter:description" content="A simple system for keeping track of every repair, from intake to collection.">
+    <meta name="twitter:image" content="https://phonerepairpos.app/og-image.png">
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #2B2D7C;
+            --accent: #3F41B2;
+            --vibrant: #5B5EF4;
+            --white: #FFFFFF;
+            --off-white: #F6F6FB;
+            --dark: #111136;
+            --text: #1E1E3F;
+            --text-light: #5C5C7A;
+            --warm-accent: #FF6B4A;
+            --border: #E4E4EE;
+        }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+            color: var(--text);
+            background: var(--white);
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* ===== NAV ===== */
+        nav {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            padding: 1rem 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: rgba(255, 255, 255, 0.92);
+            backdrop-filter: blur(16px);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .nav-logo {
+            font-weight: 800;
+            font-size: 1.25rem;
+            color: var(--dark);
+            text-decoration: none;
+            letter-spacing: -0.02em;
+        }
+
+        .nav-logo span { color: var(--vibrant); }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: var(--text-light);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover { color: var(--dark); }
+
+        .nav-links a.active {
+            color: var(--vibrant);
+            font-weight: 600;
+        }
+
+        .nav-cta {
+            background: var(--vibrant) !important;
+            color: var(--white) !important;
+            padding: 0.5rem 1.25rem;
+            border-radius: 8px;
+            font-weight: 600 !important;
+            transition: transform 0.2s, box-shadow 0.2s !important;
+        }
+
+        .nav-cta:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 4px 16px rgba(91, 94, 244, 0.4);
+        }
+
+        /* ===== ARTICLE HEADER ===== */
+        .article-hero {
+            background: linear-gradient(135deg, var(--dark) 0%, var(--primary) 100%);
+            padding: 5rem 2rem 4rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .article-hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background:
+                radial-gradient(ellipse 300px 250px at 25% 40%, rgba(91, 94, 244, 0.25), transparent),
+                radial-gradient(ellipse 250px 200px at 75% 60%, rgba(255, 107, 74, 0.12), transparent);
+        }
+
+        .article-hero > * { position: relative; }
+
+        .article-hero .post-tag {
+            display: inline-block;
+            font-size: 0.7rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: rgba(255, 255, 255, 0.7);
+            background: rgba(255, 255, 255, 0.1);
+            padding: 0.3rem 0.75rem;
+            border-radius: 6px;
+            margin-bottom: 1.25rem;
+        }
+
+        .article-hero h1 {
+            font-size: clamp(2rem, 4.5vw, 3rem);
+            font-weight: 800;
+            color: var(--white);
+            line-height: 1.15;
+            letter-spacing: -0.03em;
+            max-width: 700px;
+            margin: 0 auto 1.25rem;
+        }
+
+        .article-meta {
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.5);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.75rem;
+        }
+
+        .article-meta-dot {
+            width: 3px;
+            height: 3px;
+            background: rgba(255, 255, 255, 0.4);
+            border-radius: 50%;
+        }
+
+        /* ===== ARTICLE BODY ===== */
+        .article-body {
+            max-width: 680px;
+            margin: 0 auto;
+            padding: 3rem 2rem 5rem;
+        }
+
+        .article-body p {
+            font-size: 1.05rem;
+            line-height: 1.8;
+            color: var(--text);
+            margin-bottom: 1.5rem;
+        }
+
+        .article-body h2 {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--dark);
+            letter-spacing: -0.02em;
+            margin: 2.5rem 0 1rem;
+            line-height: 1.2;
+        }
+
+        .article-body h3 {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--dark);
+            margin: 2rem 0 0.75rem;
+        }
+
+        .article-body ul, .article-body ol {
+            margin: 0 0 1.5rem 1.25rem;
+        }
+
+        .article-body li {
+            font-size: 1.05rem;
+            line-height: 1.8;
+            color: var(--text);
+            margin-bottom: 0.5rem;
+        }
+
+        .article-body blockquote {
+            border-left: 3px solid var(--vibrant);
+            padding: 0.75rem 1.25rem;
+            margin: 1.5rem 0;
+            background: var(--off-white);
+            border-radius: 0 10px 10px 0;
+        }
+
+        .article-body blockquote p {
+            color: var(--text-light);
+            font-size: 1rem;
+            margin-bottom: 0;
+        }
+
+        .article-body strong {
+            color: var(--dark);
+            font-weight: 700;
+        }
+
+        .article-body a {
+            color: var(--vibrant);
+            text-decoration: underline;
+            text-underline-offset: 2px;
+        }
+
+        .article-body a:hover {
+            color: var(--primary);
+        }
+
+        /* Callout box */
+        .callout {
+            background: var(--off-white);
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            padding: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .callout-title {
+            font-size: 0.9rem;
+            font-weight: 700;
+            color: var(--vibrant);
+            margin-bottom: 0.5rem;
+        }
+
+        .callout p {
+            font-size: 0.95rem;
+            margin-bottom: 0;
+        }
+
+        /* ===== ARTICLE FOOTER / CTA ===== */
+        .article-cta {
+            max-width: 680px;
+            margin: 0 auto;
+            padding: 0 2rem 5rem;
+        }
+
+        .article-cta-card {
+            background: var(--dark);
+            border-radius: 20px;
+            padding: 2.5rem;
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .article-cta-card::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(ellipse 200px 200px at 90% 50%, rgba(91, 94, 244, 0.2), transparent);
+        }
+
+        .article-cta-card > * { position: relative; }
+
+        .article-cta-text h3 {
+            font-size: 1.25rem;
+            font-weight: 800;
+            color: var(--white);
+            margin-bottom: 0.5rem;
+        }
+
+        .article-cta-text p {
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.6);
+            line-height: 1.5;
+        }
+
+        .article-cta-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            background: var(--vibrant);
+            color: var(--white);
+            padding: 0.75rem 1.5rem;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            white-space: nowrap;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .article-cta-btn:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 4px 16px rgba(91, 94, 244, 0.4);
+        }
+
+        /* Back link */
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.35rem;
+            color: var(--text-light);
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 500;
+            margin-bottom: 2rem;
+            transition: color 0.2s, gap 0.2s;
+        }
+
+        .back-link:hover {
+            color: var(--vibrant);
+            gap: 0.55rem;
+        }
+
+        /* ===== FOOTER ===== */
+        footer {
+            background: var(--dark);
+            color: rgba(255, 255, 255, 0.5);
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+
+        .footer-content {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .footer-logo {
+            font-weight: 800;
+            font-size: 1.1rem;
+            color: var(--white);
+            margin-bottom: 0.75rem;
+        }
+
+        .footer-logo span { color: var(--vibrant); }
+
+        .footer-links {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.5);
+            text-decoration: none;
+            font-size: 0.85rem;
+            transition: color 0.2s;
+        }
+
+        .footer-links a:hover { color: var(--white); }
+
+        footer p { font-size: 0.8rem; }
+
+        .footer-tagline {
+            font-size: 0.85rem;
+            color: rgba(255, 255, 255, 0.4);
+            margin-bottom: 1rem;
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 768px) {
+            nav { padding: 1rem 1.25rem; }
+            .nav-links { display: none; }
+
+            .article-hero { padding: 4rem 1.25rem 3rem; }
+            .article-body { padding: 2rem 1.25rem 4rem; }
+            .article-cta { padding: 0 1.25rem 4rem; }
+
+            .article-cta-card {
+                flex-direction: column;
+                text-align: center;
+                padding: 2rem 1.5rem;
+            }
+        }
+    </style>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      "headline": "How to Manage Repair Tickets Without Losing Your Mind",
+      "datePublished": "2026-02-28",
+      "dateModified": "2026-02-28",
+      "author": {
+        "@type": "Person",
+        "name": "PhoneRepairPOS Team"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "PhoneRepairPOS",
+        "url": "https://phonerepairpos.app"
+      },
+      "description": "A simple system for keeping track of every repair, from intake to collection.",
+      "mainEntityOfPage": "https://phonerepairpos.app/blog/how-to-manage-repair-tickets.html"
+    }
+    </script>
+</head>
+<body>
+
+    <nav>
+        <a href="../index.html" class="nav-logo">Phone<span>Repair</span>POS</a>
+        <div class="nav-links">
+            <a href="../index.html#features">Features</a>
+            <a href="index.html" class="active">Blog</a>
+            <a href="https://apps.apple.com/gb/app/phone-repair-pos/id6759859240" class="nav-cta">Download</a>
+        </div>
+    </nav>
+
+    <div class="article-hero">
+        <div class="post-tag tips">Tips</div>
+        <h1>How to Manage Repair Tickets Without Losing Your Mind</h1>
+        <div class="article-meta">
+            <span>28 Feb 2026</span>
+            <span class="article-meta-dot"></span>
+            <span>5 min read</span>
+        </div>
+    </div>
+
+    <article class="article-body">
+        <a href="index.html" class="back-link">← All articles</a>
+
+        <p>Every repair shop owner has had the same moment: a customer walks in asking about their phone, and for a brief, awful second you're not sure which one is theirs. The ticket is somewhere. The notes are vague. You start mentally replaying what you were working on two days ago. It's a bad feeling — and it gets worse as volume increases.</p>
+
+        <p>A solid ticketing system doesn't need to be complicated. It just needs to be consistent. Here's what works.</p>
+
+        <h2>What a repair ticket actually needs to contain</h2>
+
+        <p>Strip it back to essentials. Every ticket should capture:</p>
+
+        <ul>
+            <li><strong>Customer name and contact number</strong> — so you can call them when the job's done, or if something unexpected comes up</li>
+            <li><strong>Device make, model, and colour</strong> — colour matters more than you'd think when two customers hand in the same model</li>
+            <li><strong>IMEI or serial number</strong> — critical for identifying the device if a label falls off</li>
+            <li><strong>Fault description</strong> — in enough detail that someone else could pick it up and understand what needs doing</li>
+            <li><strong>Agreed price</strong> — what you quoted, so there's no ambiguity at collection</li>
+            <li><strong>Estimated turnaround</strong> — a rough timeframe you've committed to</li>
+            <li><strong>Ticket reference number</strong> — so both you and the customer can refer to it</li>
+        </ul>
+
+        <p>That's it. Everything else is optional. Some shops add a photo of the device on intake (useful for pre-existing damage), a passcode field (if diagnostics require it), and a consent signature. These are worth adding once your base system is solid.</p>
+
+        <h2>Common failure modes</h2>
+
+        <p>Most ticketing problems come down to the same handful of root causes:</p>
+
+        <p><strong>Unclear notes.</strong> "Screen broken" tells you nothing. "Customer reports screen cracked in top left corner, touch still working, wants cheapest fix option" tells you everything. Train yourself — and any staff — to write notes as if a stranger will be reading them.</p>
+
+        <p><strong>Lost tickets.</strong> Paper tickets get wet, fall behind benches, or get thrown away by mistake. If you use paper, keep tickets attached to the device using a cable tie tag or a resealable bag. Never leave a ticket floating loose.</p>
+
+        <p><strong>No customer contact info.</strong> You'd be surprised how many shops miss this. If there's no phone number on the ticket, you can't reach the customer if the repair reveals a new issue, or if a part is delayed. Always take a number, even for quick same-day repairs.</p>
+
+        <blockquote>
+            <p>The moment you think "I'll remember that", you've created a future problem. Write it down. Always.</p>
+        </blockquote>
+
+        <h2>A simple numbering system</h2>
+
+        <p>Give every ticket a reference number that increments from 1. That's all you need. Don't try to encode dates or device types into the number — it just adds complexity. Ticket #0047 means nothing until you look it up, but it means the same thing to both you and the customer.</p>
+
+        <p>When a customer comes to collect, they can give you their number and you can pull up the job instantly. It also means you have a running record of how many jobs you've completed — useful for tracking growth over time.</p>
+
+        <h2>Status tracking basics</h2>
+
+        <p>Binary status — "done" or "not done" — is the source of a lot of confusion. Use a simple set of stages instead:</p>
+
+        <ol>
+            <li><strong>Received</strong> — device is in your possession, ticket created</li>
+            <li><strong>Diagnosing</strong> — you're assessing the fault</li>
+            <li><strong>Waiting for parts</strong> — you know what's needed but haven't started the repair yet</li>
+            <li><strong>In repair</strong> — actively being worked on</li>
+            <li><strong>Testing</strong> — repair complete, checking everything works</li>
+            <li><strong>Ready for collection</strong> — notified the customer</li>
+            <li><strong>Collected</strong> — payment taken, device handed back</li>
+        </ol>
+
+        <p>You don't need all seven stages from day one. Start with Received, In Progress, Ready, and Collected. Add more granularity as your volume grows.</p>
+
+        <div class="callout">
+            <div class="callout-title">Quick win</div>
+            <p>When a job moves to "Ready for collection", send the customer a text immediately. Don't batch it up for later — the sooner they collect, the sooner your bench space clears.</p>
+        </div>
+
+        <h2>Digital vs paper: the honest comparison</h2>
+
+        <p>Paper has real advantages. It's instant, requires no setup, never crashes, and works without Wi-Fi. Many shops run successfully on paper notebooks for years. If you're doing fewer than 5 repairs a day and work alone, paper may genuinely be all you need.</p>
+
+        <p>The problems with paper compound as you scale:</p>
+
+        <ul>
+            <li>Searching for a specific job means flipping through pages</li>
+            <li>There's no way to filter by status — you have to scan everything manually</li>
+            <li>If a notebook goes missing, you've lost your records</li>
+            <li>Staff members can't update a ticket without being physically present</li>
+            <li>There's no payment audit trail — just crossed-out lines</li>
+        </ul>
+
+        <p>Digital ticketing solves all of these. A well-designed app gives you instant search, status filtering, payment records, and a history that doesn't get lost if someone spills coffee on the counter.</p>
+
+        <p>The barrier people cite is usually time to set up. In practice, a good repair shop app takes minutes to get started with — you're not configuring enterprise software.</p>
+
+        <h2>Keeping tickets under control</h2>
+
+        <p>A few habits that make a big difference:</p>
+
+        <p><strong>Close jobs when they're done.</strong> Don't leave completed jobs sitting in your "active" list. Mark them collected as soon as the customer leaves. A clean active list means you can see your real workload at a glance.</p>
+
+        <p><strong>Add notes as you work, not after.</strong> The habit of writing notes at the end of the day is a bad one. Memory degrades. Add a note the moment something relevant happens: you found additional damage, you called the customer, you ordered a part.</p>
+
+        <p><strong>Attach pre-existing damage notes on intake.</strong> This is your protection. If a customer collected a phone with a scratch and claims you caused it, your intake note saying "cosmetic scratching on rear panel noted on arrival" is your defence.</p>
+
+        <p>PhoneRepairPOS is built around exactly this kind of workflow — intake, status tracking, notes, and payment, all tied to a single ticket. Whether you use it or build your own system, the discipline is the same: capture everything, keep it current, and never rely on memory.</p>
+
+        <h2>Related articles</h2>
+        <ul>
+            <li><a href="tracking-repair-status-why-it-matters.html">Tracking Repair Status: Why It Matters</a></li>
+            <li><a href="5-ways-to-speed-up-your-repair-workflow.html">5 Ways to Speed Up Your Repair Workflow</a></li>
+            <li><a href="going-paperless-a-guide-for-repair-shops.html">Going Paperless: A Guide for Repair Shops</a></li>
+        </ul>
+    </article>
+
+    <!-- Post CTA -->
+    <div class="article-cta">
+        <div class="article-cta-card">
+            <div class="article-cta-text">
+                <h3>Try PhoneRepairPOS free</h3>
+                <p>Digital tickets, status tracking, and payment records — all from your iPad.</p>
+            </div>
+            <a href="https://apps.apple.com/gb/app/phone-repair-pos/id6759859240" class="article-cta-btn">Download →</a>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">Phone<span>Repair</span>POS</div>
+            <p class="footer-tagline">Built for repair shops worldwide.</p>
+            <div class="footer-links">
+                <a href="index.html">Blog</a>
+                <a href="mailto:support@phonerepairpos.app">Contact</a>
+                <a href="../privacy.html">Privacy Policy</a>
+                <a href="../terms.html">Terms of Use</a>
+            </div>
+            <p>&copy; 2026 PhoneRepairPOS. All rights reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>

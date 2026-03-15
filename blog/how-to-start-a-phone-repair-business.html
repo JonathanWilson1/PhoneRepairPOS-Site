@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How to Start a Phone Repair Business: A Practical Guide — PhoneRepairPOS</title>
+    <meta name="description" content="Everything from tools and parts to pricing and your first customer — without the fluff.">
+    <meta property="og:title" content="How to Start a Phone Repair Business: A Practical Guide">
+    <meta property="og:description" content="Everything from tools and parts to pricing and your first customer — without the fluff.">
+    <meta property="og:type" content="article">
+    <link rel="canonical" href="https://phonerepairpos.app/blog/how-to-start-a-phone-repair-business.html">
+    <meta property="og:url" content="https://phonerepairpos.app/blog/how-to-start-a-phone-repair-business.html">
+    <meta property="og:locale" content="en_GB">
+    <meta property="og:image" content="https://phonerepairpos.app/og-image.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="How to Start a Phone Repair Business: A Practical Guide — PhoneRepairPOS">
+    <meta name="twitter:description" content="Everything from tools and parts to pricing and your first customer — without the fluff.">
+    <meta name="twitter:image" content="https://phonerepairpos.app/og-image.png">
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #2B2D7C;
+            --accent: #3F41B2;
+            --vibrant: #5B5EF4;
+            --white: #FFFFFF;
+            --off-white: #F6F6FB;
+            --dark: #111136;
+            --text: #1E1E3F;
+            --text-light: #5C5C7A;
+            --warm-accent: #FF6B4A;
+            --border: #E4E4EE;
+        }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+            color: var(--text);
+            background: var(--white);
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* ===== NAV ===== */
+        nav {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            padding: 1rem 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: rgba(255, 255, 255, 0.92);
+            backdrop-filter: blur(16px);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .nav-logo {
+            font-weight: 800;
+            font-size: 1.25rem;
+            color: var(--dark);
+            text-decoration: none;
+            letter-spacing: -0.02em;
+        }
+
+        .nav-logo span { color: var(--vibrant); }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: var(--text-light);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover { color: var(--dark); }
+
+        .nav-links a.active {
+            color: var(--vibrant);
+            font-weight: 600;
+        }
+
+        .nav-cta {
+            background: var(--vibrant) !important;
+            color: var(--white) !important;
+            padding: 0.5rem 1.25rem;
+            border-radius: 8px;
+            font-weight: 600 !important;
+            transition: transform 0.2s, box-shadow 0.2s !important;
+        }
+
+        .nav-cta:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 4px 16px rgba(91, 94, 244, 0.4);
+        }
+
+        /* ===== ARTICLE HEADER ===== */
+        .article-hero {
+            background: linear-gradient(135deg, var(--dark) 0%, var(--primary) 100%);
+            padding: 5rem 2rem 4rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .article-hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background:
+                radial-gradient(ellipse 300px 250px at 25% 40%, rgba(91, 94, 244, 0.25), transparent),
+                radial-gradient(ellipse 250px 200px at 75% 60%, rgba(255, 107, 74, 0.12), transparent);
+        }
+
+        .article-hero > * { position: relative; }
+
+        .article-hero .post-tag {
+            display: inline-block;
+            font-size: 0.7rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: rgba(255, 255, 255, 0.7);
+            background: rgba(255, 255, 255, 0.1);
+            padding: 0.3rem 0.75rem;
+            border-radius: 6px;
+            margin-bottom: 1.25rem;
+        }
+
+        .article-hero h1 {
+            font-size: clamp(2rem, 4.5vw, 3rem);
+            font-weight: 800;
+            color: var(--white);
+            line-height: 1.15;
+            letter-spacing: -0.03em;
+            max-width: 700px;
+            margin: 0 auto 1.25rem;
+        }
+
+        .article-meta {
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.5);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.75rem;
+        }
+
+        .article-meta-dot {
+            width: 3px;
+            height: 3px;
+            background: rgba(255, 255, 255, 0.4);
+            border-radius: 50%;
+        }
+
+        /* ===== ARTICLE BODY ===== */
+        .article-body {
+            max-width: 680px;
+            margin: 0 auto;
+            padding: 3rem 2rem 5rem;
+        }
+
+        .article-body p {
+            font-size: 1.05rem;
+            line-height: 1.8;
+            color: var(--text);
+            margin-bottom: 1.5rem;
+        }
+
+        .article-body h2 {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--dark);
+            letter-spacing: -0.02em;
+            margin: 2.5rem 0 1rem;
+            line-height: 1.2;
+        }
+
+        .article-body h3 {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--dark);
+            margin: 2rem 0 0.75rem;
+        }
+
+        .article-body ul, .article-body ol {
+            margin: 0 0 1.5rem 1.25rem;
+        }
+
+        .article-body li {
+            font-size: 1.05rem;
+            line-height: 1.8;
+            color: var(--text);
+            margin-bottom: 0.5rem;
+        }
+
+        .article-body blockquote {
+            border-left: 3px solid var(--vibrant);
+            padding: 0.75rem 1.25rem;
+            margin: 1.5rem 0;
+            background: var(--off-white);
+            border-radius: 0 10px 10px 0;
+        }
+
+        .article-body blockquote p {
+            color: var(--text-light);
+            font-size: 1rem;
+            margin-bottom: 0;
+        }
+
+        .article-body strong {
+            color: var(--dark);
+            font-weight: 700;
+        }
+
+        .article-body a {
+            color: var(--vibrant);
+            text-decoration: underline;
+            text-underline-offset: 2px;
+        }
+
+        .article-body a:hover {
+            color: var(--primary);
+        }
+
+        /* Callout box */
+        .callout {
+            background: var(--off-white);
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            padding: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .callout-title {
+            font-size: 0.9rem;
+            font-weight: 700;
+            color: var(--vibrant);
+            margin-bottom: 0.5rem;
+        }
+
+        .callout p {
+            font-size: 0.95rem;
+            margin-bottom: 0;
+        }
+
+        /* ===== ARTICLE FOOTER / CTA ===== */
+        .article-cta {
+            max-width: 680px;
+            margin: 0 auto;
+            padding: 0 2rem 5rem;
+        }
+
+        .article-cta-card {
+            background: var(--dark);
+            border-radius: 20px;
+            padding: 2.5rem;
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .article-cta-card::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(ellipse 200px 200px at 90% 50%, rgba(91, 94, 244, 0.2), transparent);
+        }
+
+        .article-cta-card > * { position: relative; }
+
+        .article-cta-text h3 {
+            font-size: 1.25rem;
+            font-weight: 800;
+            color: var(--white);
+            margin-bottom: 0.5rem;
+        }
+
+        .article-cta-text p {
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.6);
+            line-height: 1.5;
+        }
+
+        .article-cta-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            background: var(--vibrant);
+            color: var(--white);
+            padding: 0.75rem 1.5rem;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            white-space: nowrap;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .article-cta-btn:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 4px 16px rgba(91, 94, 244, 0.4);
+        }
+
+        /* Back link */
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.35rem;
+            color: var(--text-light);
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 500;
+            margin-bottom: 2rem;
+            transition: color 0.2s, gap 0.2s;
+        }
+
+        .back-link:hover {
+            color: var(--vibrant);
+            gap: 0.55rem;
+        }
+
+        /* ===== FOOTER ===== */
+        footer {
+            background: var(--dark);
+            color: rgba(255, 255, 255, 0.5);
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+
+        .footer-content {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .footer-logo {
+            font-weight: 800;
+            font-size: 1.1rem;
+            color: var(--white);
+            margin-bottom: 0.75rem;
+        }
+
+        .footer-logo span { color: var(--vibrant); }
+
+        .footer-links {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.5);
+            text-decoration: none;
+            font-size: 0.85rem;
+            transition: color 0.2s;
+        }
+
+        .footer-links a:hover { color: var(--white); }
+
+        footer p { font-size: 0.8rem; }
+
+        .footer-tagline {
+            font-size: 0.85rem;
+            color: rgba(255, 255, 255, 0.4);
+            margin-bottom: 1rem;
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 768px) {
+            nav { padding: 1rem 1.25rem; }
+            .nav-links { display: none; }
+
+            .article-hero { padding: 4rem 1.25rem 3rem; }
+            .article-body { padding: 2rem 1.25rem 4rem; }
+            .article-cta { padding: 0 1.25rem 4rem; }
+
+            .article-cta-card {
+                flex-direction: column;
+                text-align: center;
+                padding: 2rem 1.5rem;
+            }
+        }
+    </style>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      "headline": "How to Start a Phone Repair Business: A Practical Guide",
+      "datePublished": "2026-03-02",
+      "dateModified": "2026-03-02",
+      "author": {
+        "@type": "Person",
+        "name": "PhoneRepairPOS Team"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "PhoneRepairPOS",
+        "url": "https://phonerepairpos.app"
+      },
+      "description": "Everything from tools and parts to pricing and your first customer — without the fluff.",
+      "mainEntityOfPage": "https://phonerepairpos.app/blog/how-to-start-a-phone-repair-business.html"
+    }
+    </script>
+</head>
+<body>
+
+    <nav>
+        <a href="../index.html" class="nav-logo">Phone<span>Repair</span>POS</a>
+        <div class="nav-links">
+            <a href="../index.html#features">Features</a>
+            <a href="index.html" class="active">Blog</a>
+            <a href="https://apps.apple.com/gb/app/phone-repair-pos/id6759859240" class="nav-cta">Download</a>
+        </div>
+    </nav>
+
+    <div class="article-hero">
+        <div class="post-tag guide">Guide</div>
+        <h1>How to Start a Phone Repair Business: A Practical Guide</h1>
+        <div class="article-meta">
+            <span>2 Mar 2026</span>
+            <span class="article-meta-dot"></span>
+            <span>8 min read</span>
+        </div>
+    </div>
+
+    <article class="article-body">
+        <a href="index.html" class="back-link">← All articles</a>
+
+        <p>Phone repair is one of the few trades you can genuinely start with a few hundred pounds, a set of tools, and some practice. Demand is constant — screens crack, batteries degrade, charging ports get damaged — and customers need someone local and reliable to fix them. But getting started without guidance means learning expensive lessons the hard way. This guide cuts through the noise.</p>
+
+        <h2>Skills you need — and how to get them</h2>
+
+        <p>You don't need a formal qualification to repair phones. What you do need is patience, a steady hand, and the ability to follow technical procedures carefully. Screen replacements and battery swaps on popular models like the iPhone and Samsung Galaxy are relatively straightforward once you've done a few. More complex repairs — motherboard work, micro-soldering — take longer to develop.</p>
+
+        <p>The best way to build skills quickly:</p>
+
+        <ul>
+            <li><strong>Buy broken phones to practice on.</strong> eBay is full of devices listed as "spares or repairs". Buy a job lot of the same model and take them apart until the process feels routine.</li>
+            <li><strong>Use iFixit guides.</strong> The repair guides at iFixit are detailed, free, and cover thousands of devices. They're the industry standard for a reason.</li>
+            <li><strong>Watch YouTube repair channels.</strong> Channels like Hugh Jeffreys show real repairs with commentary on what goes wrong. Watching before attempting saves mistakes.</li>
+            <li><strong>Join repair communities.</strong> The Phone Repair Technicians group on Facebook has hundreds of thousands of members. You can ask questions and get answers from experienced techs within minutes.</li>
+        </ul>
+
+        <p>Focus on mastering the top 10 most common repairs first — iPhone screen replacement, Samsung screen replacement, battery replacements across popular models, and charging port repairs. These account for the majority of walk-in work at most shops.</p>
+
+        <h2>Essential tools and parts to start</h2>
+
+        <p>You can start with less than £300 of tools. Here's the core kit:</p>
+
+        <ul>
+            <li>Precision screwdriver set (pentalobe, Phillips, Torx)</li>
+            <li>Plastic spudgers and opening picks</li>
+            <li>Suction cup handles</li>
+            <li>Heat gun or iOpener (for adhesive screens)</li>
+            <li>Anti-static mat and wrist strap</li>
+            <li>Tweezers (fine-tip and curved)</li>
+            <li>UV lamp and UV-cure adhesive (for reassembly)</li>
+            <li>Multimeter (essential for diagnosing power issues)</li>
+        </ul>
+
+        <p>For parts, start with the models you see most in your area. In the UK, iPhones dominate, followed by Samsung Galaxy. Order from reputable wholesalers — Mobile Sentrix, RP Electronics, and Mytrendyphone are commonly used. Avoid the cheapest possible parts; poor-quality screens lead to complaints and returns that cost you more than the margin you saved.</p>
+
+        <div class="callout">
+            <div class="callout-title">Parts tip</div>
+            <p>Always carry a small stock of the most common parts (iPhone 13/14 screens, standard batteries) so you can offer same-day repairs rather than making customers wait for an order.</p>
+        </div>
+
+        <h2>Setting up a workspace: home vs shop</h2>
+
+        <p>Most repair businesses start at home. A spare bedroom or garage works fine. You need a clean, well-lit workspace — good lighting is non-negotiable for working on small components. A dedicated desk with your tools organised saves time on every repair.</p>
+
+        <p><strong>Working from home advantages:</strong> No rent, low overheads, flexible hours. You can build up revenue before committing to bigger costs.</p>
+
+        <p><strong>Working from home disadvantages:</strong> You need to go out and collect or customers need to come to you. Not everyone is comfortable bringing a device to someone's home address. It limits walk-in traffic significantly.</p>
+
+        <p><strong>Renting a unit or kiosk:</strong> Once you're consistently doing 5–10 repairs a week from home, a small unit or market kiosk starts to make sense. A kiosk in a shopping centre or market stall is often cheaper than a high-street unit and gives you high footfall. Rent varies enormously by location — budget from £200/month for a small market stall to £1,000+/month for a high-street shop.</p>
+
+        <p>There's no right answer. Start where your costs are lowest and move when the revenue justifies it.</p>
+
+        <h2>Pricing your first repairs</h2>
+
+        <p>New repair shop owners almost always underprice. It feels safer to be cheap when you're starting out — but underpricing sets expectations, attracts difficult customers, and makes the business unsustainable.</p>
+
+        <p>A sensible starting approach: check what two or three established local shops charge, and price somewhere in the same range. You don't need to be the cheapest. Customers choose based on proximity, reviews, and trust as much as price.</p>
+
+        <p>Your floor price for any repair should cover: cost of parts + your time (at a minimum wage equivalent) + a contribution to overheads. If you can't cover that, the repair isn't worth doing.</p>
+
+        <p>As a rough reference: iPhone screen replacements typically go for £60–£120 depending on model and quality of parts. Battery replacements are usually £35–£60. Charging port repairs often command £40–£80. These figures vary by region — London is higher, rural areas lower.</p>
+
+        <h2>Getting your first customers</h2>
+
+        <p>Before you spend money on advertising, work through these free channels first:</p>
+
+        <p><strong>Google Business Profile.</strong> This is the single most important thing you can do. When someone in your area searches "phone repair near me", Google shows a map with local businesses. Set up your profile, add photos, add your services and prices, and ask your first few customers for reviews. A profile with 10 genuine reviews will outrank shops with none, even if they've been open longer.</p>
+
+        <p><strong>Local Facebook groups.</strong> Most towns have local community or "buy and sell" Facebook groups with thousands of members. Post a friendly introduction, mention what you offer, and share occasionally when you've done an impressive repair. Don't spam — but a genuine presence pays off.</p>
+
+        <p><strong>Friends and family.</strong> Tell everyone you know. Your first 20 repairs will almost certainly come through personal networks. Offer a small discount in exchange for an honest Google review.</p>
+
+        <p><strong>Local businesses.</strong> Offices, tradespeople, and small businesses often have staff who crack phones. Pop a card through letterboxes on a local industrial estate — a bulk deal (e.g. discounted repairs for employees of a local company) can generate consistent volume.</p>
+
+        <h2>Legal basics</h2>
+
+        <p>In the UK, the simplest way to start is as a <strong>sole trader</strong>. Register with HMRC for Self Assessment, keep records of income and expenses, and submit a tax return each year. There's no incorporation required and minimal admin.</p>
+
+        <p>Insurance is not optional. You need at minimum:</p>
+
+        <ul>
+            <li><strong>Public liability insurance</strong> — covers injury or damage to a customer's property caused by your work</li>
+            <li><strong>Goods in transit / device insurance</strong> — covers customer devices while they're in your care</li>
+        </ul>
+
+        <p>Premiums for basic cover are typically £10–£20/month for a sole trader starting out. Providers like Simply Business and Hiscox offer trades insurance policies. It's a small cost against the risk of a customer claiming their £1,000 iPhone was damaged in your care.</p>
+
+        <h2>Managing jobs from day one</h2>
+
+        <p>From your very first repair, keep records. At minimum: customer name, contact number, device model, fault description, agreed price, and whether payment was received. This matters when a customer disputes a repair three months later, and it matters for your tax records.</p>
+
+        <p>Paper works to start, but it gets unwieldy fast. An app like PhoneRepairPOS lets you log jobs digitally, track repair status, and record payments from your iPad. It's the difference between running a professional operation and feeling like you're constantly playing catch-up.</p>
+
+        <h2>Related articles</h2>
+        <ul>
+            <li><a href="setting-repair-prices-guide.html">A Straightforward Guide to Setting Repair Prices</a></li>
+            <li><a href="phone-repair-shop-marketing.html">Marketing Your Repair Shop on a Budget</a></li>
+            <li><a href="7-common-mistakes-new-repair-shop-owners-make.html">7 Common Mistakes New Repair Shop Owners Make</a></li>
+        </ul>
+    </article>
+
+    <!-- Post CTA -->
+    <div class="article-cta">
+        <div class="article-cta-card">
+            <div class="article-cta-text">
+                <h3>Try PhoneRepairPOS free</h3>
+                <p>Digital tickets, status tracking, and payment records — all from your iPad.</p>
+            </div>
+            <a href="https://apps.apple.com/gb/app/phone-repair-pos/id6759859240" class="article-cta-btn">Download →</a>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">Phone<span>Repair</span>POS</div>
+            <p class="footer-tagline">Built for repair shops worldwide.</p>
+            <div class="footer-links">
+                <a href="index.html">Blog</a>
+                <a href="mailto:support@phonerepairpos.app">Contact</a>
+                <a href="../privacy.html">Privacy Policy</a>
+                <a href="../terms.html">Terms of Use</a>
+            </div>
+            <p>&copy; 2026 PhoneRepairPOS. All rights reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
