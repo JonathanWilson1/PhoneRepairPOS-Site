@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Going Paperless: A Guide for Repair Shops — PhoneRepairPOS</title>
+    <meta name="description" content="How to ditch paper tickets and spreadsheets without disrupting your workflow.">
+    <meta property="og:title" content="Going Paperless: A Guide for Repair Shops">
+    <meta property="og:description" content="How to ditch paper tickets and spreadsheets without disrupting your workflow.">
+    <meta property="og:type" content="article">
+    <link rel="canonical" href="https://phonerepairpos.app/blog/going-paperless-a-guide-for-repair-shops.html">
+    <meta property="og:url" content="https://phonerepairpos.app/blog/going-paperless-a-guide-for-repair-shops.html">
+    <meta property="og:locale" content="en_GB">
+    <meta property="og:image" content="https://phonerepairpos.app/og-image.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Going Paperless: A Guide for Repair Shops — PhoneRepairPOS">
+    <meta name="twitter:description" content="How to ditch paper tickets and spreadsheets without disrupting your workflow.">
+    <meta name="twitter:image" content="https://phonerepairpos.app/og-image.png">
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #2B2D7C;
+            --accent: #3F41B2;
+            --vibrant: #5B5EF4;
+            --white: #FFFFFF;
+            --off-white: #F6F6FB;
+            --dark: #111136;
+            --text: #1E1E3F;
+            --text-light: #5C5C7A;
+            --warm-accent: #FF6B4A;
+            --border: #E4E4EE;
+        }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+            color: var(--text);
+            background: var(--white);
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* ===== NAV ===== */
+        nav {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            padding: 1rem 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: rgba(255, 255, 255, 0.92);
+            backdrop-filter: blur(16px);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .nav-logo {
+            font-weight: 800;
+            font-size: 1.25rem;
+            color: var(--dark);
+            text-decoration: none;
+            letter-spacing: -0.02em;
+        }
+
+        .nav-logo span { color: var(--vibrant); }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: var(--text-light);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover { color: var(--dark); }
+
+        .nav-links a.active {
+            color: var(--vibrant);
+            font-weight: 600;
+        }
+
+        .nav-cta {
+            background: var(--vibrant) !important;
+            color: var(--white) !important;
+            padding: 0.5rem 1.25rem;
+            border-radius: 8px;
+            font-weight: 600 !important;
+            transition: transform 0.2s, box-shadow 0.2s !important;
+        }
+
+        .nav-cta:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 4px 16px rgba(91, 94, 244, 0.4);
+        }
+
+        /* ===== ARTICLE HEADER ===== */
+        .article-hero {
+            background: linear-gradient(135deg, var(--dark) 0%, var(--primary) 100%);
+            padding: 5rem 2rem 4rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .article-hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background:
+                radial-gradient(ellipse 300px 250px at 25% 40%, rgba(91, 94, 244, 0.25), transparent),
+                radial-gradient(ellipse 250px 200px at 75% 60%, rgba(255, 107, 74, 0.12), transparent);
+        }
+
+        .article-hero > * { position: relative; }
+
+        .article-hero .post-tag {
+            display: inline-block;
+            font-size: 0.7rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: rgba(255, 255, 255, 0.7);
+            background: rgba(255, 255, 255, 0.1);
+            padding: 0.3rem 0.75rem;
+            border-radius: 6px;
+            margin-bottom: 1.25rem;
+        }
+
+        .article-hero h1 {
+            font-size: clamp(2rem, 4.5vw, 3rem);
+            font-weight: 800;
+            color: var(--white);
+            line-height: 1.15;
+            letter-spacing: -0.03em;
+            max-width: 700px;
+            margin: 0 auto 1.25rem;
+        }
+
+        .article-meta {
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.5);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.75rem;
+        }
+
+        .article-meta-dot {
+            width: 3px;
+            height: 3px;
+            background: rgba(255, 255, 255, 0.4);
+            border-radius: 50%;
+        }
+
+        /* ===== ARTICLE BODY ===== */
+        .article-body {
+            max-width: 680px;
+            margin: 0 auto;
+            padding: 3rem 2rem 5rem;
+        }
+
+        .article-body p {
+            font-size: 1.05rem;
+            line-height: 1.8;
+            color: var(--text);
+            margin-bottom: 1.5rem;
+        }
+
+        .article-body h2 {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--dark);
+            letter-spacing: -0.02em;
+            margin: 2.5rem 0 1rem;
+            line-height: 1.2;
+        }
+
+        .article-body h3 {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--dark);
+            margin: 2rem 0 0.75rem;
+        }
+
+        .article-body ul, .article-body ol {
+            margin: 0 0 1.5rem 1.25rem;
+        }
+
+        .article-body li {
+            font-size: 1.05rem;
+            line-height: 1.8;
+            color: var(--text);
+            margin-bottom: 0.5rem;
+        }
+
+        .article-body blockquote {
+            border-left: 3px solid var(--vibrant);
+            padding: 0.75rem 1.25rem;
+            margin: 1.5rem 0;
+            background: var(--off-white);
+            border-radius: 0 10px 10px 0;
+        }
+
+        .article-body blockquote p {
+            color: var(--text-light);
+            font-size: 1rem;
+            margin-bottom: 0;
+        }
+
+        .article-body strong {
+            color: var(--dark);
+            font-weight: 700;
+        }
+
+        .article-body a {
+            color: var(--vibrant);
+            text-decoration: underline;
+            text-underline-offset: 2px;
+        }
+
+        .article-body a:hover {
+            color: var(--primary);
+        }
+
+        /* Callout box */
+        .callout {
+            background: var(--off-white);
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            padding: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .callout-title {
+            font-size: 0.9rem;
+            font-weight: 700;
+            color: var(--vibrant);
+            margin-bottom: 0.5rem;
+        }
+
+        .callout p {
+            font-size: 0.95rem;
+            margin-bottom: 0;
+        }
+
+        /* ===== ARTICLE FOOTER / CTA ===== */
+        .article-cta {
+            max-width: 680px;
+            margin: 0 auto;
+            padding: 0 2rem 5rem;
+        }
+
+        .article-cta-card {
+            background: var(--dark);
+            border-radius: 20px;
+            padding: 2.5rem;
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .article-cta-card::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(ellipse 200px 200px at 90% 50%, rgba(91, 94, 244, 0.2), transparent);
+        }
+
+        .article-cta-card > * { position: relative; }
+
+        .article-cta-text h3 {
+            font-size: 1.25rem;
+            font-weight: 800;
+            color: var(--white);
+            margin-bottom: 0.5rem;
+        }
+
+        .article-cta-text p {
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.6);
+            line-height: 1.5;
+        }
+
+        .article-cta-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            background: var(--vibrant);
+            color: var(--white);
+            padding: 0.75rem 1.5rem;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            white-space: nowrap;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .article-cta-btn:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 4px 16px rgba(91, 94, 244, 0.4);
+        }
+
+        /* Back link */
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.35rem;
+            color: var(--text-light);
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 500;
+            margin-bottom: 2rem;
+            transition: color 0.2s, gap 0.2s;
+        }
+
+        .back-link:hover {
+            color: var(--vibrant);
+            gap: 0.55rem;
+        }
+
+        /* ===== FOOTER ===== */
+        footer {
+            background: var(--dark);
+            color: rgba(255, 255, 255, 0.5);
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+
+        .footer-content {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .footer-logo {
+            font-weight: 800;
+            font-size: 1.1rem;
+            color: var(--white);
+            margin-bottom: 0.75rem;
+        }
+
+        .footer-logo span { color: var(--vibrant); }
+
+        .footer-links {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.5);
+            text-decoration: none;
+            font-size: 0.85rem;
+            transition: color 0.2s;
+        }
+
+        .footer-links a:hover { color: var(--white); }
+
+        footer p { font-size: 0.8rem; }
+
+        .footer-tagline {
+            font-size: 0.85rem;
+            color: rgba(255, 255, 255, 0.4);
+            margin-bottom: 1rem;
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 768px) {
+            nav { padding: 1rem 1.25rem; }
+            .nav-links { display: none; }
+
+            .article-hero { padding: 4rem 1.25rem 3rem; }
+            .article-body { padding: 2rem 1.25rem 4rem; }
+            .article-cta { padding: 0 1.25rem 4rem; }
+
+            .article-cta-card {
+                flex-direction: column;
+                text-align: center;
+                padding: 2rem 1.5rem;
+            }
+        }
+    </style>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      "headline": "Going Paperless: A Guide for Repair Shops",
+      "datePublished": "2026-02-12",
+      "dateModified": "2026-02-12",
+      "author": {
+        "@type": "Person",
+        "name": "PhoneRepairPOS Team"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "PhoneRepairPOS",
+        "url": "https://phonerepairpos.app"
+      },
+      "description": "How to ditch paper tickets and spreadsheets without disrupting your workflow.",
+      "mainEntityOfPage": "https://phonerepairpos.app/blog/going-paperless-a-guide-for-repair-shops.html"
+    }
+    </script>
+</head>
+<body>
+
+    <nav>
+        <a href="../index.html" class="nav-logo">Phone<span>Repair</span>POS</a>
+        <div class="nav-links">
+            <a href="../index.html#features">Features</a>
+            <a href="index.html" class="active">Blog</a>
+            <a href="https://apps.apple.com/gb/app/phone-repair-pos/id6759859240" class="nav-cta">Download</a>
+        </div>
+    </nav>
+
+    <div class="article-hero">
+        <div class="post-tag">Workflow</div>
+        <h1>Going Paperless: A Guide for Repair Shops</h1>
+        <div class="article-meta">
+            <span>12 Feb 2026</span>
+            <span class="article-meta-dot"></span>
+            <span>5 min read</span>
+        </div>
+    </div>
+
+    <article class="article-body">
+        <a href="index.html" class="back-link">← All articles</a>
+
+        <p>Paper has served repair shops for decades. Ticket pads, job sheets, handwritten receipts — they're familiar, cheap, and need no batteries. So why would you change? The honest answer is that paper works fine until it doesn't, and by the time it stops working, you've usually lost something: a ticket, a payment record, a customer's details.</p>
+
+        <p>Going paperless isn't about chasing technology for its own sake. It's about removing the friction that slows you down, costs you money, and occasionally leaves a customer angry because you can't find their job. This guide will walk you through exactly how to make the switch — without disrupting what's already working.</p>
+
+        <h2>Why repair shops resist going paperless</h2>
+
+        <p>The hesitation is understandable. Repair shops are busy, and most owners didn't start the business to manage software. The common objections tend to cluster around three things:</p>
+
+        <p><strong>Habit:</strong> "This is how I've always done it." Paper tickets have a physical presence — you can shuffle them, pin them to the bench, hand them to a customer. That tangibility feels reliable.</p>
+
+        <p><strong>Transition fear:</strong> What happens to current open jobs when you switch? Do you have to re-enter everything? What if the system goes down mid-repair?</p>
+
+        <p><strong>Cost:</strong> Many repairers assume digital tools are expensive — monthly subscriptions, hardware costs, training time. The reality is that a single iPad running the right app costs less per month than a box of job sheets and the time you spend searching through them.</p>
+
+        <p>None of these objections are wrong — they're just overstated. The transition is manageable, and the ongoing benefits outweigh the short-term disruption.</p>
+
+        <h2>What to digitise first</h2>
+
+        <p>You don't have to go all-in on day one. In fact, trying to change everything at once is the quickest way to abandon the whole thing. Instead, digitise in order of impact:</p>
+
+        <h3>1. Job intake forms</h3>
+
+        <p>This is the highest-leverage change. Every repair starts with intake, so standardising it digitally means every job from day one has a consistent record. Capture: customer name, phone number, device make and model, fault description, agreed price, and expected turnaround. That's it. The rest can come later.</p>
+
+        <h3>2. Payment records</h3>
+
+        <p>Paper receipts fade, get lost, and don't tell you anything about your revenue trends. Linking a payment record to each job ticket means you always know who's paid and who hasn't — without checking a separate till report or drawer full of receipts.</p>
+
+        <h3>3. Customer database</h3>
+
+        <p>This one builds itself once you're capturing intake digitally. After a month, you have a searchable list of every customer who's walked through the door. That's useful for follow-up, for warranty queries, and for the inevitable "I was in a few months ago, can you check what you did to my phone?" conversation.</p>
+
+        <h2>Common fears — and why they're manageable</h2>
+
+        <h3>Fear: "What if I lose all my data?"</h3>
+
+        <p>This is the most common concern, and it's completely valid. Paper can't be hacked or deleted. But paper also can't be backed up. When it's gone, it's gone.</p>
+
+        <p>A well-designed digital system does automatic backups. If your app uses iCloud or a cloud sync layer, your data is safe even if your iPad is stolen or dropped. That's a much stronger safety guarantee than a filing cabinet.</p>
+
+        <h3>Fear: "It'll take too long to learn"</h3>
+
+        <p>Good software is designed to be learned in an afternoon. If an app takes weeks of training, it's the wrong tool for a repair shop. Look for something purpose-built for repair workflows rather than a generic business tool with bolt-on features.</p>
+
+        <div class="callout">
+            <div class="callout-title">Reality check</div>
+            <p>Most repair shop owners who make the switch say they were fully comfortable within a week. The first day is slower; by day three, they're faster than they were on paper.</p>
+        </div>
+
+        <h3>Fear: "What if the internet goes down?"</h3>
+
+        <p>This is a legitimate concern — which is why offline capability matters. An app that stops working when Wi-Fi drops is a liability. Look for software that stores data locally on the device and syncs when connected. Your shop shouldn't depend on a stable internet connection to take in a repair.</p>
+
+        <h2>A step-by-step transition approach</h2>
+
+        <p>Here's the approach that works for most shops:</p>
+
+        <ol>
+            <li><strong>Week 1 — Run parallel systems.</strong> Keep taking paper tickets as normal, but also log every new job digitally. This removes the pressure of "what if the app fails?" and lets you get comfortable without any risk.</li>
+            <li><strong>Week 2 — Digital-first for new jobs.</strong> Stop writing new paper tickets. Use the app as your primary intake. Only refer to paper for jobs that came in during week one.</li>
+            <li><strong>Week 3 — Close out the paper backlog.</strong> As old paper jobs complete, mark them off and don't replace them. By the end of the week, you should be fully digital.</li>
+            <li><strong>Week 4 and beyond — Refine.</strong> Now that the habit is forming, look at what else you can capture: notes on parts ordered, photos of damage at intake, customer signatures for high-value repairs.</li>
+        </ol>
+
+        <p>This approach means there's never a scary "cutover day" where everything changes at once. You migrate gradually, with zero disruption to customers.</p>
+
+        <h2>What you gain</h2>
+
+        <p>Once the transition is complete, the benefits are immediate and compound over time:</p>
+
+        <p><strong>Searchable records.</strong> A customer comes back six months later asking about a repair. On paper, you'd be digging through archived tickets. Digitally, you type their name and it's there in two seconds.</p>
+
+        <p><strong>No lost tickets.</strong> Paper tickets fall behind benches, go home in pockets, get used as scrap paper. A digital ticket exists until you deliberately delete it.</p>
+
+        <p><strong>Instant job status.</strong> You or any member of staff can see where every open repair is without walking to the bench. This is especially useful for answering customer calls quickly.</p>
+
+        <p><strong>Payment clarity.</strong> You know exactly what's been paid, what's outstanding, and how much came in this week — without reconciling a till and a pile of receipts.</p>
+
+        <p><strong>Professional appearance.</strong> Handing a customer a digital receipt or confirmation feels more professional than a scribbled note on a till roll. That matters for repeat business and referrals.</p>
+
+        <h2>Making the move with PhoneRepairPOS</h2>
+
+        <p>PhoneRepairPOS is designed specifically for this transition. It's an iPad-native app built around the repair shop workflow: job intake, status tracking, payment recording, and customer history — all in one place, and all available offline.</p>
+
+        <p>There's no complex setup, no monthly per-seat pricing, and no training period that takes a week. You can have your first digital ticket created within five minutes of downloading it.</p>
+
+        <p>Going paperless isn't a leap of faith — it's a series of small, practical steps. Start with one job, then another, and within a fortnight you'll wonder how you managed with paper at all.</p>
+
+        <h2>Related articles</h2>
+        <ul>
+            <li><a href="why-paper-tickets-are-costing-you-money.html">Why Paper Tickets Are Costing You Money</a></li>
+            <li><a href="5-ways-to-speed-up-your-repair-workflow.html">5 Ways to Speed Up Your Repair Workflow</a></li>
+            <li><a href="how-to-manage-repair-tickets.html">How to Manage Repair Tickets Without Losing Your Mind</a></li>
+        </ul>
+    </article>
+
+    <!-- Post CTA -->
+    <div class="article-cta">
+        <div class="article-cta-card">
+            <div class="article-cta-text">
+                <h3>Try PhoneRepairPOS free</h3>
+                <p>Digital tickets, status tracking, and payment records — all from your iPad.</p>
+            </div>
+            <a href="https://apps.apple.com/gb/app/phone-repair-pos/id6759859240" class="article-cta-btn">Download →</a>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">Phone<span>Repair</span>POS</div>
+            <p class="footer-tagline">Built for repair shops worldwide.</p>
+            <div class="footer-links">
+                <a href="index.html">Blog</a>
+                <a href="mailto:support@phonerepairpos.app">Contact</a>
+                <a href="../privacy.html">Privacy Policy</a>
+                <a href="../terms.html">Terms of Use</a>
+            </div>
+            <p>&copy; 2026 PhoneRepairPOS. All rights reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
