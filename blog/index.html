@@ -8,6 +8,31 @@
     <meta property="og:title" content="Blog — PhoneRepairPOS">
     <meta property="og:description" content="Tips, guides, and insights for phone repair shop owners.">
     <meta property="og:type" content="website">
+    <link rel="canonical" href="https://phonerepairpos.app/blog/">
+    <meta property="og:url" content="https://phonerepairpos.app/blog/">
+    <meta property="og:locale" content="en_GB">
+    <meta property="og:image" content="https://phonerepairpos.app/og-image.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Blog — PhoneRepairPOS">
+    <meta name="twitter:description" content="Tips, guides, and insights for phone repair shop owners.">
+    <meta name="twitter:image" content="https://phonerepairpos.app/og-image.png">
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Blog",
+      "name": "PhoneRepairPOS Blog",
+      "description": "Tips, guides, and insights for phone repair shop owners.",
+      "url": "https://phonerepairpos.app/blog/",
+      "publisher": {
+        "@type": "Organization",
+        "name": "PhoneRepairPOS",
+        "url": "https://phonerepairpos.app"
+      }
+    }
+    </script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Instrument+Serif&display=swap" rel="stylesheet">
@@ -343,6 +368,41 @@
             margin-top: auto;
         }
 
+        /* ===== FILTER PILLS ===== */
+        .filter-pills {
+            display: flex;
+            gap: 0.5rem;
+            justify-content: center;
+            margin: 0 auto 2rem;
+            max-width: 900px;
+            padding: 0 2rem;
+            flex-wrap: wrap;
+        }
+
+        .filter-pill {
+            padding: 0.4rem 1rem;
+            border-radius: 20px;
+            border: 1px solid var(--border);
+            background: var(--white);
+            color: var(--text-light);
+            font-size: 0.8rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+            font-family: inherit;
+        }
+
+        .filter-pill:hover {
+            border-color: var(--vibrant);
+            color: var(--vibrant);
+        }
+
+        .filter-pill.active {
+            background: var(--vibrant);
+            color: var(--white);
+            border-color: var(--vibrant);
+        }
+
         /* ===== NEWSLETTER CTA ===== */
         .newsletter {
             max-width: 600px;
@@ -521,7 +581,7 @@
         <div class="nav-links">
             <a href="../index.html#features">Features</a>
             <a href="" class="active">Blog</a>
-            <a href="../index.html#" class="nav-cta">Download</a>
+            <a href="https://apps.apple.com/gb/app/phone-repair-pos/id6759859240" class="nav-cta">Download</a>
         </div>
     </nav>
 
@@ -530,9 +590,17 @@
         <p>Tips, guides, and insights to help you run a more efficient phone repair business.</p>
     </div>
 
+    <div class="filter-pills">
+        <button class="filter-pill active" data-filter="all">All</button>
+        <button class="filter-pill" data-filter="business">Business</button>
+        <button class="filter-pill" data-filter="tips">Tips</button>
+        <button class="filter-pill" data-filter="guide">Guide</button>
+        <button class="filter-pill" data-filter="workflow">Workflow</button>
+    </div>
+
     <!-- Featured Post -->
     <div class="featured">
-        <a href="5-ways-to-speed-up-your-repair-workflow.html" class="featured-card animate-in">
+        <a href="5-ways-to-speed-up-your-repair-workflow.html" class="featured-card animate-in" data-category="workflow">
             <div class="featured-image">
                 <div class="featured-image-icon">&#9889;</div>
             </div>
@@ -552,7 +620,7 @@
 
     <!-- Posts Grid -->
     <div class="posts-grid">
-        <a href="why-paper-tickets-are-costing-you-money.html" class="post-card animate-in delay-1">
+        <a href="why-paper-tickets-are-costing-you-money.html" class="post-card animate-in delay-1" data-category="business">
             <div class="post-card-image bg-warm">
                 <span>&#128203;</span>
             </div>
@@ -568,7 +636,7 @@
             </div>
         </a>
 
-        <a href="how-to-handle-customer-disputes.html" class="post-card animate-in delay-2">
+        <a href="how-to-handle-customer-disputes.html" class="post-card animate-in delay-2" data-category="tips">
             <div class="post-card-image bg-teal">
                 <span>&#129309;</span>
             </div>
@@ -584,7 +652,7 @@
             </div>
         </a>
 
-        <a href="ipad-pos-vs-traditional-till.html" class="post-card animate-in delay-3">
+        <a href="ipad-pos-vs-traditional-till.html" class="post-card animate-in delay-3" data-category="guide">
             <div class="post-card-image bg-indigo">
                 <span>&#128241;</span>
             </div>
@@ -600,7 +668,7 @@
             </div>
         </a>
 
-        <a href="tracking-repair-status-why-it-matters.html" class="post-card animate-in delay-1">
+        <a href="tracking-repair-status-why-it-matters.html" class="post-card animate-in delay-1" data-category="workflow">
             <div class="post-card-image bg-slate">
                 <span>&#128200;</span>
             </div>
@@ -616,7 +684,7 @@
             </div>
         </a>
 
-        <a href="setting-repair-prices-guide.html" class="post-card animate-in delay-2">
+        <a href="setting-repair-prices-guide.html" class="post-card animate-in delay-2" data-category="business">
             <div class="post-card-image bg-warm">
                 <span>&#128176;</span>
             </div>
@@ -632,7 +700,7 @@
             </div>
         </a>
 
-        <a href="phone-repair-shop-marketing.html" class="post-card animate-in delay-3">
+        <a href="phone-repair-shop-marketing.html" class="post-card animate-in delay-3" data-category="tips">
             <div class="post-card-image bg-teal">
                 <span>&#128227;</span>
             </div>
