@@ -1,8 +1,0 @@
-title: PhoneRepairPOS
-url: https://phonerepairpos.app
-baseurl: ""
-og_image: https://phonerepairpos.app/og-image.png
-
-exclude:
-  - docs/
-  - scripts/

@@ -1,4 +1,15 @@
 .superpowers/
-_site/
-.jekyll-cache/
-Gemfile.lock
+
+# dependencies
+node_modules/
+
+# next.js
+.next/
+out/
+
+# misc
+.DS_Store
+*.pem
+
+# env
+.env*.local
