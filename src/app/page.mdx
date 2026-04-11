@@ -1,10 +1,56 @@
 import { SparkleIcon } from '@/components/SparkleIcon'
 import { PhoneScreenshot } from '@/components/PhoneScreenshot'
+import { ScreenshotGrid } from '@/components/ScreenshotGrid'
 import { AppStoreLink } from '@/components/AppStoreLink'
 import ticketDetail from '@/images/ticket-detail.png'
 import ticketList from '@/images/ticket-list.png'
+import pdfReceipt from '@/images/pdf-receipt.png'
+import tourFreeForever from '@/images/tour-free-forever.png'
+import tourLiveStatus from '@/images/tour-live-status.png'
+import tourNewTicket from '@/images/tour-new-ticket.png'
 
 export { Layout as default } from '@/components/Layout'
+
+---
+
+## Coming soon: printable PDF receipts {{ date: '2026-04-11T12:00Z' }}
+
+<PhoneScreenshot src={pdfReceipt} alt="Printable PDF repair receipt with shop name, ticket ID, customer, device, issue, status, and estimated cost">
+
+**Requested by a real shop owner.** You asked, we're building it.
+
+The next update adds one-tap PDF export for any ticket. Hand the customer a clean, branded repair receipt — with your shop name, ticket ID, device, issue, status, and estimated cost — ready to print from your iPad over AirPrint or share as a file.
+
+### <SparkleIcon /> What's shipping
+
+- **Branded receipts** — Your shop name at the top, "Thank you for your business" at the bottom.
+- **Every detail captured** — Ticket ID, date, customer, device, issue, technician, status, estimate, and payment status on one page.
+- **Print from the iPad** — AirPrint support means any compatible wireless printer works out of the box. No extra setup.
+- **Share as a file** — Email, Messages, AirDrop, or save to Files — whatever fits your workflow.
+
+<AppStoreLink>Download the current version</AppStoreLink>
+
+</PhoneScreenshot>
+
+---
+
+<ScreenshotGrid images={[
+  { src: tourFreeForever, alt: 'Zero cost, zero catch — free forever with no subscription, no credit card, no trial' },
+  { src: tourLiveStatus, alt: 'Live status tracking from received to collected across five repair stages' },
+  { src: tourNewTicket, alt: 'Create a new repair ticket in 30 seconds flat' },
+]} />
+
+## A quick tour {{ date: '2026-04-11T00:00Z' }}
+
+Three screens. One free app. See exactly what PhoneRepairPOS does before you download.
+
+### <SparkleIcon /> At a glance
+
+- **Free forever** — No subscription, no credit card, no trial. Download it and start managing repairs in minutes.
+- **Live status tracking** — Move every job through Received → Diagnose → Repair → Ready → Collected with auto-timestamps.
+- **30-second ticket intake** — One screen. Customer, device, issue, estimate. Done before the next walk-in.
+
+<AppStoreLink>Download on the App Store</AppStoreLink>
 
 ---
 
@@ -72,8 +118,6 @@ PhoneRepairPOS is an iPad app that replaces paper tickets, spreadsheets, and sti
 **Who is PhoneRepairPOS for?**
 It is built for phone repair shop owners and technicians — whether you are a solo repairer working from a market stall or a multi-staff high street shop. If you fix phones and need a better way to manage jobs, it is for you.
 
-</PhoneScreenshot>
-
 **Does it work offline?**
 Yes. PhoneRepairPOS is 100% offline capable. All your data is stored locally on your iPad. No internet connection is required to create tickets, update statuses, or record payments. If you use iCloud, your data syncs when you are back online.
 
@@ -90,3 +134,5 @@ Your data stays on your iPad. PhoneRepairPOS uses local storage (Core Data) and 
 [Download PhoneRepairPOS from the App Store](https://apps.apple.com/gb/app/phone-repair-pos/id6759859240), open it on your iPad, and create your first ticket. There is no account to set up and no configuration needed. You will be managing repairs in under a minute.
 
 <AppStoreLink>Download on the App Store</AppStoreLink>
+
+</PhoneScreenshot>

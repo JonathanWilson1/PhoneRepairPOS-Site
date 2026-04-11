@@ -14,15 +14,15 @@ export function PhoneScreenshot({
   children: React.ReactNode
 }) {
   return (
-    <div className="flex flex-col gap-8 sm:flex-row sm:items-start">
-      <div className="flex-1">{children}</div>
+    <div className="flow-root [&>*+*]:mt-6 [&>p+p]:mt-8 [&>:is(h2,h3,h4)]:mt-8 [&>p:first-of-type]:mt-0">
       <Link
         href={APP_STORE_URL}
-        className="relative w-48 flex-none overflow-hidden rounded-xl bg-gray-50 transition-opacity hover:opacity-80 sm:w-44 dark:bg-gray-900"
+        className="relative mx-auto mb-8 block w-48 overflow-hidden rounded-xl bg-gray-50 transition-opacity hover:opacity-80 sm:float-right sm:mx-0 sm:mt-1 sm:mb-4 sm:ml-8 sm:w-44 dark:bg-gray-900"
       >
         <Image src={src} alt={alt} sizes="12rem" className="w-full" />
-        <div className="pointer-events-none absolute inset-0 rounded-xl ring-1 ring-gray-900/10 ring-inset dark:ring-white/10" />
+        <div className="pointer-events-none absolute inset-0 rounded-xl ring-2 ring-violet-500 ring-inset dark:ring-violet-400" />
       </Link>
+      {children}
     </div>
   )
 }

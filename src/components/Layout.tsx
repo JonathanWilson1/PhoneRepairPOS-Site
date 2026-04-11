@@ -17,7 +17,7 @@ function Timeline() {
           <pattern id={id} width="6" height="8" patternUnits="userSpaceOnUse">
             <path
               d="M0 0H6M0 8H6"
-              className="stroke-sky-900/10 xl:stroke-white/10 dark:stroke-white/10"
+              className="stroke-violet-900/10 xl:stroke-white/10 dark:stroke-white/10"
               fill="none"
             />
           </pattern>
@@ -39,13 +39,13 @@ function Glow() {
       >
         <defs>
           <radialGradient id={`${id}-desktop`} cx="100%">
-            <stop offset="0%" stopColor="rgba(56, 189, 248, 0.3)" />
-            <stop offset="53.95%" stopColor="rgba(0, 71, 255, 0.09)" />
+            <stop offset="0%" stopColor="rgba(167, 139, 250, 0.3)" />
+            <stop offset="53.95%" stopColor="rgba(109, 40, 217, 0.12)" />
             <stop offset="100%" stopColor="rgba(10, 14, 23, 0)" />
           </radialGradient>
           <radialGradient id={`${id}-mobile`} cy="100%">
-            <stop offset="0%" stopColor="rgba(56, 189, 248, 0.3)" />
-            <stop offset="53.95%" stopColor="rgba(0, 71, 255, 0.09)" />
+            <stop offset="0%" stopColor="rgba(167, 139, 250, 0.3)" />
+            <stop offset="53.95%" stopColor="rgba(109, 40, 217, 0.12)" />
             <stop offset="100%" stopColor="rgba(10, 14, 23, 0)" />
           </radialGradient>
         </defs>

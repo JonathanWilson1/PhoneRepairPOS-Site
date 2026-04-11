@@ -49,7 +49,7 @@ export default function BlogIndex() {
             <h2 className="mt-2 font-display text-xl font-semibold text-white">
               <Link
                 href={`/blog/${post.slug}`}
-                className="transition hover:text-sky-300"
+                className="transition hover:text-violet-300"
               >
                 {post.title}
               </Link>
@@ -57,7 +57,7 @@ export default function BlogIndex() {
             <p className="mt-2 text-sm/6 text-gray-400">{post.excerpt}</p>
             <Link
               href={`/blog/${post.slug}`}
-              className="mt-3 inline-block text-sm font-semibold text-sky-400 transition hover:text-sky-300"
+              className="mt-3 inline-block text-sm font-semibold text-violet-400 transition hover:text-violet-300"
             >
               Read more &rarr;
             </Link>

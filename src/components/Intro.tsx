@@ -38,7 +38,7 @@ export function Intro() {
       </div>
       <h1 className="mt-14 font-display text-4xl/tight font-light text-white">
         The iPad POS built for{' '}
-        <span className="text-sky-300">phone repair shops</span>
+        <span className="text-violet-300">phone repair shops</span>
       </h1>
       <p className="mt-4 text-sm/6 text-gray-300">
         Create tickets, track repairs, and get paid — all from your iPad. Built

@@ -30,7 +30,7 @@ export function Button({
     'group relative isolate inline-flex items-center justify-center rounded-md py-2 text-[0.8125rem]/6 font-semibold transition-all',
     arrow ? 'pl-3 pr-2.5' : 'px-3',
     variant === 'primary'
-      ? 'bg-sky-500 text-white hover:bg-sky-400 shadow-lg shadow-sky-500/25'
+      ? 'bg-violet-600 text-white hover:bg-violet-500 shadow-lg shadow-violet-600/30'
       : 'bg-white/10 text-white/70 hover:bg-white/15 hover:text-white',
   )
 

@@ -8,7 +8,7 @@ export function AppStoreLink({ children }: { children: React.ReactNode }) {
     <div className="mt-8">
       <Link
         href={APP_STORE_URL}
-        className="text-sm font-semibold text-sky-400 transition hover:text-sky-300"
+        className="text-sm font-semibold text-violet-400 transition hover:text-violet-300"
       >
         {children} &rarr;
       </Link>

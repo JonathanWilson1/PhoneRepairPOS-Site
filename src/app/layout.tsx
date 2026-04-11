@@ -67,12 +67,13 @@ export const metadata: Metadata = {
   },
   icons: {
     icon: [
-      { url: '/favicon.svg', type: 'image/svg+xml' },
-      { url: '/favicon-32x32.png', sizes: '32x32', type: 'image/png' },
+      { url: '/favicon.ico', sizes: 'any' },
+      { url: '/icon-192.png', sizes: '192x192', type: 'image/png' },
+      { url: '/icon-512.png', sizes: '512x512', type: 'image/png' },
     ],
     apple: '/apple-touch-icon.png',
   },
-  manifest: undefined,
+  manifest: '/manifest.webmanifest',
   alternates: {
     canonical: 'https://phonerepairpos.app',
   },
@@ -85,7 +86,7 @@ const structuredData = {
       '@type': 'Organization',
       name: 'PhoneRepairPOS',
       url: 'https://phonerepairpos.app',
-      logo: 'https://phonerepairpos.app/favicon.svg',
+      logo: 'https://phonerepairpos.app/icon-512.png',
       foundingDate: '2026',
       contactPoint: {
         '@type': 'ContactPoint',
