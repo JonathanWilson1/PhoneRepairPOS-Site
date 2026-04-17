@@ -23,19 +23,19 @@ const monaSans = localFont({
 
 export const metadata: Metadata = {
   title: {
-    default: 'PhoneRepairPOS — The iPad POS Built for Phone Repair Shops',
+    default: 'PhoneRepairPOS — The POS App Built for Phone Repair Shops',
     template: '%s — PhoneRepairPOS',
   },
   description:
-    'Manage jobs, track repairs, and get paid faster. PhoneRepairPOS is the all-in-one iPad point-of-sale system designed specifically for phone repair shops.',
+    'Manage jobs, track repairs, and get paid faster. PhoneRepairPOS is the free point-of-sale app designed specifically for phone repair shops. Available on iPhone and iPad.',
   keywords: [
     'phone repair POS',
-    'iPad POS',
+    'phone repair POS app',
     'repair shop software',
     'phone repair ticket system',
     'repair shop point of sale',
     'phone repair management',
-    'iPad repair shop app',
+    'iPhone iPad repair shop app',
     'repair tracking software',
   ],
   authors: [{ name: 'Jonathan Wilson' }],
@@ -50,7 +50,7 @@ export const metadata: Metadata = {
         url: '/og-image.png',
         width: 1200,
         height: 630,
-        alt: 'PhoneRepairPOS — iPad POS for Phone Repair Shops',
+        alt: 'PhoneRepairPOS — POS App for Phone Repair Shops',
       },
     ],
   },
@@ -88,9 +88,9 @@ const structuredData = {
       '@type': 'SoftwareApplication',
       name: 'PhoneRepairPOS',
       applicationCategory: 'BusinessApplication',
-      operatingSystem: 'iPadOS',
+      operatingSystem: 'iOS',
       description:
-        'The all-in-one iPad point-of-sale system designed specifically for phone repair shops. Manage jobs, track repairs, and get paid faster.',
+        'The free point-of-sale app designed specifically for phone repair shops. Available on iPhone and iPad. Manage jobs, track repairs, and get paid faster.',
       url: 'https://phonerepairpos.app',
       installUrl:
         'https://apps.apple.com/gb/app/phone-repair-pos/id6759859240',

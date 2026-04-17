@@ -37,12 +37,12 @@ export function Intro() {
         </Link>
       </div>
       <h1 className="mt-14 font-display text-4xl/tight font-light text-white">
-        The iPad POS built for{' '}
+        The POS app built for{' '}
         <span className="text-violet-300">phone repair shops</span>
       </h1>
       <p className="mt-4 text-sm/6 text-gray-300">
-        Create tickets, track repairs, and get paid — all from your iPad. Built
-        specifically for phone repair shops that want to ditch the paperwork.
+        Create tickets, track repairs, and get paid — on iPhone and iPad. Simple
+        to use, free to download, and built for phone repair shops.
       </p>
       <div className="mt-8 flex flex-wrap gap-x-4 gap-y-3">
         <Button
