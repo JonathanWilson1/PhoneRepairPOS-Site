@@ -1,11 +1,24 @@
+import { Callout, BlogImage, PostHeader, PostFooter } from '@/components/blog'
+import ticketList from '@/images/ticket-list.png'
+import newTicket from '@/images/new-ticket.png'
+import ticketDetail from '@/images/ticket-detail.png'
+
 export const metadata = {
-  title: 'Why phone repair shops need a dedicated POS system - RepairPOS',
+  title: 'Why phone repair shops need a dedicated POS system',
   description: 'Generic retail POS systems were not designed for repair workflows. Here is why that matters and what to look for instead.',
+  alternates: { canonical: '/blog/why-repair-shops-need-dedicated-pos' },
+  openGraph: {
+    title: 'Why phone repair shops need a dedicated POS system',
+    description: 'Generic retail POS systems were not designed for repair workflows. Here is why that matters and what to look for instead.',
+    type: 'article',
+    publishedTime: '2026-03-20T00:00:00Z',
+    authors: ['PhoneRepairPOS'],
+  },
 }
 
 # Why phone repair shops need a dedicated POS system
 
-<time dateTime="2026-03-20" className="text-2xs font-medium text-gray-500">Mar 20, 2026</time>
+<PostHeader date="2026-03-20" />
 
 If you run a phone repair shop, you have probably tried using a generic POS system at some point. Square, Shopify POS, Vend — they are all great for retail. But they were built to scan barcodes and sell products off a shelf.
 
@@ -18,22 +31,54 @@ Phone repair is different. Your workflow looks like this:
 5. **You fix it**, then notify the customer
 6. **Customer picks up** and pays
 
-That is a service workflow, not a retail one. Generic POS systems have no concept of a repair ticket, device tracking, or job status. So you end up duct-taping things together — a POS for payments, a spreadsheet for tracking, maybe a paper ticket system.
+That is a service workflow, not a retail one. Generic POS systems have no concept of a repair ticket, device tracking, or job status. So you end up duct-taping things together — a POS for payments, a spreadsheet for tracking, maybe a paper ticket system. It works, until it does not. A customer calls asking about their repair and you are flipping through a notebook trying to find their name. Or a technician finishes a job but forgets to update the spreadsheet and the customer never gets called.
 
 ## What a repair-specific POS gives you
 
-A system built for repairs understands the full lifecycle:
+A system built for repairs understands the full lifecycle. Instead of forcing a retail workflow onto a service business, it mirrors how your shop actually works:
 
-- **Job intake** — capture device type, issue, customer details, and estimated cost in one flow
-- **Ticket management** — see all active repairs at a glance, filter by status, search by customer
-- **Status tracking** — move jobs through stages (diagnosed, waiting for parts, in progress, ready for pickup)
-- **Customer notifications** — let customers know when their device is ready
-- **Payment at pickup** — close the ticket and take payment in one step
+- **Job intake** — capture device type, issue, customer details, and estimated cost in one flow. No switching between apps.
+- **Ticket management** — see all active repairs at a glance, filter by status, search by customer. Know exactly what is on the bench at any moment.
+- **Status tracking** — move jobs through stages like diagnosed, waiting for parts, in progress, and ready for pickup. Everyone on the team can see where things stand.
+- **Customer notifications** — let customers know when their device is ready without having to remember to call them.
+- **Payment at pickup** — close the ticket and take payment in one step. No re-entering amounts from a separate system.
+
+<BlogImage src={newTicket} alt="Creating a new repair ticket in PhoneRepairPOS" caption="Create a ticket in seconds — device, issue, customer, and quote all in one flow." />
+
+The difference is night and day. Instead of juggling three or four tools, your whole operation lives in one place. A customer calls? Search their name and you have the answer in two seconds.
 
 ## The cost of using the wrong tool
 
+<BlogImage src={ticketList} alt="PhoneRepairPOS ticket list showing active repairs" caption="All repairs at a glance.">
+
 Every minute your staff spends switching between apps, retyping information, or hunting through spreadsheets is a minute they are not fixing phones or helping customers. In a high-volume shop doing 20+ repairs a day, that adds up fast.
 
-The right POS system should feel invisible. It should make the next step obvious, not get in the way.
+Think about it: if switching between tools wastes just 2 minutes per repair, that is 40 minutes a day in a 20-repair shop. Over a month, that is **over 13 hours of lost productivity** — more than a full working day gone, every single month, just from tool-switching friction.
 
-That is exactly what we are building with RepairPOS.
+And that is just the time cost. The real damage comes from mistakes. A repair that falls through the cracks because someone forgot to update the spreadsheet. A customer who waits three days for a call that never comes. A payment that gets recorded in the wrong place. These things erode trust and cost you repeat business.
+
+</BlogImage>
+
+## Built for the counter, not the back office
+
+<BlogImage src={ticketDetail} alt="Detailed ticket view in PhoneRepairPOS" caption="Full repair details in one place.">
+
+The right POS system should feel invisible. It should make the next step obvious, not get in the way. When a customer walks in, the first thing you do is create a ticket — not open a laptop, find the right spreadsheet, scroll to the bottom, and start typing in a new row.
+
+PhoneRepairPOS was designed around this principle. Every screen answers one question: **what do I need to do next?** The ticket detail view shows you the device, the issue, the current status, and what actions are available. No hunting through menus or tabs.
+
+Your technicians should be spending their time fixing phones, not fighting with software. The best tool is the one that gets out of the way and lets skilled people do their work. That is exactly what we are building with PhoneRepairPOS.
+
+</BlogImage>
+
+<PostFooter
+  title="Why phone repair shops need a dedicated POS system"
+  description="Generic retail POS systems were not designed for repair workflows. Here is why that matters and what to look for instead."
+  date="2026-03-20"
+  slug="why-repair-shops-need-dedicated-pos"
+  related={{
+    slug: 'ipad-vs-laptop-for-repair-counter',
+    title: 'iPad vs laptop at the repair counter',
+    excerpt: 'We tested both setups in real shops. Here is what we found about speed, portability, and customer experience.',
+  }}
+/>

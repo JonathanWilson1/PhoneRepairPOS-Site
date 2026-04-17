@@ -10,7 +10,7 @@ export function Logo(props: React.ComponentPropsWithoutRef<'span'>) {
         aria-hidden="true"
         className="h-8 w-8 rounded-lg"
       />
-      RepairPOS
+      PhoneRepairPOS
     </span>
   )
 }

@@ -42,10 +42,6 @@ export const metadata: Metadata = {
   creator: 'PhoneRepairPOS',
   metadataBase: new URL('https://phonerepairpos.app'),
   openGraph: {
-    title: 'PhoneRepairPOS — iPad POS for Phone Repair Shops',
-    description:
-      'Manage jobs, track repairs, and get paid faster. PhoneRepairPOS is the all-in-one iPad point-of-sale system designed specifically for phone repair shops.',
-    url: 'https://phonerepairpos.app',
     siteName: 'PhoneRepairPOS',
     type: 'website',
     locale: 'en_GB',
@@ -60,9 +56,6 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'PhoneRepairPOS — iPad POS for Phone Repair Shops',
-    description:
-      'Manage jobs, track repairs, and get paid faster. The all-in-one iPad POS for phone repair shops.',
     images: ['/og-image.png'],
   },
   icons: {
@@ -74,9 +67,6 @@ export const metadata: Metadata = {
     apple: '/apple-touch-icon.png',
   },
   manifest: '/manifest.webmanifest',
-  alternates: {
-    canonical: 'https://phonerepairpos.app',
-  },
 }
 
 const structuredData = {
