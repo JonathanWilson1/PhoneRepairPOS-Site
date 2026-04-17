@@ -1,0 +1,98 @@
+import { Callout, PostHeader, PostFooter } from '@/components/blog'
+
+export const metadata = {
+  title: 'Repair ticket workflow: from intake to pickup',
+  description: 'The ideal repair ticket workflow — how to move jobs from intake through diagnosis, repair, and customer pickup without dropping the ball.',
+  alternates: { canonical: '/blog/repair-ticket-workflow-from-intake-to-pickup' },
+  openGraph: {
+    title: 'Repair ticket workflow: from intake to pickup',
+    description: 'The ideal repair ticket workflow — how to move jobs from intake through diagnosis, repair, and customer pickup without dropping the ball.',
+    type: 'article',
+    publishedTime: '2026-04-17T00:00:00Z',
+    authors: ['PhoneRepairPOS'],
+  },
+}
+
+# Repair ticket workflow: from intake to pickup
+
+<PostHeader date="2026-04-17" />
+
+Every phone repair follows the same basic arc. A customer brings in a broken device, you fix it, they pick it up and pay. Simple enough in theory. In practice, the space between "intake" and "pickup" is where most shops lose time, lose tickets, and lose customers.
+
+The difference between a shop that runs smoothly and one that is constantly firefighting usually comes down to one thing: a clear, repeatable workflow with defined stages. Here is what that looks like, step by step, and what goes wrong when you skip it.
+
+## 1. Customer intake
+
+This is where everything starts. A customer walks in with a cracked screen, a dead battery, or a phone that will not charge. Your job in the first two minutes is to capture four things: the device (make, model, color), the reported issue, the customer's contact details, and a quote.
+
+Speed matters here. The customer is standing in front of you. If you are fumbling with a notebook or switching between apps to record everything, you look disorganized and they start wondering if their device is in good hands.
+
+What goes wrong without a system: details get written on sticky notes that end up lost. Customer phone numbers are scribbled illegibly. The quote is verbal and nobody remembers the exact figure two days later when the customer comes back. Worse, if someone other than the person who did intake needs to work on the device, they have no context.
+
+A good intake flow captures everything in one place, assigns a ticket number, and gives you something to hand the customer — a receipt or reference number so they can check back later.
+
+## 2. Diagnosis
+
+Sometimes the customer's description of the problem is exactly right. Sometimes "my screen is cracked" turns into "cracked screen plus a damaged digitizer plus water damage." Diagnosis is where the technician confirms what is actually wrong and whether the original quote still holds.
+
+If the estimate changes, the customer needs to know before any work begins. This is both good business practice and basic trust-building. Nobody wants to pick up their phone and discover the bill is twice what they expected.
+
+What goes wrong without a system: the technician diagnoses a bigger issue but has no easy way to flag it. The updated estimate never reaches the customer because nobody remembered to call. Or the tech starts the repair at the original price and the shop eats the difference.
+
+## 3. Waiting for parts
+
+Not every repair can be done same-day. If a specific screen assembly or battery is not in stock, the job stalls until parts arrive. This is completely normal — but it is also where tickets silently die if you are not tracking status.
+
+What goes wrong without a system: the part gets ordered but nobody updates the ticket. Three days later the part arrives and sits on a shelf because the tech who ordered it is off that day and nobody else knows it was for this specific job. The customer calls asking for an update and whoever answers the phone has no idea what is going on.
+
+A clear "waiting for parts" status, visible to everyone on the team, solves this. When the part arrives, anyone can see which ticket it belongs to and move the job forward.
+
+## 4. In progress
+
+The tech has the device and the parts. They are doing the work. This stage is usually the least problematic because someone is actively paying attention to the repair. But in a busy shop with multiple technicians, it still matters to know which jobs are actively being worked on versus sitting in a queue.
+
+What goes wrong without a system: two technicians accidentally start on the same device. Or a tech finishes one repair and has to ask around to figure out what to work on next instead of just looking at a list of jobs waiting for attention.
+
+<Callout type="insight" title="Where most shops lose tickets">
+The highest-risk moments are not during the repair itself — they are the handoffs between stages. Intake to diagnosis, diagnosis to parts ordering, parts arriving to repair starting, repair finishing to customer notification. Every transition is a point where a ticket can stall silently. If you are not tracking status, you will not notice until the customer calls asking why their phone has been sitting in your shop for a week.
+</Callout>
+
+## 5. Quality check
+
+Before you call the customer, test the repair. This sounds obvious, but under pressure it is tempting to skip it. Check that the new screen responds to touch across the entire surface. Verify the new battery charges and holds. Make sure the camera, speakers, and buttons all work. A two-minute quality check saves you from the embarrassment and cost of a customer walking back in an hour later with a "fixed" phone that still has issues.
+
+What goes wrong without a system: there is no stage between "repaired" and "ready for pickup," so the quality check gets skipped or done inconsistently. When it is baked into the workflow as its own step, it becomes a habit rather than an afterthought.
+
+## 6. Ready for pickup
+
+The repair is done and tested. Now you need to tell the customer. This is one of the simplest steps in the workflow and also one of the most commonly botched. In shops without a system, "ready for pickup" lives in someone's head. The tech who finished the job meant to call the customer but got pulled into the next repair and forgot.
+
+Meanwhile, the customer is waiting. After a day or two with no update, they call you — and now you are on the back foot, apologizing instead of delivering good news.
+
+Automatic status tracking fixes this. When a ticket moves to "ready for pickup," the notification goes out. No relying on memory, no dropped balls.
+
+## 7. Pickup and payment
+
+The customer comes in, you hand back their device, and they pay. This should be the smoothest part of the whole process. Pull up the ticket, confirm the final amount, take payment, close the ticket. Done.
+
+What goes wrong without a system: the person at the counter cannot find the ticket. Or the price on the ticket does not match what the customer was quoted because the updated estimate was never recorded. Or the payment gets taken but the ticket stays open, so your records show an active repair that was actually completed days ago.
+
+## Why this workflow matters
+
+Each of these seven stages is simple on its own. The complexity comes from managing dozens of them simultaneously, across multiple technicians, over days or weeks. A shop doing 15 repairs a day has over 100 tickets in various stages at any given time. Without a system that tracks where every ticket is, things fall through the cracks. It is not a question of if — it is a question of how often.
+
+PhoneRepairPOS was built around exactly this workflow. Every ticket moves through defined stages — from intake through diagnosis, parts, repair, quality check, and pickup. The status is always visible, always current, and accessible to everyone on the team. No spreadsheets, no sticky notes, no guesswork about what needs to happen next.
+
+The best repair shops are not necessarily the ones with the most skilled technicians. They are the ones where nothing gets forgotten, every customer gets called back, and every job moves forward without someone having to chase it. A clear workflow, backed by the right tool, is how you get there.
+
+<PostFooter
+  title="Repair ticket workflow: from intake to pickup"
+  description="The ideal repair ticket workflow — how to move jobs from intake through diagnosis, repair, and customer pickup without dropping the ball."
+  date="2026-04-17"
+  slug="repair-ticket-workflow-from-intake-to-pickup"
+  related={{
+    slug: 'why-repair-shops-need-dedicated-pos',
+    title: 'Why phone repair shops need a dedicated POS system',
+    excerpt: 'Generic retail POS systems were not designed for repair workflows. Here is why that matters.',
+  }}
+/>

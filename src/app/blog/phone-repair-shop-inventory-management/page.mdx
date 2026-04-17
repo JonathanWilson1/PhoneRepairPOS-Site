@@ -1,0 +1,125 @@
+import { Callout, PostHeader, PostFooter } from '@/components/blog'
+
+export const metadata = {
+  title: 'Phone repair shop inventory management: a practical guide',
+  description: 'How to track parts, avoid stockouts, and keep your repair shop running without spreadsheet chaos.',
+  alternates: { canonical: '/blog/phone-repair-shop-inventory-management' },
+  openGraph: {
+    title: 'Phone repair shop inventory management: a practical guide',
+    description: 'How to track parts, avoid stockouts, and keep your repair shop running without spreadsheet chaos.',
+    type: 'article',
+    publishedTime: '2026-04-17T00:00:00Z',
+    authors: ['PhoneRepairPOS'],
+  },
+}
+
+# Phone repair shop inventory management: a practical guide
+
+<PostHeader date="2026-04-17" />
+
+Phone repair inventory is a different beast from normal retail stock. A clothing shop might carry 50 SKUs across a few sizes. A phone repair shop can easily have 500+ individual parts once you account for every device model, repair type, and quality tier. One wrong order and you are sitting on a drawer full of parts that fit nothing on your bench.
+
+This guide covers how to organize, track, and reorder parts so you spend less time hunting through drawers and more time doing actual repairs.
+
+## Why inventory is uniquely hard for phone repair
+
+Three things make parts management harder in this trade than in almost any other small business:
+
+- **Device-specific parts.** A screen for an iPhone 14 does not fit an iPhone 14 Pro. A charging port for a Samsung Galaxy S23 is different from an S23 Ultra. Multiply that across every brand and generation you service, and the SKU count explodes fast.
+- **Quality tiers.** Screens are the worst offender. You might stock original OEM panels, high-quality aftermarket (sometimes called "soft OLED" or "hard OLED"), and budget-tier replacements. Each has a different cost, margin, and warranty expectation. One "iPhone 15 screen" is not the same as another.
+- **Tiny, easy-to-lose parts.** Screws, flex cables, adhesive strips, pentalobe bits. They cost almost nothing individually but a missing screw set can stall a repair for days if you do not have spares on hand.
+
+The result is that generic inventory tools -- or worse, memory -- break down quickly. You need a system that accounts for the specifics of this business.
+
+## Organize by device family and repair type
+
+The simplest structure that works: group parts first by device family, then by repair type.
+
+For example:
+
+- **iPhone 15 series** > Screen / Battery / Charging port / Rear glass
+- **Samsung Galaxy S24 series** > Screen / Battery / Charging port
+- **iPad 10th gen** > Screen / Battery / Digitizer
+
+Within each repair type, note the quality tier if applicable. A naming convention like "iPhone 15 Pro Max - Screen - OEM" or "iPhone 15 Pro Max - Screen - Aftermarket OLED" removes ambiguity when you have multiple options in stock.
+
+Keep your physical storage aligned with this structure too. Label drawers or bins by device family. When a new model launches, add a section before you start ordering parts for it. A few minutes of setup saves hours of searching later.
+
+## Use ABC analysis to focus your attention
+
+Not every part deserves the same level of tracking. ABC analysis is a simple framework borrowed from traditional inventory management, and it works well here:
+
+- **A items (top 20% of parts, roughly 80% of usage).** These are your screens and batteries -- high volume, high cost, and the parts that actually generate revenue. Track these closely. Know exactly how many you have, how fast they move, and when to reorder.
+- **B items (next 30%, roughly 15% of usage).** Charging ports, back covers, cameras. Important but not moving as fast. Check stock weekly rather than daily.
+- **C items (bottom 50%, roughly 5% of usage).** Screws, adhesive strips, pry tools, cleaning supplies. Buy these in bulk when you are running low. Do not spend time counting individual screws -- just keep a healthy buffer and reorder when the bin looks thin.
+
+<Callout type="tip" title="Do not over-track low-value parts">
+  It is tempting to log every screw and adhesive strip. Resist the urge. The time you spend tracking a part should be proportional to its cost and importance. For C items, a simple "low / okay / full" visual check is enough.
+</Callout>
+
+## Set reorder points for high-use parts
+
+A reorder point is the stock level at which you place a new order. It accounts for how fast you use a part and how long your supplier takes to deliver.
+
+The formula is straightforward:
+
+**Reorder point = (average daily usage x supplier lead time in days) + safety stock**
+
+If you replace 3 iPhone 15 screens per week and your supplier takes 5 business days to deliver, your reorder point might be:
+
+- Average daily usage: 3/5 = 0.6 screens per working day
+- Lead time: 5 days
+- Lead time demand: 0.6 x 5 = 3 screens
+- Safety stock: 2 screens (buffer for spikes or delays)
+- **Reorder point: 5 screens**
+
+When your iPhone 15 screen stock hits 5, you order more. No guessing, no emergency overnight shipping fees, no telling a customer you need to wait for parts.
+
+You only need reorder points for your A items and maybe your busiest B items. For everything else, a periodic visual check is fine.
+
+## Track parts per ticket
+
+This is where inventory management connects to the rest of your operation. Every time you use a part in a repair, it should be logged against that ticket. This gives you three things:
+
+1. **Automatic stock updates.** When a screen is used on a job, your count goes down by one. No separate step to update inventory.
+2. **Accurate cost tracking.** You know exactly what parts went into each repair, so you can calculate true margins per job -- not just estimates.
+3. **Usage data over time.** After a few months, you have real numbers on which parts move fastest, which lets you refine your reorder points and stocking decisions.
+
+If you are still doing this manually, even a simple spreadsheet column that records "part used" per ticket is better than nothing. The goal is to connect parts consumption to jobs so nothing falls through the cracks.
+
+## Serial tracking for high-value parts
+
+For expensive components -- screens, motherboards, logic boards -- consider tracking individual serial numbers or batch numbers. This matters most in two situations:
+
+- **Warranty disputes.** A customer comes back claiming the screen you fitted is defective. With a serial number logged to their ticket, you can verify whether the part was actually one you supplied, and trace it back to the batch and supplier if needed.
+- **Supplier quality issues.** If a batch of screens from a particular supplier has a high failure rate, serial or batch tracking lets you identify and pull the remaining stock before you fit more of them.
+
+You do not need to serial-track every part. Screws and adhesive do not warrant it. But for any component where a single unit costs more than a few pounds, euros, or dollars, it is worth the extra ten seconds to log an identifier.
+
+<Callout type="insight" title="Link parts to suppliers">
+  Record which supplier each batch came from. When you notice a pattern of returns or failures on a specific part, you can trace it back to the source and make better purchasing decisions going forward.
+</Callout>
+
+## Start simple, then scale
+
+If you are a solo technician doing 5 to 10 repairs a day, a well-structured spreadsheet can handle your inventory. Columns for part name, device, quality tier, quantity on hand, reorder point, and supplier. Update it when stock arrives and when parts go onto a job. That is enough.
+
+When a spreadsheet starts breaking down -- typically when you add staff, open a second location, or push past 15 to 20 repairs a day -- that is the signal to move to dedicated software. A proper system ties inventory to your tickets automatically, alerts you at reorder points, and gives you reporting without manual pivot tables.
+
+The mistake most shops make is either extreme: never tracking inventory at all (leading to emergency orders and lost revenue) or trying to implement an enterprise-grade system on day one (leading to abandoned processes and wasted money). Start where you are, get the habits right, and upgrade the tooling when the pain justifies it.
+
+## The bottom line
+
+Good inventory management in a phone repair shop comes down to a few principles: organize parts logically, focus your attention on the items that matter most, set reorder triggers so you never run dry on critical stock, and tie parts usage to repair tickets so your data stays accurate. None of this requires expensive software or complex processes. It just requires a system you actually use, every day, on every job.
+
+<PostFooter
+  title="Phone repair shop inventory management: a practical guide"
+  description="How to track parts, avoid stockouts, and keep your repair shop running without spreadsheet chaos."
+  date="2026-04-17"
+  slug="phone-repair-shop-inventory-management"
+  related={{
+    slug: 'how-to-price-phone-repairs',
+    title: 'How to price phone repairs',
+    excerpt: 'A practical pricing guide covering common repairs, margins, and how to stay competitive.',
+  }}
+/>
