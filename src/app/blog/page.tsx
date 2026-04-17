@@ -17,6 +17,14 @@ const posts = [
     readTime: '6 min read',
   },
   {
+    slug: 'cheapest-pos-systems-for-phone-repair-shops',
+    title: 'The cheapest POS systems for phone repair shops',
+    date: '2026-04-17',
+    excerpt:
+      'A breakdown of the most affordable POS options for phone repair shops — from free tools to budget subscriptions.',
+    readTime: '5 min read',
+  },
+  {
     slug: 'best-pos-systems-for-phone-repair-shops',
     title: 'Best POS systems for phone repair shops in 2026',
     date: '2026-04-17',
