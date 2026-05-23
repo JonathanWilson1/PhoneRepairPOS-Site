@@ -2,6 +2,8 @@
 
 import { useCallback, useEffect, useState } from 'react'
 
+import { ImeiCapture } from './ImeiCapture'
+
 // Device-capability probe. Throwaway test page: opens on a phone, attempts every
 // browser API we might use for web-based self-intake / diagnostics, and shows what
 // is actually available on this device. No data leaves the phone — display only.
@@ -320,6 +322,8 @@ export default function CheckPage() {
         What this browser exposes about your device. Nothing is sent anywhere — this is a test page
         that only displays on screen.
       </p>
+
+      <ImeiCapture />
 
       <section className="mt-8">
         <h2 className="text-xs font-semibold tracking-wide text-gray-400 uppercase">
