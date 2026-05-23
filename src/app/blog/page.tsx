@@ -9,6 +9,14 @@ export const metadata: Metadata = {
 
 const posts = [
   {
+    slug: 'repairdesk-vs-repairshopr',
+    title: 'RepairDesk vs RepairShopr: Which POS Wins for Phone Repair? (2026)',
+    date: '2026-05-10',
+    excerpt:
+      'Honest 2026 comparison of RepairDesk and RepairShopr for phone repair shops — features, real pricing, hidden costs, and a free alternative most owners overlook.',
+    readTime: '7 min read',
+  },
+  {
     slug: 'how-to-start-a-phone-repair-business',
     title: 'How to start a phone repair business in 2026',
     date: '2026-04-17',
@@ -42,10 +50,10 @@ const posts = [
   },
   {
     slug: 'how-to-price-phone-repairs',
-    title: 'How to price phone repairs',
+    title: 'Phone Repair Pricing Guide 2026: Real Margins by Repair Type',
     date: '2026-04-17',
     excerpt:
-      'A practical pricing guide for phone repair shops — covering common repairs, margins, and how to stay competitive.',
+      'How to price phone repairs profitably — the formula, typical markups by repair type, and the mistakes that quietly kill your margins.',
     readTime: '5 min read',
   },
   {
@@ -66,10 +74,10 @@ const posts = [
   },
   {
     slug: 'mistakes-new-phone-repair-shop-owners-make',
-    title: '5 mistakes new phone repair shop owners make',
+    title: '5 Phone Repair Shop Mistakes That Quietly Drain Profit (2026)',
     date: '2026-04-17',
     excerpt:
-      'The most common mistakes we see from new repair shop owners — and how to avoid them before they cost you money.',
+      'The five mistakes new repair shop owners make in their first year — and exactly how to avoid each one before it costs you money.',
     readTime: '4 min read',
   },
   {
@@ -114,10 +122,10 @@ const posts = [
   },
   {
     slug: 'ipad-vs-laptop-for-repair-counter',
-    title: 'iPad vs laptop at the repair counter',
+    title: 'iPad vs Laptop for Repair Shop POS: Which Wins at the Counter?',
     date: '2026-03-15',
     excerpt:
-      'We tested both setups in real shops. Here is what we found about speed, portability, and customer experience.',
+      'We tested iPad and laptop POS setups in real phone repair shops. Here is what we found on speed, counter space, and customer experience.',
     readTime: '4 min read',
   },
 ]
