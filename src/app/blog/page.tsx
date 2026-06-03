@@ -9,6 +9,14 @@ export const metadata: Metadata = {
 
 const posts = [
   {
+    slug: 'repairdesk-alternatives',
+    title: 'RepairDesk Alternatives in 2026: Free + Paid POS Options for Phone Repair Shops',
+    date: '2026-06-03',
+    excerpt:
+      'The best RepairDesk alternatives in 2026 for phone repair shops — free, low-cost, and enterprise options compared on price, features, and which size shop each one fits.',
+    readTime: '8 min read',
+  },
+  {
     slug: 'repairdesk-vs-repairshopr',
     title: 'RepairDesk vs RepairShopr: Which POS Wins for Phone Repair? (2026)',
     date: '2026-05-10',
