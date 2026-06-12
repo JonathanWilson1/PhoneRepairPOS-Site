@@ -56,10 +56,36 @@ export function Intro() {
         <IconLink href="/blog" icon={BookIcon} className="flex-none">
           Blog
         </IconLink>
+        <IconLink href="/templates" icon={BookIcon} className="flex-none">
+          Free templates
+        </IconLink>
         <IconLink href="mailto:support@phonerepairpos.app" icon={MailIcon} className="flex-none">
           support@phonerepairpos.app
         </IconLink>
       </div>
+      <nav
+        aria-label="Languages"
+        className="mt-6 flex flex-wrap justify-center gap-x-3 gap-y-1 text-xs text-gray-500 lg:justify-start"
+      >
+        {[
+          ['/es', 'Español'],
+          ['/pt', 'Português'],
+          ['/fr', 'Français'],
+          ['/de', 'Deutsch'],
+          ['/it', 'Italiano'],
+          ['/ja', '日本語'],
+          ['/ru', 'Русский'],
+          ['/zh', '中文'],
+        ].map(([href, label]) => (
+          <Link
+            key={href}
+            href={href}
+            className="transition hover:text-gray-300 [text-decoration:none]"
+          >
+            {label}
+          </Link>
+        ))}
+      </nav>
     </>
   )
 }
