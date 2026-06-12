@@ -6,7 +6,7 @@ import { hreflangAlternates } from '@/components/landingAlternates'
 export const metadata: Metadata = {
   title: 'Logiciel Gratuit pour Atelier de Réparation de Téléphones',
   description:
-    'Logiciel de caisse gratuit pour ateliers de réparation de téléphones — sans abonnement ni frais mensuels. Tickets de réparation, alertes SMS et WhatsApp, paiements et reçus sur iPhone et iPad. Fonctionne hors ligne, en français.',
+    'Logiciel de gestion gratuit pour ateliers de réparation de téléphones — sans abonnement ni frais mensuels. Tickets de réparation, alertes SMS et WhatsApp, suivi des paiements et reçus sur iPhone et iPad. Fonctionne hors ligne, en français.',
   alternates: hreflangAlternates('/fr'),
   openGraph: { locale: 'fr_FR' },
 }
