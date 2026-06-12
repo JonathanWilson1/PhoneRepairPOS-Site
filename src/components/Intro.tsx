@@ -38,7 +38,7 @@ export function Intro() {
       </div>
       <h1 className="mt-14 font-display text-4xl/tight font-light text-white">
         The <span className="text-violet-300">free</span> POS app built for{' '}
-        phone repair shops
+        cell phone repair shops
       </h1>
       <p className="mt-4 text-sm/6 text-gray-300">
         Create tickets, track repairs, and get paid — on iPhone and iPad. Simple

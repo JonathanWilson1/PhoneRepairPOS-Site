@@ -25,14 +25,18 @@ const monaSans = localFont({
 export const metadata: Metadata = {
   title: {
     default:
-      'PhoneRepairPOS — Free iPad & iPhone POS for Phone Repair Shops',
+      'Free POS for Cell Phone Repair Shops — PhoneRepairPOS',
     template: '%s — PhoneRepairPOS',
   },
   description:
-    'Free POS app for phone repair shops — no monthly fee, no subscription. Track tickets, manage repairs, and record payments on iPad or iPhone. Works offline.',
+    'Free cell phone repair POS — no monthly fee, no subscription. Track repair tickets, message customers, and record payments on iPhone or iPad. Works offline.',
   keywords: [
+    'cell phone repair POS',
+    'cell phone repair POS system',
+    'cell phone repair shop software',
     'phone repair POS',
     'phone repair POS app',
+    'free repair shop POS',
     'repair shop software',
     'phone repair ticket system',
     'repair shop point of sale',
@@ -92,7 +96,7 @@ const structuredData = {
       applicationCategory: 'BusinessApplication',
       operatingSystem: 'iOS',
       description:
-        'The free point-of-sale app designed specifically for phone repair shops. Available on iPhone and iPad. Manage jobs, track repairs, and get paid faster.',
+        'The free point-of-sale app designed specifically for cell phone repair shops. Available on iPhone and iPad. Manage jobs, track repairs, message customers, and get paid faster.',
       url: 'https://phonerepairpos.app',
       installUrl:
         'https://apps.apple.com/gb/app/phone-repair-pos/id6759859240',
@@ -144,6 +148,14 @@ const structuredData = {
           acceptedAnswer: {
             '@type': 'Answer',
             text: 'PhoneRepairPOS is free to download from the App Store. Download it and start using it straight away — no sign-up, no credit card, no trial period.',
+          },
+        },
+        {
+          '@type': 'Question',
+          name: 'How does PhoneRepairPOS compare to RepairDesk, RepairShopr, or CellStore?',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: 'RepairDesk ($149/month), RepairShopr, and CellStore ($39/month) are subscription platforms with features like multi-location support and accounting integrations. PhoneRepairPOS is free and focuses on the core repair workflow — tickets, status tracking, customer messaging, and payments — which is everything a solo tech or small cell phone repair shop needs without the monthly bill.',
           },
         },
         {
