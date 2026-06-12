@@ -4,9 +4,9 @@ import { LocalizedLanding } from '@/components/LocalizedLanding'
 import { hreflangAlternates } from '@/components/landingAlternates'
 
 export const metadata: Metadata = {
-  title: 'Kostenlose Kassen-App für Handy-Reparatur-Werkstätten',
+  title: 'Kostenlose Werkstatt-App für Handy-Reparatur-Betriebe',
   description:
-    'Kostenlose POS-App für Handy-Reparatur-Werkstätten — keine Monatsgebühr, kein Abo. Reparatur-Tickets, Kundenbenachrichtigung per SMS und WhatsApp, Zahlungen und Belege auf iPhone und iPad. Funktioniert offline, auf Deutsch.',
+    'Kostenlose Verwaltungs-App für Handy-Reparatur-Werkstätten — keine Monatsgebühr, kein Abo. Reparatur-Tickets, Kundenbenachrichtigung per SMS und WhatsApp, Zahlungsübersicht und Belege auf iPhone und iPad. Funktioniert offline, auf Deutsch.',
   alternates: hreflangAlternates('/de'),
   openGraph: { locale: 'de_DE' },
 }
@@ -16,7 +16,7 @@ export default function Page() {
     <LocalizedLanding
       strings={{
         langName: 'Deutsch',
-        heroTitle: 'Die kostenlose Kassen-App für Handy-Reparatur-Werkstätten',
+        heroTitle: 'Die kostenlose Werkstatt-App für Handy-Reparaturen',
         heroAccent: 'kostenlose',
         heroSubtitle:
           'Tickets erstellen, jede Reparatur verfolgen und kassieren — alles auf iPhone oder iPad. Keine Monatsgebühr, kein Abo, keine Registrierung. Herunterladen und in einer Minute loslegen, komplett auf Deutsch.',
