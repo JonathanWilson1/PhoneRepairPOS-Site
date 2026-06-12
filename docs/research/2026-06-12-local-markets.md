@@ -48,10 +48,10 @@ The localized landing pages (Site PR #4) were written as careful translations ta
 
 ## France (fr)
 
-**⚠️ Regulatory finding — NF525.** French competitors prominently advertise NF525-certified invoicing/caisse (FixVault: "facturation NF525", Mon Atelier: "factures NF525 et électroniques compatibles Factur-X"). NF525 is France's anti-VAT-fraud certification regime for cash-register/POS software recording B2C payments. PhoneRepairPOS records payments and is **not** NF525-certified.
+**⚠️ Regulatory finding — NF525.** French competitors prominently advertise NF525-certified invoicing/caisse (FixVault: "facturation NF525", Mon Atelier: "factures NF525 et électroniques compatibles Factur-X"). NF525 is France's anti-VAT-fraud certification regime for cash-register/POS software. **Important nuance (per Jonathan):** PhoneRepairPOS does NOT take or process payments — no card processing, no transaction handling. It only keeps a record of who has paid against a ticket. Whether mere payment *recording* (vs processing/receipt issuance) brings software into NF525 scope is exactly the `[unverified]` legal question below — do not assert either way.
 
 - **Action taken (this commit):** /fr metadata no longer calls the app a "logiciel de caisse"; repositioned as "logiciel de gestion" (shop/repair management). The word "caisse" was also in the fr keywords list — removed.
-- `[unverified]` — the exact legal scope (whether a free iPad app recording payments for a French merchant falls under the certification obligation, and what the merchant's obligations are vs the vendor's) needs proper verification before any French marketing push or before adding "caisse" positioning back. Do NOT assert compliance either way in content.
+- `[unverified]` — the exact legal scope (whether a free iPad app that merely logs payment status — without processing payments or issuing fiscal receipts — falls under the certification obligation, and what the merchant's obligations are vs the vendor's) needs proper verification before any French marketing push or before adding "caisse" positioning back. Do NOT assert compliance either way in content. The repositioning to "logiciel de gestion" is a no-cost safety measure either way: it describes what the app actually is.
 
 **Local competitor set:**
 | Product | URL | Notes |
