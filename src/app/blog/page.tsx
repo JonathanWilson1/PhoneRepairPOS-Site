@@ -9,6 +9,22 @@ export const metadata: Metadata = {
 
 const posts = [
   {
+    slug: 'repair-shop-software-pricing',
+    title: 'Repair Shop Software Pricing in 2026: What RepairDesk, RepairShopr & Co. Actually Cost',
+    date: '2026-06-12',
+    excerpt:
+      'Real 2026 pricing for repair shop software — true annual costs, the add-ons that inflate the bill, the per-user traps, and the free option.',
+    readTime: '6 min read',
+  },
+  {
+    slug: 'square-for-phone-repair-shops',
+    title: 'Can You Run a Phone Repair Shop on Square? (Honest 2026 Answer)',
+    date: '2026-06-12',
+    excerpt:
+      'Square takes payments brilliantly and loses track of phones completely. What it does well, where it breaks for repair work, and the free way to fix the gap without replacing it.',
+    readTime: '5 min read',
+  },
+  {
     slug: 'repairdesk-alternatives',
     title: 'RepairDesk Alternatives in 2026: Free + Paid POS Options for Phone Repair Shops',
     date: '2026-06-03',
