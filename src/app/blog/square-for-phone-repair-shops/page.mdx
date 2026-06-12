@@ -1,0 +1,84 @@
+import { Callout, PostHeader, PostFooter } from '@/components/blog'
+
+export const metadata = {
+  title: 'Can You Run a Phone Repair Shop on Square? (Honest 2026 Answer)',
+  description:
+    'Square is free and brilliant at taking payments — but it has no repair tickets, no status tracking, and no device records. What Square does well, where it breaks for repair shops, and the free fix.',
+  alternates: { canonical: '/blog/square-for-phone-repair-shops' },
+  openGraph: {
+    title: 'Can You Run a Phone Repair Shop on Square? (Honest 2026 Answer)',
+    description:
+      'Square is free and brilliant at taking payments — but it has no repair tickets, no status tracking, and no device records. What Square does well, where it breaks for repair shops, and the free fix.',
+    type: 'article',
+    publishedTime: '2026-06-12T00:00:00Z',
+    authors: ['PhoneRepairPOS'],
+  },
+}
+
+# Can You Run a Phone Repair Shop on Square? (Honest 2026 Answer)
+
+<PostHeader date="2026-06-12" />
+
+Short answer: Square will take your customers' money brilliantly, and it will lose track of their phones completely. It is half of a repair shop system — the payments half — and the half it is missing is the half that actually runs a repair business.
+
+This is worth spelling out properly, because Square is most new shop owners' first instinct. It is free to start, everyone has seen the reader, and it feels like "getting a real POS." Here is where that instinct is right, and where it falls apart.
+
+## What Square genuinely does well
+
+Credit where due — Square is excellent at the thing it was built for:
+
+- **Taking card payments.** The free plan charges around 2.6% + 15¢ per in-person tap or swipe (Square raised the per-transaction fee from 10¢ in late 2025 — check [Square's pricing page](https://squareup.com/us/en/pricing) for current rates). No monthly fee on the basic plan, hardware from a cheap reader upward.
+- **Basic retail sales.** Selling cases, cables, and screen protectors over the counter works fine — it was built for exactly this.
+- **Reporting on sales.** Daily takings, item sales, simple summaries.
+
+If your shop were only an accessories counter, Square alone would be a fine answer.
+
+## Where it breaks for repair work
+
+A repair is not a sale. A sale takes ten seconds and ends when the customer walks out. A repair is an open job that lives in your shop for hours or days, changes state, and has to be matched back to a specific human and their specific device. Square has no concept of any of that:
+
+- **No repair tickets.** There is nowhere to record "Maria's iPhone 13, cracked screen, quoted $90, promised Thursday." A sale exists or it doesn't — there is no in-progress.
+- **No status workflow.** Received, diagnosing, waiting for parts, ready for pickup — none of it exists. Your actual workflow lives somewhere else: a notebook, a whiteboard, your memory.
+- **No device records.** No model, no IMEI/serial, no fault description, no record of the condition the phone arrived in — the thing that settles "it was fine when I dropped it off" disputes.
+- **No repair-status customer messaging.** Square can email a receipt. It cannot tell Maria her screen is fixed.
+
+## The workarounds people try
+
+Every shop that runs on Square ends up improvising, and the improvisations are where jobs get lost:
+
+**The notes field.** Stuffing device and fault details into a transaction note or customer note. Fine until you need to *find* something — notes aren't searchable by status, don't show what's on the bench, and only exist after you've charged something.
+
+**Square Appointments.** Treats a repair as a calendar slot. But a repair isn't an appointment — the phone stays when the customer leaves, and the booking has no state beyond "happened."
+
+**The spreadsheet (or notebook) on the side.** The most common setup: Square for money, Google Sheets or paper for jobs. It works, sort of — but now every repair is entered twice, the two systems never agree, and the sheet quietly becomes the real POS while Square is just the card reader.
+
+<Callout type="insight" title="The pattern behind all three">
+Each workaround is an attempt to bolt job tracking onto a tool that only understands transactions. The fix is not a better workaround — it is accepting that payments and repair workflow are two different jobs.
+</Callout>
+
+## The setup that actually works: keep Square, add a repair workflow
+
+Here is the part most "alternatives" articles get wrong: you probably should not *replace* Square. If you like your card reader and your rates, keep them. What you need is the missing half — and it pairs cleanly, because a repair workflow tool does not need to process payments at all.
+
+That is exactly how [PhoneRepairPOS](/) is built. It does not take payments and never touches your card processing — it manages everything around the repair: tickets in about 30 seconds, the status pipeline from received to collected, device and fault records, one-tap SMS/WhatsApp/email updates to the customer, a *record* of how each job was paid (cash, card-via-Square, whatever), and a branded PDF receipt. It is free, works offline, and runs on the iPhone in your pocket or an iPad at the counter — next to the Square reader, not instead of it.
+
+So the honest 2026 answer to the headline:
+
+- **Accessories-only counter** → Square alone is fine.
+- **Actual repair shop** → Square (or any card reader you like) for taking money, plus a free dedicated repair workflow for everything Square can't see.
+- **Bigger shop needing inventory and accounting integrations** → that's when the paid platforms earn their subscriptions; see our [pricing breakdown](/blog/repair-shop-software-pricing) and [full comparison](/blog/best-pos-systems-for-phone-repair-shops).
+
+The expensive mistake isn't choosing Square — it's spending a year pretending its notes field is a ticketing system while jobs slip through the cracks.
+
+<PostFooter
+  title="Can You Run a Phone Repair Shop on Square? (Honest 2026 Answer)"
+  description="Square is free and brilliant at taking payments — but it has no repair tickets, no status tracking, and no device records. What Square does well, where it breaks for repair shops, and the free fix."
+  date="2026-06-12"
+  slug="square-for-phone-repair-shops"
+  related={{
+    slug: 'repair-shop-software-pricing',
+    title: 'Repair Shop Software Pricing in 2026: What RepairDesk, RepairShopr & Co. Actually Cost',
+    excerpt:
+      'Real 2026 pricing for repair shop software — true annual costs, the add-ons that inflate the bill, and the free option.',
+  }}
+/>
