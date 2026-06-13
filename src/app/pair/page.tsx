@@ -5,7 +5,7 @@ import { Button } from '@/components/Button'
 export const metadata: Metadata = {
   title: 'Add a device — Phone Repair POS',
   description:
-    'Finish adding this iPad to your Phone Repair POS shop by opening the app and scanning the pairing code.',
+    'Finish adding this device to your Phone Repair POS shop by opening the app and scanning the pairing code.',
   robots: { index: false, follow: false },
 }
 
@@ -25,14 +25,14 @@ export default function PairPage() {
           🔗
         </div>
         <h1 className="font-display mt-6 text-2xl font-semibold">
-          Add this iPad to your shop
+          Add this device to your shop
         </h1>
         <p className="mt-3 text-sm/6 text-gray-400">
           You&rsquo;ve scanned a Phone Repair POS pairing code. To finish, open
           the <span className="text-gray-200">Phone Repair POS</span> app on
-          this iPad and tap <span className="text-gray-200">Scan</span> — if you
-          don&rsquo;t have it yet, install it first, then scan again from inside
-          the app.
+          this device and tap <span className="text-gray-200">Scan</span> — if
+          you don&rsquo;t have it yet, install it first, then scan again from
+          inside the app.
         </p>
         <div className="mt-8 flex justify-center">
           <Button href="https://apps.apple.com/gb/app/phone-repair-pos/id6759859240" arrow>
@@ -42,7 +42,7 @@ export default function PairPage() {
       </div>
       <p className="mt-6 text-center text-xs text-gray-500">
         Pairing happens device-to-device. This page can&rsquo;t join a shop on
-        its own — only the app on the new iPad can.
+        its own — only the app on the new device can.
       </p>
     </main>
   )
