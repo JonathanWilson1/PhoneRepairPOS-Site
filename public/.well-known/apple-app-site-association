@@ -1,0 +1,11 @@
+{
+  "applinks": {
+    "apps": [],
+    "details": [
+      {
+        "appID": "4E528V89CX.com.jonathanwilson.PhoneRepairPOS",
+        "paths": ["/pair", "/pair?*", "/pair/*"]
+      }
+    ]
+  }
+}
