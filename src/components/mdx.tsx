@@ -14,7 +14,7 @@ type ImagePropsWithOptionalAlt = Omit<ImageProps, 'alt'> & { alt?: string }
 export const img = function Img(props: ImagePropsWithOptionalAlt) {
   return (
     <Link
-      href="https://apps.apple.com/gb/app/phone-repair-pos/id6759859240"
+      href="https://apps.apple.com/app/phone-repair-pos/id6759859240"
       className="relative block overflow-hidden rounded-xl bg-gray-50 transition-opacity hover:opacity-80 dark:bg-gray-900"
     >
       <Image

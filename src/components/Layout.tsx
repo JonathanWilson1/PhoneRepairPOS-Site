@@ -1,5 +1,7 @@
 import { useId } from 'react'
 
+import { HomeHero } from '@/components/HomeHero'
+import { HomeGuides } from '@/components/HomeGuides'
 import { Intro, IntroFooter } from '@/components/Intro'
 import { StarField } from '@/components/StarField'
 import { ThemeToggle } from '@/components/ThemeToggle'
@@ -102,7 +104,9 @@ export function Layout({ children }: { children: React.ReactNode }) {
       <div className="relative flex-auto">
         <Timeline />
         <main className="space-y-20 py-20 sm:space-y-32 sm:py-32">
+          <HomeHero />
           {children}
+          <HomeGuides />
         </main>
       </div>
     </>
