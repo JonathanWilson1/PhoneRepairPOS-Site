@@ -46,7 +46,7 @@ export function Intro() {
       </p>
       <div className="mt-8 flex flex-wrap gap-x-4 gap-y-3">
         <Button
-          href="https://apps.apple.com/gb/app/phone-repair-pos/id6759859240"
+          href="https://apps.apple.com/app/phone-repair-pos/id6759859240"
           arrow
         >
           Download free on the App Store

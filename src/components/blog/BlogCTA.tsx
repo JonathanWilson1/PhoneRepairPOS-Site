@@ -12,7 +12,7 @@ export function BlogCTA() {
       </p>
       <div className="mt-6 flex flex-wrap gap-4">
         <Link
-          href="https://apps.apple.com/gb/app/phone-repair-pos/id6759859240"
+          href="https://apps.apple.com/app/phone-repair-pos/id6759859240"
           className="inline-flex items-center gap-2 rounded-full bg-violet-600 px-6 py-3 text-sm font-semibold text-white transition hover:bg-violet-500"
         >
           <svg className="h-5 w-5" viewBox="0 0 24 24" fill="currentColor">

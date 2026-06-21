@@ -35,7 +35,7 @@ export default function PairPage() {
           inside the app.
         </p>
         <div className="mt-8 flex justify-center">
-          <Button href="https://apps.apple.com/gb/app/phone-repair-pos/id6759859240" arrow>
+          <Button href="https://apps.apple.com/app/phone-repair-pos/id6759859240" arrow>
             Get Phone Repair POS
           </Button>
         </div>

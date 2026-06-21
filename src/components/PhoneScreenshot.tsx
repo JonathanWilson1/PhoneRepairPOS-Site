@@ -2,7 +2,7 @@ import Image, { type StaticImageData } from 'next/image'
 import Link from 'next/link'
 
 const APP_STORE_URL =
-  'https://apps.apple.com/gb/app/phone-repair-pos/id6759859240'
+  'https://apps.apple.com/app/phone-repair-pos/id6759859240'
 
 export function PhoneScreenshot({
   src,

@@ -50,7 +50,7 @@ export const metadata: Metadata = {
   openGraph: {
     siteName: 'PhoneRepairPOS',
     type: 'website',
-    locale: 'en_GB',
+    locale: 'en_US',
     images: [
       {
         url: '/og-image.png',
@@ -99,7 +99,7 @@ const structuredData = {
         'The free point-of-sale app designed specifically for cell phone repair shops. Available on iPhone and iPad. Manage jobs, track repairs, message customers, and get paid faster.',
       url: 'https://phonerepairpos.app',
       installUrl:
-        'https://apps.apple.com/gb/app/phone-repair-pos/id6759859240',
+        'https://apps.apple.com/app/phone-repair-pos/id6759859240',
       offers: {
         '@type': 'Offer',
         price: '0',
