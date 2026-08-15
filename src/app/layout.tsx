@@ -6,6 +6,8 @@ import Script from 'next/script'
 
 import { Providers } from '@/app/providers'
 import { Analytics } from '@/components/Analytics'
+import { CookieBanner } from '@/components/CookieBanner'
+import { SiteFooter } from '@/components/SiteFooter'
 
 import '@/styles/tailwind.css'
 
@@ -131,7 +133,7 @@ const structuredData = {
           name: 'Does PhoneRepairPOS work offline?',
           acceptedAnswer: {
             '@type': 'Answer',
-            text: 'Yes. PhoneRepairPOS is 100% offline capable. All your data is stored locally on your device. No internet connection is required to create tickets, update statuses, or record payments. If you use iCloud, your data syncs across your devices when you are back online.',
+            text: 'Yes. No internet connection is required to create tickets, update statuses, or record payments — the app works fully offline and stores your data on your device. When you are back online, your data syncs to your secure cloud account so it is backed up and available on your other devices.',
           },
         },
         {
@@ -163,7 +165,7 @@ const structuredData = {
           name: 'Is my customer data private and secure?',
           acceptedAnswer: {
             '@type': 'Answer',
-            text: 'Your data stays on your device. PhoneRepairPOS uses local storage (Core Data) and optionally iCloud for sync. There is no third-party server, no analytics tracking, and no one else has access to your customer records.',
+            text: 'Your repair records are stored on your device and synced to our secure cloud database hosted on Google Cloud Platform. We never sell your data, never share it for advertising, and only access it to operate the service or fix a fault you report. We collect anonymous usage and crash analytics to improve the app — these contain no customer names, numbers, or repair details. Full details are in our privacy policy.',
           },
         },
         {
@@ -191,14 +193,32 @@ export default function RootLayout({
       suppressHydrationWarning
     >
       <body className="flex min-h-full flex-col bg-white dark:bg-gray-950">
+        {/*
+          Consent Mode defaults must be queued BEFORE gtag.js loads, or GA sets
+          analytics cookies on first paint — which PECR reg. 6 does not allow.
+          A plain inline script guarantees document-order execution ahead of the
+          afterInteractive tag below; CookieBanner upgrades this to 'granted'
+          only once the visitor accepts.
+        */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('consent', 'default', {
+  ad_storage: 'denied',
+  ad_user_data: 'denied',
+  ad_personalization: 'denied',
+  analytics_storage: 'denied',
+  wait_for_update: 500
+});`,
+          }}
+        />
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-SY7WGPSFBF"
           strategy="afterInteractive"
         />
         <Script id="ga4" strategy="afterInteractive">
-          {`window.dataLayer = window.dataLayer || [];
-function gtag(){dataLayer.push(arguments);}
-gtag('js', new Date());
+          {`gtag('js', new Date());
 gtag('config', 'G-SY7WGPSFBF');`}
         </Script>
         <Script
@@ -208,6 +228,8 @@ gtag('config', 'G-SY7WGPSFBF');`}
         />
         <Analytics />
         <Providers>{children}</Providers>
+        <SiteFooter />
+        <CookieBanner />
       </body>
     </html>
   )

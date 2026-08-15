@@ -9,3 +9,15 @@
   --font-sans: var(--font-inter);
   --font-display: var(--font-mona-sans);
 }
+
+/*
+  The home page pins a fixed sidebar over the left column from `lg` up, which
+  would otherwise sit on top of the site footer's content. Indent the footer by
+  the same offset the sidebar reserves, but only on pages that actually render
+  one — every other layout is a normal centred column and needs no indent.
+*/
+@media (min-width: 64rem) {
+  body:has([data-fixed-sidebar]) [data-site-footer] {
+    padding-left: calc(max(2rem, 50% - 38rem) + 40rem);
+  }
+}
