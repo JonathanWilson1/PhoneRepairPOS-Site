@@ -6,7 +6,7 @@ export const metadata = {
 
 # Privacy Policy
 
-*Last updated: 15 August 2026*
+*Last updated: 20 August 2026*
 
 ## Who we are
 
@@ -41,7 +41,7 @@ We use the following third parties. Each is bound by its own data protection ter
 | Provider | Purpose | Location |
 |---|---|---|
 | Google (Firebase / Google Cloud) | Database, authentication, crash reporting, remote configuration, analytics | EU / US |
-| Mixpanel | Product analytics | **United States** |
+| Mixpanel | Product analytics, and masked session replay | **United States** |
 | Apple | App distribution, and device-level services | EU / US |
 
 Where data is transferred outside the UK, we rely on the UK International Data Transfer Addendum to the EU Standard Contractual Clauses, or another safeguard permitted under UK GDPR.
@@ -52,11 +52,25 @@ We will give you reasonable notice before adding or replacing a sub-processor th
 
 The app sends usage and diagnostic events to Firebase Analytics, Crashlytics, and Mixpanel so we can understand how features are used and fix crashes.
 
-These events describe **app usage, not your customers**. We do not send customer names, phone numbers, repair notes, or payment amounts to any analytics provider. Error reports include technical error codes only, never message content or personal details.
+These events describe **app usage, not your customers**. No event we send carries a customer name, phone number, repair note, or payment amount. Error reports include technical error codes only, never message content or personal details.
+
+### Session replay
+
+To understand where people get stuck — an abandoned repair ticket tells us that it happened, but not why — the app also sends Mixpanel a **masked replay** of a sample of sessions.
+
+A replay is not a recording of your screen as you see it. The app takes periodic screenshots of its own interface, and **before any image leaves your device it masks every piece of text, every photo, every web view and every map**. Anything typed into a field is masked and cannot be unmasked. What reaches us shows the shape of a screen, which controls were tapped, and in what order — not what your tickets say.
+
+Because a replay depicts the app's own screens, it is usage data that we control. But it is captured while your shop's business data is on screen, which is precisely why the masking happens on the device, before anything is uploaded, rather than afterwards.
+
+Three things we think you should know:
+
+- Replays are taken from roughly **1 in 10 sessions**, not all of them.
+- They upload over mobile data as well as Wi-Fi, so they count towards a metered connection.
+- We can **switch session replay off for every device remotely**, without waiting on an app update. The masking is automatic, and if we ever find a screen it has not masked correctly, that is what we will do: switch it off, delete the affected replays, and fix it before it goes back on.
 
 ## How long we keep data
 
-Your shop's business data is retained for as long as your shop uses the app. If you stop using it, contact us and we will delete your shop's records. Analytics and diagnostic data is retained for up to 14 months.
+Your shop's business data is retained for as long as your shop uses the app. If you stop using it, contact us and we will delete your shop's records. Analytics and diagnostic data, including session replays, is retained for up to 14 months.
 
 ## Security
 
