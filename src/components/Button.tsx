@@ -10,7 +10,12 @@ function ButtonInner({
 }) {
   return (
     <>
-      {children} {arrow ? <span aria-hidden="true">&rarr;</span> : null}
+      {children}{' '}
+      {arrow ? (
+        <span aria-hidden="true" className="inline-block rtl:-scale-x-100">
+          &rarr;
+        </span>
+      ) : null}
     </>
   )
 }

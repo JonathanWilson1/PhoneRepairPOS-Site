@@ -14,6 +14,7 @@ export const metadata: Metadata = {
 export default function Page() {
   return (
     <LocalizedLanding
+      lang="de"
       strings={{
         langName: 'Deutsch',
         heroTitle: 'Die kostenlose Werkstatt-App für Handy-Reparaturen',
@@ -79,7 +80,7 @@ export default function Page() {
           },
           {
             q: 'Gibt es die App auf Deutsch?',
-            a: 'Ja, die App ist vollständig ins Deutsche übersetzt — außerdem in Englisch, Spanisch, Portugiesisch, Französisch, Italienisch, Russisch, Japanisch und Chinesisch.',
+            a: 'Ja, die App ist vollständig ins Deutsche übersetzt — außerdem in Englisch, Spanisch, Portugiesisch, Französisch, Italienisch, Japanisch, Russisch, Chinesisch, Türkisch, Vietnamesisch, Thailändisch, Hebräisch und Arabisch. Insgesamt 14 Sprachen.',
           },
         ],
         footerNote:

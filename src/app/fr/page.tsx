@@ -14,6 +14,7 @@ export const metadata: Metadata = {
 export default function Page() {
   return (
     <LocalizedLanding
+      lang="fr"
       strings={{
         langName: 'Français',
         heroTitle: 'Le logiciel gratuit pour votre atelier de réparation de téléphones',
@@ -79,7 +80,7 @@ export default function Page() {
           },
           {
             q: "L'application est en français ?",
-            a: "Oui, l'application est entièrement traduite en français — ainsi qu'en anglais, espagnol, portugais, allemand, italien, russe, japonais et chinois.",
+            a: "Oui, l'application est entièrement traduite en français — ainsi qu'en anglais, espagnol, portugais, allemand, italien, japonais, russe, chinois, turc, vietnamien, thaï, hébreu et arabe. 14 langues au total.",
           },
         ],
         footerNote:

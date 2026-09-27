@@ -35,9 +35,19 @@ function highlight(title: string, accent: string) {
   )
 }
 
-export function LocalizedLanding({ strings }: { strings: LandingStrings }) {
+// The root layout renders <html lang="en">, so each landing page declares its
+// own language (and direction, for Hebrew and Arabic) on its content root.
+export function LocalizedLanding({
+  lang,
+  dir = 'ltr',
+  strings,
+}: {
+  lang: string
+  dir?: 'ltr' | 'rtl'
+  strings: LandingStrings
+}) {
   return (
-    <div className="relative min-h-full bg-gray-950">
+    <div lang={lang} dir={dir} className="relative min-h-full bg-gray-950">
       <div className="pointer-events-none absolute inset-x-0 top-0 h-80 bg-gradient-to-b from-violet-500/10 to-transparent" />
       <div className="relative mx-auto max-w-3xl px-6 py-16 sm:py-24">
         <header className="mb-16 flex items-center justify-between">
@@ -46,7 +56,9 @@ export function LocalizedLanding({ strings }: { strings: LandingStrings }) {
           </Link>
           <Link
             href="/"
-            className="text-sm font-medium text-gray-400 transition hover:text-white [text-decoration:none]"
+            lang="en"
+            dir="ltr"
+            className="text-sm font-medium text-gray-400 transition [text-decoration:none] hover:text-white"
           >
             {strings.inEnglish}
           </Link>

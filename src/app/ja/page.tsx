@@ -14,6 +14,7 @@ export const metadata: Metadata = {
 export default function Page() {
   return (
     <LocalizedLanding
+      lang="ja"
       strings={{
         langName: '日本語',
         heroTitle: 'スマホ修理店のための無料POSアプリ',
@@ -79,7 +80,7 @@ export default function Page() {
           },
           {
             q: '日本語に対応していますか？',
-            a: 'はい、アプリは完全に日本語化されています。ほかに英語・スペイン語・ポルトガル語・フランス語・ドイツ語・イタリア語・ロシア語・中国語にも対応しています。',
+            a: 'はい、アプリは完全に日本語化されています。ほかに英語・スペイン語・ポルトガル語・フランス語・ドイツ語・イタリア語・ロシア語・中国語・トルコ語・ベトナム語・タイ語・ヘブライ語・アラビア語にも対応し、全14言語で利用できます。',
           },
         ],
         footerNote:

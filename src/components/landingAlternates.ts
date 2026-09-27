@@ -13,6 +13,11 @@ export function hreflangAlternates(canonical: string) {
       ja: '/ja',
       ru: '/ru',
       'zh-Hans': '/zh',
+      tr: '/tr',
+      vi: '/vi',
+      th: '/th',
+      he: '/he',
+      ar: '/ar',
       'x-default': '/',
     },
   }

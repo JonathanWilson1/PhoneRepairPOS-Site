@@ -2,6 +2,7 @@ import { SparkleIcon } from '@/components/SparkleIcon'
 import { PhoneScreenshot } from '@/components/PhoneScreenshot'
 import { ScreenshotGrid } from '@/components/ScreenshotGrid'
 import { AppStoreLink } from '@/components/AppStoreLink'
+import { hreflangAlternates } from '@/components/landingAlternates'
 import ticketDetail from '@/images/ticket-detail.png'
 import ticketList from '@/images/ticket-list.png'
 import pdfReceipt from '@/images/pdf-receipt.png'
@@ -12,22 +13,27 @@ import tourNewTicket from '@/images/tour-new-ticket.png'
 export { Layout as default } from '@/components/Layout'
 
 export const metadata = {
-  alternates: {
-    canonical: '/',
-    languages: {
-      en: '/',
-      es: '/es',
-      'pt-BR': '/pt',
-      fr: '/fr',
-      de: '/de',
-      it: '/it',
-      ja: '/ja',
-      ru: '/ru',
-      'zh-Hans': '/zh',
-      'x-default': '/',
-    },
-  },
+  alternates: hreflangAlternates('/'),
 }
+
+---
+
+## Now Shipping: Receipt Printing, Reminders & Mileage {{ date: '2026-09-27T12:00Z' }}
+
+**Version 1.9 puts receipts on paper, nudges you about jobs that have stalled, and adds up the miles on your callouts.**
+
+### <SparkleIcon /> What's New in v1.9
+
+- **Print receipts on paper** — Pair a Bluetooth receipt printer and print straight from the ticket. Change what your receipts say, and every device in the shop prints the same wording.
+- **Two documents to print** — A Receipt, as proof of payment once the customer has paid, and a Repair Ticket for drop-off with the device, the fault, and what was agreed. Each has its own wording you can change.
+- **Reminders for you** — A nudge when a repaired device has sat uncollected for two days, or a job has stalled waiting on parts. At most one a day, only during shop hours — and one switch turns them off.
+- **Drive time and mileage** — Every callout shows how long the drive takes and how far it is. A mileage report in Back Office adds up the distance for your tax return.
+- **Payment recorded** — See the change due and anything still owed, then mark the repair collected.
+- **Photos on every device** — Photos taken on one device now show on your paired devices.
+- **Edit the IMEI** — The IMEI or serial now shows on the ticket and can be corrected later.
+- **Now in 14 languages** — Turkish, Vietnamese, Thai, Hebrew and Arabic joined in the last update, so the app and your receipts now come in 14 languages: English, Spanish, Portuguese (Brazil), French, German, Italian, Japanese, Russian, Simplified Chinese, Turkish, Vietnamese, Thai, Hebrew, and Arabic.
+
+<AppStoreLink>Update on the App Store</AppStoreLink>
 
 ---
 
@@ -101,7 +107,7 @@ Purpose-built tools that replace paper tickets, spreadsheets, and sticky notes.
 - **Customer Database** — Build a customer history automatically. See past repairs, spending history, and contact info at a glance.
 - **Customer Updates by SMS, WhatsApp & Email** — One tap to message the customer when their device is ready. Pre-written status updates, sent from your number on your existing plan. No SMS gateway fees, no per-message charges.
 - **Printable PDF Receipts** — Hand out a branded receipt with shop name, optional VAT number, ticket details, and payment status. Print over AirPrint or share via email, Messages, or AirDrop.
-- **Localized in 9 Languages** — English, Spanish, Portuguese (Brazil), French, German, Italian, Russian, Japanese, and Simplified Chinese. Run your shop in the language your team and customers speak.
+- **Localized in 14 Languages** — English, Spanish, Portuguese (Brazil), French, German, Italian, Japanese, Russian, Simplified Chinese, Turkish, Vietnamese, Thai, Hebrew, and Arabic. Run your shop in the language your team and customers speak.
 - **Search & Filter** — Find any ticket instantly. Search by customer name, device, status, or date — never lose track of a job again.
 - **Built for iPhone and iPad** — A native app designed for speed. Use it on your counter with iPad or in your pocket with iPhone. Fast, responsive, and works offline.
 
