@@ -7,7 +7,7 @@ import { StarField } from '@/components/StarField'
 import { ThemeToggle } from '@/components/ThemeToggle'
 
 function Timeline() {
-  let id = useId()
+  const id = useId()
 
   return (
     <div className="pointer-events-none absolute inset-0 z-50 overflow-hidden lg:right-[calc(max(2rem,50%-38rem)+40rem)] lg:min-w-lg lg:overflow-visible">
@@ -31,7 +31,7 @@ function Timeline() {
 }
 
 function Glow() {
-  let id = useId()
+  const id = useId()
 
   return (
     <div className="absolute inset-0 -z-10 overflow-hidden bg-gray-950 lg:right-[calc(max(2rem,50%-38rem)+40rem)] lg:min-w-lg">
