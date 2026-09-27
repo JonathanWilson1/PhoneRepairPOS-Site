@@ -41,6 +41,7 @@ Static output goes to `/out`.
 src/
   app/
     layout.tsx        — Root layout, metadata, structured data, GA4 script
+    sitemap.ts        — Generates /sitemap.xml
     page.mdx          — Homepage (features, how it works, FAQ)
     providers.tsx      — ThemeProvider wrapper
     not-found.tsx      — 404 page
@@ -56,7 +57,7 @@ src/
     tailwind.css       — Tailwind entry point + theme config
     typography.css     — Prose typography styles
 mdx/                   — MDX plugins (remark, rehype, recma)
-public/                — Static assets (favicons, OG image, robots.txt, sitemap.xml, CNAME)
+public/                — Static assets (favicons, OG image, robots.txt, CNAME)
 ```
 
 ---
@@ -78,6 +79,8 @@ Deploys automatically to **GitHub Pages** on push to `main`.
 - Dark mode is forced on — the `ThemeProvider` uses `forcedTheme="dark"`. The `ThemeToggle` component exists but the forced theme overrides it.
 - Path alias: `@/*` maps to `./src/*`.
 - Prettier config uses single quotes, no semicolons, and the Tailwind CSS plugin.
-- The `sitemap.xml` and `robots.txt` are manually maintained in `/public` — they are not auto-generated.
+- `/sitemap.xml` is generated from `src/app/sitemap.ts` at build time. Each page has a hand-set `lastModified` there: add a row when you add a page, and bump its date when you change its content. `robots.txt` is still hand-maintained in `/public`.
+- Localized landing pages (`src/app/<locale>/page.tsx`, 13 locales incl. RTL `he`/`ar`) all render `LocalizedLanding`. A new locale needs its page, a `lang` (and `dir="rtl"` if RTL), an entry in `src/components/landingAlternates.ts`, the language nav in `src/components/Intro.tsx`, and a sitemap row.
+- `npm run lint` runs ESLint directly (`eslint.config.mjs`, flat config from `eslint-config-next`).
 - Blog posts are MDX files inside `src/app/blog/<slug>/page.mdx`.
 - The homepage layout is a fixed sidebar (intro + star field) with a scrollable main content area.
