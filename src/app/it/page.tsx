@@ -14,6 +14,7 @@ export const metadata: Metadata = {
 export default function Page() {
   return (
     <LocalizedLanding
+      lang="it"
       strings={{
         langName: 'Italiano',
         heroTitle: 'Il gestionale gratuito per il tuo negozio di riparazione cellulari',
@@ -79,7 +80,7 @@ export default function Page() {
           },
           {
             q: "L'app è in italiano?",
-            a: "Sì, l'app è completamente tradotta in italiano — oltre che in inglese, spagnolo, portoghese, francese, tedesco, russo, giapponese e cinese.",
+            a: "Sì, l'app è completamente tradotta in italiano — oltre che in inglese, spagnolo, portoghese, francese, tedesco, giapponese, russo, cinese, turco, vietnamita, thailandese, ebraico e arabo. 14 lingue in tutto.",
           },
         ],
         footerNote:

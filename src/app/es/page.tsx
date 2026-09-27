@@ -14,6 +14,7 @@ export const metadata: Metadata = {
 export default function Page() {
   return (
     <LocalizedLanding
+      lang="es"
       strings={{
         langName: 'Español',
         heroTitle: 'El POS gratis para talleres de reparación de celulares',
@@ -79,7 +80,7 @@ export default function Page() {
           },
           {
             q: '¿Está en español?',
-            a: 'Sí, la aplicación está completamente traducida al español — además de inglés, portugués, francés, alemán, italiano, ruso, japonés y chino.',
+            a: 'Sí, la aplicación está completamente traducida al español — además de inglés, portugués, francés, alemán, italiano, japonés, ruso, chino, turco, vietnamita, tailandés, hebreo y árabe. 14 idiomas en total.',
           },
         ],
         footerNote:

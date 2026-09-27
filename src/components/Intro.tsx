@@ -76,6 +76,11 @@ export function Intro() {
           ['/ja', '日本語'],
           ['/ru', 'Русский'],
           ['/zh', '中文'],
+          ['/tr', 'Türkçe'],
+          ['/vi', 'Tiếng Việt'],
+          ['/th', 'ไทย'],
+          ['/he', 'עברית'],
+          ['/ar', 'العربية'],
         ].map(([href, label]) => (
           <Link
             key={href}

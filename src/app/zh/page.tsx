@@ -14,6 +14,7 @@ export const metadata: Metadata = {
 export default function Page() {
   return (
     <LocalizedLanding
+      lang="zh-Hans"
       strings={{
         langName: '简体中文',
         heroTitle: '专为手机维修店打造的免费POS应用',
@@ -79,7 +80,7 @@ export default function Page() {
           },
           {
             q: '有中文界面吗？',
-            a: '有，应用已完整翻译为简体中文 — 同时支持英语、西班牙语、葡萄牙语、法语、德语、意大利语、俄语和日语。',
+            a: '有，应用已完整翻译为简体中文 — 同时支持英语、西班牙语、葡萄牙语、法语、德语、意大利语、日语、俄语、土耳其语、越南语、泰语、希伯来语和阿拉伯语，共 14 种语言。',
           },
         ],
         footerNote:

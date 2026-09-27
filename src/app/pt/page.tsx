@@ -14,6 +14,7 @@ export const metadata: Metadata = {
 export default function Page() {
   return (
     <LocalizedLanding
+      lang="pt-BR"
       strings={{
         langName: 'Português',
         heroTitle: 'O sistema grátis para sua assistência técnica de celular',
@@ -79,7 +80,7 @@ export default function Page() {
           },
           {
             q: 'Está em português?',
-            a: 'Sim, o aplicativo é totalmente traduzido para o português do Brasil — além de inglês, espanhol, francês, alemão, italiano, russo, japonês e chinês.',
+            a: 'Sim, o aplicativo é totalmente traduzido para o português do Brasil — além de inglês, espanhol, francês, alemão, italiano, japonês, russo, chinês, turco, vietnamita, tailandês, hebraico e árabe. São 14 idiomas no total.',
           },
         ],
         footerNote:
