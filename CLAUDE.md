@@ -56,7 +56,7 @@ src/
     tailwind.css       — Tailwind entry point + theme config
     typography.css     — Prose typography styles
 mdx/                   — MDX plugins (remark, rehype, recma)
-public/                — Static assets (favicons, OG image, robots.txt, sitemap.xml, CNAME)
+public/                — Static assets (favicons, OG image, robots.txt, CNAME)
 ```
 
 ---
@@ -78,6 +78,6 @@ Deploys automatically to **GitHub Pages** on push to `main`.
 - Dark mode is forced on — the `ThemeProvider` uses `forcedTheme="dark"`. The `ThemeToggle` component exists but the forced theme overrides it.
 - Path alias: `@/*` maps to `./src/*`.
 - Prettier config uses single quotes, no semicolons, and the Tailwind CSS plugin.
-- The `sitemap.xml` and `robots.txt` are manually maintained in `/public` — they are not auto-generated.
+- `sitemap.xml` is generated at build by `src/app/sitemap.ts` from every `page.tsx`/`page.mdx` (lastmod = last git commit to the page). New pages are included automatically; add utility routes to its `EXCLUDED` set. `robots.txt` is manually maintained in `/public`.
 - Blog posts are MDX files inside `src/app/blog/<slug>/page.mdx`.
 - The homepage layout is a fixed sidebar (intro + star field) with a scrollable main content area.

@@ -42,4 +42,4 @@ Custom domain: `phonerepairpos.app`
 - `src/styles/` — Tailwind config and typography
 - `src/images/` — Site screenshots
 - `mdx/` — MDX plugins (remark, rehype, recma)
-- `public/` — Static assets (favicons, OG image, sitemap, robots.txt)
+- `public/` — Static assets (favicons, OG image, robots.txt)
