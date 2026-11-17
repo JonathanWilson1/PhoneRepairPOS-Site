@@ -1,6 +1,6 @@
 import Link from 'next/link'
 
-import { contactEmail, disclosureLines } from '@/lib/legal'
+import { contactEmail, contactMailto, disclosureLines } from '@/lib/legal'
 
 export function SiteFooter() {
   return (
@@ -15,7 +15,7 @@ export function SiteFooter() {
           ))}
           <p>
             <a
-              href={`mailto:${contactEmail}`}
+              href={contactMailto}
               className="transition hover:text-gray-300"
             >
               {contactEmail}

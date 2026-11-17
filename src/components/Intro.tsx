@@ -59,8 +59,8 @@ export function Intro() {
         <IconLink href="/templates" icon={BookIcon} className="flex-none">
           Free templates
         </IconLink>
-        <IconLink href="mailto:support@phonerepairpos.app" icon={MailIcon} className="flex-none">
-          support@phonerepairpos.app
+        <IconLink href="mailto:support@boxroomsoftware.com?subject=PhoneRepairPOS%20Support" icon={MailIcon} className="flex-none">
+          support@boxroomsoftware.com
         </IconLink>
       </div>
       <nav
