@@ -44,7 +44,10 @@ export const company = {
 /** Set to the VAT number once registered; omitted from the footer while null. */
 export const vatNumber: string | null = null
 
-export const contactEmail = 'support@phonerepairpos.app'
+export const contactEmail = 'support@boxroomsoftware.com'
+
+/** mailto: link with the product subject prefilled (one inbox serves every Boxroom product). */
+export const contactMailto = `mailto:${contactEmail}?subject=PhoneRepairPOS%20Support`
 
 /** The disclosure lines to render, in order. */
 export function disclosureLines(): string[] {

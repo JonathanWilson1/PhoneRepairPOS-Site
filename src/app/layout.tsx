@@ -88,7 +88,7 @@ const structuredData = {
       foundingDate: '2026',
       contactPoint: {
         '@type': 'ContactPoint',
-        email: 'support@phonerepairpos.app',
+        email: 'support@boxroomsoftware.com',
         contactType: 'customer support',
       },
     },
